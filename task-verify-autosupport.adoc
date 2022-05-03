@@ -1,0 +1,28 @@
+---
+sidebar: sidebar 
+permalink: task-verify-autosupport.html 
+keywords: autosupport, set up autosupport, test autosupport, asup, test asup 
+summary: 可主動監控系統健全狀況、並傳送訊息給NetApp技術支援部門。AutoSupport根據預設、AutoSupport 每個節點上都會啟用支援功能、以便使用HTTPS傳輸傳輸傳輸協定將訊息傳送給技術支援。 
+---
+= 驗AutoSupport 證此設定
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+可主動監控系統健全狀況、並傳送訊息給NetApp技術支援部門。AutoSupport根據預設、AutoSupport 每個節點上都會啟用支援功能、以便使用HTTPS傳輸傳輸傳輸協定將訊息傳送給技術支援。最好驗證AutoSupport 此資訊是否能傳送。
+
+如果Cloud Manager帳戶管理員在您啟動執行個體之前、已將Proxy伺服器新增至Cloud Manager、Cloud Volumes ONTAP 則會將此代理伺服器設定為使用AutoSupport 該代理伺服器來接收消息。
+
+唯一必要的組態步驟是確保Cloud Volumes ONTAP 透過NAT執行個體或環境的Proxy服務、實現出站網際網路連線。如需詳細資料、請參閱雲端供應商的網路需求。
+
+* link:reference-networking-aws.html["AWS網路需求"]
+* link:reference-networking-azure.html["Azure網路需求"]
+* link:reference-networking-gcp.html["Google Cloud網路需求"]
+
+
+在您確認可以存取傳出網際網路之後、您可以測試AutoSupport 以確保能夠傳送訊息。如需相關指示、請參閱 https://docs.netapp.com/us-en/ontap/system-admin/setup-autosupport-task.html["文件：設定檔ONTAP AutoSupport"^]。

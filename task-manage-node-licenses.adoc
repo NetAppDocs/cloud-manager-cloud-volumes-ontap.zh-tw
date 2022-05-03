@@ -1,0 +1,211 @@
+---
+sidebar: sidebar 
+permalink: task-manage-node-licenses.html 
+keywords: license, licensing, install, updating license, system license, add system license, adding a system license, byol license, add byol license, update byol license, nlf, license generator 
+summary: 在Digital Wallet中管理您的節點型授權、確保每Cloud Volumes ONTAP 個版本都擁有有效的授權、並具備所需的容量。 
+---
+= 管理節點型授權
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在Digital Wallet中管理節點型授權、以確保每Cloud Volumes ONTAP 個版本均具有有效的授權、並具有所需的容量。
+
+_Node型授權_是前一代授權模式（不適用於新客戶）：
+
+* 向NetApp購買BYOL授權
+* 從雲端供應商的市場訂閱每小時隨付（PAYGO）
+
+
+「_數位錢包_」可讓您從Cloud Volumes ONTAP 單一位置管理用於支援的授權。您可以新增授權並更新現有授權。
+
+link:concept-licensing.html["深入瞭Cloud Volumes ONTAP 解不知如何取得授權"]。
+
+
+
+== 管理PAYGO授權
+
+「Digital Wallet」頁面可讓您檢視每Cloud Volumes ONTAP 個PAYGO更新系統的詳細資料、包括序號和PAYGO授權類型。
+
+.步驟
+. 按一下*「所有服務」>「數位錢包」> Cloud Volumes ONTAP 「參考」*。
+. 從下拉式清單中選取*節點型授權*。
+. 按一下* PAYGO*。
+. 請在表格中檢視每個PAYGO授權的詳細資料。
++
+image:screenshot_paygo_licenses.png["一張螢幕快照、顯示「數位錢包」頁面中的表格、其中包含三份Paygo授權。每一列都會顯示名稱、系統類型、序號、套件、以及管理授權的連結。"]
+
+. 如有需要、請按一下*管理PAYGO授權*以變更PAYGO授權或變更執行個體類型。
+
+
+
+
+== 管理 BYOL 授權
+
+透過新增及移除系統授權與額外容量授權、來管理您直接向NetApp購買的授權。
+
+
+
+=== 新增未指派的授權
+
+將節點型授權新增至Digital Wallet、以便在建立新Cloud Volumes ONTAP 的作業系統時選取授權。數位錢包會將這些授權識別為_未指派_。
+
+.步驟
+. 按一下*「所有服務」>「數位錢包」> Cloud Volumes ONTAP 「參考」*。
+. 從下拉式清單中選取*節點型授權*。
+. 按一下*未指派*。
+. 按一下「*新增未指派的授權*」。
+. 輸入授權的序號或上傳授權檔案。
++
+如果您還沒有授權檔案、請參閱下列章節。
+
+. 按一下「 * 新增授權 * 」。
+
+
+Cloud Manager會將授權新增至Digital Wallet。授權將被識別為未指派、直到您將其與新Cloud Volumes ONTAP 的一套系統關聯為止。之後、授權會移至「數位錢包」中的「* BYOL*」索引標籤。
+
+
+
+=== Exchange未指派的節點型授權
+
+如果Cloud Volumes ONTAP 您擁有尚未使用的未指派節點型支援功能、您可以將授權轉換為Cloud Backup授權、Cloud Data Sense授權或Cloud Tiering授權、以交換授權。
+
+交換授權會撤銷Cloud Volumes ONTAP 該服務的不含美元的授權、並為該服務建立相當於美元的授權：
+
+* 針對某個不符合需求的HA配對授權Cloud Volumes ONTAP 會轉換為51 TiB資料服務授權
+* 針對單一節點的授權Cloud Volumes ONTAP 會轉換為32 TiB資料服務授權
+
+
+轉換後的授權到期日與Cloud Volumes ONTAP 不含更新授權的到期日相同。
+
+.步驟
+. 按一下*「所有服務」>「數位錢包」> Cloud Volumes ONTAP 「參考」*。
+. 從下拉式清單中選取*節點型授權*。
+. 按一下*未指派*。
+. 按一下「* Exchange授權*」。
++
+image:screenshot-exchange-license.png["顯示在「未指派的授權」頁面上的Exchange授權選項快照。"]
+
+. 選取您要與其交換授權的服務。
+. 如果出現提示、請為HA配對選取額外的授權。
+. 閱讀法律同意書、然後按一下*同意*。
+
+
+Cloud Manager會將未指派的授權轉換成您所選的服務。您可以在「*資料服務授權*」標籤中檢視新授權。
+
+
+
+=== 取得系統授權檔案
+
+在大多數情況下、 Cloud Manager 會使用您的 NetApp 支援網站帳戶自動取得授權檔案。但如果無法、則需要手動上傳授權檔案。如果您沒有授權檔案、可以從 netapp.com 取得。
+
+.步驟
+. 前往 https://register.netapp.com/register/getlicensefile["NetApp 授權檔案產生器"^] 並使用您的 NetApp 支援網站認證登入。
+. 輸入您的密碼、選擇產品、輸入序號、確認您已閱讀並接受隱私權政策、然後按一下 * 提交 * 。
++
+* 範例 *
+
++
+image:screenshot_license_generator.gif["螢幕擷取畫面：顯示填寫的 NetApp 授權檔案產生器網頁範例、包括密碼、產品（ Cloud Volumes ONTAP 適用於 AWS 的 NetApp Eshot BYOL ）和產品序號。"]
+
+. 選擇您要透過電子郵件或直接下載來接收 serialNumber.NLF Json 檔案。
+
+
+
+
+=== 更新系統授權
+
+當您透過聯絡 NetApp 代表續約 BYOL 訂閱時、 Cloud Manager 會自動從 NetApp 取得新授權、並將其安裝在 Cloud Volumes ONTAP 該系統上。
+
+如果 Cloud Manager 無法透過安全的網際網路連線存取授權檔案、您可以自行取得檔案、然後手動將檔案上傳至 Cloud Manager 。
+
+.步驟
+. 按一下*「所有服務」>「數位錢包」> Cloud Volumes ONTAP 「參考」*。
+. 從下拉式清單中選取*節點型授權*。
+. 在「* BYOL*」標籤中、展開Cloud Volumes ONTAP 關於某個系統的詳細資料。
+. 按一下系統授權旁的動作功能表、然後選取*更新授權*。
+. 上傳授權檔案（若您有HA配對、則為檔案）。
+. 按一下 * 更新授權 * 。
+
+
+Cloud Manager 會更新 Cloud Volumes ONTAP 整個作業系統的授權。
+
+
+
+=== 管理額外容量授權
+
+您可以購買Cloud Volumes ONTAP 額外容量授權給某個不含BYOL的系統、以配置超過368TiB的BYOL系統授權容量。例如、您可以購買一個額外的授權容量、以配置多達736 TiB的容量來Cloud Volumes ONTAP 供使用。或者、您也可以購買三份額外容量授權、最多可取得1.4 PIB。
+
+單一節點系統或 HA 配對可購買的授權數量不受限制。
+
+
+
+==== 新增容量授權
+
+透過Cloud Manager右下角的聊天圖示聯絡我們、購買額外的容量授權。購買授權後、您可以將其套用Cloud Volumes ONTAP 至一套系統。
+
+.步驟
+. 按一下*「所有服務」>「數位錢包」> Cloud Volumes ONTAP 「參考」*。
+. 從下拉式清單中選取*節點型授權*。
+. 在「* BYOL*」標籤中、展開Cloud Volumes ONTAP 關於某個系統的詳細資料。
+. 按一下「*新增容量授權*」。
+. 輸入序號或上傳授權檔案（如果您有HA配對、也可以輸入檔案）。
+. 按一下「*新增容量授權*」。
+
+
+
+
+==== 更新容量授權
+
+如果您延長額外容量授權的期限、則必須在Cloud Manager中更新授權。
+
+.步驟
+. 按一下*「所有服務」>「數位錢包」> Cloud Volumes ONTAP 「參考」*。
+. 從下拉式清單中選取*節點型授權*。
+. 在「* BYOL*」標籤中、展開Cloud Volumes ONTAP 關於某個系統的詳細資料。
+. 按一下容量授權旁邊的動作功能表、然後選取*更新授權*。
+. 上傳授權檔案（若您有HA配對、則為檔案）。
+. 按一下 * 更新授權 * 。
+
+
+
+
+==== 移除容量授權
+
+如果額外的容量授權過期且不再使用、您可以隨時將其移除。
+
+.步驟
+. 按一下*「所有服務」>「數位錢包」> Cloud Volumes ONTAP 「參考」*。
+. 從下拉式清單中選取*節點型授權*。
+. 在「* BYOL*」標籤中、展開Cloud Volumes ONTAP 關於某個系統的詳細資料。
+. 按一下容量授權旁的動作功能表、然後選取*移除授權*。
+. 按一下「*移除*」。
+
+
+
+
+=== 將試用版授權轉換為BYOL
+
+試用版授權可提供30天的使用時間。您可以在就地升級的評估授權上套用新的BYOL授權。
+
+當您將試用版授權轉換為BYOL時、Cloud Manager會重新啟動Cloud Volumes ONTAP 該系統。
+
+* 對於單節點系統、重新啟動會在重新開機程序期間導致I/O中斷。
+* 對於HA配對、重新啟動會啟動接管和恢復、以繼續為用戶端提供I/O服務。
+
+
+.步驟
+. 按一下*「所有服務」>「數位錢包」> Cloud Volumes ONTAP 「參考」*。
+. 從下拉式清單中選取*節點型授權*。
+. 按一下* Eval*。
+. 在表格中、按一下*「轉換成BYOL授權*」以取得Cloud Volumes ONTAP 一套系統。
+. 輸入序號或上傳授權檔案。
+. 按一下*「轉換授權*」。
+
+
+Cloud Manager會開始轉換程序。此程序會自動重新啟動。Cloud Volumes ONTAP備份時、授權資訊會反映出新的授權。

@@ -1,0 +1,100 @@
+---
+sidebar: sidebar 
+permalink: task-enabling-private-link.html 
+keywords: azure private link, private link connection, private link to storage 
+summary: 根據預設、 Cloud Manager 會在 Cloud Volumes ONTAP 支援 Azure 及其相關儲存帳戶的情況下、啟用 Azure Private Link 連線。私有連結可保護 Azure 中端點之間的連線安全。 
+---
+= 搭配 Cloud Volumes ONTAP 使用 Azure Private Link 與整個過程
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+根據預設、 Cloud Manager 會在 Cloud Volumes ONTAP 支援 Azure 及其相關儲存帳戶的情況下、啟用 Azure Private Link 連線。Private Link 可保護 Azure 中端點之間的連線、並提供效能優勢。 https://docs.microsoft.com/en-us/azure/private-link/private-link-overview["深入瞭解"^]。
+
+在大多數情況下、您無需做任何事、 Cloud Manager 會為您管理 Azure Private Link 。但是如果您使用 Azure 私有 DNS 、則需要編輯組態檔。您也可以視需要停用「私有連結」連線。
+
+
+
+== 連接器位於Azure中
+
+連接器應部署在Cloud Volumes ONTAP 其所管理的或所管理的各個系統所在的Azure區域 https://docs.microsoft.com/en-us/azure/availability-zones/cross-region-replication-azure#azure-cross-region-replication-pairings-for-all-geographies["Azure區域配對"^] 適用於整個系統。Cloud Volumes ONTAP這項需求可確保Cloud Volumes ONTAP Azure Private Link連線可用於連接至相關的儲存帳戶。 link:task-enabling-private-link.html["瞭Cloud Volumes ONTAP 解如何使用Azure Private Link"]。
+
+
+
+== 私有連結連線如何搭配Cloud Volumes ONTAP 使用
+
+Cloud Manager在Cloud Volumes ONTAP Azure中部署時、會在資源群組中建立私有端點。私有端點會與Cloud Volumes ONTAP 用於不供參考的儲存帳戶建立關聯。因此Cloud Volumes ONTAP 、存取資料可透過Microsoft主幹網路存取。
+
+當用戶端與Cloud Volumes ONTAP S時 位於相同的vnet內、在連接VNets的對等網路內、或在使用私有VPN或ExpressRoute連線至vnet的內部部署網路中、用戶端存取會透過私有連結進行。
+
+以下範例顯示用戶端透過私有連結從同一個Vnet存取、以及從內部網路存取具有私有VPN或ExpressRoute連線的權限。
+
+image:diagram_azure_private_link.png["概念性影像、顯示資料存取功能可透過Cloud Volumes ONTAP 私有端點和私有連結存取至功能性的資料、並可存取儲存帳戶。"]
+
+
+
+== 向Cloud Manager提供Azure私有DNS的詳細資料
+
+如果您使用 https://docs.microsoft.com/en-us/azure/dns/private-dns-overview["Azure 私有 DNS"^]然後您需要修改每個 Connector 上的組態檔。否則、 Cloud Manager 無法在 Cloud Volumes ONTAP 支援 Azure 及其相關儲存帳戶的情況下、啟用 Azure Private Link 連線。
+
+請注意、 DNS 名稱必須符合 Azure DNS 命名需求 https://docs.microsoft.com/en-us/azure/storage/common/storage-private-endpoints#dns-changes-for-private-endpoints["如 Azure 文件所示"^]。
+
+.步驟
+. SSH 連接至 Connector 主機並登入。
+. 瀏覽至下列目錄：/opp/application/netapp/cloudmanager/docker_occm/data
+. 修改下列參數以編輯app.conf、如下所示：
++
+....
+"user-private-dns-zone-settings": {
+   "use-existing": true,
+   "resource-group": "<resource group name of the DNS zone>",
+   "subscription": "<subscription ID>"
+  }
+....
++
+只有當私有DNS區域存在於與Connector不同的訂閱中時、才需要訂購參數。
+
+. 儲存檔案並登出 Connector 。
++
+不需要重新開機。
+
+
+
+
+
+== 在故障時啟用復原功能
+
+如果Cloud Manager無法建立Azure私有連結做為特定行動的一部分、則在不使用Azure私有連結連線的情況下完成此行動。當建立新的工作環境（單一節點或HA配對）、或是HA配對上發生下列動作時、就會發生這種情況：建立新的Aggregate、新增磁碟至現有的Aggregate、或是在超過32 TiB時建立新的儲存帳戶。
+
+如果Cloud Manager無法建立Azure私有連結、您可以啟用復原功能來變更此預設行為。這有助於確保您完全符合貴公司的安全法規。
+
+如果您啟用復原、Cloud Manager會停止動作、並回復作為行動一部分所建立的所有資源。
+
+只有API支援啟用復原功能。
+
+.步驟
+. 請使用「PUT /occm/config（放入/occm/config）API呼叫與下列要求內容：
++
+[source, json]
+----
+{ "rollbackOnAzurePrivateLinkFailure": true }
+----
+
+
+
+
+== 停用Azure Private Link連線
+
+如果 Azure 組態需要、您可以停用 Cloud Volumes ONTAP Azure 私有 Link 與儲存帳戶之間的連線。
+
+.步驟
+. 在Cloud Manager主控台右上角、按一下「設定」圖示、然後選取「*連接器設定*」。
+. 在* Azure *下、按一下*使用Azure Private Link*。
+. 取消選擇* Cloud Volumes ONTAP 在不同時使用*私有連結的情況下、連接到儲存帳戶*。
+. 按一下「 * 儲存 * 」。
+

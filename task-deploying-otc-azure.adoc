@@ -1,0 +1,274 @@
+---
+sidebar: sidebar 
+permalink: task-deploying-otc-azure.html 
+keywords: Cloud Volumes ONTAP, deploying, launching, creating, deploy, launch, create, azure, BYOL, license key, serial number, tags, azure tags, location, license, preconfigured packages, programmatic deployments, disk size, write speed, access control, volume protection, usage profile, register, CIFS share, quota, qtree, HA, HA pair, associate subscription, azure marketplace, marketplace subscription 
+summary: 您可以 Cloud Volumes ONTAP 在 Cloud Manager 中建立 Cloud Volumes ONTAP 一個運作環境、在 Azure 中啟動單一的「不受資料保護」系統。 
+---
+= 在 Cloud Volumes ONTAP Azure 中啟動
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以 Cloud Volumes ONTAP 在 Cloud Manager 中建立運作不正常的環境、在 Azure 中啟動單一節點系統或 HA 配對。
+
+您需要下列項目才能建立工作環境。
+
+[[licensing]]
+* 已啟動並執行的連接器。
++
+** 您應該擁有 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html["與工作區相關的連接器"^]。
+** https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["您應該隨時準備好讓 Connector 保持運作"^]。
+
+
+* 瞭解您要使用的組態。
++
+您應該已經選擇組態、並從系統管理員取得 Azure 網路資訊。如需詳細資訊、請參閱 link:task-planning-your-config-azure.html["規劃 Cloud Volumes ONTAP 您的需求組態"]。
+
+* 瞭解在「新增工作環境」精靈中選擇特定授權選項所需的條件。 link:concept-licensing.html["深入瞭Cloud Volumes ONTAP 解關於功能驗證的資訊"]。
++
+[cols="20,40,40"]
+|===
+| 授權選項 | 需求 | 如何滿足需求 
+
+
+| Freemium | 需要Marketplace訂閱或NetApp支援網站（NSS）帳戶。 | 您可以從*詳細資料與認證*頁面訂閱雲端供應商的市場。您可以在「*充電方法」和「NSSAccount *」頁面上輸入您的NSS*帳戶。 
+
+
+| 專業或基本套件 | 需要Marketplace訂閱或容量型授權（BYOL）。如果您的帳戶沒有有效的容量型授權、或是您的資源配置超過授權容量、建議您訂閱Marketplace以容量為基礎進行收費。 | 您可以從*詳細資料與認證*頁面訂閱雲端供應商的市場。如果您想要使用從NetApp購買的容量型授權（BYOL）、您必須先將其新增至*數位錢包*。 link:task-manage-capacity-licenses.html["瞭解如何新增容量型BYOL授權"]。 
+
+
+| Keystone Flex 訂閱 | 您的帳戶必須獲得授權、而且訂閱必須啟用Cloud Volumes ONTAP 才能與效益管理系統搭配使用。  a| 
+.. mailto：ng-keystone-success@netapp.com [聯絡NetApp]、以一或多個Keystone Flex訂閱授權您的Cloud Manager使用者帳戶。
+.. NetApp授權您的帳戶之後、 link:task-manage-keystone.html#link-a-subscription["連結您的訂閱內容以供Cloud Volumes ONTAP 搭配使用"]。
+.. 當您建立Cloud Volumes ONTAP 一個「叢集HA配對」時、請選取Keystone Flex訂閱充電方法。
+
+
+
+
+| 每個節點授權 | 您必須訂閱Marketplace、否則必須自行攜帶授權（BYOL）。此選項適用於現有訂閱或現有授權的客戶。不適用於新客戶。 | 如果您想要使用從NetApp購買的節點型授權（BYOL）、您必須先將其新增至*數位錢包*。 link:task-manage-node-licenses.html#obtain-a-system-license-file["瞭解如何新增節點型BYOL授權"]。您可以在「*充電方法」和「NSSAccount *」頁面上輸入您的NSS*帳戶。 
+|===
+
+
+Cloud Manager Cloud Volumes ONTAP 在 Azure 中建立一套功能完善的系統時、會建立多個 Azure 物件、例如資源群組、網路介面和儲存帳戶。您可以在精靈結束時檢閱資源摘要。
+
+[WARNING]
+.資料遺失的可能性
+====
+最佳實務做法是針對每Cloud Volumes ONTAP 個系統使用新的專屬資源群組。
+
+由於資料遺失的風險、不建議在 Cloud Volumes ONTAP 現有的共享資源群組中部署此功能。雖然Cloud Manager可在Cloud Volumes ONTAP 部署失敗或刪除時、從共用資源群組移除資源的功能、但Azure使用者可能會不小心從Cloud Volumes ONTAP 共用資源群組中刪除這些資源。
+
+====
+.步驟
+. [[訂閱]在「畫版」頁面上、按一下「*新增工作環境*」、然後依照提示進行。
+. * 選擇位置 * ：選擇 * Microsoft Azure * 與 * Cloud Volumes ONTAP 《單一節點 * 》或 * Cloud Volumes ONTAP 《高可用度 * 》。
+. 如果出現提示、 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html["建立連接器"^]。
+. *詳細資料與認證*：選擇性變更Azure認證與訂閱、指定叢集名稱、視需要新增標籤、然後指定認證資料。
++
+下表說明您可能需要指導的欄位：
+
++
+[cols="25,75"]
+|===
+| 欄位 | 說明 
+
+
+| 工作環境名稱 | Cloud Manager 會使用工作環境名稱來命名 Cloud Volumes ONTAP 整個系統、以及 Azure 虛擬機器。如果您選取該選項、它也會使用名稱做為預先定義安全性群組的前置詞。 
+
+
+| 資源群組標記 | 標記是 Azure 資源的中繼資料。當您在此欄位中輸入標記時、 Cloud Manager 會將標記新增至與 Cloud Volumes ONTAP 該系統相關聯的資源群組。建立工作環境時、您最多可以從使用者介面新增四個標記、然後在建立之後新增更多標記。請注意、在建立工作環境時、 API 不會限制您使用四個標記。如需標記的相關資訊、請參閱 https://azure.microsoft.com/documentation/articles/resource-group-using-tags/["Microsoft Azure 說明文件：使用標籤來組織 Azure 資源"^]。 
+
+
+| 使用者名稱和密碼 | 這些是Cloud Volumes ONTAP 適用於整個叢集管理員帳戶的認證資料。您可以使用這些認證資料、 Cloud Volumes ONTAP 透過 System Manager 或其 CLI 連線至功能驗證。保留預設的_admin_使用者名稱、或將其變更為自訂使用者名稱。 
+
+
+| [[video ） ] 編輯認證資料 | 您可以選擇不同的 Azure 認證資料和其他 Azure 訂閱、以搭配此 Cloud Volumes ONTAP 款作業系統使用。您必須將 Azure Marketplace 訂閱與所選 Azure 訂閱建立關聯、才能部署隨用隨付 Cloud Volumes ONTAP 的功能。 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-azure-accounts.html["瞭解如何新增認證"^]。 
+|===
++
+下列影片說明如何將 Marketplace 訂閱與 Azure 訂閱建立關聯：
+
++
+video::video_subscribing_azure.mp4[width=848,height=480]
+. * 服務 * ：啟用或停用 Cloud Volumes ONTAP 您不想搭配使用的個別服務。
++
+** https://docs.netapp.com/us-en/cloud-manager-data-sense/concept-cloud-compliance.html["深入瞭解Cloud Data Sense"^]。
+** https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-backup-to-cloud.html["深入瞭解Cloud Backup"^]。
+** https://docs.netapp.com/us-en/cloud-manager-monitoring/concept-monitoring.html["深入瞭解監控服務"^]。
+
+
+. *位置與連線*：選取位置、資源群組、安全性群組、然後選取核取方塊以確認連接器與目標位置之間的網路連線。
++
+下表說明您可能需要指導的欄位：
+
++
+[cols="25,75"]
+|===
+| 欄位 | 說明 
+
+
+| 位置 | 對於單一節點系統、您可以選擇要部署 Cloud Volumes ONTAP 的可用度區域。如果您未選擇 AZ 、 Cloud Manager 會為您選擇一個。 
+
+
+| 資源群組  a| 
+建立Cloud Volumes ONTAP 新的資源群組以供使用、或使用現有的資源群組。最佳實務做法是使用全新的資源群組 Cloud Volumes ONTAP 來進行支援。雖然可以在Cloud Volumes ONTAP 現有的共享資源群組中部署功能、但由於資料遺失的風險、不建議這麼做。如需詳細資料、請參閱上述警告。
+
+您必須使用專屬的資源群組來處理Cloud Volumes ONTAP 您在Azure中部署的每個「EHA配對」。資源群組僅支援一個HA配對。如果您嘗試在Cloud Volumes ONTAP Azure資源群組中部署第二個「功能組」配對、Cloud Manager會發生連線問題。
+
+
+TIP: 如果您使用的Azure帳戶具有 https://mysupport.netapp.com/site/info/cloud-manager-policies["必要權限"^]Cloud Manager可在Cloud Volumes ONTAP 部署失敗或刪除時、從資源群組移除不必要的資源。
+
+
+
+| 安全性群組 | 如果您選擇現有的安全群組、則必須符合Cloud Volumes ONTAP 下列需求： link:reference-networking-azure.html#security-group-rules-for-cloud-volumes-ontap["檢視預設的安全性群組"]。 
+|===
+. *充電方法與NSS帳戶*：指定您要搭配此系統使用的收費選項、然後指定NetApp支援網站帳戶。
++
+** link:concept-licensing.html["瞭解這些充電方法"]。
+** link:task-deploying-otc-azure.html#licensing["瞭解精靈中您想要使用的授權方法所需的內容"]。
+
+
+. * 預先設定的套件 * ：選取其中一個套件以快速部署 Cloud Volumes ONTAP 某個作業系統、或按一下 * 建立我自己的組態 * 。
++
+如果您選擇其中一個套件、則只需指定一個 Volume 、然後檢閱並核准組態。
+
+. * 授權 * ：視 Cloud Volumes ONTAP 需要變更版本、選取授權、然後選取虛擬機器類型。
++
+image:screenshot_cvo_licensing_azure.gif["「授權」頁面的快照"]
+
++
+如果您在啟動系統之後需要變更、您可以稍後修改授權或虛擬機器類型。
+
++
+
+NOTE: 如果所選版本有較新的發行候選版本、一般可用度或修補程式版本、 Cloud Manager 會在建立工作環境時、將系統更新至該版本。例如、如果您選取 Cloud Volumes ONTAP 了「供應的是」「供應的是」「供應的是」「供應的」「供應的是」、就會進行更新。更新不會從一個版本發生到另一個版本、例如從 9.6 到 9.7 。
+
+. * 從 Azure Marketplace 訂閱 * ：如果 Cloud Manager 無法以程式設計方式部署 Cloud Volumes ONTAP 功能、請依照下列步驟進行。
+. * 基礎儲存資源 * ：選擇初始 Aggregate 的設定：磁碟類型、每個磁碟的大小、以及是否應啟用資料分層至 Blob 儲存設備。
++
+請注意下列事項：
+
++
+** 磁碟類型適用於初始磁碟區。您可以為後續磁碟區選擇不同的磁碟類型。
+** 磁碟大小適用於初始 Aggregate 中的所有磁碟、以及 Cloud Manager 在使用簡易資源配置選項時所建立的任何其他集合體。您可以使用進階配置選項、建立使用不同磁碟大小的集合體。
++
+如需選擇磁碟類型和大小的說明、請參閱 link:task-planning-your-config-azure.html#sizing-your-system-in-azure["在 Azure 中調整系統規模"]。
+
+** 您可以在建立或編輯磁碟區時、選擇特定的磁碟區分層原則。
+** 如果停用資料分層、您可以在後續的 Aggregate 上啟用。
++
+link:concept-data-tiering.html["深入瞭解資料分層"]。
+
+
+
+. * 寫入速度與 WORM * （僅限單節點系統）：選擇 * 正常 * 或 * 高速 * 寫入速度、並視需要啟動一次寫入、多次讀取（ WORM ）儲存設備。
++
+link:concept-write-speed.html["深入瞭解寫入速度"]。
+
++
+如果啟用雲端備份或啟用資料分層、則無法啟用WORM。
+
++
+link:concept-worm.html["深入瞭解 WORM 儲存設備"]。
+
+. * 安全通訊至儲存設備與 WORM * （僅限 HA ）：選擇是否啟用 HTTPS 連線至 Azure 儲存帳戶、並視需要啟動一次寫入、多次讀取（ WORM ）儲存設備。
++
+HTTPS 連線是 Cloud Volumes ONTAP 從一個名為「支援速度」的鏈接至 Azure 儲存帳戶。請注意、啟用此選項可能會影響寫入效能。您無法在建立工作環境之後變更設定。
+
++
+link:concept-worm.html["深入瞭解 WORM 儲存設備"]。
+
+. * 建立 Volume * ：輸入新磁碟區的詳細資料、或按一下 * 跳過 * 。
++
+link:concept-client-protocols.html["瞭解支援的用戶端傳輸協定和版本"]。
+
++
+本頁中的部分欄位是不知自明的。下表說明您可能需要指導的欄位：
+
++
+[cols="25,75"]
+|===
+| 欄位 | 說明 
+
+
+| 尺寸 | 您可以輸入的最大大小、主要取決於您是否啟用精簡配置、這可讓您建立比目前可用實體儲存容量更大的磁碟區。 
+
+
+| 存取控制（僅適用於 NFS ） | 匯出原則會定義子網路中可存取磁碟區的用戶端。根據預設、 Cloud Manager 會輸入一個值、讓您存取子網路中的所有執行個體。 
+
+
+| 權限與使用者 / 群組（僅限 CIFS ） | 這些欄位可讓您控制使用者和群組（也稱為存取控制清單或 ACL ）的共用存取層級。您可以指定本機或網域 Windows 使用者或群組、或 UNIX 使用者或群組。如果您指定網域 Windows 使用者名稱、則必須使用網域 \ 使用者名稱格式來包含使用者的網域。 
+
+
+| Snapshot 原則 | Snapshot 複製原則會指定自動建立的 NetApp Snapshot 複本的頻率和數量。NetApp Snapshot 複本是一種不影響效能的時間點檔案系統映像、需要最少的儲存容量。您可以選擇預設原則或無。您可以針對暫時性資料選擇「無」：例如、 Microsoft SQL Server 的 Tempdb 。 
+
+
+| 進階選項（僅適用於 NFS ） | 為磁碟區選取 NFS 版本： NFSv3 或 NFSv3 。 
+
+
+| 啟動器群組和 IQN （僅適用於 iSCSI ） | iSCSI 儲存目標稱為 LUN （邏輯單元）、以標準區塊裝置的形式呈現給主機。啟動器群組是 iSCSI 主機節點名稱的表格、可控制哪些啟動器可存取哪些 LUN 。iSCSI 目標可透過標準乙太網路介面卡（ NIC ）、 TCP 卸載引擎（ TOE ）卡（含軟體啟動器）、整合式網路介面卡（ CNA ）或專用主機匯流排介面卡（ HBA ）連線至網路、並由 iSCSI 合格名稱（ IQN ）識別。建立 iSCSI Volume 時、 Cloud Manager 會自動為您建立 LUN 。我們只要在每個磁碟區建立一個 LUN 、就能輕鬆完成工作、因此不需要管理。建立磁碟區之後、 link:task-connect-lun.html["使用 IQN 從主機連線至 LUN"]。 
+|===
++
+下圖顯示 CIFS 傳輸協定的「 Volume 」（磁碟區）頁面：
+
++
+image:screenshot_cot_vol.gif["螢幕擷取畫面：顯示針對 Cloud Volumes ONTAP 某個實例填寫的 Volume 頁面。"]
+
+. * CIFS 設定 * ：如果您選擇 CIFS 傳輸協定、請設定 CIFS 伺服器。
++
+[cols="25,75"]
+|===
+| 欄位 | 說明 
+
+
+| DNS 主要和次要 IP 位址 | 提供 CIFS 伺服器名稱解析的 DNS 伺服器 IP 位址。列出的 DNS 伺服器必須包含所需的服務位置記錄（ SRV), 才能找到 CIFS 伺服器要加入之網域的 Active Directory LDAP 伺服器和網域控制器。 
+
+
+| 要加入的 Active Directory 網域 | 您要 CIFS 伺服器加入之 Active Directory （ AD ）網域的 FQDN 。 
+
+
+| 授權加入網域的認證資料 | 具有足夠權限的 Windows 帳戶名稱和密碼、可將電腦新增至 AD 網域內的指定組織單位（ OU ）。 
+
+
+| CIFS 伺服器 NetBios 名稱 | AD 網域中唯一的 CIFS 伺服器名稱。 
+
+
+| 組織單位 | AD 網域中與 CIFS 伺服器相關聯的組織單位。預設值為「 CN= 電腦」。若要將 Azure AD 網域服務設定為 Cloud Volumes ONTAP AD 伺服器以供使用、您應在此欄位中輸入 * OID=AADDC computers* 或 * OID=AADDC 使用者 * 。https://docs.microsoft.com/en-us/azure/active-directory-domain-services/create-ou["Azure 說明文件：在 Azure AD 網域服務託管網域中建立組織單位（ OU ）"^] 
+
+
+| DNS 網域 | 適用於整個儲存虛擬 Cloud Volumes ONTAP 機器（ SVM ）的 DNS 網域。在大多數情況下、網域與 AD 網域相同。 
+
+
+| NTP 伺服器 | 選擇 * 使用 Active Directory 網域 * 來使用 Active Directory DNS 設定 NTP 伺服器。如果您需要使用不同的位址來設定 NTP 伺服器、則應該使用 API 。請參閱 https://docs.netapp.com/us-en/cloud-manager-automation/index.html["Cloud Manager自動化文件"^] 以取得詳細資料。請注意、您只能在建立CIFS伺服器時設定NTP伺服器。您建立CIFS伺服器之後、就無法進行設定。 
+|===
+. * 使用率設定檔、磁碟類型及分層原則 * ：視需要選擇是否要啟用儲存效率功能、並變更磁碟區分層原則。
++
+如需詳細資訊、請參閱 link:task-planning-your-config-azure.html#choosing-a-volume-usage-profile["瞭解 Volume 使用量設定檔"] 和 link:concept-data-tiering.html["資料分層總覽"]。
+
+. * 審查與核准 * ：檢閱並確認您的選擇。
++
+.. 檢閱組態的詳細資料。
+.. 按一下 * 更多資訊 * 以檢閱 Cloud Manager 將購買的支援與 Azure 資源詳細資料。
+.. 選取「 * 我瞭解 ... * 」核取方塊。
+.. 按一下「 * 執行 * 」。
+
+
+
+
+Cloud Manager 部署 Cloud Volumes ONTAP 了這個功能。您可以追蹤時間表的進度。
+
+如果您在部署 Cloud Volumes ONTAP 此系統時遇到任何問題、請檢閱故障訊息。您也可以選取工作環境、然後按一下 * 重新建立環境 * 。
+
+如需其他協助、請前往 https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/guideme-tab["NetApp Cloud Volumes ONTAP 支援"^]。
+
+.完成後
+* 如果您已配置 CIFS 共用區、請授予使用者或群組檔案和資料夾的權限、並確認這些使用者可以存取共用區並建立檔案。
+* 如果您要將配額套用至磁碟區、請使用 System Manager 或 CLI 。
++
+配額可讓您限制或追蹤使用者、群組或 qtree 所使用的磁碟空間和檔案數量。
+
+

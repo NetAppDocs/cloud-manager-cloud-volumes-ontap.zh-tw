@@ -1,0 +1,287 @@
+---
+settings:
+  name: Cloud Volumes ONTAP
+  platform: cloud
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  langs: zh-tw,us-en,ja-jp,zh-cn,ko-kr
+sidebar:
+  entries:
+  - title: 所有Cloud Manager文件
+    url: https://docs.netapp.com/us-en/cloud-manager-family
+  - title: 文件Cloud Volumes ONTAP
+    url: "/index.html"
+  - title: 版本資訊
+    entries:
+    - title: 新增功能
+      url: "/whats-new.html"
+    - title: 已知限制
+      url: "/reference-limitations.html"
+    - title: 發行說明 Cloud Volumes ONTAP
+      url: "/whats-new-ontap.html"
+  - title: 開始使用
+    entries:
+    - title: 深入瞭解 Cloud Volumes ONTAP
+      url: "/concept-overview-cvo.html"
+    - title: Amazon Web Services入門
+      entries:
+      - title: 快速入門
+        url: "/task-getting-started-aws.html"
+      - title: 規劃您的組態
+        url: "/task-planning-your-config.html"
+      - title: 設定您的網路
+        entries:
+        - title: 網路需求
+          url: "/reference-networking-aws.html"
+        - title: 設定 AWS 傳輸閘道
+          url: "/task-setting-up-transit-gateway.html"
+        - title: AWS 的安全群組規則
+          url: "/reference-security-groups.html"
+      - title: 設定 AWS KMS
+        url: "/task-setting-up-kms.html"
+      - title: 在 AWS 中啟動系統
+        url: "/task-deploying-otc-aws.html"
+      - title: 開始使用 AWS C2S
+        url: "/task-getting-started-aws-c2s.html"
+    - title: 開始使用Microsoft Azure
+      entries:
+      - title: 快速入門
+        url: "/task-getting-started-azure.html"
+      - title: 規劃您的組態
+        url: "/task-planning-your-config-azure.html"
+      - title: 設定您的網路
+        url: "/reference-networking-azure.html"
+      - title: 使用您的金鑰設定加密
+        url: "/task-set-up-azure-encryption.html"
+      - title: 在 Azure 中啟動系統
+        url: "/task-deploying-otc-azure.html"
+    - title: 開始使用Google Cloud
+      entries:
+      - title: 快速入門
+        url: "/task-getting-started-gcp.html"
+      - title: 規劃您的組態
+        url: "/task-planning-your-config-gcp.html"
+      - title: 設定您的網路
+        url: "/reference-networking-gcp.html"
+      - title: 規劃VPC服務控制
+        url: "/reference-vpc-service-controls-gcp.html"
+      - title: 建立服務帳戶
+        url: "/task-creating-gcp-service-account.html"
+      - title: 使用客戶管理的加密金鑰
+        url: "/task-setting-up-gcp-encryption.html"
+      - title: 在 GCP 中啟動系統
+        url: "/task-deploying-gcp.html"
+  - title: 使用Cloud Volumes ONTAP
+    entries:
+    - title: 授權管理
+      entries:
+      - title: 管理容量型授權
+        url: "/task-manage-capacity-licenses.html"
+      - title: 管理 Keystone Flex 訂閱
+        url: "/task-manage-keystone.html"
+      - title: 管理節點型授權
+        url: "/task-manage-node-licenses.html"
+    - title: Volume與LUN管理
+      entries:
+      - title: 建立磁碟區
+        url: "/task-create-volumes.html"
+      - title: 管理現有磁碟區
+        url: "/task-manage-volumes.html"
+      - title: 將非作用中資料分層至物件儲存設備
+        url: "/task-tiering.html"
+      - title: 將LUN連接至主機
+        url: "/task-connect-lun.html"
+      - title: 利用NetApp加速資料存取FlexCache
+        url: "/task-accelerate-data-access.html"
+    - title: Aggregate管理
+      entries:
+      - title: 建立Aggregate
+        url: "/task-create-aggregates.html"
+      - title: 管理現有的集合體
+        url: "/task-manage-aggregates.html"
+    - title: 儲存VM管理
+      entries:
+      - title: 在Cloud Manager中使用儲存VM
+        url: "/task-managing-svms.html"
+      - title: 在AWS中建立儲存VM
+        url: "/task-managing-svms-aws.html"
+      - title: 在Azure中建立儲存VM
+        url: "/task-managing-svms-azure.html"
+    - title: 安全性與資料加密
+      entries:
+      - title: 使用 NetApp 加密來加密磁碟區
+        url: "/task-encrypting-volumes.html"
+      - title: 改善勒索軟體保護
+        url: "/task-protecting-ransomware.html"
+    - title: 系統管理
+      entries:
+      - title: 升級Cloud Volumes ONTAP
+        url: "/task-updating-ontap-cloud.html"
+      - title: 註冊隨用隨付系統
+        url: "/task-registering.html"
+      - title: 停止並啟動系統
+        url: "/task-managing-state.html"
+      - title: 同步系統時間
+        url: "/task-sync-time.html"
+      - title: 修改系統寫入速度
+        url: "/task-modify-write-speed.html"
+      - title: 變更系統密碼
+        url: "/task-change-password.html"
+      - title: 新增、移除或刪除系統
+        entries:
+        - title: 新增現有系統
+          url: "/task-adding-systems.html"
+        - title: 移除工作環境
+          url: "/task-removing.html"
+        - title: 刪除系統
+          url: "/task-deleting-working-env.html"
+      - title: AWS系統管理
+        entries:
+        - title: 變更EC2執行個體類型
+          url: "/task-change-ec2-instance.html"
+        - title: 變更HA配對的路由表
+          url: "/task-change-route-tables.html"
+        - title: 監控 AWS 成本
+          url: "/task-monitoring-costs.html"
+      - title: Azure系統管理
+        entries:
+        - title: 變更Azure VM類型
+          url: "/task-change-azure-vm.html"
+        - title: 覆寫CIFS鎖定
+          url: "/task-overriding-cifs-locks.html"
+        - title: 使用 Azure 私有連結
+          url: "/task-enabling-private-link.html"
+      - title: Google Cloud管理
+        entries:
+        - title: 變更機器類型
+          url: "/task-change-gcp-machine.html"
+      - title: 系統管理員或CLI的系統管理
+        url: "/task-connecting-to-otc.html"
+    - title: 系統健全狀況與事件
+      entries:
+      - title: 驗AutoSupport 證此設定
+        url: "/task-verify-autosupport.html"
+      - title: 設定EMS
+        url: "/task-configure-ems.html"
+  - title: 概念
+    entries:
+    - title: 儲存設備
+      entries:
+      - title: 用戶端傳輸協定
+        url: "/concept-client-protocols.html"
+      - title: 磁碟與集合體
+        url: "/concept-storage.html"
+      - title: 資料分層
+        url: "/concept-data-tiering.html"
+      - title: 儲存管理
+        url: "/concept-storage-management.html"
+      - title: 寫入速度
+        url: "/concept-write-speed.html"
+      - title: Flash 快取
+        url: "/concept-flash-cache.html"
+      - title: WORM 儲存設備
+        url: "/concept-worm.html"
+    - title: 高可用度配對
+      entries:
+      - title: AWS 中的 HA 配對
+        url: "/concept-ha.html"
+      - title: Azure 中的 HA 配對
+        url: "/concept-ha-azure.html"
+      - title: GCP 中的 HA 配對
+        url: "/concept-ha-google-cloud.html"
+      - title: 儲存設備接管期間的行動
+        url: "/concept-degraded-ha-pair.html"
+    - title: 授權
+      url: "/concept-licensing.html"
+    - title: 管理節點型BYOL
+      url: "/concept-license-management.html"
+    - title: 安全性
+      url: "/concept-security.html"
+    - title: 效能
+      url: "/concept-performance.html"
+    - title: 不再是不知道的數位顧問AutoSupport Active IQ
+      url: "/concept-active-iq.html"
+    - title: 預設組態
+      url: "/reference-default-configs.html"
+  - title: 知識與支援
+    entries:
+    - title: 註冊以取得支援
+      url: "/task-support-registration.html"
+    - title: 取得協助
+      url: "/task-get-help.html"
+  - title: 法律聲明
+    url: "/legal-notices.html"
+homepage:
+  tiles:
+  - title: 開始使用
+    links:
+    - title: 深入瞭解 Cloud Volumes ONTAP
+      url: concept-overview-cvo.html
+    - title: AWS快速入門
+      url: task-getting-started-aws.html
+    - title: Azure快速入門
+      url: task-getting-started-azure.html
+    - title: Google Cloud快速入門
+      url: task-getting-started-gcp.html
+  - title: 授權
+    links:
+    - title: 授權總覽
+      url: concept-licensing.html
+    - title: 管理容量型授權
+      url: task-manage-capacity-licenses.html
+    - title: Exchange未指派的節點型授權
+      url: task-manage-node-licenses.html#exchange-unassigned-node-based-licenses
+    - title: 管理 Keystone Flex 訂閱
+      url: task-manage-keystone.html
+  - title: 儲存管理
+    links:
+    - title: 建立磁碟區
+      url: task-create-volumes.html
+    - title: 將非作用中資料分層至物件儲存設備
+      url: task-tiering.html
+    - title: 利用NetApp加速資料存取FlexCache
+      url: task-accelerate-data-access.html
+  - title: 系統管理
+    links:
+    - title: 升級Cloud Volumes ONTAP
+      url: task-updating-ontap-cloud.html
+    - title: 停止Cloud Volumes ONTAP 並啟動
+      url: task-managing-state.html
+  - title: 安全性
+    links:
+    - title: 使用 NetApp 加密來加密磁碟區
+      url: task-encrypting-volumes.html
+    - title: 改善勒索軟體保護
+      url: task-protecting-ransomware.html
+  - title: API
+    links:
+    - title: 概述of the不適用的API Cloud Volumes ONTAP
+      url: https://docs.netapp.com/us-en/cloud-manager-automation/cm/overview.html
+    - title: 準備使用API
+      url: https://docs.netapp.com/us-en/cloud-manager-automation/cm/prepare.html
+    - title: API 參考
+      url: https://docs.netapp.com/us-en/cloud-manager-automation/cm/api_ref_resources.html
+  - title: 疑難排解
+    links:
+    - title: NetApp知識庫
+      url: https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Volumes_ONTAP_(CVO)
+  - title: 參考資料
+    links:
+    - title: 支援的組態
+      url: https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html
+    - title: 支援的雲端區域
+      url: https://cloud.netapp.com/cloud-volumes-global-regions
+    - title: 計算機
+      url: https://cloud.netapp.com/calculator-hub
+  - title: 部落格社群
+    links:
+    - title: NetApp社群
+      url: https://community.netapp.com/t5/Cloud-Volumes-ONTAP/bd-p/CloudVolumes
+    - title: Cloud Central部落格
+      url: https://cloud.netapp.com/blog/topic/cloud-volumes-ontap
+    - title: 雲端網路研討會
+      url: https://cloud.netapp.com/events
+product-family: {}

@@ -1,0 +1,675 @@
+---
+sidebar: sidebar 
+permalink: whats-new.html 
+keywords: 'what"s new, features, new, release notes, bugs, limitations, known issues, enhancements, fixes' 
+summary: 瞭Cloud Volumes ONTAP 解Cloud Manager的更新功能。 
+---
+= 新功能
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+瞭Cloud Volumes ONTAP 解Cloud Manager的更新功能。
+
+本頁所述的增強功能、是專為Cloud Manager提供的功能、可讓Cloud Volumes ONTAP 您管理各種功能。若要瞭解Cloud Volumes ONTAP 有關此功能的最新消息、請參閱 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html["前往Cloud Volumes ONTAP 《發行說明》"^]
+
+
+
+== 2022年5月2日
+
+以下是3.9.18版Connector所做的變更。
+
+
+
+=== 版本9.11.0 Cloud Volumes ONTAP
+
+Cloud Manager現在可以部署及管理Cloud Volumes ONTAP 功能。
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes["深入瞭Cloud Volumes ONTAP 解本版的更新功能"^]。
+
+
+
+=== 強化中介升級
+
+當Cloud Manager升級HA配對的中介程式時、它現在會在刪除開機磁碟之前驗證是否有新的中介映像可用。此變更可確保在升級程序失敗時、中介程序仍能繼續順利運作。
+
+
+
+=== K8s標籤已移除
+
+K8s索引標籤已在先前版本中過時、現在已移除。如果您想要搭配Cloud Volumes ONTAP 使用Kubernetes搭配使用、可以將託管Kubernetes叢集新增至Canvas、作為進階資料管理的工作環境。
+
+https://docs.netapp.com/us-en/cloud-manager-kubernetes/concept-kubernetes.html["深入瞭解Cloud Manager中的Kubernetes資料管理"^]
+
+
+
+=== Azure年度合約
+
+Azure現已透過年度合約提供Essentials與Professional套裝軟體。您可以聯絡NetApp銷售代表以購買年度合約。該合約可在Azure Marketplace以私人優惠形式提供。
+
+NetApp與您分享私人優惠之後、您可以在工作環境建立期間、從Azure Marketplace訂閱年度方案。
+
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html["深入瞭解授權"]。
+
+
+
+=== S3 Glacier即時擷取
+
+您現在可以將階層式資料儲存在Amazon S3 Glacier即時擷取儲存類別中。
+
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.html#changing-the-storage-class-for-tiered-data["瞭解如何變更階層式資料的儲存類別"]。
+
+
+
+=== Connector需要新的AWS權限
+
+在單一可用度區域（AZ）中部署HA配對時、現在需要下列權限才能建立AWS分散配置群組：
+
+[source, json]
+----
+"ec2:DescribePlacementGroups",
+"iam:GetRolePolicy",
+----
+現在需要這些權限、才能最佳化Cloud Manager建立放置群組的方式。
+
+請務必為您新增至Cloud Manager的每組AWS認證資料提供這些權限。您可以在上找到最新的權限清單 https://mysupport.netapp.com/site/info/cloud-manager-policies["Cloud Manager 原則頁面"^]。
+
+
+
+=== 新的Google Cloud區域支援
+
+從9.10.1版開始、下列Google Cloud區域現在支援此功能：Cloud Volumes ONTAP
+
+* 德里（亞洲-南2）
+* 墨爾本（澳洲-蘇特斯塔2）
+* Milan（Europe - west8）-僅限單一節點
+* Santiago,（西南1）-僅限單一節點
+
+
+https://cloud.netapp.com/cloud-volumes-global-regions["檢視Cloud Volumes ONTAP 支援區域的完整清單以供參閱"^]
+
+
+
+=== 在Google Cloud中支援n2-Standard-16
+
+從Cloud Volumes ONTAP 9.10.1版開始、Google Cloud現在支援使用支援n2-Standard-16機器類型的功能。
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html["在Cloud Volumes ONTAP Google Cloud中檢視支援的支援功能組態"^]
+
+
+
+=== Google Cloud防火牆原則的增強功能
+
+* 當您Cloud Volumes ONTAP 在Google Cloud中建立一個「叢集式HA配對」時、Cloud Manager現在會在VPC中顯示所有現有的防火牆原則。
++
+之前Cloud Manager不會在VPC-1、VPC-2或VPC-3中顯示任何沒有目標標記的原則。
+
+* 當您Cloud Volumes ONTAP 在Google Cloud中建立一個單一節點系統時、現在您可以選擇是否要預先定義的防火牆原則、僅允許所選VPC（建議）或所有VPC內的流量。
+
+
+
+
+=== Google Cloud服務帳戶的增強功能
+
+當您選擇要搭配Cloud Volumes ONTAP 使用的Google Cloud服務帳戶時、Cloud Manager現在會顯示與每個服務帳戶相關的電子郵件地址。檢視電子郵件地址可讓您更容易區分共用相同名稱的服務帳戶。
+
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/main/media/screenshot-google-cloud-service-account.png["服務帳戶欄位的快照"]
+
+
+
+== 2022年4月3日
+
+
+
+=== System Manager連結已移除
+
+我們已移除Cloud Volumes ONTAP 先前可從功能環境中取得的System Manager連結。
+
+您仍可在連線Cloud Volumes ONTAP 至該系統的網頁瀏覽器中輸入叢集管理IP位址、以連線至System Manager。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-connecting-to-otc.html["深入瞭解連線至System Manager"]。
+
+
+
+=== WORM儲存設備充電
+
+入門特惠費率已經到期、現在您將需要支付使用WORM儲存設備的費用。根據WORM磁碟區的總配置容量、每小時充電一次。這適用於新的Cloud Volumes ONTAP 和現有的不全系統。
+
+https://cloud.netapp.com/pricing["瞭解WORM儲存設備的定價"^]。
+
+
+
+== 2022年2月27日
+
+以下變更是在版本3.9.16的Connector中進行。
+
+
+
+=== 重新設計Volume精靈
+
+我們最近推出的「建立新磁碟區精靈」、現在可從*進階分配*選項在特定的集合體上建立磁碟區。
+
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-create-volumes.html["瞭解如何在特定的Aggregate上建立磁碟區"]。
+
+
+
+== 2022年2月9日
+
+
+
+=== 市場更新
+
+* Essentials套件和專業版套件現已在AWS和Google Cloud市場推出。
++
+這些隨容量付費方法可讓您按小時付費、或直接向雲端供應商購買年度合約。您仍可選擇直接向NetApp購買隨容量授權。
+
++
+如果您在雲端市場中有現有的訂閱、您也會自動訂閱這些新服務項目。您可以在部署全新Cloud Volumes ONTAP 的運作環境時、選擇隨容量充電。
+
++
+如果您是新客戶、Cloud Manager會在您建立新的工作環境時提示您訂閱。
+
+* 透過AWS和Google Cloud市場取得的個別節點授權已過時、不再適用於新訂閱者。這包括年度合約和每小時訂閱（Explore、Standard和Premium）。
++
+目前有有效訂閱的客戶仍可使用此收費方法。
+
+
+
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html["深入瞭Cloud Volumes ONTAP 解適用於NetApp的授權選項"]。
+
+
+
+== 2022年2月6日
+
+
+
+=== Exchange未指派的授權
+
+如果Cloud Volumes ONTAP 您擁有尚未使用的未指派節點型支援功能、您現在可以將授權轉換成Cloud Backup授權、Cloud Data Sense授權或Cloud Tiering授權、以交換授權。
+
+此動作會撤銷Cloud Volumes ONTAP 此「不支援」授權、並針對相同到期日的服務建立等值金額的授權。
+
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-node-licenses.html#exchange-unassigned-node-based-licenses["瞭解如何交換未指派的節點型授權"]。
+
+
+
+== 2022年1月30日
+
+以下變更是在版本3.9.15的Connector中提出的。
+
+
+
+=== 重新設計授權選項
+
+我們重新設計了授權選擇畫面、以建立全新Cloud Volumes ONTAP 的運作環境。這些變更突顯了2021年7月推出的附加容量充電方法、並透過雲端供應商市場支援即將推出的產品。
+
+
+
+=== 數位錢包更新
+
+我們在Cloud Volumes ONTAP 單一索引標籤中整合了各種不完整的授權、藉此更新*數位錢包*。
+
+
+
+=== 每個NetApp帳戶20個系統
+
+無論使用何種授權模式、每個NetApp帳戶最多只能有20個不受限的功能。Cloud Volumes ONTAP
+
+_system_是HA配對或單一節點系統。例如、如果您有兩Cloud Volumes ONTAP 個用作2個用作2個用作2個用作2個用作2個用作2個用作單一節點的系統、則您的帳戶中總共有4個用作16個用作額外系統的空間。
+
+如果您有任何問題、請聯絡您的客戶代表或銷售團隊。
+
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-netapp-accounts.html["深入瞭解NetApp客戶"^]
+
+
+
+== 2022年1月2日
+
+以下變更是在3.9.14版的Connector中提出的。
+
+
+
+=== 支援其他VM類型
+
+從9.10.1版開始、下列VM類型現在可在Microsoft Azure中支援此功能：Cloud Volumes ONTAP
+
+* E4ds_v4
+* E8ds_v4
+* E32ds_v4
+* E48ds_v4
+
+
+前往 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes["發行說明 Cloud Volumes ONTAP"^] 如需支援組態的詳細資訊、請參閱。
+
+
+
+=== FlexClone充電更新
+
+如果您使用 link:concept-licensing.html["容量型授權"^] 對於本產品、FlexClone磁碟區所使用的容量不再需要付費。Cloud Volumes ONTAP
+
+
+
+=== 現在顯示充電方法
+
+Cloud Manager現在會在Cloud Volumes ONTAP 畫版的右側面板中顯示每個運作環境的充電方法。
+
+image:screenshot-cvo-charging-method.png["這是一個快照、顯示Cloud Volumes ONTAP 從Canvas.選取工作環境後、右側面板中出現的功能適用於功能不正常的環境充電方法。"]
+
+
+
+=== 選擇您的使用者名稱
+
+當您建立Cloud Volumes ONTAP 一個可運作的環境時、現在可以選擇輸入您偏好的使用者名稱、而非預設的管理使用者名稱。
+
+image:screenshot-cvo-user-name.png["工作環境精靈中的「詳細資料與認證」頁面快照、您可以在其中指定使用者名稱。"]
+
+
+
+=== Volume建立增強功能
+
+我們在Volume建立方面做了一些增強：
+
+* 我們重新設計了「建立Volume精靈」、以方便使用。
+* 您新增至磁碟區的標記現在已與應用程式範本服務相關聯、可協助您組織及簡化資源管理。
+* 您現在可以選擇NFS的自訂匯出原則。
+
+
+image:screenshot-cvo-create-volume.png["建立新Volume時顯示「Protocol（傳輸協定）」頁面的快照。"]
+
+
+
+== 2021年11月28日
+
+以下是連接器3.9.13版本的變更。
+
+
+
+=== 零點9.10.1 Cloud Volumes ONTAP
+
+Cloud Manager現在可以部署及管理Cloud Volumes ONTAP 功能。
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes["深入瞭Cloud Volumes ONTAP 解本版的更新功能"^]。
+
+
+
+=== Keystone Flex訂閱
+
+您現在可以使用Keystone Flex訂閱來支付Cloud Volumes ONTAP 有關功能不均的HA配對費用。
+
+Keystone Flex訂閱是一種隨需付費的訂閱型服務、可為偏好使用營運成本消費模式的使用者、提供無縫的混合雲體驗、以預先支付資本支出或租賃。
+
+Keystone Flex訂閱支援所有可Cloud Volumes ONTAP 從Cloud Manager部署的全新版本的功能。
+
+* https://www.netapp.com/services/subscriptions/keystone/flex-subscription/["深入瞭解Keystone Flex訂閱"^]。
+* link:task-manage-keystone.html["瞭解如何在Cloud Manager中開始使用Keystone Flex訂閱"]。
+
+
+
+
+=== 全新AWS區域支援
+
+目前支援AWS亞太地區（大阪）（亞太東北3區）的支援。Cloud Volumes ONTAP
+
+
+
+=== 連接埠減量
+
+Azure中的任何一組節點系統和HA配對、連接埠8023和49000都不再開放於Cloud Volumes ONTAP 支援的整套系統上。
+
+此變更適用於從Cloud Volumes ONTAP 連接器3.9.13版開始的_new _版。
+
+
+
+== 2021年10月4日
+
+以下是3.9.11版本的Connector所做的變更。
+
+
+
+=== 零點9.10.0 Cloud Volumes ONTAP
+
+Cloud Manager現在可以部署及管理Cloud Volumes ONTAP 功能。
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-9100-relnotes["深入瞭Cloud Volumes ONTAP 解本版的更新功能"^]。
+
+
+
+=== 縮短部署時間
+
+我們縮短了在Cloud Volumes ONTAP Microsoft Azure或Google Cloud中部署運作環境所需的時間（啟用正常寫入速度時）。部署時間現在平均縮短3-4分鐘。
+
+
+
+== 2021年9月2日
+
+以下是連接器3.9.10版本的變更。
+
+
+
+=== Azure中由客戶管理的加密金鑰
+
+資料會使用在Cloud Volumes ONTAP Azure中的功能自動加密 https://azure.microsoft.com/en-us/documentation/articles/storage-service-encryption/["Azure 儲存服務加密"^] 使用Microsoft管理的金鑰。但您現在可以改為使用客戶管理的加密金鑰、只要完成下列步驟即可：
+
+. 從Azure建立金鑰保存庫、然後在該保存庫中產生金鑰。
+. 在Cloud Manager中、使用API建立Cloud Volumes ONTAP 一個使用金鑰的功能不全的環境。
+
+
+link:task-set-up-azure-encryption.html["深入瞭解這些步驟"]。
+
+
+
+== 2021年7月7日
+
+下列變更是隨附於Connector 3.9.8版中。
+
+
+
+=== 全新的充電方法
+
+全新的充電方法Cloud Volumes ONTAP 可供使用。
+
+* *容量型BYOL*：容量型授權可讓您依照Cloud Volumes ONTAP 容量的每一TiB付費。授權與您的NetApp帳戶有關、只Cloud Volumes ONTAP 要您的授權有足夠的容量、您就能建立為多個版本的支援系統。容量型授權以套件形式提供、包括_Essentials或_Professional_。
+* * Freemium產品*：Freemium可讓您免費使用Cloud Volumes ONTAP NetApp提供的所有功能（雲端供應商仍需付費）。每個系統的資源配置容量上限為500 GiB、而且沒有支援合約。您最多可擁有10個Freemium系統。
++
+link:concept-licensing.html["深入瞭解這些授權選項"]。
+
++
+以下是Cloud Volumes ONTAP 您在Azure中部署新的一套功能完善的充電方法範例：
+
++
+image:screenshot_cvo_charging_methods.png["「功能性環境精靈」的螢幕快照、Cloud Volumes ONTAP 您可以在其中選擇充電方法。"]
+
+
+
+
+
+=== WORM儲存設備可供一般使用
+
+一次寫入、多次讀取（WORM）儲存設備已不再處於預覽模式、現在可用於Cloud Volumes ONTAP 搭配使用。 link:concept-worm.html["深入瞭解 WORM 儲存設備"]。
+
+
+
+=== 支援AWS中的m5dn.24xlarge
+
+從9.9.1版開始、Cloud Volumes ONTAP 支援m5dn.24xLarge執行個體類型的功能如下：PAYGO Premium、自帶授權（BYOL）和Freemium。
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-aws.html["在Cloud Volumes ONTAP AWS中檢視支援的支援組態"^]。
+
+
+
+=== 選取現有的Azure資源群組
+
+在Cloud Volumes ONTAP Azure中建立一套功能完善的系統時、您現在可以選擇現有的虛擬機器資源群組及其相關資源。
+
+image:screenshot_azure_resource_group.png["「建立工作環境」精靈的快照、您可以在其中選取現有的資源群組。"]
+
+下列權限可讓Cloud Manager在Cloud Volumes ONTAP 部署失敗或刪除時、從資源群組中移除不必要的資源：
+
+[source, json]
+----
+"Microsoft.Network/privateEndpoints/delete",
+"Microsoft.Compute/availabilitySets/delete",
+----
+請務必提供這些權限給您新增至Cloud Manager的每組Azure認證資料。您可以在上找到最新的權限清單 https://mysupport.netapp.com/site/info/cloud-manager-policies["Cloud Manager 原則頁面"^]。
+
+
+
+=== Azure中現在已停用BLOB公開存取
+
+Cloud Manager現在會在建立Cloud Volumes ONTAP 適用於的儲存帳戶時、停用* Blob公有存取*、以增強安全性。
+
+
+
+=== Azure Private Link增強功能
+
+根據預設、Cloud Manager現在可在開機診斷儲存帳戶上啟用Azure Private Link連線、以供新Cloud Volumes ONTAP 的作業系統使用。
+
+這表示Cloud Volumes ONTAP 適用於此功能的_all_儲存帳戶現在將使用私有連結。
+
+link:task-enabling-private-link.html["深入瞭解如何搭配 Cloud Volumes ONTAP 使用 Azure 私有 Link 搭配使用功能"]。
+
+
+
+=== Google Cloud中的平衡式持續磁碟
+
+從9.9.1版開始、Cloud Volumes ONTAP 支援平衡式持續磁碟（PD平衡）。
+
+這些SSD可提供較低的每GiB IOPS、藉此平衡效能與成本。
+
+
+
+=== Google Cloud不再支援Custom-4-16384
+
+全新Cloud Volumes ONTAP 的功能不再支援custom 4-16384機器類型。
+
+如果您在此機器類型上執行現有的系統、您可以繼續使用、但我們建議您切換至n2-Standard-4機器類型。
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html["在Cloud Volumes ONTAP GCP中檢視支援的組態"^]。
+
+
+
+== 2021年5月30日
+
+以下是3.9.7版本的Connector所帶來的變更。
+
+
+
+=== AWS全新專業套件
+
+全新的專業套裝軟體可Cloud Volumes ONTAP 讓您Cloud Backup Service 使用AWS Marketplace的年度合約來搭售各種功能。每TiB付款。此訂閱無法讓您備份內部資料。
+
+如果您選擇此付款選項、Cloud Volumes ONTAP 您可以透過EBS磁碟、為每個支援系統配置最多2個PIB、並分層至S3物件儲存設備（單一節點或HA）。
+
+前往 https://aws.amazon.com/marketplace/pp/prodview-q7dg6zwszplri["AWS Marketplace頁面"^] 若要檢視價格詳細資料、請前往 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes["發行說明 Cloud Volumes ONTAP"^] 以深入瞭解此授權選項。
+
+
+
+=== AWS中EBS磁碟區上的標記
+
+Cloud Manager現在可在EBS磁碟區中新增標籤、以建立全新Cloud Volumes ONTAP 的運作環境。這些標記是Cloud Volumes ONTAP 在部署完畢後才建立的。
+
+如果您的組織使用服務控制原則（SCP）來管理權限、這項變更將有助益。
+
+
+
+=== 自動分層原則的最低冷卻時間
+
+如果您使用_auto_分層原則在磁碟區上啟用資料分層、您現在可以使用API調整最小冷卻時間。
+
+link:task-tiering.html#changing-the-cooling-period-for-the-auto-tiering-policy["瞭解如何調整最低冷卻週期。"]
+
+
+
+=== 增強自訂匯出原則
+
+當您建立新的NFS Volume時、Cloud Manager現在會以遞增順序顯示自訂匯出原則、讓您更容易找到所需的匯出原則。
+
+
+
+=== 刪除舊的雲端快照
+
+Cloud Manager現在會刪除在Cloud Volumes ONTAP 部署完一套系統時、以及每次關機時所建立的舊版根磁碟和開機磁碟雲端快照。只有兩個最新的快照會同時保留給根磁碟區和開機磁碟區。
+
+這項增強功能可移除不再需要的快照、協助降低雲端供應商的成本。
+
+請注意、Connector需要新的權限才能刪除Azure快照。 https://mysupport.netapp.com/site/info/cloud-manager-policies["檢視Azure最新的Cloud Manager原則"^]。
+
+[source, json]
+----
+"Microsoft.Compute/snapshots/delete"
+----
+
+
+== 2021年5月24日
+
+
+
+=== 部分9.9.1 Cloud Volumes ONTAP
+
+Cloud Manager現在可以部署及管理Cloud Volumes ONTAP 支援。
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-991-relnotes["深入瞭Cloud Volumes ONTAP 解本版的更新功能"^]。
+
+
+
+== 2021年4月11日
+
+下列變更是隨附於3.9.5版的Connector所做的變更。
+
+
+
+=== 邏輯空間報告
+
+Cloud Manager現在可針對其建立的Cloud Volumes ONTAP 初始儲存虛擬機器、提供邏輯空間報告功能、以供支援。
+
+以邏輯方式回報空間時ONTAP 、此功能會報告磁碟區空間、讓儲存效率功能所節省的所有實體空間也會報告為已使用。
+
+
+
+=== 支援AWS中的GP3磁碟
+
+從9.7版開始、支援_通用SSD（GP3）_磁碟。Cloud Volumes ONTAPGP3磁碟是成本最低的SSD、可在各種工作負載的成本與效能之間取得平衡。
+
+link:task-planning-your-config.html#sizing-your-system-in-aws["深入瞭解搭配Cloud Volumes ONTAP 使用GP3磁碟的相關資訊"]。
+
+
+
+=== AWS不再支援冷HDD磁碟
+
+不再支援冷硬碟（SC1）磁碟。Cloud Volumes ONTAP
+
+
+
+=== 適用於Azure儲存帳戶的TLS 1.2
+
+當Cloud Manager在Azure中建立Cloud Volumes ONTAP 儲存帳戶以供支援時、儲存帳戶的TLS版本現在是1.2版。
+
+
+
+== 2021年3月8日
+
+以下是3.9.4版連接器的變更。
+
+
+
+=== 版本9.9.0 Cloud Volumes ONTAP
+
+Cloud Manager現在可以部署及管理Cloud Volumes ONTAP
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-990-relnotes["深入瞭Cloud Volumes ONTAP 解本版的更新功能"^]。
+
+
+
+=== 支援AWS C2S環境
+
+您現在可以在Cloud Volumes ONTAP AWS商業雲端服務（C2S）環境中部署S效能 指數9.8。
+
+link:task-getting-started-aws-c2s.html["瞭解如何開始使用C2S"]。
+
+
+
+=== 使用客戶管理的CMK進行AWS加密
+
+Cloud Manager一向能讓您Cloud Volumes ONTAP 使用AWS金鑰管理服務（KMS）來加密各項資料。從Cloud Volumes ONTAP 供應支援支援支援的9.9到0開始、如果您選擇客戶管理的CMK、EBS磁碟上的資料和階層至S3的資料都會加密。以前只會加密EBS資料。
+
+請注意Cloud Volumes ONTAP 、您必須提供使用CMK的權限給IAM角色。
+
+link:task-setting-up-kms.html["深入瞭解如何設定AWS KMS Cloud Volumes ONTAP 搭配功能"]。
+
+
+
+=== 支援Azure DoD
+
+您現在可以在Cloud Volumes ONTAP Azure Department of Defence（DoD）Impact Level 6（IL6）中部署整套功能。
+
+
+
+=== Google Cloud的IP位址減量
+
+我們已經減少Cloud Volumes ONTAP 了在Google Cloud中使用NetApp 9.8及更新版本所需的IP位址數量。根據預設、需要少一個IP位址（我們將叢集間LIF與節點管理LIF統一化）。您也可以選擇在使用API時跳過SVM管理LIF的建立、如此可減少額外IP位址的需求。
+
+link:reference-networking-gcp.html#requirements-for-cloud-volumes-ontap["深入瞭解Google Cloud的IP位址需求"]。
+
+
+
+=== Google Cloud的共享VPC支援
+
+當您在Cloud Volumes ONTAP Google Cloud中部署一組「叢集式HA」配對時、現在您可以選擇VPC-1、VPC-2和VPC-3的「共享式VPC」。以前只有VPC-0可以是共享VPC。支援此變更Cloud Volumes ONTAP 的更新版本為支援。
+
+link:reference-networking-gcp.html["深入瞭解Google Cloud網路需求"]。
+
+
+
+== 2021年1月4日
+
+下列變更是隨附於Connector 3.9.2版本中。
+
+
+
+=== AWS outs
+
+幾個月前、我們宣佈 Cloud Volumes ONTAP 、在 Amazon Web Services （ AWS ）的「 Ready 」（就緒）頭銜中、此產品已獲獎。今天、我們很高興宣布 Cloud Manager 和 Cloud Volumes ONTAP 以 AWS outs 驗證的功能。
+
+如果您有 AWS Outpost 、您可以 Cloud Volumes ONTAP 在「工作環境」精靈中選取 Outpost VPC 、在該 Outpost 中部署功能不全。體驗與 AWS 中的任何其他 VPC 相同。請注意、您必須先在 AWS Outpost 部署 Connector 。
+
+有幾項限制可以指出：
+
+* 目前僅 Cloud Volumes ONTAP 支援單一節點的不支援系統
+* 您可以搭配 Cloud Volumes ONTAP 使用的 EC2 執行個體僅限於您的據點所提供的項目
+* 目前僅支援通用SSD（gp2）
+
+
+
+
+=== 支援Azure地區的Ultra SSD VNVRAM
+
+當您在單一節點系統上使用 E32s_v3 VM 類型時、可使用 Ultra SSD 做為 VNVRAM Cloud Volumes ONTAP https://docs.microsoft.com/en-us/azure/virtual-machines/disks-enable-ultra-ssd["在任何受支援的 Azure 地區"^]。
+
+VNVRAM 提供更佳的寫入效能。
+
+
+
+=== 選擇Azure中的可用度區域
+
+您現在可以選擇要在其中部署單一節點 Cloud Volumes ONTAP 的可用度區域。如果您未選擇 AZ 、 Cloud Manager 會為您選擇一個。
+
+image:screenshot_azure_az.gif["選擇區域後可用的「可用度區域」下拉式清單快照。"]
+
+
+
+=== Google Cloud中的較大磁碟
+
+目前支援 GCP 中的 64 TB 磁碟。 Cloud Volumes ONTAP
+
+
+NOTE: 由於 GCP 限制、單獨使用磁碟的最大系統容量仍維持在 256 TB 。
+
+
+
+=== Google Cloud中的新機器類型
+
+目前支援下列機器類型： Cloud Volumes ONTAP
+
+* n2-Standard-4 （含 Explore 授權）及 BYOL
+* n2-Standard/8 （含標準授權）及 BYOL
+* n2-Standard-32 （含 Premium 授權）及 BYOL
+
+
+
+
+== 2020年11月3日
+
+以下是3.9.0版的Connector所做的變更。
+
+
+
+=== Azure Private Link Cloud Volumes ONTAP for 功能
+
+根據預設、 Cloud Manager 現在可在 Cloud Volumes ONTAP 支援的各個儲存帳戶之間、啟用 Azure Private Link 連線。私有連結可保護 Azure 中端點之間的連線安全。
+
+* https://docs.microsoft.com/en-us/azure/private-link/private-link-overview["深入瞭解 Azure 私有連結"^]
+* link:task-enabling-private-link.html["深入瞭解如何搭配 Cloud Volumes ONTAP 使用 Azure 私有 Link 搭配使用功能"]
+

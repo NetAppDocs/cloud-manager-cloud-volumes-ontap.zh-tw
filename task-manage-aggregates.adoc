@@ -1,0 +1,59 @@
+---
+sidebar: sidebar 
+permalink: task-manage-aggregates.html 
+keywords: aggregates, delete aggregates, add disks, view aggregates 
+summary: 新增磁碟、檢視有關集合體的資訊、以及刪除這些磁碟來管理集合體。 
+---
+= 管理集合體
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+新增磁碟、檢視有關集合體的資訊、以及刪除這些磁碟來管理集合體。
+
+
+CAUTION: 所有磁碟和集合體都必須直接從 Cloud Manager 建立和刪除。您不應從其他管理工具執行這些動作。這樣做可能會影響系統穩定性、阻礙未來新增磁碟的能力、並可能產生備援雲端供應商費用。
+
+如果您要刪除 Aggregate 、則必須先刪除 Aggregate 中的磁碟區。
+
+如果Aggregate空間不足、您可以使用System Manager將磁碟區移至其他Aggregate。
+
+.步驟
+. 在「畫版」頁面上、按兩下 Cloud Volumes ONTAP 您要管理集合體的功能性工作環境。
+. 按一下功能表圖示、然後按一下 * 進階 > 進階分配 * 。
+. 管理您的 Aggregate ：
++
+[cols="30,70"]
+|===
+| 工作 | 行動 
+
+
+| 檢視有關 Aggregate 的資訊 | 選取一個 Aggregate 、然後按一下「 * 資訊 * 」。 
+
+
+| 在特定 Aggregate 上建立磁碟區 | 選取一個 Aggregate 、然後按一下「 * 建立 Volume * 」。 
+
+
+| 將磁碟新增至 Aggregate  a| 
+.. 選取一個Aggregate、然後按一下*「Add disks*」。
+.. 選取您要新增的磁碟數目、然後按一下「 * 新增 * 」。
++
+
+TIP: 集合體中的所有磁碟大小必須相同。
+
+
+
+
+
+| 刪除 Aggregate  a| 
+.. 選取不包含任何磁碟區的 Aggregate 、然後按一下 * 刪除 * 。
+.. 再按一下 * 刪除 * 以確認。
+
+
+|===
+

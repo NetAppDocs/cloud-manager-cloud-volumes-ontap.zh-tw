@@ -1,0 +1,30 @@
+---
+sidebar: sidebar 
+permalink: task-create-aggregates.html 
+keywords: storage, provisioning, aggregates, provision, create, advanced allocation, creating aggregates, adding an aggregate, add an aggregate, create an aggregate 
+summary: 您可以自行建立集合體、或是讓 Cloud Manager 在建立磁碟區時為您執行集合體。自行建立集合體的好處在於、您可以選擇基礎磁碟大小、以便根據所需的容量或效能來調整集合體大小。 
+---
+= 建立Aggregate
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以自行建立集合體、或是讓 Cloud Manager 在建立磁碟區時為您執行集合體。自行建立集合體的好處在於、您可以選擇基礎磁碟大小、以便根據所需的容量或效能來調整集合體大小。
+
+
+CAUTION: 所有磁碟和集合體都必須直接從 Cloud Manager 建立和刪除。您不應從其他管理工具執行這些動作。這樣做可能會影響系統穩定性、阻礙未來新增磁碟的能力、並可能產生備援雲端供應商費用。
+
+.步驟
+. 在「畫版」頁面上、按兩下 Cloud Volumes ONTAP 您要管理集合體的實例名稱。
+. 按一下功能表圖示、然後按一下 * 進階 > 進階分配 * 。
+. 按一下「 * 新增 Aggregate * 」、然後指定 Aggregate 的詳細資料。
++
+如需磁碟類型與磁碟大小的說明、請參閱 link:task-planning-your-config.html["規劃組態"]。
+
+. 按一下「 * 執行 * 」、然後按一下「 * 核准並購買 * 」。
+
