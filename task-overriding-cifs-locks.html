@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="zh-tw">
   <head class="at-element-marker">
-  <title>在 Cloud Volumes ONTAP Azure 中覆寫 CIFS 鎖、以利實現不鎖頻 | NetApp Documentation</title>
+  <title>在Cloud Volumes ONTAP Azure中覆寫CIFS鎖、以利執行不需使用的功能 | NetApp Documentation</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="在 Cloud Volumes ONTAP Azure 中覆寫 CIFS 鎖、以利實現不鎖頻 | NetApp Documentation" />
+  <meta property="og:title" content="在Cloud Volumes ONTAP Azure中覆寫CIFS鎖、以利執行不需使用的功能 | NetApp Documentation" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/task-overriding-cifs-locks.html" />
 	<meta property="og:description" content="帳戶管理員可在Cloud Manager中啟用一項設定、以避免Cloud Volumes ONTAP 在Azure維護活動期間發生有關還原儲存設備的問題。啟用此設定時 Cloud Volumes ONTAP 、不支援 CIFS 會鎖定並重設作用中的 CIFS 工作階段。" />
@@ -169,7 +169,39 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[在 Cloud Volumes ONTAP Azure 中覆寫 CIFS 鎖、以利實現不鎖頻](https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/task-overriding-cifs-locks.html)" class="page-nav-contribute-link" role="button"><img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />要求變更文件</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/task-overriding-cifs-locks.adoc" class="page-nav-contribute-link" role="button"><img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />編輯此頁面</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />瞭解如何作出貢獻</a></div>
+  <div class="page-nav-toolbar">
+<div id="flavor-dropdown" class="custom-dropdown" data-url="/zh-tw/cloud-manager-cloud-volumes-ontap/task-overriding-cifs-locks.html">
+  
+  <div class="custom-dropdown-select unselected" title="所有雲端供應商">
+    <label>雲端供應商</label>
+    <span>所有雲端供應商</span>
+    <img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/filter.svg" class="custom-icon" alt="" />
+  </div>
+  
+
+  <ul class="custom-dropdown-menu">
+    
+    
+    <li data-value="aws" data-url="/zh-tw/cloud-manager-cloud-volumes-ontap/aws">
+      <img alt="" src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/aws-ico.svg" onerror="this.src='/zh-tw/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Amazon Web Services
+    </li>
+    
+    
+    
+    <li data-value="gcp" data-url="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp">
+      <img alt="" src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/gcp-ico.svg" onerror="this.src='/zh-tw/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Google Cloud
+    </li>
+    
+    
+    
+    <li data-value="azure" data-url="/zh-tw/cloud-manager-cloud-volumes-ontap/azure/task-overriding-cifs-locks.html">
+      <img alt="" src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/azure-ico.svg" onerror="this.src='/zh-tw/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Microsoft Azure
+    </li>
+    
+    
+  </ul>
+</div>
+<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[在Cloud Volumes ONTAP Azure中覆寫CIFS鎖、以利執行不需使用的功能](https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/task-overriding-cifs-locks.html)" class="page-nav-contribute-link" role="button"><img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />要求變更文件</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/task-overriding-cifs-locks.adoc" class="page-nav-contribute-link" role="button"><img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />編輯此頁面</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />瞭解如何作出貢獻</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">在此頁面上</div>
@@ -1400,14 +1432,14 @@
     </div>
   </span>
 </div><div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">在 Cloud Volumes ONTAP Azure 中覆寫 CIFS 鎖、以利實現不鎖頻</h1>
+  <h1 class="n-doc__component-detail-heading">在Cloud Volumes ONTAP Azure中覆寫CIFS鎖、以利執行不需使用的功能</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-05-03 09:39:01 +0000">05/03/2022</time>
+    <time datetime="2022-05-09 15:43:09 +0000">05/09/2022</time>
     
   
 
@@ -1474,16 +1506,16 @@
               <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
             </li>
             <li class="n-footer__copyright-link">
-              <a href="https://www.netapp.com/company/legal/terms-of-use/">legal-terms</a>
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">條款與條件</a>
             </li>
             <li class="n-footer__copyright-link">
-              <a href="https://www.netapp.com/company/legal/privacy-policy/">legal-privacy</a>
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">Privacy Policy</a>
             </li>
             <li class="n-footer__copyright-link">
-              <a href="https://www.netapp.com/company/legal/cookie-policy/">legal-cookies</a>
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">Cookie Policy</a>
             </li>
             <li class="n-footer__copyright-link">
-              <a class="ot-sdk-show-settings">cookie-settings</a>
+              <a class="ot-sdk-show-settings">Cookie 設定</a>
             </li>
           </ul>
         </div>

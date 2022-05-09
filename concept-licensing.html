@@ -169,7 +169,39 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[提供授權Cloud Volumes ONTAP](https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/concept-licensing.html)" class="page-nav-contribute-link" role="button"><img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />要求變更文件</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/concept-licensing.adoc" class="page-nav-contribute-link" role="button"><img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />編輯此頁面</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />瞭解如何作出貢獻</a></div>
+  <div class="page-nav-toolbar">
+<div id="flavor-dropdown" class="custom-dropdown" data-url="/zh-tw/cloud-manager-cloud-volumes-ontap/concept-licensing.html">
+  
+  <div class="custom-dropdown-select unselected" title="所有雲端供應商">
+    <label>雲端供應商</label>
+    <span>所有雲端供應商</span>
+    <img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/filter.svg" class="custom-icon" alt="" />
+  </div>
+  
+
+  <ul class="custom-dropdown-menu">
+    
+    
+    <li data-value="aws" data-url="/zh-tw/cloud-manager-cloud-volumes-ontap/aws/concept-licensing.html">
+      <img alt="" src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/aws-ico.svg" onerror="this.src='/zh-tw/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Amazon Web Services
+    </li>
+    
+    
+    
+    <li data-value="gcp" data-url="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/concept-licensing.html">
+      <img alt="" src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/gcp-ico.svg" onerror="this.src='/zh-tw/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Google Cloud
+    </li>
+    
+    
+    
+    <li data-value="azure" data-url="/zh-tw/cloud-manager-cloud-volumes-ontap/azure/concept-licensing.html">
+      <img alt="" src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/azure-ico.svg" onerror="this.src='/zh-tw/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Microsoft Azure
+    </li>
+    
+    
+  </ul>
+</div>
+<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[提供授權Cloud Volumes ONTAP](https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/concept-licensing.html)" class="page-nav-contribute-link" role="button"><img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />要求變更文件</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/concept-licensing.adoc" class="page-nav-contribute-link" role="button"><img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />編輯此頁面</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />瞭解如何作出貢獻</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">在此頁面上</div>
@@ -1407,7 +1439,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-03 09:39:01 +0000">05/03/2022</time>
+    <time datetime="2022-05-09 15:43:09 +0000">05/09/2022</time>
     
   
 
@@ -1582,10 +1614,9 @@
 </li>
 <li>
 <p>一年一度的雲端供應商市場合約。</p>
-<div class="ulist">
-<ul>
+</li>
 <li>
-<p>在AWS中、年度合約可從AWS Marketplace的公開優惠中取得。Cloud Manager會在部署Cloud Volumes ONTAP 不必要的工作環境時提示您訂閱。</p>
+<p>在AWS中、年度合約可從AWS Marketplace的公開優惠中取得。部署Cloud Volumes ONTAP 執行功能的環境時、Cloud Manager會提示您從「詳細資料與認證」頁面訂閱。</p>
 </li>
 <li>
 <p>在Azure中、您需要與NetApp銷售代表合作、以購買年度合約。該合約可在Azure Marketplace以私人優惠形式提供。</p>
@@ -1597,9 +1628,6 @@
 <p>在Google Cloud中、您需要與NetApp銷售代表合作、以購買年度合約。合約可在Google Cloud Marketplace以私人優惠形式提供。</p>
 <div class="paragraph">
 <p>在NetApp與您分享私人優惠之後、您可以在工作環境建立期間、從Google Cloud Marketplace訂閱年度方案。</p>
-</div>
-</li>
-</ul>
 </div>
 </li>
 </ul>
@@ -1640,19 +1668,13 @@
 <div class="sect2">
 <h3 id="免費試用">免費試用</h3>
 <div class="paragraph">
-<p>您可以在雲端供應商的市場中、透過隨用隨付訂閱取得30天的免費試用版。免費試用版包含Cloud Volumes ONTAP 了VMware和Cloud Backup、並於您訂閱市場上市時開始。</p>
+<p>您可以在雲端供應商的市場中、透過隨用隨付訂閱取得30天的免費試用版。免費試用版包含Cloud Volumes ONTAP 了VMware及Cloud Backup。試用版會在您訂閱市場上的產品項目時開始。</p>
 </div>
 <div class="paragraph">
-<p>舉例來說、並不收取每小時的軟體授權費用、但您的雲端供應商仍需支付基礎架構費用。</p>
+<p>沒有執行個體或容量限制。您可以任意部署Cloud Volumes ONTAP 多個不需付費的功能、並視需要配置多餘的容量、30天內即可免費部署。免費試用版會在30天後自動轉換為付費的每小時訂閱。</p>
 </div>
 <div class="paragraph">
-<p>免費試用版會在到期時自動轉換為付費的每小時訂閱。如果您在期限內終止執行個體、則您部署的下一個執行個體不屬於免費試用（即使是在30天內部署）。</p>
-</div>
-<div class="paragraph">
-<p>您可以 Cloud Volumes ONTAP 在 Cloud Volumes ONTAP 付款人的帳戶中建立第一個的 VMware 系統、從 Cloud Manager 開始 30 天的免費試用版。</p>
-</div>
-<div class="paragraph">
-<p>隨用隨付的試用版是透過雲端供應商提供、不得以任何方式延長。</p>
+<p>雖然不收取Cloud Volumes ONTAP 每小時的軟體授權費用、但您的雲端供應商仍需支付基礎架構費用。</p>
 </div>
 </div>
 <div class="sect2">
@@ -1714,12 +1736,16 @@
 <ul>
 <li>
 <p><a href="task-deploying-otc-aws.html">"在 Cloud Volumes ONTAP AWS 中啟動"</a></p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><a href="task-deploying-otc-azure.html">"在 Cloud Volumes ONTAP Azure 中啟動"</a></p>
 </li>
 <li>
 <p><a href="task-deploying-gcp.html">"在Cloud Volumes ONTAP Google Cloud上啟動"</a></p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -1775,12 +1801,16 @@
 <ul>
 <li>
 <p><a href="task-deploying-otc-aws.html">"在 Cloud Volumes ONTAP AWS 中啟動"</a></p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><a href="task-deploying-otc-azure.html">"在 Cloud Volumes ONTAP Azure 中啟動"</a></p>
 </li>
 <li>
 <p><a href="task-deploying-gcp.html">"在Cloud Volumes ONTAP Google Cloud上啟動"</a></p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -1858,16 +1888,16 @@
               <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
             </li>
             <li class="n-footer__copyright-link">
-              <a href="https://www.netapp.com/company/legal/terms-of-use/">legal-terms</a>
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">條款與條件</a>
             </li>
             <li class="n-footer__copyright-link">
-              <a href="https://www.netapp.com/company/legal/privacy-policy/">legal-privacy</a>
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">Privacy Policy</a>
             </li>
             <li class="n-footer__copyright-link">
-              <a href="https://www.netapp.com/company/legal/cookie-policy/">legal-cookies</a>
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">Cookie Policy</a>
             </li>
             <li class="n-footer__copyright-link">
-              <a class="ot-sdk-show-settings">cookie-settings</a>
+              <a class="ot-sdk-show-settings">Cookie 設定</a>
             </li>
           </ul>
         </div>

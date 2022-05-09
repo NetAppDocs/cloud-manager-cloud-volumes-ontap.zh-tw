@@ -169,7 +169,39 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[建立FlexVol 功能區](https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/task-create-volumes.html)" class="page-nav-contribute-link" role="button"><img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />要求變更文件</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/task-create-volumes.adoc" class="page-nav-contribute-link" role="button"><img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />編輯此頁面</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />瞭解如何作出貢獻</a></div>
+  <div class="page-nav-toolbar">
+<div id="flavor-dropdown" class="custom-dropdown" data-url="/zh-tw/cloud-manager-cloud-volumes-ontap/task-create-volumes.html">
+  
+  <div class="custom-dropdown-select unselected" title="所有雲端供應商">
+    <label>雲端供應商</label>
+    <span>所有雲端供應商</span>
+    <img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/filter.svg" class="custom-icon" alt="" />
+  </div>
+  
+
+  <ul class="custom-dropdown-menu">
+    
+    
+    <li data-value="aws" data-url="/zh-tw/cloud-manager-cloud-volumes-ontap/aws/task-create-volumes.html">
+      <img alt="" src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/aws-ico.svg" onerror="this.src='/zh-tw/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Amazon Web Services
+    </li>
+    
+    
+    
+    <li data-value="gcp" data-url="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/task-create-volumes.html">
+      <img alt="" src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/gcp-ico.svg" onerror="this.src='/zh-tw/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Google Cloud
+    </li>
+    
+    
+    
+    <li data-value="azure" data-url="/zh-tw/cloud-manager-cloud-volumes-ontap/azure/task-create-volumes.html">
+      <img alt="" src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/azure-ico.svg" onerror="this.src='/zh-tw/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Microsoft Azure
+    </li>
+    
+    
+  </ul>
+</div>
+<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[建立FlexVol 功能區](https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/task-create-volumes.html)" class="page-nav-contribute-link" role="button"><img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />要求變更文件</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/task-create-volumes.adoc" class="page-nav-contribute-link" role="button"><img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />編輯此頁面</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />瞭解如何作出貢獻</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">在此頁面上</div>
@@ -1407,7 +1439,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-03 09:39:01 +0000">05/03/2022</time>
+    <time datetime="2022-05-09 15:43:09 +0000">05/09/2022</time>
     
   
 
@@ -1556,6 +1588,9 @@
 <div class="paragraph">
 <p>以下各節將說明您可能需要指引的欄位。說明會依傳輸協定加以組織。</p>
 </div>
+</li>
+</ol>
+</div>
 <div class="exampleblock tabbed-block">
 <div class="content">
 <div class="openblock">
@@ -1592,11 +1627,11 @@
 </div>
 </div>
 </div>
+<div class="openblock">
+<div class="content">
 <div class="paragraph">
 <p>如果您要設定Google Managed Active Directory、AD預設可透過169.254.169.254 IP位址存取。</p>
 </div>
-<div class="openblock">
-<div class="content">
 <div class="dlist">
 <dl>
 <dt class="hdlist1">要加入的 Active Directory 網域</dt>
@@ -1614,11 +1649,6 @@
 <dt class="hdlist1">組織單位</dt>
 <dd>
 <p>AD 網域中與 CIFS 伺服器相關聯的組織單位。預設值為「 CN= 電腦」。</p>
-</dd>
-</dl>
-</div>
-</div>
-</div>
 <div class="ulist">
 <ul>
 <li>
@@ -1632,10 +1662,7 @@
 </li>
 </ul>
 </div>
-<div class="openblock">
-<div class="content">
-<div class="dlist">
-<dl>
+</dd>
 <dt class="hdlist1">DNS 網域</dt>
 <dd>
 <p>適用於整個儲存虛擬 Cloud Volumes ONTAP 機器（ SVM ）的 DNS 網域。在大多數情況下、網域與 AD 網域相同。</p>
@@ -1679,21 +1706,29 @@
 </div>
 </div>
 </div>
-</li>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
 <li>
 <p><strong>磁碟類型</strong>：根據您的效能需求和成本需求、為磁碟區選擇基礎磁碟類型。</p>
 <div class="ulist">
 <ul>
 <li>
 <p><a href="task-planning-your-config.html#sizing-your-system-in-aws">"在 AWS 中調整系統規模"</a></p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><a href="task-planning-your-config-azure.html#sizing-your-system-in-azure">"在 Azure 中調整系統規模"</a></p>
 </li>
 <li>
-<p><a href="task-planning-your-config-gcp.html#sizing-your-system-in-gcp">"在 GCP 中調整系統規模"</a></p>
+<p><a href="task-planning-your-config-gcp.html#sizing-your-system-in-gcp">"在Google Cloud中調整系統規模"</a></p>
 </li>
 </ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
 </div>
 </li>
 <li>
@@ -1720,9 +1755,6 @@
 </li>
 <li>
 <p><strong>審查</strong>：檢閱磁碟區的詳細資料、然後按一下*新增*。</p>
-</li>
-</ol>
-</div>
 </li>
 </ol>
 </div>
@@ -1898,16 +1930,16 @@
               <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
             </li>
             <li class="n-footer__copyright-link">
-              <a href="https://www.netapp.com/company/legal/terms-of-use/">legal-terms</a>
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">條款與條件</a>
             </li>
             <li class="n-footer__copyright-link">
-              <a href="https://www.netapp.com/company/legal/privacy-policy/">legal-privacy</a>
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">Privacy Policy</a>
             </li>
             <li class="n-footer__copyright-link">
-              <a href="https://www.netapp.com/company/legal/cookie-policy/">legal-cookies</a>
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">Cookie Policy</a>
             </li>
             <li class="n-footer__copyright-link">
-              <a class="ot-sdk-show-settings">cookie-settings</a>
+              <a class="ot-sdk-show-settings">Cookie 設定</a>
             </li>
           </ul>
         </div>
