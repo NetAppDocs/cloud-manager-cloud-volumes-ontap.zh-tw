@@ -4,7 +4,7 @@ permalink: task-overriding-cifs-locks.html
 keywords: CIFS locks, azure maintenance, maintenance events, cifs sessions, storage failover, storage giveback, giveback 
 summary: 帳戶管理員可在Cloud Manager中啟用一項設定、以避免Cloud Volumes ONTAP 在Azure維護活動期間發生有關還原儲存設備的問題。啟用此設定時 Cloud Volumes ONTAP 、不支援 CIFS 會鎖定並重設作用中的 CIFS 工作階段。 
 ---
-= 在 Cloud Volumes ONTAP Azure 中覆寫 CIFS 鎖、以利實現不鎖頻
+= 在Cloud Volumes ONTAP Azure中覆寫CIFS鎖、以利執行不需使用的功能
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

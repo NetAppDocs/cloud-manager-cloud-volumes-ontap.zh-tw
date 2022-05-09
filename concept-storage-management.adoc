@@ -43,6 +43,8 @@ Cloud Manager 會根據以下幾項因素來決定新磁碟區的放置位置：
 
 TIP: 帳戶管理員可從 * 設定 * 頁面修改可用空間臨界值。
 
+ifdef::aws[]
+
 
 
 ==== AWS 中集合體的磁碟大小選擇
@@ -66,6 +68,8 @@ Cloud Manager 在 Cloud Volumes ONTAP AWS 中建立新的 Aggregate 、隨著系
 |===
 您可以使用進階配置選項自行選擇磁碟大小。
 
+endif::aws[]
+
 
 
 === 進階分配
@@ -86,16 +90,16 @@ Cloud Manager 在 Cloud Volumes ONTAP AWS 中建立新的 Aggregate 、隨著系
 
 下列範例說明此模式的運作方式：
 
-* 如果有 5 個或更少 EBS 磁碟的集合體達到容量臨界值、 Cloud Manager 會自動為該集合體購買新的磁碟、讓磁碟區能夠持續成長。
+* 如果某個Aggregate達到容量臨界值、而且有空間容納更多磁碟、Cloud Manager會自動為該Aggregate購買新的磁碟、讓磁碟區持續成長。
 +
 Cloud Manager每15分鐘檢查一次可用空間比例、以判斷是否需要購買額外的磁碟。
 
-* 如果具有 12 個 Azure 磁碟的 Aggregate 達到容量臨界值、 Cloud Manager 會自動將該 Aggregate 中的磁碟區移至具有可用容量的 Aggregate 、或移至新的 Aggregate 。
+* 如果Aggregate達到容量臨界值、但無法支援任何其他磁碟、Cloud Manager會自動將該Aggregate中的磁碟區移至具有可用容量的Aggregate、或移至新的Aggregate。
 +
 如果 Cloud Manager 為磁碟區建立新的 Aggregate 、則會選擇適合該磁碟區大小的磁碟大小。
 
 +
-請注意、可用空間現在可在原始 Aggregate 上使用。現有磁碟區或新磁碟區可以使用該空間。在此案例中、空間無法歸還給 AWS 、 Azure 或 GCP 。
+請注意、可用空間現在可在原始 Aggregate 上使用。現有磁碟區或新磁碟區可以使用該空間。在此案例中、無法將空間傳回雲端產品。
 
 * 如果 Aggregate 不包含超過 12 小時的磁碟區、 Cloud Manager 會將其刪除。
 

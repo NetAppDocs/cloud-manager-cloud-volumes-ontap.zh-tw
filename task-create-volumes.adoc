@@ -32,8 +32,14 @@ Cloud Manager提供多種建立新磁碟區的方法：
 
 * 建立 iSCSI Volume 時、 Cloud Manager 會自動為您建立 LUN 。我們只要在每個磁碟區建立一個 LUN 、就能輕鬆完成工作、因此不需要管理。建立磁碟區之後、 <<Connect a LUN to a host,使用 IQN 從主機連線至 LUN>>。
 * 您可以從 System Manager 或 CLI 建立其他 LUN 。
+
+
+ifdef::aws[]
+
 * 如果您想在 AWS 中使用 CIFS 、則必須設定 DNS 和 Active Directory 。如需詳細資訊、請參閱 link:reference-networking-aws.html["AWS 的 Cloud Volumes ONTAP 網路需求"]。
 
+
+endif::aws[]
 
 
 
@@ -110,21 +116,42 @@ link:concept-client-protocols.html["瞭解支援的用戶端傳輸協定和版�
 DNS 主要和次要 IP 位址:: 提供 CIFS 伺服器名稱解析的 DNS 伺服器 IP 位址。列出的 DNS 伺服器必須包含所需的服務位置記錄（ SRV), 才能找到 CIFS 伺服器要加入之網域的 Active Directory LDAP 伺服器和網域控制器。
 +
 --
-如果您要設定Google Managed Active Directory、AD預設可透過169.254.169.254 IP位址存取。
+ifdef::gcp[]
 
 --
+
+
+如果您要設定Google Managed Active Directory、AD預設可透過169.254.169.254 IP位址存取。
+
+endif::gcp[]
+
 要加入的 Active Directory 網域:: 您要 CIFS 伺服器加入之 Active Directory （ AD ）網域的 FQDN 。
 授權加入網域的認證資料:: 具有足夠權限的 Windows 帳戶名稱和密碼、可將電腦新增至 AD 網域內的指定組織單位（ OU ）。
 CIFS 伺服器 NetBios 名稱:: AD 網域中唯一的 CIFS 伺服器名稱。
 組織單位:: AD 網域中與 CIFS 伺服器相關聯的組織單位。預設值為「 CN= 電腦」。
-+
---
+
+
+ifdef::aws[]
+
 *** 若要將AWS託管Microsoft AD設定為Cloud Volumes ONTAP AD伺服器以供使用、請在此欄位中輸入* OID=computers,O=corp*。
+
+
+endif::aws[]
+
+ifdef::azure[]
+
 *** 若要將Azure AD網域服務設定為Cloud Volumes ONTAP AD伺服器以供使用、請在此欄位中輸入* OID=AADDC computers*或* OID=AADDC使用者*。https://docs.microsoft.com/en-us/azure/active-directory-domain-services/create-ou["Azure 說明文件：在 Azure AD 網域服務託管網域中建立組織單位（ OU ）"^]
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
 *** 若要將Google託管Microsoft AD設定為Cloud Volumes ONTAP AD伺服器以供使用、請在此欄位中輸入* OU=computers,OU=Cloud *。https://cloud.google.com/managed-microsoft-ad/docs/manage-active-directory-objects#organizational_units["Google Cloud文件：Google託管Microsoft AD的組織單位"^]
 
 
---
+endif::gcp[]
+
 DNS 網域:: 適用於整個儲存虛擬 Cloud Volumes ONTAP 機器（ SVM ）的 DNS 網域。在大多數情況下、網域與 AD 網域相同。
 NTP 伺服器:: 選擇 * 使用 Active Directory 網域 * 來使用 Active Directory DNS 設定 NTP 伺服器。如果您需要使用不同的位址來設定 NTP 伺服器、則應該使用 API 。請參閱 https://docs.netapp.com/us-en/cloud-manager-automation/index.html["Cloud Manager自動化文件"^] 以取得詳細資料。
 +
@@ -146,12 +173,33 @@ LUN:: iSCSI 儲存目標稱為 LUN （邏輯單元）、以標準區塊裝置的
 ====
 .. *磁碟類型*：根據您的效能需求和成本需求、為磁碟區選擇基礎磁碟類型。
 +
+ifdef::aws[]
+
++
 *** link:task-planning-your-config.html#sizing-your-system-in-aws["在 AWS 中調整系統規模"]
-*** link:task-planning-your-config-azure.html#sizing-your-system-in-azure["在 Azure 中調整系統規模"]
-*** link:task-planning-your-config-gcp.html#sizing-your-system-in-gcp["在 GCP 中調整系統規模"]
 
 
-.. *使用率設定檔與分層原則*：選擇是否啟用或停用磁碟區上的儲存效率功能、然後選取 link:concept-data-tiering.html["Volume分層原則"]。
+
+
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+* link:task-planning-your-config-azure.html#sizing-your-system-in-azure["在 Azure 中調整系統規模"]
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+* link:task-planning-your-config-gcp.html#sizing-your-system-in-gcp["在Google Cloud中調整系統規模"]
+
+
+endif::gcp[]
+
+. *使用率設定檔與分層原則*：選擇是否啟用或停用磁碟區上的儲存效率功能、然後選取 link:concept-data-tiering.html["Volume分層原則"]。
 +
 包含多項儲存效率功能、可減少您所需的總儲存容量。 ONTAPNetApp 儲存效率功能提供下列效益：
 
@@ -161,9 +209,7 @@ LUN:: iSCSI 儲存目標稱為 LUN （邏輯單元）、以標準區塊裝置的
 壓縮:: 藉由壓縮主儲存設備、次儲存設備和歸檔儲存設備上磁碟區內的資料、來減少儲存資料所需的實體容量。
 
 
-.. *審查*：檢閱磁碟區的詳細資料、然後按一下*新增*。
-
-
+. *審查*：檢閱磁碟區的詳細資料、然後按一下*新增*。
 
 
 Cloud Manager會在Cloud Volumes ONTAP 整個系統上建立磁碟區。
@@ -237,8 +283,12 @@ image:screenshot_template_creating_resource_cvo.png["快照顯示從範本建立
 
 Cloud Manager會在HA配對的第二個節點上建立磁碟區。
 
+ifdef::aws[]
+
 
 TIP: 對於部署在多個 AWS 可用性區域中的 HA 配對、您必須使用磁碟區所在節點的浮動 IP 位址、將磁碟區掛載到用戶端。
+
+endif::aws[]
 
 
 

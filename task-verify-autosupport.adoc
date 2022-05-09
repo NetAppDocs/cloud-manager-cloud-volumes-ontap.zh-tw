@@ -20,9 +20,25 @@ summary: 可主動監控系統健全狀況、並傳送訊息給NetApp技術支�
 
 唯一必要的組態步驟是確保Cloud Volumes ONTAP 透過NAT執行個體或環境的Proxy服務、實現出站網際網路連線。如需詳細資料、請參閱雲端供應商的網路需求。
 
+ifdef::aws[]
+
 * link:reference-networking-aws.html["AWS網路需求"]
+
+
+endif::aws[]
+
+ifdef::azure[]
+
 * link:reference-networking-azure.html["Azure網路需求"]
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
 * link:reference-networking-gcp.html["Google Cloud網路需求"]
 
+
+endif::gcp[]
 
 在您確認可以存取傳出網際網路之後、您可以測試AutoSupport 以確保能夠傳送訊息。如需相關指示、請參閱 https://docs.netapp.com/us-en/ontap/system-admin/setup-autosupport-task.html["文件：設定檔ONTAP AutoSupport"^]。

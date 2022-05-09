@@ -7,6 +7,19 @@ settings:
   prod:
     pdf_enabled: true
     harmony_enabled: false
+  filter:
+    label: 雲端供應商
+    default: 所有雲端供應商
+    options:
+    - name: Amazon Web Services
+      alias: AWS
+      id: aws
+    - name: Google Cloud
+      alias: Google Cloud
+      id: gcp
+    - name: Microsoft Azure
+      alias: Azure
+      id: azure
   langs: zh-tw,us-en,ja-jp,zh-cn,ko-kr
 sidebar:
   entries:
@@ -27,6 +40,7 @@ sidebar:
     - title: 深入瞭解 Cloud Volumes ONTAP
       url: "/concept-overview-cvo.html"
     - title: Amazon Web Services入門
+      flavor: aws
       entries:
       - title: 快速入門
         url: "/task-getting-started-aws.html"
@@ -47,6 +61,7 @@ sidebar:
       - title: 開始使用 AWS C2S
         url: "/task-getting-started-aws-c2s.html"
     - title: 開始使用Microsoft Azure
+      flavor: azure
       entries:
       - title: 快速入門
         url: "/task-getting-started-azure.html"
@@ -59,6 +74,7 @@ sidebar:
       - title: 在 Azure 中啟動系統
         url: "/task-deploying-otc-azure.html"
     - title: 開始使用Google Cloud
+      flavor: gcp
       entries:
       - title: 快速入門
         url: "/task-getting-started-gcp.html"
@@ -107,8 +123,10 @@ sidebar:
       - title: 在Cloud Manager中使用儲存VM
         url: "/task-managing-svms.html"
       - title: 在AWS中建立儲存VM
+        flavor: aws
         url: "/task-managing-svms-aws.html"
       - title: 在Azure中建立儲存VM
+        flavor: azure
         url: "/task-managing-svms-azure.html"
     - title: 安全性與資料加密
       entries:
@@ -139,6 +157,7 @@ sidebar:
         - title: 刪除系統
           url: "/task-deleting-working-env.html"
       - title: AWS系統管理
+        flavor: aws
         entries:
         - title: 變更EC2執行個體類型
           url: "/task-change-ec2-instance.html"
@@ -147,6 +166,7 @@ sidebar:
         - title: 監控 AWS 成本
           url: "/task-monitoring-costs.html"
       - title: Azure系統管理
+        flavor: azure
         entries:
         - title: 變更Azure VM類型
           url: "/task-change-azure-vm.html"
@@ -155,6 +175,7 @@ sidebar:
         - title: 使用 Azure 私有連結
           url: "/task-enabling-private-link.html"
       - title: Google Cloud管理
+        flavor: gcp
         entries:
         - title: 變更機器類型
           url: "/task-change-gcp-machine.html"
@@ -187,10 +208,13 @@ sidebar:
     - title: 高可用度配對
       entries:
       - title: AWS 中的 HA 配對
+        flavor: aws
         url: "/concept-ha.html"
       - title: Azure 中的 HA 配對
+        flavor: azure
         url: "/concept-ha-azure.html"
       - title: GCP 中的 HA 配對
+        flavor: gcp
         url: "/concept-ha-google-cloud.html"
       - title: 儲存設備接管期間的行動
         url: "/concept-degraded-ha-pair.html"
@@ -222,10 +246,13 @@ homepage:
       url: concept-overview-cvo.html
     - title: AWS快速入門
       url: task-getting-started-aws.html
+      flavor: aws
     - title: Azure快速入門
       url: task-getting-started-azure.html
+      flavor: azure
     - title: Google Cloud快速入門
       url: task-getting-started-gcp.html
+      flavor: gcp
   - title: 授權
     links:
     - title: 授權總覽

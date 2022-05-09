@@ -14,9 +14,7 @@ summary: Cloud Manager 可讓您選擇一般或高速寫入速度 Cloud Volumes 
 
 
 [role="lead"]
-Cloud Manager 可讓您選擇一般或高速寫入速度 Cloud Volumes ONTAP 來執行功能。在您選擇寫入速度之前、您應該先瞭解一般與高設定之間的差異、以及使用高速寫入速度時的風險與建議。
-
-所有類型的單一節點系統均支援高速寫入。使用特定執行個體或 VM 類型時、 AWS 和 Azure 中的 HA 配對也支援此功能（請參閱下列各節以取得支援執行個體和 VM 類型的清單）。GCP 中的 HA 配對不支援高速寫入速度。
+Cloud Manager可讓您針對Cloud Volumes ONTAP 大多數的功能組態、選擇一般或高速寫入速度。在您選擇寫入速度之前、您應該先瞭解一般與高設定之間的差異、以及使用高速寫入速度時的風險與建議。
 
 
 
@@ -46,6 +44,8 @@ Cloud Manager 可讓您選擇一般或高速寫入速度 Cloud Volumes ONTAP 來
 
 如果您啟用高速寫入速度、則應確保應用程式層的寫入保護、或是應用程式在發生資料遺失時仍能承受。
 
+ifdef::aws[]
+
 
 
 === 使用AWS中的HA配對來高速寫入
@@ -54,11 +54,15 @@ Cloud Manager 可讓您選擇一般或高速寫入速度 Cloud Volumes ONTAP 來
 
 link:concept-ha.html["深入瞭解AWS中的HA配對"]。
 
+endif::aws[]
+
 
 
 === 支援高速寫入的組態
 
 並非所有 Cloud Volumes ONTAP 的不支援高速寫入的組態。這些組態預設會使用正常寫入速度。
+
+ifdef::aws[]
 
 
 
@@ -70,6 +74,10 @@ link:concept-ha.html["深入瞭解AWS中的HA配對"]。
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-aws.html["深入瞭解Cloud Volumes ONTAP 支援的Amazon EC2執行個體"^]。
 
+endif::aws[]
+
+ifdef::azure[]
+
 
 
 ==== Azure
@@ -77,6 +85,10 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-aws
 如果您使用單一節點系統、 Cloud Volumes ONTAP 則支援所有 VM 類型的高速寫入速度。
 
 如果您使用HA配對、Cloud Volumes ONTAP 從9.8版開始、支援多種VM類型的高速寫入速度。前往 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html["發行說明 Cloud Volumes ONTAP"^] 可查看支持高速寫入速度的VM類型。
+
+endif::azure[]
+
+ifdef::gcp[]
 
 
 
@@ -87,6 +99,8 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-aws
 在 Google Cloud 中、使用 HA 配對不支援高速寫入。 Cloud Volumes ONTAP
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html["深入瞭解Cloud Volumes ONTAP 支援的Google Cloud機器類型"^]。
+
+endif::gcp[]
 
 
 

@@ -23,8 +23,12 @@ summary: 如果您需要執行Cloud Volumes ONTAP 進階的支援管理功能、
 
 您要從其中存取 Cloud Manager 的電腦、必須有連至 Cloud Volumes ONTAP NetApp 的網路連線。例如、您可能需要從雲端供應商網路中的跨接主機登入Cloud Manager。
 
+ifdef::aws[]
+
 
 NOTE: 當部署於多個 AWS 可用性區域時、 Cloud Volumes ONTAP 使用浮動 IP 位址進行叢集管理介面、這表示外部路由無法使用。您必須從屬於同一個路由網域的主機連線。
+
+endif::aws[]
 
 .步驟
 . 從「畫版」中選取Cloud Volumes ONTAP 「功能性環境」。
@@ -44,10 +48,14 @@ image:screenshot-cvo-info.png["出現在適用於Cloud Volumes ONTAP 整個作�
 
 利用此功能、您可以執行所有的管理命令、這是進階工作或使用CLI時的最佳選擇。Cloud Volumes ONTAP您可以使用 Secure Shell （ SSH ）連線至 CLI 。
 
-您使用 SSH 連線 Cloud Volumes ONTAP 到 Suse 的主機必須有連至 Cloud Volumes ONTAP Suse 的網路連線。例如、您可能需要從 AWS 或 Azure 中的跨接主機使用 SSH 。
+您使用 SSH 連線 Cloud Volumes ONTAP 到 Suse 的主機必須有連至 Cloud Volumes ONTAP Suse 的網路連線。例如、您可能需要從雲端供應商網路中的跨接主機執行SSH。
+
+ifdef::aws[]
 
 
 NOTE: 當部署於多個 AZs 時 Cloud Volumes ONTAP 、使用浮動 IP 位址進行叢集管理介面、這表示外部路由無法使用。您必須從屬於同一個路由網域的主機連線。
+
+endif::aws[]
 
 .步驟
 . 在 Cloud Manager 中、識別叢集管理介面的 IP 位址：

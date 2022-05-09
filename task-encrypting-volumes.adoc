@@ -19,7 +19,15 @@ summary: 支援 NetApp Volume Encryption （ NVE ）和 NetApp Aggregate Encrypt
 [role="lead"]
 支援NetApp Volume Encryption（NVE）和NetApp Aggregate Encryption（NAE）Cloud Volumes ONTAP 。NVE 和 NAE 是軟體型解決方案、可對磁碟區進行（ FIPS ） 140-2 相容的閒置資料加密。 link:concept-security.html["深入瞭解這些加密解決方案"]。
 
-外部金鑰管理程式支援NVE和NAE。如果您使用NVE、您可以選擇使用Azure Key Vault（AKV）或Google Cloud Key Management Service來保護ONTAP 這些加密金鑰。
+外部金鑰管理程式支援NVE和NAE。
+
+ifdef::azure[]
+
+endif::azure[]
+
+ifdef::gcp[]
+
+endif::gcp[]
 
 新的Aggregate在您設定外部金鑰管理程式之後、預設會啟用NAE。非 NAE Aggregate 一部分的新磁碟區預設會啟用 NVE （例如、如果在設定外部金鑰管理程式之前已建立現有的 Aggregate ）。
 

@@ -30,7 +30,7 @@ link:concept-licensing.html["深入瞭Cloud Volumes ONTAP 解不知如何取得�
 
 在此期間、Cloud Manager會自動查詢NetApp的授權服務、以取得與您NetApp支援網站帳戶相關之授權的詳細資料。如果沒有錯誤、Cloud Manager會自動將授權新增至Digital Wallet。
 
-如果Cloud Manager無法新增授權、您必須自行手動將其新增至Digital Wallet。 <<Add purchased licenses to your account,瞭解如何將購買的授權新增至您的帳戶>>。
+如果Cloud Manager無法新增授權、您必須自行手動將其新增至Digital Wallet。例如、如果Connector安裝在無法存取網際網路的位置、您就必須自行新增授權。 <<Add purchased licenses to your account,瞭解如何將購買的授權新增至您的帳戶>>。
 
 
 

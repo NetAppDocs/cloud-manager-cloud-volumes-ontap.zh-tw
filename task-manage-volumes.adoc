@@ -136,7 +136,7 @@ NOTE: Cloud Manager 會將磁碟區移至現有的 Aggregate 、該集合體使�
 | 工作 | 行動 
 
 
-| DNS 主要和次要 IP 位址 | 提供 CIFS 伺服器名稱解析的 DNS 伺服器 IP 位址。列出的 DNS 伺服器必須包含所需的服務位置記錄（ SRV), 才能找到 CIFS 伺服器要加入之網域的 Active Directory LDAP 伺服器和網域控制器。如果您要設定Google Managed Active Directory、AD預設可透過169.254.169.254 IP位址存取。 
+| DNS 主要和次要 IP 位址 | 提供 CIFS 伺服器名稱解析的 DNS 伺服器 IP 位址。列出的 DNS 伺服器必須包含所需的服務位置記錄（ SRV), 才能找到 CIFS 伺服器要加入之網域的 Active Directory LDAP 伺服器和網域控制器。ifdef：：GCP[]如果您正在設定Google Managed Active Directory、則AD預設可透過169.254.169.254 IP位址存取。endif::GCP[] 
 
 
 | 要加入的 Active Directory 網域 | 您要 CIFS 伺服器加入之 Active Directory （ AD ）網域的 FQDN 。 
@@ -151,10 +151,26 @@ NOTE: Cloud Manager 會將磁碟區移至現有的 Aggregate 、該集合體使�
 | 組織單位  a| 
 AD 網域中與 CIFS 伺服器相關聯的組織單位。預設值為「 CN= 電腦」。
 
+ifdef::aws[]
+
 ** 若要將AWS託管Microsoft AD設定為Cloud Volumes ONTAP AD伺服器以供使用、請在此欄位中輸入* OID=computers,O=corp*。
+
+
+endif::aws[]
+
+ifdef::azure[]
+
 ** 若要將Azure AD網域服務設定為Cloud Volumes ONTAP AD伺服器以供使用、請在此欄位中輸入* OID=AADDC computers*或* OID=AADDC使用者*。https://docs.microsoft.com/en-us/azure/active-directory-domain-services/create-ou["Azure 說明文件：在 Azure AD 網域服務託管網域中建立組織單位（ OU ）"^]
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
 ** 若要將Google託管Microsoft AD設定為Cloud Volumes ONTAP AD伺服器以供使用、請在此欄位中輸入* OU=computers,OU=Cloud *。https://cloud.google.com/managed-microsoft-ad/docs/manage-active-directory-objects#organizational_units["Google Cloud文件：Google託管Microsoft AD的組織單位"^]
 
+
+endif::gcp[]
 
 
 
@@ -320,7 +336,7 @@ image:screenshot_aggr_capacity.gif["螢幕擷取畫面：顯示 Aggregate 資訊
 * 磁碟區是複製的。
 * Volume 是實體複本的父實體。
 * 來源或目的地 Aggregate 具有單一資料處理量最佳化 HDD （ ST1 ）磁碟。
-* 這個系統位於 AWS 中、其中一個 Aggregate 使用舊的物件命名配置。 Cloud Volumes ONTAP兩個 Aggregate 都必須使用相同的名稱格式。
+* 其中一個集合體使用舊的物件命名配置。兩個 Aggregate 都必須使用相同的名稱格式。
 +
 如果在 9.4 版或更早版本的 Aggregate 上啟用資料分層、則會使用較舊的命名配置。
 

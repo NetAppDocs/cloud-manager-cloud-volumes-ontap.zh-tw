@@ -86,7 +86,7 @@ link:task-enabling-private-link.html["深入瞭解如何搭配 Cloud Volumes ONT
 
 === 連線至其他ONTAP 的系統
 
-若要在 Cloud Volumes ONTAP Azure 中的某個更新系統與 ONTAP 其他網路中的其他更新系統之間複寫資料、您必須在 Azure vnet 與其他網路（例如 AWS VPC 或公司網路）之間建立 VPN 連線。
+若要在Cloud Volumes ONTAP Azure中的某個系統與ONTAP 其他網路中的某些系統之間複寫資料、您必須在Azure vnet與其他網路（例如您的公司網路）之間建立VPN連線。
 
 如需相關指示、請參閱 https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal["Microsoft Azure 文件：在 Azure 入口網站中建立站台對站台連線"^]。
 
@@ -465,7 +465,7 @@ NOTE: 來源 IP 位址為 Connector 主機。
 | 服務 | 連接埠 | 傳輸協定 | 目的地 | 目的 
 
 
-| API 呼叫與 AutoSupport 功能 | 443.. | HTTPS | 傳出網際網路和 ONTAP 叢集管理 LIF | API會呼叫AWS和ONTAP VMware、Cloud Data Sense、勒索軟體服務、並將AutoSupport 這些訊息傳送給NetApp 
+| API 呼叫與 AutoSupport 功能 | 443.. | HTTPS | 傳出網際網路和 ONTAP 叢集管理 LIF | API將Azure和ONTAP VMware呼叫、Cloud Data Sense、勒索軟體服務、並將AutoSupport VMware訊息傳送給NetApp 
 
 
 | DNS | 53. | UDP | DNS | 用於 Cloud Manager 的 DNS 解析 

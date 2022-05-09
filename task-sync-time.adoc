@@ -16,8 +16,4 @@ summary: 指定 NTP 伺服器可同步處理網路中系統之間的時間、有
 [role="lead"]
 指定 NTP 伺服器可同步處理網路中系統之間的時間、有助於避免時間差異所造成的問題。
 
-使用指定NTP伺服器 https://docs.netapp.com/us-en/cloud-manager-automation/index.html["Cloud Manager API"^] 或從使用者介面進行 link:task-create-volumes.html#create-a-volume["建立CIFS伺服器"]。
-
-例如、以下是 AWS 中單節點系統的 API ：
-
-image:screenshot_ntp_server_api.gif["顯示 NTP API 呼叫的 Swagger 介面快照。"]
+使用指定NTP伺服器 https://docs.netapp.com/us-en/cloud-manager-automation/cm/api_ref_resources.html["Cloud Manager API"^] 或從使用者介面進行 link:task-create-volumes.html#create-a-volume["建立CIFS伺服器"]。

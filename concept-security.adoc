@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept-security.html 
-keywords: security, encryption, antivirus, concepts, key managers, safenet, kms, keys, vscan, encrypt, aws, key management service, cmk, customer master key, data at rest, data-at-rest, netapp storage encryption, certificate signing request, csr, certificate, ca certificate, virus, scan, virus scan, certificate authority, netapp volume encryption, nve, volume encryption, key management server, ransomware, fpolicy, snapshots 
+keywords: security, encryption, antivirus, concepts, key managers, safenet, kms, keys, vscan, encrypt, key management service, cmk, customer master key, data at rest, data-at-rest, netapp storage encryption, certificate signing request, csr, certificate, ca certificate, virus, scan, virus scan, certificate authority, netapp volume encryption, nve, volume encryption, key management server, ransomware, fpolicy, snapshots 
 summary: 支援資料加密、並提供防範病毒和勒索軟體的功能。 Cloud Volumes ONTAP 
 ---
 = 安全性
@@ -23,12 +23,30 @@ summary: 支援資料加密、並提供防範病毒和勒索軟體的功能。 C
 支援下列加密技術： Cloud Volumes ONTAP
 
 * NetApp 加密解決方案（ NVE 和 NAE ）
+
+
+ifdef::aws[]
+
 * AWS 金鑰管理服務
+
+
+endif::aws[]
+
+ifdef::azure[]
+
 * Azure 儲存服務加密
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
 * Google Cloud Platform 預設加密
 
 
-您可以使用 NetApp 加密解決方案搭配 AWS 、 Azure 或 GCP 的原生加密、以加密 Hypervisor 層級的資料。這樣做會提供雙重加密、這可能是非常敏感的資料所需要的。存取加密資料時、加密資料會兩次未加密、一次是 Hypervisor 層級（使用雲端供應商提供的金鑰）、然後再次使用 NetApp 加密解決方案（使用外部金鑰管理程式的金鑰）。
+endif::gcp[]
+
+您可以使用NetApp加密解決方案搭配雲端供應商提供的原生加密、以加密Hypervisor層級的資料。這樣做會提供雙重加密、這可能是非常敏感的資料所需要的。存取加密資料時、加密資料會兩次未加密、一次是 Hypervisor 層級（使用雲端供應商提供的金鑰）、然後再次使用 NetApp 加密解決方案（使用外部金鑰管理程式的金鑰）。
 
 
 
@@ -40,11 +58,21 @@ summary: 支援資料加密、並提供防範病毒和勒索軟體的功能。 C
 * Nae 是 NVE 的延伸、它會加密每個磁碟區的資料、而且磁碟區會在整個集合體之間共用金鑰。Nae 也允許對集合體中所有磁碟區的通用區塊進行重複資料刪除。
 
 
-外部金鑰管理程式支援NVE和NAE。如果您使用NVE、您可以選擇使用Azure Key Vault（AKV）或Google Cloud Key Management Service來保護ONTAP 這些加密金鑰。
+外部金鑰管理程式支援NVE和NAE。
+
+ifdef::azure[]
+
+endif::azure[]
+
+ifdef::gcp[]
+
+endif::gcp[]
 
 新的Aggregate在您設定外部金鑰管理程式之後、預設會啟用NetApp Aggregate Encryption（NAE）。非 NAE Aggregate 一部分的新磁碟區、預設會啟用 NetApp Volume Encryption （ NVE ）（例如、如果您有在設定外部金鑰管理程式之前建立的現有 Aggregate ）。
 
 設定支援的金鑰管理程式是唯一必要的步驟。如需設定指示、請參閱 link:task-encrypting-volumes.html["使用 NetApp 加密解決方案加密磁碟區"]。
+
+ifdef::aws[]
 
 
 
@@ -57,6 +85,10 @@ TIP: 建立 Cloud Volumes ONTAP 一套系統後、您無法變更 AWS 資料加�
 
 如果您要使用此加密選項、則必須確保 AWS KMS 設定適當。如需詳細資訊、請參閱 link:task-setting-up-kms.html["設定 AWS KMS"]。
 
+endif::aws[]
+
+ifdef::azure[]
+
 
 
 === Azure 儲存服務加密
@@ -65,6 +97,10 @@ TIP: 建立 Cloud Volumes ONTAP 一套系統後、您無法變更 AWS 資料加�
 
 您可以視需要使用自己的加密金鑰。 link:task-set-up-azure-encryption.html["瞭解如何在Cloud Volumes ONTAP Azure中設定使用客戶管理的金鑰"]。
 
+endif::azure[]
+
+ifdef::gcp[]
+
 
 
 === Google Cloud Platform 預設加密
@@ -72,6 +108,8 @@ TIP: 建立 Cloud Volumes ONTAP 一套系統後、您無法變更 AWS 資料加�
 https://cloud.google.com/security/encryption-at-rest/["Google Cloud Platform 閒置資料加密"^] 預設為 Cloud Volumes ONTAP 啟用以供使用。無需設定。
 
 雖然 Google Cloud Storage 會在資料寫入磁碟之前先加密資料、但您可以使用 Cloud Manager API 來建立 Cloud Volumes ONTAP 使用 _ 客戶管理的加密金鑰 _ 的支援系統。這些是您使用 Cloud Key Management Service 在 GCP 中產生及管理的金鑰。 link:task-setting-up-gcp-encryption.html["深入瞭解"]。
+
+endif::gcp[]
 
 
 

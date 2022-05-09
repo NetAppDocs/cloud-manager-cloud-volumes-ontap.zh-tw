@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task-manage-keystone.html 
-keywords: license, licensing, install, updating license, system license, add system license, adding a system license, byol license, add byol license, update byol license, nlf, license generator 
+keywords: license, licensing, install, keystone, requst capacity, link subscription, add keystone subscription, keystone subscription 
 summary: 「Digital Wallet」頁面可讓您從Cloud Volumes ONTAP 單一位置管理for eWe的授權。您可以新增授權並更新現有授權。 
 ---
 = 管理 Keystone Flex 訂閱

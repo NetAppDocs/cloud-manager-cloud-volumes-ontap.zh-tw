@@ -18,9 +18,8 @@ summary: 瞭解 Cloud Volumes ONTAP 根據預設設定的功能可協助您設�
 
 
 
-== 預設值
+== 預設設定
 
-* 可在 AWS 、 Azure 和 GCP 中以單節點系統和 HA 配對的形式使用。 Cloud Volumes ONTAP
 * Cloud Manager 部署 Cloud Volumes ONTAP 時會建立一個資料服務儲存 VM 、部分組態支援額外的儲存 VM 。 link:task-managing-svms.html["深入瞭解管理儲存 VM"]。
 +
 從Cloud Manager 3.9.5版本開始、系統會在初始儲存VM上啟用邏輯空間報告功能。以邏輯方式回報空間時ONTAP 、此功能會報告磁碟區空間、讓儲存效率功能所節省的所有實體空間也會報告為已使用。
@@ -42,21 +41,52 @@ summary: 瞭解 Cloud Volumes ONTAP 根據預設設定的功能可協助您設�
 +
 ** 叢集管理 LIF
 ** 叢集間 LIF
-** Azure 和 GCP 中 HA 系統上的 SVM 管理 LIF 、 AWS 中的單一節點系統上的 SVM 管理 LIF 、以及多個 AWS 可用性區域中的 HA 系統上的 SVM 管理 LIF （可選）
-** 節點管理LIF（在GCP中、此LIF與叢集間LIF結合使用）
-** iSCSI 資料 LIF
-** CIFS 與 NFS 資料 LIF
+
+
+
+
+ifdef::azure[]
+
+* Azure HA系統上的SVM管理LIF
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+* Google Cloud HA系統上的SVM管理LIF
+
+
+endif::gcp[]
+
+ifdef::aws[]
+
+* AWS單一節點系統上的SVM管理LIF
+
+
+endif::aws[]
+
+* 節點管理 LIF
+
+
+ifdef::gcp[]
+
++在Google Cloud中、此LIF與叢集間LIF結合使用。
+
+endif::gcp[]
+
+* iSCSI 資料 LIF
+* CIFS 與 NFS 資料 LIF
 +
 
-NOTE: 由於 Cloud Volumes ONTAP EC2 需求、 LIF 容錯移轉功能預設為停用。將 LIF 移轉至其他連接埠會中斷執行個體上 IP 位址與網路介面的外部對應、使 LIF 無法存取。
+NOTE: 根據Cloud Volumes ONTAP 雲端供應商的需求、根據預設、LIF容錯移轉功能會停用以供使用。將 LIF 移轉至其他連接埠會中斷執行個體上 IP 位址與網路介面的外部對應、使 LIF 無法存取。
 
-
-
-* 使用 HTTPS 將組態備份傳送至 Connector 。 Cloud Volumes ONTAP
++
+** 使用 HTTPS 將組態備份傳送至 Connector 。 Cloud Volumes ONTAP
 +
 可從存取備份 https://ipaddress/occm/offboxconfig/[] 其中 _ipaddress_ 是連接器主機的 IP 位址。
 
-* Cloud Manager 設定的磁碟區屬性與其他管理工具（例如 System Manager 或 CLI ）有所不同。
+** Cloud Manager 設定的磁碟區屬性與其他管理工具（例如 System Manager 或 CLI ）有所不同。
 +
 下表列出 Cloud Manager 設定的 Volume 屬性與預設值不同：
 
@@ -92,9 +122,13 @@ NOTE: 帳戶管理員可從「設定」頁面修改此值。
 
 
 
+
+
 == 用於系統資料的內部磁碟
 
 除了使用者資料的儲存設備、 Cloud Manager 也購買雲端儲存設備來儲存系統資料。
+
+ifdef::aws[]
 
 
 
@@ -109,10 +143,15 @@ NOTE: 帳戶管理員可從「設定」頁面修改此值。
 
 * 每個開機磁碟和根磁碟各一份 EBS 快照
 * 對於HA配對、一個EBS Volume用於「內化器」執行個體、約為8 GiB
+* 當您使用金鑰管理服務（ KMS ）在 AWS 中啟用資料加密時、 Cloud Volumes ONTAP 也會加密適用於此功能的開機磁碟和根磁碟。這包括 HA 配對中中介執行個體的開機磁碟。磁碟會使用您在建立工作環境時所選取的 CMK 進行加密。
 
 
 
 TIP: 在AWS中、NVRAM位於開機磁碟上。
+
+endif::aws[]
+
+ifdef::azure[]
 
 
 
@@ -130,6 +169,7 @@ TIP: 在AWS中、NVRAM位於開機磁碟上。
 
 * 一張1024 GiB標準HDD磁碟、可節省核心
 * 每個開機磁碟和根磁碟各一份 Azure 快照
+* 開機磁碟和根磁碟預設為加密。
 
 
 
@@ -141,7 +181,12 @@ TIP: 在AWS中、NVRAM位於開機磁碟上。
 * 兩個1024 GiB標準HDD磁碟、可節省核心（每個節點一個）
 * 兩個512 GiB Premium SSD磁碟用於NVRAM（每個節點一個）
 * 每個開機磁碟和根磁碟各一份 Azure 快照
+* 開機磁碟和根磁碟預設為加密。
 
+
+endif::azure[]
+
+ifdef::gcp[]
 
 
 
@@ -152,6 +197,7 @@ TIP: 在AWS中、NVRAM位於開機磁碟上。
 * 一個500 GiB SSD持續磁碟用於NVRAM
 * 一個315 GiB標準持續磁碟、用於儲存核心
 * 用於開機和根資料的快照
+* 開機磁碟和根磁碟預設為加密。
 
 
 
@@ -164,7 +210,10 @@ TIP: 在AWS中、NVRAM位於開機磁碟上。
 * 兩個315 GiB標準持續磁碟、用於儲存核心
 * 一個10 GiB標準持續磁碟、用於中介資料
 * 用於開機和根資料的快照
+* 開機磁碟和根磁碟預設為加密。
 
+
+endif::gcp[]
 
 
 
@@ -180,11 +229,3 @@ Cloud Manager 的儲存設備如下所示：
 * 儲存虛擬機器（ SVM ）根磁碟區位於 aggr1 中。
 * 資料磁碟區也位於 aggr1 中。
 
-
-
-
-=== 加密
-
-Azure 和 Google Cloud Platform 會一律加密開機和根磁碟、因為這些雲端供應商預設會啟用加密功能。
-
-當您使用金鑰管理服務（ KMS ）在 AWS 中啟用資料加密時、 Cloud Volumes ONTAP 也會加密適用於此功能的開機磁碟和根磁碟。這包括 HA 配對中中介執行個體的開機磁碟。磁碟會使用您在建立工作環境時所選取的 CMK 進行加密。

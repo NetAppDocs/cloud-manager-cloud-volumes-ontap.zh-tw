@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: concept-ha-google-cloud.html 
 keywords: high availability, HA, mediator, concepts, understanding, overview, takeover, giveback, rpo, rto, nondisruptive, ha pairs, node, nodes, synchronous, resync, recovery point objective, recovery time objective, failover, mount, remount, failure, data access, access, ip address, performance, gcp, gcp ha, google cloud ha, ha in google cloud 
-summary: 支援不中斷營運和容錯功能的高可用度組態。 Cloud Volumes ONTAP在 Google Cloud Platform 中、資料會在兩個節點之間同步鏡射。 
+summary: 支援不中斷營運和容錯功能的高可用度組態。 Cloud Volumes ONTAP在Google Cloud中、資料會在兩個節點之間同步鏡射。 
 ---
-= Google Cloud Platform 的高可用度配對
+= Google Cloud的高可用度配對
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,13 +14,13 @@ summary: 支援不中斷營運和容錯功能的高可用度組態。 Cloud Volu
 
 
 [role="lead"]
-支援高可用度（ HA ）組態、可提供不中斷營運及容錯功能。 Cloud Volumes ONTAP在 Google Cloud Platform 中、資料會在兩個節點之間同步鏡射。
+支援高可用度（ HA ）組態、可提供不中斷營運及容錯功能。 Cloud Volumes ONTAP在Google Cloud中、資料會在兩個節點之間同步鏡射。
 
 
 
 == HA 元件
 
-GCP 中的 HHA 組態包括下列元件： Cloud Volumes ONTAP
+Google Cloud的NetApp HA組態包括下列元件：Cloud Volumes ONTAP
 
 * 兩 Cloud Volumes ONTAP 個彼此同步鏡射資料的鏡射節點。
 * 一種中介執行個體、可在節點之間提供通訊通道、以協助儲存接管和恢復程序。

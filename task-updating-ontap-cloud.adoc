@@ -123,7 +123,7 @@ TIP: 尚未註冊支援的系統仍會在有新版本可用時收到 Cloud Manag
 
 === HA中介程序的升級
 
-對於AWS或Google Cloud中的HA系統、Cloud Manager也會視Cloud Volumes ONTAP 需要在升級過程中更新中介執行個體。
+Cloud Manager也會在Cloud Volumes ONTAP 升級過程中視需要更新中介執行個體。
 
 
 
@@ -279,6 +279,8 @@ Cloud Manager 會啟動軟體更新。軟體更新完成後、即可在工作環
 
 如果您暫停 SnapMirror 傳輸、請使用 System Manager 繼續傳輸。
 
+ifdef::gcp[]
+
 
 
 == 修正使用Google Cloud NAT閘道時的下載失敗
@@ -300,3 +302,5 @@ _MaxDownloadSseds_的值可以是1或任何大於1的整數。如果值為1、�
 請注意、32為範例值。您應該使用的值取決於NAT組態和可同時使用的工作階段數目。
 
 https://docs.netapp.com/us-en/cloud-manager-automation/cm/api_ref_resources.html#occmconfig["深入瞭解/occm/config API呼叫"^]。
+
+endif::gcp[]

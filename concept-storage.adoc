@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept-storage.html 
-keywords: storage, capacity, volumes, aggregates, raw capacity, usable capacity, aws, azure 
+keywords: storage, capacity, volumes, aggregates, raw capacity, usable capacity 
 summary: 瞭解 Cloud Volumes ONTAP 如何使用雲端儲存設備、有助於瞭解儲存成本。 
 ---
 = 磁碟與集合體
@@ -32,6 +32,8 @@ image:diagram_storage.png["本圖顯示由磁碟組成的 Aggregate 、 Cloud Vo
 
 TIP: 向雲端供應商購買的儲存設備總容量為 _rawcapity_ 。_ 可用容量 _ 較低、因為大約 12% 至 14% 的成本是保留供 Cloud Volumes ONTAP 作供參考之用的成本。例如、如果Cloud Manager建立500 GiB Aggregate、則可用容量為442.94 GiB。
 
+ifdef::aws[]
+
 
 
 == AWS 儲存設備
@@ -57,6 +59,10 @@ NOTE: 使用處理量最佳化的HDD（ST1）時、不建議將資料分層至�
 * https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-aws.html["檢閱 Cloud Volumes ONTAP AWS 的儲存限制"^]
 * http://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-aws.html["檢閱 Cloud Volumes ONTAP AWS 支援的支援組態"^]
 
+
+endif::aws[]
+
+ifdef::azure[]
 
 
 
@@ -90,19 +96,25 @@ HA 配對:: HA配對使用Premium分頁區、磁碟大小上限為8 TiB。
 * https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-azure.html["檢閱 Cloud Volumes ONTAP Azure 的儲存限制"^]
 
 
+endif::azure[]
+
+ifdef::gcp[]
 
 
-== GCP 儲存設備
 
-在 GCP 中、 Aggregate 最多可包含 6 個大小相同的磁碟。磁碟大小上限為64 TiB。
+== Google Cloud儲存設備
+
+在Google Cloud中、Aggregate最多可包含6個大小相同的磁碟。磁碟大小上限為64 TiB。
 
 磁碟類型可以是_分區SSD持續磁碟_、_分區平衡持續磁碟_或_分區標準持續磁碟_。您可以將持續的磁碟與 Google 儲存庫配對至 link:concept-data-tiering.html["將非作用中資料分層至低成本物件儲存設備"]。
 
 * 相關連結 *
 
-* https://cloud.google.com/compute/docs/disks/["Google Cloud Platform 文件：儲存選項"^]
-* https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-gcp.html["檢閱 Cloud Volumes ONTAP GCP 中的儲存限制"^]
+* https://cloud.google.com/compute/docs/disks/["Google Cloud文件：儲存選項"^]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-gcp.html["檢閱Cloud Volumes ONTAP Google Cloud中的功能不均儲存限制"^]
 
+
+endif::gcp[]
 
 
 

@@ -26,9 +26,11 @@ summary: 已知限制指出本產品版本不支援的平台、裝置或功能�
 
 
 
-== Cloud Manager不支援ONTAP SS3
+== Cloud Manager Cloud Volumes ONTAP 不支援S3搭配使用
 
-雖然Azure中的支援對象使用S3、但Cloud Manager並未針對此功能提供任何管理功能。Cloud Volumes ONTAP使用CLI是設定S3用戶端從Cloud Volumes ONTAP 功能支援的最佳實務做法。如需詳細資訊、請參閱 http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-s3-cg/home.html["S3組態電源指南"^]。
+雖然在某些雲端供應商中、支援S3作為橫向擴充儲存設備的選項、但Cloud Manager並未針對此功能提供任何管理功能。Cloud Volumes ONTAP使用CLI是設定S3用戶端從Cloud Volumes ONTAP 功能支援的最佳實務做法。如需詳細資訊、請參閱 http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-s3-cg/home.html["S3組態電源指南"^]。
+
+link:concept-client-protocols.html["深入瞭Cloud Volumes ONTAP 解支援S3和其他用戶端傳輸協定的功能"]。
 
 
 
