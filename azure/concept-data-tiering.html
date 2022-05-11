@@ -1385,7 +1385,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-09 15:43:09 +0000">05/09/2022</time>
+    <time datetime="2022-05-11 22:57:58 +0000">05/11/2022</time>
     
   
 
@@ -1431,29 +1431,54 @@
 </dd>
 <dt class="hdlist1">容量層</dt>
 <dd>
-<p>利用 Azure <em>hot</em> 儲存層、 Cloud Volumes ONTAP 將非作用中資料分層至單一 Blob 容器。熱層是經常存取資料的理想選擇。</p>
+<p>將非作用中資料分層至單一Blob容器。Cloud Volumes ONTAP</p>
 <div class="openblock">
 <div class="content">
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="附註">
-</td>
-<td class="content">
-Cloud Manager 會為 Cloud Volumes ONTAP 每個運作環境建立一個新的儲存帳戶、其中包含一個容器。儲存帳戶名稱為隨機。並不會針對每個 Volume 建立不同的容器。
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Cloud Manager會為Cloud Volumes ONTAP 每個運作環境建立一個新的儲存帳戶、其中包含一個容器。儲存帳戶名稱為隨機。並不會針對每個 Volume 建立不同的容器。</p>
+</div>
+<div class="paragraph">
+<p>Cloud Manager會以下列設定建立儲存帳戶：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>存取層：Hot</p>
+</li>
+<li>
+<p>效能：標準</p>
+</li>
+<li>
+<p>備援：本機備援儲存設備（LRS）</p>
+</li>
+<li>
+<p>帳戶：StorageV2（通用v2）</p>
+</li>
+<li>
+<p>需要安全傳輸以執行REST API作業：已啟用</p>
+</li>
+<li>
+<p>儲存帳戶金鑰存取：已啟用</p>
+</li>
+<li>
+<p>最低TLS版本：1.2版</p>
+</li>
+<li>
+<p>基礎架構加密：已停用</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 </dd>
 <dt class="hdlist1">儲存存取層</dt>
 <dd>
-<p>Azure 中階層式資料的預設儲存存取層為 <em>hot</em> 層。如果您不打算存取非作用中資料、可以改用 _cool 儲存層來降低儲存成本。當您變更儲存層時、非作用中的資料會從熱儲存層開始、並在 30 天後無法存取資料時、移轉至冷卻儲存層。</p>
+<p>Azure 中階層式資料的預設儲存存取層為 <em>hot</em> 層。熱層是經常存取資料的理想選擇。</p>
 <div class="openblock">
 <div class="content">
+<div class="paragraph">
+<p>如果您不打算存取非作用中資料、可以改用 _cool 儲存層來降低儲存成本。當您變更儲存層時、非作用中的資料會從熱儲存層開始、並在 30 天後無法存取資料時、移轉至冷卻儲存層。</p>
+</div>
 <div class="paragraph">
 <p>如果您確實存取資料、存取成本就會較高、因此在變更儲存層之前、請先將此納入考量。 <a href="https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-storage-tiers" target="_blank" rel="noopener">"深入瞭解 Azure Blob 儲存設備存取層"</a>。</p>
 </div>

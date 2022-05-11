@@ -1439,7 +1439,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-09 15:43:09 +0000">05/09/2022</time>
+    <time datetime="2022-05-11 22:57:58 +0000">05/11/2022</time>
     
   
 
@@ -1484,46 +1484,56 @@
 <p>效能層可以是通用SSD（GP3或gp2）或已配置的IOPS SSD（IO1）。</p>
 <div class="openblock">
 <div class="content">
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="附註">
-</td>
-<td class="content">
-使用處理量最佳化的HDD（ST1）時、不建議將資料分層至物件儲存設備。
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>使用處理量最佳化的HDD（ST1）時、不建議將資料分層至物件儲存設備。</p>
 </div>
 </div>
 </div>
 </dd>
 <dt class="hdlist1">容量層</dt>
 <dd>
-<p>利用 <em>Standard</em> 儲存類別、將非作用中資料分層至單一 S3 儲存區。 Cloud Volumes ONTAPStandard 適用於儲存在多個可用度區域中的常用資料。</p>
+<p>這個系統會將非作用中的資料分層至單一S3儲存區。Cloud Volumes ONTAP</p>
 <div class="openblock">
 <div class="content">
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="附註">
-</td>
-<td class="content">
-Cloud Manager 會針對每個工作環境建立單一 S3 儲存區、並將其命名為「網路資源池」、「叢集唯一識別碼」。並不會針對每個 Volume 建立不同的 S3 儲存區。
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Cloud Manager 會針對每個工作環境建立單一 S3 儲存區、並將其命名為「網路資源池」、「叢集唯一識別碼」。並不會針對每個 Volume 建立不同的 S3 儲存區。</p>
+</div>
+<div class="paragraph">
+<p>Cloud Manager建立S3儲存區時、會使用下列預設設定：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>儲存等級：標準</p>
+</li>
+<li>
+<p>預設加密：停用</p>
+</li>
+<li>
+<p>封鎖公開存取：封鎖所有公開存取</p>
+</li>
+<li>
+<p>物件擁有權：啟用ACL</p>
+</li>
+<li>
+<p>儲存區版本設定：已停用</p>
+</li>
+<li>
+<p>物件鎖定：已停用</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 </dd>
 <dt class="hdlist1">儲存類別</dt>
 <dd>
-<p>AWS 中階層式資料的預設儲存類別為 <em>Standard</em> 。如果您不打算存取非作用中資料、可以將儲存類別變更為下列其中一項、藉此降低儲存成本：<em>Intelligent Tiering、_One Zone In頻率 存取</em>、_Standard-in頻繁 存取_或_S3 Glacier即時擷取。當您變更儲存類別時、非作用中的資料會從 Standard 儲存類別開始、並轉換至您選取的儲存類別（如果 30 天後仍未存取資料）。</p>
+<p>AWS 中階層式資料的預設儲存類別為 <em>Standard</em> 。Standard 適用於儲存在多個可用度區域中的常用資料。</p>
 <div class="openblock">
 <div class="content">
+<div class="paragraph">
+<p>如果您不打算存取非作用中資料、可以將儲存類別變更為下列其中一項、藉此降低儲存成本：<em>Intelligent Tiering、_One Zone In頻率 存取</em>、_Standard-in頻繁 存取_或_S3 Glacier即時擷取。當您變更儲存類別時、非作用中的資料會從 Standard 儲存類別開始、並轉換至您選取的儲存類別（如果 30 天後仍未存取資料）。</p>
+</div>
 <div class="paragraph">
 <p>如果您確實存取資料、存取成本就會較高、因此在變更儲存類別之前、請先將此納入考量。 <a href="https://aws.amazon.com/s3/storage-classes" target="_blank" rel="noopener">"深入瞭解 Amazon S3 儲存類別"</a>。</p>
 </div>
@@ -1554,29 +1564,54 @@ Cloud Manager 會針對每個工作環境建立單一 S3 儲存區、並將其�
 </dd>
 <dt class="hdlist1">容量層</dt>
 <dd>
-<p>利用 Azure <em>hot</em> 儲存層、 Cloud Volumes ONTAP 將非作用中資料分層至單一 Blob 容器。熱層是經常存取資料的理想選擇。</p>
+<p>將非作用中資料分層至單一Blob容器。Cloud Volumes ONTAP</p>
 <div class="openblock">
 <div class="content">
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="附註">
-</td>
-<td class="content">
-Cloud Manager 會為 Cloud Volumes ONTAP 每個運作環境建立一個新的儲存帳戶、其中包含一個容器。儲存帳戶名稱為隨機。並不會針對每個 Volume 建立不同的容器。
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Cloud Manager會為Cloud Volumes ONTAP 每個運作環境建立一個新的儲存帳戶、其中包含一個容器。儲存帳戶名稱為隨機。並不會針對每個 Volume 建立不同的容器。</p>
+</div>
+<div class="paragraph">
+<p>Cloud Manager會以下列設定建立儲存帳戶：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>存取層：Hot</p>
+</li>
+<li>
+<p>效能：標準</p>
+</li>
+<li>
+<p>備援：本機備援儲存設備（LRS）</p>
+</li>
+<li>
+<p>帳戶：StorageV2（通用v2）</p>
+</li>
+<li>
+<p>需要安全傳輸以執行REST API作業：已啟用</p>
+</li>
+<li>
+<p>儲存帳戶金鑰存取：已啟用</p>
+</li>
+<li>
+<p>最低TLS版本：1.2版</p>
+</li>
+<li>
+<p>基礎架構加密：已停用</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 </dd>
 <dt class="hdlist1">儲存存取層</dt>
 <dd>
-<p>Azure 中階層式資料的預設儲存存取層為 <em>hot</em> 層。如果您不打算存取非作用中資料、可以改用 _cool 儲存層來降低儲存成本。當您變更儲存層時、非作用中的資料會從熱儲存層開始、並在 30 天後無法存取資料時、移轉至冷卻儲存層。</p>
+<p>Azure 中階層式資料的預設儲存存取層為 <em>hot</em> 層。熱層是經常存取資料的理想選擇。</p>
 <div class="openblock">
 <div class="content">
+<div class="paragraph">
+<p>如果您不打算存取非作用中資料、可以改用 _cool 儲存層來降低儲存成本。當您變更儲存層時、非作用中的資料會從熱儲存層開始、並在 30 天後無法存取資料時、移轉至冷卻儲存層。</p>
+</div>
 <div class="paragraph">
 <p>如果您確實存取資料、存取成本就會較高、因此在變更儲存層之前、請先將此納入考量。 <a href="https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-storage-tiers" target="_blank" rel="noopener">"深入瞭解 Azure Blob 儲存設備存取層"</a>。</p>
 </div>
@@ -1607,20 +1642,36 @@ Cloud Manager 會為 Cloud Volumes ONTAP 每個運作環境建立一個新的儲
 </dd>
 <dt class="hdlist1">容量層</dt>
 <dd>
-<p>利用 _Regional 儲存類別、將非作用中資料分層至單一 Google Cloud Storage 儲存庫。 Cloud Volumes ONTAP</p>
+<p>這個系統會將非作用中的資料分層至單一Google Cloud Storage儲存庫。Cloud Volumes ONTAP</p>
 <div class="openblock">
 <div class="content">
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="附註">
-</td>
-<td class="content">
-Cloud Manager 會為每個工作環境建立單一儲存區、並將其命名為「網路資源池」、「叢集唯一識別碼」。並不會針對每個 Volume 建立不同的儲存區。
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Cloud Manager會為每個工作環境建立一個儲存區、並將其命名為「網路資源池」、「叢集唯一識別碼」。並不會針對每個 Volume 建立不同的儲存區。</p>
+</div>
+<div class="paragraph">
+<p>Cloud Manager建立儲存庫時、會使用下列預設設定：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>位置類型：地區</p>
+</li>
+<li>
+<p>儲存等級：標準</p>
+</li>
+<li>
+<p>公共存取：受物件ACL限制</p>
+</li>
+<li>
+<p>存取控制：精細的</p>
+</li>
+<li>
+<p>保護：無</p>
+</li>
+<li>
+<p>資料加密：Google管理的金鑰</p>
+</li>
+</ul>
 </div>
 </div>
 </div>

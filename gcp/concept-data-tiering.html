@@ -1383,7 +1383,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-09 15:43:09 +0000">05/09/2022</time>
+    <time datetime="2022-05-11 22:57:58 +0000">05/11/2022</time>
     
   
 
@@ -1429,20 +1429,36 @@
 </dd>
 <dt class="hdlist1">容量層</dt>
 <dd>
-<p>利用 _Regional 儲存類別、將非作用中資料分層至單一 Google Cloud Storage 儲存庫。 Cloud Volumes ONTAP</p>
+<p>這個系統會將非作用中的資料分層至單一Google Cloud Storage儲存庫。Cloud Volumes ONTAP</p>
 <div class="openblock">
 <div class="content">
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="附註">
-</td>
-<td class="content">
-Cloud Manager 會為每個工作環境建立單一儲存區、並將其命名為「網路資源池」、「叢集唯一識別碼」。並不會針對每個 Volume 建立不同的儲存區。
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Cloud Manager會為每個工作環境建立一個儲存區、並將其命名為「網路資源池」、「叢集唯一識別碼」。並不會針對每個 Volume 建立不同的儲存區。</p>
+</div>
+<div class="paragraph">
+<p>Cloud Manager建立儲存庫時、會使用下列預設設定：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>位置類型：地區</p>
+</li>
+<li>
+<p>儲存等級：標準</p>
+</li>
+<li>
+<p>公共存取：受物件ACL限制</p>
+</li>
+<li>
+<p>存取控制：精細的</p>
+</li>
+<li>
+<p>保護：無</p>
+</li>
+<li>
+<p>資料加密：Google管理的金鑰</p>
+</li>
+</ul>
 </div>
 </div>
 </div>

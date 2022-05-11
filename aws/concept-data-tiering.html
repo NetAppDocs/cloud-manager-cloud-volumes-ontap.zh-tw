@@ -1394,7 +1394,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-09 15:43:09 +0000">05/09/2022</time>
+    <time datetime="2022-05-11 22:57:58 +0000">05/11/2022</time>
     
   
 
@@ -1439,46 +1439,56 @@
 <p>效能層可以是通用SSD（GP3或gp2）或已配置的IOPS SSD（IO1）。</p>
 <div class="openblock">
 <div class="content">
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="附註">
-</td>
-<td class="content">
-使用處理量最佳化的HDD（ST1）時、不建議將資料分層至物件儲存設備。
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>使用處理量最佳化的HDD（ST1）時、不建議將資料分層至物件儲存設備。</p>
 </div>
 </div>
 </div>
 </dd>
 <dt class="hdlist1">容量層</dt>
 <dd>
-<p>利用 <em>Standard</em> 儲存類別、將非作用中資料分層至單一 S3 儲存區。 Cloud Volumes ONTAPStandard 適用於儲存在多個可用度區域中的常用資料。</p>
+<p>這個系統會將非作用中的資料分層至單一S3儲存區。Cloud Volumes ONTAP</p>
 <div class="openblock">
 <div class="content">
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="附註">
-</td>
-<td class="content">
-Cloud Manager 會針對每個工作環境建立單一 S3 儲存區、並將其命名為「網路資源池」、「叢集唯一識別碼」。並不會針對每個 Volume 建立不同的 S3 儲存區。
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Cloud Manager 會針對每個工作環境建立單一 S3 儲存區、並將其命名為「網路資源池」、「叢集唯一識別碼」。並不會針對每個 Volume 建立不同的 S3 儲存區。</p>
+</div>
+<div class="paragraph">
+<p>Cloud Manager建立S3儲存區時、會使用下列預設設定：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>儲存等級：標準</p>
+</li>
+<li>
+<p>預設加密：停用</p>
+</li>
+<li>
+<p>封鎖公開存取：封鎖所有公開存取</p>
+</li>
+<li>
+<p>物件擁有權：啟用ACL</p>
+</li>
+<li>
+<p>儲存區版本設定：已停用</p>
+</li>
+<li>
+<p>物件鎖定：已停用</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 </dd>
 <dt class="hdlist1">儲存類別</dt>
 <dd>
-<p>AWS 中階層式資料的預設儲存類別為 <em>Standard</em> 。如果您不打算存取非作用中資料、可以將儲存類別變更為下列其中一項、藉此降低儲存成本：<em>Intelligent Tiering、_One Zone In頻率 存取</em>、_Standard-in頻繁 存取_或_S3 Glacier即時擷取。當您變更儲存類別時、非作用中的資料會從 Standard 儲存類別開始、並轉換至您選取的儲存類別（如果 30 天後仍未存取資料）。</p>
+<p>AWS 中階層式資料的預設儲存類別為 <em>Standard</em> 。Standard 適用於儲存在多個可用度區域中的常用資料。</p>
 <div class="openblock">
 <div class="content">
+<div class="paragraph">
+<p>如果您不打算存取非作用中資料、可以將儲存類別變更為下列其中一項、藉此降低儲存成本：<em>Intelligent Tiering、_One Zone In頻率 存取</em>、_Standard-in頻繁 存取_或_S3 Glacier即時擷取。當您變更儲存類別時、非作用中的資料會從 Standard 儲存類別開始、並轉換至您選取的儲存類別（如果 30 天後仍未存取資料）。</p>
+</div>
 <div class="paragraph">
 <p>如果您確實存取資料、存取成本就會較高、因此在變更儲存類別之前、請先將此納入考量。 <a href="https://aws.amazon.com/s3/storage-classes" target="_blank" rel="noopener">"深入瞭解 Amazon S3 儲存類別"</a>。</p>
 </div>
