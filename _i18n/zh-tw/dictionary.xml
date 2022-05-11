@@ -3088,10 +3088,8 @@
   <block id="9a817efc11f456e69cd659f0afd9447b" category="list-text">效能層級</block>
   <block id="aaf6f41e4241a55e6a363b9c414d4feb" category="list-text">效能層可以是通用SSD（GP3或gp2）或已配置的IOPS SSD（IO1）。</block>
   <block id="f7c94a9d0c1e0feee8c2687a0f8fa5ad" category="list-text">容量層</block>
-  <block id="25ecc9395604e745b655dbcb6eed23bc" category="list-text">利用 _Standard_ 儲存類別、將非作用中資料分層至單一 S3 儲存區。 Cloud Volumes ONTAPStandard 適用於儲存在多個可用度區域中的常用資料。</block>
   <block id="b162acd76f83f99ac24045020f8e1c25" category="admonition">Cloud Manager 會針對每個工作環境建立單一 S3 儲存區、並將其命名為「網路資源池」、「叢集唯一識別碼」。並不會針對每個 Volume 建立不同的 S3 儲存區。</block>
   <block id="7672a092783c4348b96b40ea2dcf6681" category="list-text">儲存類別</block>
-  <block id="d84251a0fd530f03ffc5b24f87e0f907" category="list-text">AWS 中階層式資料的預設儲存類別為 _Standard_ 。如果您不打算存取非作用中資料、可以將儲存類別變更為下列其中一項、藉此降低儲存成本：_Intelligent Tiering、_One Zone In頻率 存取_、_Standard-in頻繁 存取_或_S3 Glacier即時擷取。當您變更儲存類別時、非作用中的資料會從 Standard 儲存類別開始、並轉換至您選取的儲存類別（如果 30 天後仍未存取資料）。</block>
   <block id="20831024dd0b150380212ea26b281613" category="inline-link">深入瞭解 Amazon S3 儲存類別</block>
   <block id="e401c2b474cb7d11a68d9e90b0a09307" category="paragraph">如果您確實存取資料、存取成本就會較高、因此在變更儲存類別之前、請先將此納入考量。<block ref="640a0192f14cf6137ba20e6c02d1ae81" category="inline-link-rx"></block>。</block>
   <block id="ee1c55977e8b839e0a69703538a716a5" category="paragraph">您可以在建立工作環境時選取儲存類別、之後隨時變更。如需變更儲存類別的詳細資訊、請參閱 <block ref="4fbc08218411ffa53189962e6368b39b" category="inline-link-macro-rx"></block>。</block>
@@ -3099,17 +3097,12 @@
   <block id="176cd61977ca55fd13eff7c7ba3659f5" category="section-title">Azure 中的資料分層</block>
   <block id="9f5e7587dc37b317df0faf00f072c5b5" category="paragraph">當您在 Azure 中啟用資料分層功能時、 Cloud Volumes ONTAP VMware 會使用 Azure 託管磁碟做為熱資料的效能層、而 Azure Blob 儲存設備則是非作用中資料的容量層。</block>
   <block id="567479f8818b026e7e5b2c6b0656e651" category="list-text">效能層可以是 SSD 或 HDD 。</block>
-  <block id="92e2e0d1f9d0c33f6291e87d9139fd1a" category="list-text">利用 Azure _hot_ 儲存層、 Cloud Volumes ONTAP 將非作用中資料分層至單一 Blob 容器。熱層是經常存取資料的理想選擇。</block>
-  <block id="e7f09232d4ae69ba91d69de18e74a87c" category="admonition">Cloud Manager 會為 Cloud Volumes ONTAP 每個運作環境建立一個新的儲存帳戶、其中包含一個容器。儲存帳戶名稱為隨機。並不會針對每個 Volume 建立不同的容器。</block>
   <block id="11b35c3a4f0107e2f78651baa7b32bd0" category="list-text">儲存存取層</block>
-  <block id="dc879879343c48a51de170640097bfd2" category="list-text">Azure 中階層式資料的預設儲存存取層為 _hot_ 層。如果您不打算存取非作用中資料、可以改用 _cool 儲存層來降低儲存成本。當您變更儲存層時、非作用中的資料會從熱儲存層開始、並在 30 天後無法存取資料時、移轉至冷卻儲存層。</block>
   <block id="8b2d7f1ae50962ecff6863b4b3359c61" category="inline-link">深入瞭解 Azure Blob 儲存設備存取層</block>
   <block id="68fe4c8de4747fa77a5d46c70cf18294" category="paragraph">如果您確實存取資料、存取成本就會較高、因此在變更儲存層之前、請先將此納入考量。<block ref="b972df3be971ae20a5e41fb28c27dcfc" category="inline-link-rx"></block>。</block>
   <block id="98fdd008687283335edf23e9e287cb83" category="paragraph">您可以在建立工作環境時選取儲存層、之後隨時變更。如需變更儲存層的詳細資訊、請參閱 <block ref="4fbc08218411ffa53189962e6368b39b" category="inline-link-macro-rx"></block>。</block>
   <block id="a38b9b490932e9d5b5db3e24784ec656" category="paragraph">資料分層的儲存存取層是全系統的、並非每個磁碟區。</block>
   <block id="3b8940895816a07ee6f7b4cd2d7353e3" category="list-text">效能層可以是SSD持續磁碟、平衡持續磁碟或標準持續磁碟。</block>
-  <block id="b15506ba0795b6263dd1128d8ab2f4b9" category="list-text">利用 _Regional 儲存類別、將非作用中資料分層至單一 Google Cloud Storage 儲存庫。 Cloud Volumes ONTAP</block>
-  <block id="ce0ff5d3338a785151c757f957271280" category="admonition">Cloud Manager 會為每個工作環境建立單一儲存區、並將其命名為「網路資源池」、「叢集唯一識別碼」。並不會針對每個 Volume 建立不同的儲存區。</block>
   <block id="56fcb51b5b1e4760266f6a808fa6396a" category="list-text">階層式資料的預設儲存類別為 _Standard Storage_ 類別。如果資料不常存取、您可以改用 _Nearline Storage_ 或 _Coldline Storage_ 來降低儲存成本。當您變更儲存類別時、非作用中的資料會從 Standard Storage 類別開始、並轉換至您選取的儲存類別、如果資料在 30 天後仍未存取。</block>
   <block id="5097a121ff5ccfae7cb78986b23616f8" category="inline-link">深入瞭解 Google Cloud Storage 的儲存課程</block>
   <block id="3f1b0a674f5325ee098ce0196eda6d56" category="paragraph">如果您確實存取資料、存取成本就會較高、因此在變更儲存類別之前、請先將此納入考量。<block ref="12bb21ea227f99e4e5df122704c6f379" category="inline-link-rx"></block>。</block>
@@ -3721,4 +3714,35 @@
   <block id="310c228207a0f8446bbe4c5d16978cb7" category="paragraph">endif::gcp[]</block>
   <block id="5a81378cdc7edd9ea960cf02d6ca78d2" category="paragraph">ifdef::aws[]</block>
   <block id="6beb2fa01dc121194547db1bfbe03408" category="paragraph">endif::aws[]</block>
+  <block id="f231e5c51143720c4b3e48ce40d467d4" category="list-text">這個系統會將非作用中的資料分層至單一S3儲存區。Cloud Volumes ONTAP</block>
+  <block id="572f86fb369e26ce9ca46b6d18b46c21" category="paragraph">Cloud Manager建立S3儲存區時、會使用下列預設設定：</block>
+  <block id="2d29df35288e7a898c064fc1c04fd451" category="list-text">儲存等級：標準</block>
+  <block id="804c8e3fcbb38fef4b1f66be12d7a74f" category="list-text">預設加密：停用</block>
+  <block id="dd0ae3a0377d592bbcaeba23fcd7e7ff" category="list-text">封鎖公開存取：封鎖所有公開存取</block>
+  <block id="a4f41197b4619463f389cc696d0ea81b" category="list-text">物件擁有權：啟用ACL</block>
+  <block id="873465357929232f09ebfe53751fc108" category="list-text">儲存區版本設定：已停用</block>
+  <block id="b788a91f4e53009b26bcc89d69b0482f" category="list-text">物件鎖定：已停用</block>
+  <block id="ed08534aa63de5b03527a0bbb1320085" category="list-text">AWS 中階層式資料的預設儲存類別為 _Standard_ 。Standard 適用於儲存在多個可用度區域中的常用資料。</block>
+  <block id="12a66087f2f58411b20b387be417b6af" category="paragraph">如果您不打算存取非作用中資料、可以將儲存類別變更為下列其中一項、藉此降低儲存成本：_Intelligent Tiering、_One Zone In頻率 存取_、_Standard-in頻繁 存取_或_S3 Glacier即時擷取。當您變更儲存類別時、非作用中的資料會從 Standard 儲存類別開始、並轉換至您選取的儲存類別（如果 30 天後仍未存取資料）。</block>
+  <block id="98084fb337b1b2cf4cb9e5af0b0ef9b1" category="list-text">將非作用中資料分層至單一Blob容器。Cloud Volumes ONTAP</block>
+  <block id="6fc2bc840d9eab00fcc83925bc6de35b" category="paragraph">Cloud Manager會為Cloud Volumes ONTAP 每個運作環境建立一個新的儲存帳戶、其中包含一個容器。儲存帳戶名稱為隨機。並不會針對每個 Volume 建立不同的容器。</block>
+  <block id="def3a5d7bc75bdc76a426a74d092179f" category="paragraph">Cloud Manager會以下列設定建立儲存帳戶：</block>
+  <block id="f7c5c3f829ba75eb23b7c60381fd4f74" category="list-text">存取層：Hot</block>
+  <block id="c89729007f1266a456e5a1133a9f58e9" category="list-text">效能：標準</block>
+  <block id="dc4d23da133e198d425564262ad6976b" category="list-text">備援：本機備援儲存設備（LRS）</block>
+  <block id="2f546189dda4bc24c6d8f6ed71c57a36" category="list-text">帳戶：StorageV2（通用v2）</block>
+  <block id="e0d679a04a2c140c65cff67ffbfd8444" category="list-text">需要安全傳輸以執行REST API作業：已啟用</block>
+  <block id="4fbd5770a6fd5de01bbbcf2a407118d7" category="list-text">儲存帳戶金鑰存取：已啟用</block>
+  <block id="c826704ed8ef326581305fef2036bfb6" category="list-text">最低TLS版本：1.2版</block>
+  <block id="276a9219319519ae3ee8b320e4458068" category="list-text">基礎架構加密：已停用</block>
+  <block id="fb3bd9a69b565a8866ad383666b98f8c" category="list-text">Azure 中階層式資料的預設儲存存取層為 _hot_ 層。熱層是經常存取資料的理想選擇。</block>
+  <block id="45c06cdb409b9857a0b2089bf2cff7a0" category="paragraph">如果您不打算存取非作用中資料、可以改用 _cool 儲存層來降低儲存成本。當您變更儲存層時、非作用中的資料會從熱儲存層開始、並在 30 天後無法存取資料時、移轉至冷卻儲存層。</block>
+  <block id="f2bc66356d174d95b97b4e9b8b873540" category="list-text">這個系統會將非作用中的資料分層至單一Google Cloud Storage儲存庫。Cloud Volumes ONTAP</block>
+  <block id="be7745616b03b282d0a3277eb8d1298c" category="paragraph">Cloud Manager會為每個工作環境建立一個儲存區、並將其命名為「網路資源池」、「叢集唯一識別碼」。並不會針對每個 Volume 建立不同的儲存區。</block>
+  <block id="8017782df4a8330f5df324c1dfbeaf59" category="paragraph">Cloud Manager建立儲存庫時、會使用下列預設設定：</block>
+  <block id="bd15f9947281cda8b8713ff72eb007f8" category="list-text">位置類型：地區</block>
+  <block id="95e66c145ec5a9c6db0940e3c8b89f10" category="list-text">公共存取：受物件ACL限制</block>
+  <block id="ed2bfa2a7df130888132e9df08fe91a7" category="list-text">存取控制：精細的</block>
+  <block id="59ec9a96a05b9ff668ebee36565638b7" category="list-text">保護：無</block>
+  <block id="77d680745644d1c19a022cc0a306f88b" category="list-text">資料加密：Google管理的金鑰</block>
 </blocks>
