@@ -1,0 +1,26 @@
+= S3 Glacier即時擷取
+:allow-uri-read: 
+
+
+
+
+=== S3 Glacier即時擷取
+
+您現在可以將階層式資料儲存在Amazon S3 Glacier即時擷取儲存類別中。
+
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.html#changing-the-storage-class-for-tiered-data["瞭解如何變更階層式資料的儲存類別"]。
+
+
+
+=== Connector需要新的AWS權限
+
+在單一可用度區域（AZ）中部署HA配對時、現在需要下列權限才能建立AWS分散配置群組：
+
+[source, json]
+----
+"ec2:DescribePlacementGroups",
+"iam:GetRolePolicy",
+----
+現在需要這些權限、才能最佳化Cloud Manager建立放置群組的方式。
+
+請務必為您新增至Cloud Manager的每組AWS認證資料提供這些權限。您可以在上找到最新的權限清單 https://mysupport.netapp.com/site/info/cloud-manager-policies["Cloud Manager 原則頁面"^]。

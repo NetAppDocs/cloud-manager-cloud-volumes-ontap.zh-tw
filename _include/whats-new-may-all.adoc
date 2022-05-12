@@ -1,0 +1,25 @@
+= 版本9.11.0 Cloud Volumes ONTAP
+:allow-uri-read: 
+
+
+
+
+=== 版本9.11.0 Cloud Volumes ONTAP
+
+Cloud Manager現在可以部署及管理Cloud Volumes ONTAP 功能。
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes["深入瞭Cloud Volumes ONTAP 解本版的更新功能"^]。
+
+
+
+=== 強化中介升級
+
+當Cloud Manager升級HA配對的中介程式時、它現在會在刪除開機磁碟之前驗證是否有新的中介映像可用。此變更可確保在升級程序失敗時、中介程序仍能繼續順利運作。
+
+
+
+=== K8s標籤已移除
+
+K8s索引標籤已在先前版本中過時、現在已移除。如果您想要搭配Cloud Volumes ONTAP 使用Kubernetes搭配使用、可以將託管Kubernetes叢集新增至Canvas、作為進階資料管理的工作環境。
+
+https://docs.netapp.com/us-en/cloud-manager-kubernetes/concept-kubernetes.html["深入瞭解Cloud Manager中的Kubernetes資料管理"^]
