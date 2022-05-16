@@ -112,7 +112,8 @@ HA 配對::
 ----
 您可以在上找到最新的權限清單 https://mysupport.netapp.com/site/info/cloud-manager-policies["Cloud Manager 原則頁面"^]。
 
-HA配對不需要這些權限。
+
+NOTE: HA配對不需要前三個權限。
 
 .步驟
 . 請使用下列Cloud Manager API呼叫、取得Azure訂閱中的金鑰保存清單。

@@ -56,7 +56,9 @@ sidebar:
           url: "/reference-security-groups.html"
       - title: 設定 AWS KMS
         url: "/task-setting-up-kms.html"
-      - title: 在 AWS 中啟動系統
+      - title: 設定授權
+        url: "/task-set-up-licensing-aws.html"
+      - title: 在Cloud Volumes ONTAP AWS中啟動
         url: "/task-deploying-otc-aws.html"
       - title: 開始使用 AWS C2S
         url: "/task-getting-started-aws-c2s.html"
@@ -71,7 +73,9 @@ sidebar:
         url: "/reference-networking-azure.html"
       - title: 使用您的金鑰設定加密
         url: "/task-set-up-azure-encryption.html"
-      - title: 在 Azure 中啟動系統
+      - title: 設定授權
+        url: "/task-set-up-licensing-azure.html"
+      - title: 在Cloud Volumes ONTAP Azure中推出功能
         url: "/task-deploying-otc-azure.html"
     - title: 開始使用Google Cloud
       flavor: gcp
@@ -88,7 +92,9 @@ sidebar:
         url: "/task-creating-gcp-service-account.html"
       - title: 使用客戶管理的加密金鑰
         url: "/task-setting-up-gcp-encryption.html"
-      - title: 在 GCP 中啟動系統
+      - title: 設定授權
+        url: "/task-set-up-licensing-google.html"
+      - title: 在Cloud Volumes ONTAP Google Cloud上啟動
         url: "/task-deploying-gcp.html"
   - title: 使用Cloud Volumes ONTAP
     entries:
@@ -189,6 +195,8 @@ sidebar:
         url: "/task-configure-ems.html"
   - title: 概念
     entries:
+    - title: 授權
+      url: "/concept-licensing.html"
     - title: 儲存設備
       entries:
       - title: 用戶端傳輸協定
@@ -218,14 +226,12 @@ sidebar:
         url: "/concept-ha-google-cloud.html"
       - title: 儲存設備接管期間的行動
         url: "/concept-degraded-ha-pair.html"
-    - title: 授權
-      url: "/concept-licensing.html"
-    - title: 管理節點型BYOL
-      url: "/concept-license-management.html"
     - title: 安全性
       url: "/concept-security.html"
     - title: 效能
       url: "/concept-performance.html"
+    - title: 管理節點型BYOL
+      url: "/concept-license-management.html"
     - title: 不再是不知道的數位顧問AutoSupport Active IQ
       url: "/concept-active-iq.html"
     - title: 預設組態
@@ -311,4 +317,6 @@ homepage:
       url: https://cloud.netapp.com/blog/topic/cloud-volumes-ontap
     - title: 雲端網路研討會
       url: https://cloud.netapp.com/events
-product-family: {}
+product-family:
+  name: Cloud Manager
+  repo: cloud-manager-family

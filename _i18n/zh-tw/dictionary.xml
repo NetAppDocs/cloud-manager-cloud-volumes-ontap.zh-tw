@@ -600,7 +600,6 @@
   <block id="60caa3723d35318302867d5f5c093f4a" category="paragraph">如果您想要將客戶管理的金鑰與單一節點Cloud Volumes ONTAP 的作業系統搭配使用、請確定Cloud Manager Connector具有下列權限：</block>
   <block id="eaf263597aafb24c99ce4e16af420ae8" category="inline-link">Cloud Manager 原則頁面</block>
   <block id="9de255345c89e4a84f3125ff96e9f3ed" category="paragraph">您可以在上找到最新的權限清單<block ref="0e92ab1ca454f31f07a6e5fba6519a3a" category="inline-link-rx"></block>。</block>
-  <block id="48edb81fae9879bec2b513900f786155" category="paragraph">HA配對不需要這些權限。</block>
   <block id="c4e08114666cf6bc480ea8458e1dd083" category="list-text">請使用下列Cloud Manager API呼叫、取得Azure訂閱中的金鑰保存清單。</block>
   <block id="b5bc96f48f2241c984568df161fa1a37" category="paragraph">對於HA配對：「Get /azure/ha/mata/Vault」</block>
   <block id="ac20be2c156e351d08e2cd3c7c63b584" category="paragraph">對於單一節點：「Get /azure/VSA/中繼資料/資料保存」</block>
@@ -1217,13 +1216,8 @@
   <block id="46cb473c7acee70e9be90113f3acce9d" category="list-text">您可以在Cloud Volumes ONTAP 任何雲端供應商中、使用最多10個包含每個NetApp帳戶的Freemium產品的NetApp系統。</block>
   <block id="922e54a2e69b279fbb6ab93d4f189181" category="list-text">如果Cloud Volumes ONTAP 供應的功能超過500 GiB、Cloud Manager會將系統轉換成Essentials套件（容量型授權）。</block>
   <block id="2b5b1f6feb7719bc282a3518f33b1784" category="paragraph">任何其他配置容量低於500 GiB的系統、都會留在Freemium上（只要使用Freemium產品進行部署）。</block>
-  <block id="9911a1f4ee7b400064d4cd20d4db15cb" category="paragraph">若要開始使用Freemium產品、請建立一個全新Cloud Volumes ONTAP 的運作環境、並在系統提示您選擇充電方法時選擇* Freemium *。</block>
   <block id="6602afb860a6cca23c3b75bf601365eb" category="inline-link-macro">在 Cloud Volumes ONTAP AWS 中啟動</block>
-  <block id="26f0ec41bd782abb78904a7e17e4540d" category="list-text"><block ref="26f0ec41bd782abb78904a7e17e4540d" category="inline-link-macro-rx"></block></block>
   <block id="7ca1af679f0ba86814f2ad58a578cb7c" category="inline-link-macro">在 Cloud Volumes ONTAP Azure 中啟動</block>
-  <block id="81355f85b1414bc80c91b2a346852c07" category="list-text"><block ref="81355f85b1414bc80c91b2a346852c07" category="inline-link-macro-rx"></block></block>
-  <block id="254d5c87d5ab437395f866390ea49cd0" category="inline-link-macro">在Cloud Volumes ONTAP Google Cloud上啟動</block>
-  <block id="ff254a90fa1819a2f48478bd6eb6d6c3" category="list-text"><block ref="ff254a90fa1819a2f48478bd6eb6d6c3" category="inline-link-macro-rx"></block></block>
   <block id="19bcaffbe8361f9d452beabc8065f223" category="section-title">容量型授權套件</block>
   <block id="e7cf94fb6f7d5441689859c52b410a98" category="paragraph">容量型授權可讓您針對Cloud Volumes ONTAP 容量的每個TiB付費。授權與您的NetApp帳戶相關聯、只要授權有足夠的容量可用、您就能根據授權向多個系統收取費用。</block>
   <block id="68935a38790e91889cd56742a47079f3" category="paragraph">例如、您可以購買單一20 TiB授權、部署四Cloud Volumes ONTAP 個作業系統、然後將5個TiB磁碟區分配給每個系統、總共20 TiB。容量可用於Cloud Volumes ONTAP 該帳戶中部署的每個作業系統上的磁碟區。</block>
@@ -1240,9 +1234,7 @@
   <block id="c603e0cd8afdb5636238d7d652481a08" category="paragraph">授權不限於單一雲端供應商。</block>
   <block id="f28f2c679b3208af9d5fe292ad6356b8" category="list-text">從雲端供應商的市場訂購（PAYGO）、每小時一次。</block>
   <block id="612b1fa388e719e990cb953520986784" category="list-text">一年一度的雲端供應商市場合約。</block>
-  <block id="1ce7e5f92b8c11b96a7b6fea0435803d" category="list-text">在Azure中、您需要與NetApp銷售代表合作、以購買年度合約。該合約可在Azure Marketplace以私人優惠形式提供。</block>
   <block id="51606c7b614cdc7ab9e0489981838dfa" category="paragraph">NetApp與您分享私人優惠之後、您可以在工作環境建立期間、從Azure Marketplace訂閱年度方案。</block>
-  <block id="d3ef010be2a71bc188b8cf2beb05ac32" category="list-text">在Google Cloud中、您需要與NetApp銷售代表合作、以購買年度合約。合約可在Google Cloud Marketplace以私人優惠形式提供。</block>
   <block id="f96723ecb29e40ca9b9fb042ab6ff4ef" category="paragraph">在NetApp與您分享私人優惠之後、您可以在工作環境建立期間、從Google Cloud Marketplace訂閱年度方案。</block>
   <block id="cf3a2d2c139bf5c9cc87fe714bfff3b1" category="paragraph">請注意下列事項：</block>
   <block id="743cd9f94465042cc1367604dce1ec22" category="list-text">如果您向NetApp（BYOL）購買授權、也必須向雲端供應商的市場訂閱PAYGO產品。</block>
@@ -1270,9 +1262,6 @@
   <block id="07e1d66babe77070cc76a4e637c9f26d" category="section-title">如何開始使用</block>
   <block id="e8e4b0657c553a7e676cdc5f933acb44" category="inline-link">請聯絡NetApp銷售人員以取得授權</block>
   <block id="9740246e7721e1c54946ab07fff5f1b1" category="list-text"><block ref="9740246e7721e1c54946ab07fff5f1b1" category="inline-link-rx"></block></block>
-  <block id="362ed31bbc07a795001d3f4ea80581f9" category="inline-link-macro">將授權新增至Cloud Manager</block>
-  <block id="86dc62d0894318f5adc857a33f5e54e6" category="list-text"><block ref="86dc62d0894318f5adc857a33f5e54e6" category="inline-link-macro-rx"></block></block>
-  <block id="9097a90c4b4bcf1f8164f90283a92eec" category="list-text">建立Cloud Volumes ONTAP 一套功能完善的系統時、請選擇容量型BYOL充電方法</block>
   <block id="69c3857459c8cf827b42c61c1b02fdd2" category="paragraph">以隨成長付費訂閱為基礎的服務、可為偏好營運成本使用模式的使用者、提供無縫的混合雲體驗、以供預先支付資本支出或租賃之用。</block>
   <block id="c2d000408838a6b2031536d54c067fd9" category="paragraph">充電是根據Cloud Volumes ONTAP 您在Keystone Flex訂閱中一或多對的已認可容量大小而計算。</block>
   <block id="892e0a2b50821daaef1eddd0b5cfa034" category="paragraph">每個磁碟區的已配置容量會定期彙總、並與Keystone Flex訂閱上的已提交容量進行比較、而且任何超額的費用都會在Keystone Flex訂閱上以「連串」的形式進行收費。</block>
@@ -1281,11 +1270,9 @@
   <block id="6f4c790c1d9416682af57e0872022ec6" category="paragraph">Keystone Flex訂閱支援HA配對。目前單一節點系統不支援此授權選項。</block>
   <block id="aad2b08c0103cffcbb5efae0a56ee747" category="paragraph">每Cloud Volumes ONTAP 個個別的支援透過磁碟和分層至物件儲存設備、最多可支援2個PIB容量。</block>
   <block id="b2e75bbfb9933bc21b7f875e8676641d" category="inline-link">請聯絡NetApp</block>
-  <block id="63573dab314c98e4e22e47653c15cf64" category="list-text">如果您尚未訂閱、<block ref="49d6686f1a400348bbcff579d9d978a6" category="inline-link-rx"></block>。</block>
   <block id="697cc5090bb98ee57c1e28438084378b" category="list-text">mailto：ng-keystone-success@netapp.com [聯絡NetApp]、以一或多個Keystone Flex訂閱授權您的Cloud Manager使用者帳戶。</block>
   <block id="72aa254218c757aad3e3703bdaf90694" category="inline-link-macro">連結您的訂閱內容以供Cloud Volumes ONTAP 搭配使用</block>
   <block id="cf2d2d8d3f12faf0a0924f5c5c89598b" category="list-text">NetApp授權您的帳戶之後、 <block ref="92e1d32055031f48c102a52373394710" category="inline-link-macro-rx"></block>。</block>
-  <block id="de4b56542275c5f0b46bea6fcc27b034" category="list-text">當您建立Cloud Volumes ONTAP 一套功能完善的系統時、請選取Keystone Flex訂閱充電方法。</block>
   <block id="a2f6a3e98ea1849ed1ab07d821bf6a18" category="section-title">節點型授權</block>
   <block id="361abfc2eaabdb045de49dafd20dbdf1" category="paragraph">節點型授權是前一代的授權模式、可讓您依Cloud Volumes ONTAP 節點授權使用。此授權模式不適用於新客戶、也不提供免費試用。副節點充電已由上述的副容量充電方法取代。</block>
   <block id="749b4d71be76e8fee5fe7895ae5ff71d" category="paragraph">現有客戶仍可使用節點型授權：</block>
@@ -1301,23 +1288,14 @@
   <block id="fc2be74c7bf9f46e12967c2298a899ba" category="inline-link">深入瞭解NetApp客戶</block>
   <block id="e821f27f6bd96fe3103abd85280bcc70" category="paragraph"><block ref="e0109745edea3dd07561e6ef24e031b3" category="inline-link-rx"></block>。</block>
   <block id="72d7d9fbd92253175591abfdb19dc6a1" category="summary">在 Cloud Volumes ONTAP AWS 中部署時、您可以選擇符合工作負載需求的預先設定系統、也可以建立自己的組態。如果您選擇自己的組態、應該瞭解可用的選項。</block>
-  <block id="593d1728ea08859193a2e2f9043853a7" category="doc">在 Cloud Volumes ONTAP AWS 中規劃您的功能</block>
-  <block id="5d50fcd8f4e6a4113496ba7c209ba4c1" category="section-title">檢視支援的區域</block>
   <block id="3b61cbbfa7452cc07df9dbea0756d650" category="inline-link">檢視支援區域的完整清單</block>
   <block id="af510d6a7a30587243cc07000a8ff59a" category="paragraph">支援大部分 AWS 地區的支援。 Cloud Volumes ONTAP<block ref="b20bc1eb7525b24c91ae87786e46adca" category="inline-link-rx"></block>。</block>
   <block id="37c70997814f20525df54f05b63b82ef" category="inline-link">瞭解如何啟用地區</block>
   <block id="20f4e542fc804667ca2377386269841c" category="paragraph">您必須先啟用較新的 AWS 區域、才能在這些區域中建立及管理資源。<block ref="37189395d1b647ca4eabf700b1185d58" category="inline-link-rx"></block>。</block>
-  <block id="e28e4fd39a62c787385e3347fb34c217" category="section-title">選擇授權</block>
   <block id="34a3fb1f13bd543905a9f22e8469763d" category="inline-link-macro">深入瞭Cloud Volumes ONTAP 解適用於此功能的授權選項</block>
-  <block id="97f5fe41b9c5239404fc2fc0c2b361b8" category="paragraph">有多種授權選項可供Cloud Volumes ONTAP 選擇。每個選項都能讓您選擇符合需求的消費模式。 <block ref="69100fd89c8fc892aa253073563db45d" category="inline-link-macro-rx"></block>。</block>
-  <block id="cd90992fc6cbd0d892984dd5302bf5d2" category="section-title">選擇支援的執行個體</block>
   <block id="63c78fe4096c032cda667cb626771016" category="paragraph">根據您選擇的授權類型、支援多種執行個體類型。 Cloud Volumes ONTAP</block>
   <block id="d4f1750ecbae7aeb8e4608c6adadf1b3" category="inline-link">AWS支援Cloud Volumes ONTAP 的支援組態</block>
   <block id="986760502c5f72b9233b40b1621b0e4c" category="paragraph"><block ref="986760502c5f72b9233b40b1621b0e4c" category="inline-link-rx"></block></block>
-  <block id="efed60f5c5aabbca9ae1c4505b4e0afc" category="section-title">選擇支援 Flash Cache 的組態</block>
-  <block id="dfeeabb8d703f59f841c2a6e2ed8d240" category="inline-link-macro">深入瞭解 Flash Cache</block>
-  <block id="4ee5a8547aa7c7947c6129c3654d9b84" category="paragraph">AWS 中的 Cloud Volumes ONTAP 部分支援部分支援 NVMe 儲存設備、 Cloud Volumes ONTAP 這些儲存設備可做為 _Flash Cache 、以獲得更好的效能。 <block ref="1574eec793654b59b67dc35ae24f18a5" category="inline-link-macro-rx"></block>。</block>
-  <block id="d8f4a27859ff4e352b2a9c267685cc52" category="section-title">瞭解儲存限制</block>
   <block id="5356346579bd6c821def647592378a8a" category="paragraph">一個不含資源的系統的原始容量上限 Cloud Volumes ONTAP 與授權有關。其他限制會影響集合體和磁碟區的大小。在規劃組態時、您應該注意這些限制。</block>
   <block id="22cb0da70aef15be2f870ac70af6492c" category="inline-link">AWS的儲存限制Cloud Volumes ONTAP</block>
   <block id="28d1200478fccc009b0e5ac11ab32501" category="paragraph"><block ref="28d1200478fccc009b0e5ac11ab32501" category="inline-link-rx"></block></block>
@@ -1349,28 +1327,23 @@
   <block id="144201862f58fd8327905be75f594393" category="list-text">即使您選擇較大的磁碟（例如六個4 TiB磁碟）、也可能無法取得所有IOPS、因為EC2執行個體可能達到其頻寬限制。</block>
   <block id="98495077f72553e0d5ba98d8177af291" category="paragraph">如需 EBS 磁碟效能的詳細資訊、請參閱<block ref="5f00b7f6405ad1bb7d391aa3c3ef6190" category="inline-link-rx"></block>。</block>
   <block id="5bee39e5cdf73892d684fdac021599f2" category="paragraph">請觀看下列影片、以瞭解如何在 Cloud Volumes ONTAP AWS 中調整您的更新功能：</block>
-  <block id="744b958daf332049fb4d6571607b034e" category="section-title">檢視預設系統磁碟</block>
   <block id="8ab1470cb7264b8c9ef83e6a7b228274" category="paragraph">Cloud Manager除了儲存使用者資料之外、也購買雲端儲存設備來儲存Cloud Volumes ONTAP 作業系統資料（開機資料、根資料、核心資料和NVRAM）。為了規劃目的、在部署Cloud Volumes ONTAP 完更新之前、您可能需要先檢閱這些詳細資料。</block>
   <block id="6d887d21049039b65defd1f905fd21e5" category="inline-link-macro">在Cloud Volumes ONTAP AWS中檢視系統資料的預設磁碟</block>
   <block id="e29d76c746533b661338b9103b2546c1" category="paragraph"><block ref="ee3828e24717bc4fd1707ccdda9b4399" category="inline-link-macro-rx"></block>。</block>
   <block id="7b2dc5bc7b1f341114987baf9730bcdf" category="inline-link">檢視Connector預設組態的詳細資料</block>
   <block id="fa680b63ec46b9e55c8065f6a6559c8c" category="admonition">連接器也需要系統磁碟。<block ref="fe6b3f8fb441f312d51a427e3e7d4b9c" category="inline-link-rx"></block>。</block>
-  <block id="984a97e0f54e410ca28c6bd5afec7532" category="section-title">準備在 Cloud Volumes ONTAP AWS Outpost 中部署功能</block>
   <block id="996af92ade7f6e5af3be3c265f31fd2c" category="paragraph">如果您有 AWS Outpost 、您可以 Cloud Volumes ONTAP 在「工作環境」精靈中選取 Outpost VPC 、在該 Outpost 中部署功能不全。體驗與 AWS 中的任何其他 VPC 相同。請注意、您必須先在 AWS Outpost 部署 Connector 。</block>
   <block id="50ebfbf4de02a5dcfa64a72d2eaeb26b" category="paragraph">有幾項限制可以指出：</block>
   <block id="3ff92f3e56a256140e09a01036ff5637" category="list-text">目前僅 Cloud Volumes ONTAP 支援單一節點的不支援系統</block>
   <block id="4c1f393916fe04b53ddaa79934ee8d6f" category="list-text">您可以搭配 Cloud Volumes ONTAP 使用的 EC2 執行個體僅限於您的據點所提供的項目</block>
   <block id="b73cfe36c7ff7b1b656525a530b23497" category="list-text">目前僅支援通用SSD（gp2）</block>
-  <block id="5b95f1acd6fc25fdfd4838c13fcca05f" category="section-title">AWS 網路資訊工作表</block>
   <block id="f6556e06515d3498d35873d8ad30c257" category="paragraph">在 Cloud Volumes ONTAP AWS 中啟動時、您需要指定 VPC 網路的詳細資料。您可以使用工作表向系統管理員收集資訊。</block>
-  <block id="349962c908812eb695c131067d76657c" category="section-title">網路資訊 Cloud Volumes ONTAP</block>
   <block id="8257a1b1f341a8911b9a367bfbdbfdeb" category="cell">AWS 資訊</block>
   <block id="d9fa81fca11f55d9fd9f33b399ab9cd6" category="cell">您的價值</block>
   <block id="f447ac856e7e72435904956e3b15f433" category="cell">區域</block>
   <block id="d85c80578ad0849a611c1056b63e385c" category="cell">VPC</block>
   <block id="9770c6469e9d27585d6c0c389ede7bc3" category="cell">子網路</block>
   <block id="e1ddb68956ddb6d57359abd83f2272ac" category="cell">安全性群組（如果使用您自己的）</block>
-  <block id="3686a09ab8b3d0a583f735c9feb71507" category="section-title">多個 AZs 中 HA 配對的網路資訊</block>
   <block id="ef3aa0baccf43562ffaf346f28a4e751" category="cell">節點 1 可用度區域</block>
   <block id="e7cae4e49cc1d6f6cd1ffb46b1c64859" category="cell">節點 1 子網路</block>
   <block id="1dc15fa9442061dbb5bbf3b5b1f9f9fe" category="cell">節點 2 可用度區域</block>
@@ -1382,10 +1355,8 @@
   <block id="89594d96881ab1d23dec23af9c8904ab" category="cell">節點 1 上資料的浮動 IP 位址</block>
   <block id="0c24475ef585478c403b399a4afc227c" category="cell">節點 2 上資料的浮動 IP 位址</block>
   <block id="7d7ca8f39ddaf09ca365d0d1f9421649" category="cell">浮動 IP 位址的路由表</block>
-  <block id="0ea8f9c065f053129f8b861e2aff16a2" category="section-title">選擇寫入速度</block>
   <block id="7e747f6f397a13c9ddfd3cf35ed0a063" category="inline-link-macro">深入瞭解寫入速度</block>
   <block id="b0319d91046fc1035a9df13aebcba1a5" category="paragraph">Cloud Manager 可讓您選擇 Cloud Volumes ONTAP 適合的寫入速度設定。在您選擇寫入速度之前、您應該先瞭解一般與高設定之間的差異、以及使用高速寫入速度時的風險與建議。 <block ref="12222f10612c9f092ca31c9e99478649" category="inline-link-macro-rx"></block>。</block>
-  <block id="97b545e367193c78419e68a63bf50e2e" category="section-title">選擇 Volume 使用設定檔</block>
   <block id="66fd1454b4219344810fdf7e39a08f50" category="paragraph">包含多項儲存效率功能、可減少您所需的總儲存容量。 ONTAP在 Cloud Manager 中建立 Volume 時、您可以選擇啟用這些功能的設定檔、或是停用這些功能的設定檔。您應該深入瞭解這些功能、以協助您決定要使用的設定檔。</block>
   <block id="5f0f6a263ce31d73e1f0d174cdeb2712" category="paragraph">NetApp 儲存效率功能提供下列效益：</block>
   <block id="6cd880eabbec3488232c6cba3fbcf998" category="list-text">資源隨需配置</block>
@@ -1537,9 +1508,7 @@
   <block id="b71ed75241f297eae2cc9775c726010d" category="list-text">在移動磁碟區時指定了 _ 分層原則 _ 選項、以變更分層原則。</block>
   <block id="95bfb9cab1e60976b25e277c0ffbcb84" category="list-text">磁碟區移動時指定了「 -generation-destination-key_ 」選項。</block>
   <block id="6d44008242ba7ea63431fdc2a35e3bfd" category="summary">在 Cloud Volumes ONTAP Azure 中部署時、您可以選擇符合工作負載需求的預先設定系統、也可以自行建立組態。如果您選擇自己的組態、應該瞭解可用的選項。</block>
-  <block id="4735ad3a3627a06b0af62dc5a9601e18" category="doc">規劃 Cloud Volumes ONTAP Azure 的不一樣組態</block>
   <block id="88a397c48e684bb909af786b6f5aea86" category="paragraph">大多數Microsoft Azure地區均支援此功能。Cloud Volumes ONTAP<block ref="b20bc1eb7525b24c91ae87786e46adca" category="inline-link-rx"></block>。</block>
-  <block id="a74f2ae17c4a444095b6545be6fc64c0" category="section-title">支援的 VM 類型</block>
   <block id="00d6f59010ef5b4445142547ef7725f2" category="paragraph">根據您選擇的授權類型、支援多種 VM 類型。 Cloud Volumes ONTAP</block>
   <block id="a09c3a7be8e7dc42776a7b03793d536c" category="inline-link">Azure支援Cloud Volumes ONTAP 的支援功能組態</block>
   <block id="374b69ed8baae6c10fc401a5f23dfabf" category="paragraph"><block ref="374b69ed8baae6c10fc401a5f23dfabf" category="inline-link-rx"></block></block>
@@ -1569,10 +1538,8 @@
   <block id="1379f2fc209ca9b10515b4b456b87b83" category="list-text"><block ref="1379f2fc209ca9b10515b4b456b87b83" category="inline-link-rx"></block></block>
   <block id="882f18d482755d0120f3d59ecedc9887" category="inline-link">Microsoft Azure ：網頁 Blobs 定價</block>
   <block id="9fe7df48343f4b7263eb4eefc0b3eb32" category="list-text"><block ref="9fe7df48343f4b7263eb4eefc0b3eb32" category="inline-link-rx"></block></block>
-  <block id="d0c3adc7824df600927f5345688ddfc0" category="paragraph">Azure 中的一個支援本地 NVMe 儲存設備的組態、可將其用作 _Flash Cache 以獲得更好的效能。 Cloud Volumes ONTAP Cloud Volumes ONTAP <block ref="1574eec793654b59b67dc35ae24f18a5" category="inline-link-macro-rx"></block>。</block>
   <block id="abb9fab0b11550f1e50c42a5191b7fc8" category="inline-link-macro">在Cloud Volumes ONTAP Azure中檢視系統資料的預設磁碟</block>
   <block id="573bc0757dd993fbb73ec7f9e2c21774" category="paragraph"><block ref="03046f9e43a56b308b4210b3da88f8a1" category="inline-link-macro-rx"></block>。</block>
-  <block id="c3d895c38670e5638fe4cff74e176aca" category="section-title">Azure 網路資訊工作表</block>
   <block id="572c964a1e5fa0d8e2bd1f51e1a13812" category="paragraph">在 Cloud Volumes ONTAP Azure 中部署時、您需要指定虛擬網路的詳細資料。您可以使用工作表向系統管理員收集資訊。</block>
   <block id="a7ebde4ba503ec21f33259cc56ce827f" category="cell">Azure 資訊</block>
   <block id="a2f3899afcc452f690cc60c38609343a" category="cell">虛擬網路（ vnet ）</block>
@@ -2315,10 +2282,8 @@
   <block id="b3f2fa100e111e8d78c1729bbe7330b9" category="inline-image-macro">概念性影像、顯示 Cloud Volumes ONTAP 以 EzeHA 架構為基礎的元件：兩 Cloud Volumes ONTAP 個 Ez供 節點和一個中介執行個體、每個執行個體位於不同的可用度區域。</block>
   <block id="8baf5cc352903972240801715cac9720" category="paragraph"><block ref="8baf5cc352903972240801715cac9720" category="inline-image-macro-rx" type="image"></block></block>
   <block id="a89897d61f59af926b4d06d06e8b2884" category="summary">部署 Cloud Volumes ONTAP 時、您可以選擇符合工作負載需求的預先設定系統、或是建立自己的組態。如果您選擇自己的組態、應該瞭解可用的選項。</block>
-  <block id="950e7e695356602272f63f5a229978c6" category="doc">在 Cloud Volumes ONTAP Google Cloud 規劃您的不一樣組態</block>
   <block id="70cc6814c68e3ce95f7b70c2f1ea3e9d" category="paragraph">在 Cloud Volumes ONTAP Google Cloud 中部署時、您可以選擇符合工作負載需求的預先設定系統、或是建立自己的組態。如果您選擇自己的組態、應該瞭解可用的選項。</block>
   <block id="cdbc190f457d5caf189142ea336d2259" category="paragraph">支援大部分Google Cloud地區的支援。Cloud Volumes ONTAP<block ref="b20bc1eb7525b24c91ae87786e46adca" category="inline-link-rx"></block>。</block>
-  <block id="bdffec98e6d23168e67ec60edb566516" category="section-title">支援的機器類型</block>
   <block id="64efea6517490623e51052b533085d96" category="paragraph">根據您選擇的授權類型、支援多種機器類型。 Cloud Volumes ONTAP</block>
   <block id="9ee8a2504ba9f03aae4b30973ea35ad4" category="inline-link">支援的GCP組態Cloud Volumes ONTAP</block>
   <block id="9402e8f13b9c1b7b1bbcad4d4c4eb4a9" category="paragraph"><block ref="9402e8f13b9c1b7b1bbcad4d4c4eb4a9" category="inline-link-rx"></block></block>
@@ -2352,7 +2317,6 @@
   <block id="c5a8d51eba7ea9cbd6a8802865ba4525" category="inline-link">Google Cloud文件：資源配額</block>
   <block id="145245423d8490935c244989b30c7cd8" category="list-text"><block ref="145245423d8490935c244989b30c7cd8" category="inline-link-rx"></block></block>
   <block id="a4f07a5384bf6c0ff50811b7cfdaf1a5" category="paragraph">Google Cloud Compute Engine會強制執行資源使用量配額、因此您應該在部署Cloud Volumes ONTAP 時確保未達到上限。</block>
-  <block id="65604a5917b6e86d1faf2a91fd87a19f" category="section-title">GCP 網路資訊工作表</block>
   <block id="24cf7e4ba799cb013c8978351f09a675" category="paragraph">在 Cloud Volumes ONTAP GCP 中部署時、您需要指定虛擬網路的詳細資料。您可以使用工作表向系統管理員收集資訊。</block>
   <block id="0708e6ef30240c1f7018e5cefe7026d8" category="paragraph">* 單節點系統的網路資訊 *</block>
   <block id="4ad8eab08ba97cad000a26933a94c309" category="cell">GCP 資訊</block>
@@ -2645,24 +2609,7 @@
   <block id="72fa1e29e831adb71ca0ce01f7356dc9" category="list-text">瞭解您要使用的組態。</block>
   <block id="754f5b76b77778c181ca6deb0a7427f4" category="inline-link-macro">規劃 Cloud Volumes ONTAP 您的需求組態</block>
   <block id="ca0eff3a522dccb4b8f4c30bbad3365e" category="paragraph">您應該已經選擇組態、並從系統管理員取得 Azure 網路資訊。如需詳細資訊、請參閱 <block ref="fab04a1941385806648057c8597be7c4" category="inline-link-macro-rx"></block>。</block>
-  <block id="84b7c8722c378a5a3900339c0471e42e" category="inline-link-macro">深入瞭Cloud Volumes ONTAP 解關於功能驗證的資訊</block>
-  <block id="a4fd42c036a07fed98e99dacf3ec78a5" category="list-text">瞭解在「新增工作環境」精靈中選擇特定授權選項所需的條件。 <block ref="7376a59e90164faf3f67955f01c06abb" category="inline-link-macro-rx"></block>。</block>
-  <block id="3cb8620ec48e86309ba87825325a80a3" category="cell">授權選項</block>
-  <block id="9b97b7bd5e0a87be7bf218224ada83cf" category="cell">需求</block>
-  <block id="19ef652a7fc7d4a93af59b8c2aa472db" category="cell">如何滿足需求</block>
   <block id="d8fe59d93325a956d9b5fd3e85bb96d8" category="cell">Freemium</block>
-  <block id="e7b024fbab7b6b94ff92aee96877e253" category="cell">需要Marketplace訂閱或NetApp支援網站（NSS）帳戶。</block>
-  <block id="d559bef8be156c394bc7a5cc5078bacd" category="cell">您可以從*詳細資料與認證*頁面訂閱雲端供應商的市場。您可以在「*充電方法」和「NSSAccount *」頁面上輸入您的NSS*帳戶。</block>
-  <block id="8b1c536c0388b1b7a0faf3382eec7dc3" category="cell">專業或基本套件</block>
-  <block id="2a4456ea68055a3bbee831803b0e3f6e" category="cell">需要Marketplace訂閱或容量型授權（BYOL）。如果您的帳戶沒有有效的容量型授權、或是您的資源配置超過授權容量、建議您訂閱Marketplace以容量為基礎進行收費。</block>
-  <block id="dc848360dfe54e5835632652826ddf42" category="inline-link-macro">瞭解如何新增容量型BYOL授權</block>
-  <block id="bcff250116077969741295484701f2ce" category="cell">您可以從*詳細資料與認證*頁面訂閱雲端供應商的市場。如果您想要使用從NetApp購買的容量型授權（BYOL）、您必須先將其新增至*數位錢包*。 <block ref="ebdf985ceca485ced33be06984101ac1" category="inline-link-macro-rx"></block>。</block>
-  <block id="4c76ea62d1599981f43ad94178ac5ebf" category="cell">您的帳戶必須獲得授權、而且訂閱必須啟用Cloud Volumes ONTAP 才能與效益管理系統搭配使用。</block>
-  <block id="126cb098464cfbb7b93d65fd5a563786" category="list-text">當您建立Cloud Volumes ONTAP 一個「叢集HA配對」時、請選取Keystone Flex訂閱充電方法。</block>
-  <block id="ed45a0fe1bc7dca888547ef1c6e1dc0b" category="cell">每個節點授權</block>
-  <block id="1bf260c51963be4201b956cc298d688c" category="cell">您必須訂閱Marketplace、否則必須自行攜帶授權（BYOL）。此選項適用於現有訂閱或現有授權的客戶。不適用於新客戶。</block>
-  <block id="cfd7d8e09028f7b4a781a310ce24a2e4" category="inline-link-macro">瞭解如何新增節點型BYOL授權</block>
-  <block id="9ce45674c38b94f304a41e9b385f0569" category="cell">如果您想要使用從NetApp購買的節點型授權（BYOL）、您必須先將其新增至*數位錢包*。 <block ref="58b2fdd499a834fa9c4bebd70a6829bc" category="inline-link-macro-rx"></block>。您可以在「*充電方法」和「NSSAccount *」頁面上輸入您的NSS*帳戶。</block>
   <block id="475336969c03eea7efbd3b9cbdd8fe70" category="paragraph">Cloud Manager Cloud Volumes ONTAP 在 Azure 中建立一套功能完善的系統時、會建立多個 Azure 物件、例如資源群組、網路介面和儲存帳戶。您可以在精靈結束時檢閱資源摘要。</block>
   <block id="088426a95c1a721001f3ed56ac2f4ed0" category="admonition-title">資料遺失的可能性</block>
   <block id="72cd91c0deb59fc4b814e6cafc8ff514" category="paragraph">最佳實務做法是針對每Cloud Volumes ONTAP 個系統使用新的專屬資源群組。</block>
@@ -2703,10 +2650,6 @@
   <block id="aeba611d332bf85ad8d5a14dd92fa935" category="inline-link-macro">檢視預設的安全性群組</block>
   <block id="44651ffc55fe78607ad39789f43eab9b" category="cell">如果您選擇現有的安全群組、則必須符合Cloud Volumes ONTAP 下列需求： <block ref="f88b68abd6e0fcb97b26739e6dccf3c6" category="inline-link-macro-rx"></block>。</block>
   <block id="045ab321baf13520d6d643ff584cda4b" category="list-text">*充電方法與NSS帳戶*：指定您要搭配此系統使用的收費選項、然後指定NetApp支援網站帳戶。</block>
-  <block id="9dbd3ac8bddbf4313a163e34e79476bf" category="inline-link-macro">瞭解這些充電方法</block>
-  <block id="a6604b5e806c06f0013e1f74d931fab7" category="list-text"><block ref="058936d48e01b3c9878b59ac4948a5fb" category="inline-link-macro-rx"></block>。</block>
-  <block id="173df750cdaadc890e97599f875e86a6" category="inline-link-macro">瞭解精靈中您想要使用的授權方法所需的內容</block>
-  <block id="cee486c3debe5a62f2290da2c4e2bafd" category="list-text"><block ref="d684a00c9b338c707aa26e1a5334789a" category="inline-link-macro-rx"></block>。</block>
   <block id="7fb89373a84cc62fc3eab535be59da09" category="list-text">* 預先設定的套件 * ：選取其中一個套件以快速部署 Cloud Volumes ONTAP 某個作業系統、或按一下 * 建立我自己的組態 * 。</block>
   <block id="07745782b2f663acabec45bb85011c26" category="paragraph">如果您選擇其中一個套件、則只需指定一個 Volume 、然後檢閱並核准組態。</block>
   <block id="090041ff6b386423b91a6f359f34c7a2" category="list-text">* 授權 * ：視 Cloud Volumes ONTAP 需要變更版本、選取授權、然後選取虛擬機器類型。</block>
@@ -2821,8 +2764,6 @@
   <block id="ca52f42dd3382f713546c1e0a47fdc5b" category="paragraph"><block ref="1897e5cb9197f6d16611dcdd2e455fbf" category="inline-link-macro-rx"></block>。</block>
   <block id="7b3f3945f44edcd71357c2f1c55fb2bd" category="inline-link-macro">深入瞭解支援的加密技術</block>
   <block id="3580b85193db6b3c43ddd4b85983e198" category="paragraph"><block ref="abdb9df31479964cd3894d8bc519e3a4" category="inline-link-macro-rx"></block>。</block>
-  <block id="4ed398218e36a2c9c5336f7c88fcc276" category="inline-link-macro">瞭解精靈中您想要使用的授權方法所需的內容。</block>
-  <block id="42cd5e523d2c99cbbfc65e1f3fb4653e" category="list-text"><block ref="42cd5e523d2c99cbbfc65e1f3fb4653e" category="inline-link-macro-rx"></block></block>
   <block id="b41b64534be19d5279eb056f9bad84a5" category="list-text">*《*》（僅限AWS Marketplace年度合約）：請檢閱預設組態、然後按一下*「Continue」（繼續）*或按一下*「Change Configuration」（變更組態）*以選取您自己的組態。Cloud Volumes ONTAP</block>
   <block id="09234f1d126e4d3c4245bc84e7ada7b0" category="paragraph">如果您保留預設組態、則只需指定一個Volume、然後檢閱並核准組態。</block>
   <block id="f6f2e0892cb62bcd1822af8539848e03" category="list-text">*預先設定的套件*（僅限每小時或BYOL）：選取其中一個套件以快速啟動Cloud Volumes ONTAP 功能、或按一下*變更組態*以選取您自己的組態。</block>
@@ -2863,7 +2804,6 @@
   <block id="33b13cf0139beac8e5ee5b05deaa6127" category="paragraph">該地區所有 VPC 的 IP 位址必須位於 CIDR 區塊之外。如需其他詳細資料、請參閱 <block ref="f5127e7e3006bcff7058d08df580da25" category="inline-link-macro-rx"></block>。</block>
   <block id="0d27f0f1131dc607258f48d5dc5dcf14" category="list-text">* 路由表 * ：如果您選擇多個 AZs 、請選取應包含浮動 IP 位址路由的路由表。</block>
   <block id="5e2b7cebb4bf10923692995c621e2e85" category="paragraph">如果您有多個路由表、請務必選取正確的路由表。否則、部分用戶端可能無法存取 Cloud Volumes ONTAP 此功能配對。如需路由表的詳細資訊、請參閱<block ref="8ed06851f50fcdbded65cb78f986bfa5" category="inline-link-rx"></block>。</block>
-  <block id="aa825b723d46c7da14908d94760e0311" category="list-text"><block ref="5b15eba8d6465312e969428262ce1a06" category="inline-link-macro-rx"></block>。</block>
   <block id="b2bb3f64fb5b828b17cb684f3c44b684" category="inline-link">有關節點和 HA 中介器的原則要求 Cloud Volumes ONTAP</block>
   <block id="75b4ad07a93bd884b4cecba578453c90" category="paragraph">如果您偏好使用自己的原則、就必須符合<block ref="a2de7a18595694bfdf2d090235d628ca" category="inline-link-rx"></block>。</block>
   <block id="bcb01838b65b85f35ba0eb30aab65df6" category="paragraph">如果您在啟動執行個體之後需要變更、您可以稍後修改授權或執行個體類型。</block>
@@ -3370,7 +3310,6 @@
   <block id="fc4876ca61d1c336e1f17141c7227b6e" category="cell">使用現有的防火牆原則</block>
   <block id="7f6be0499fe67271d3c198bd726fe0c0" category="inline-link-macro">深入瞭Cloud Volumes ONTAP 解適用於此功能的防火牆規則</block>
   <block id="154e9c61180206ef2d8b605b639fb35f" category="cell">如果您使用現有的防火牆原則、請確定其中包含必要的規則。 <block ref="c3fbed15c1fb154b840fdb8b5504f098" category="inline-link-macro-rx"></block>。</block>
-  <block id="189e842cd43a685a483fb378026a9caf" category="list-text"><block ref="3ab5a6c8f366a38af6d09759fc586206" category="inline-link-macro-rx"></block>。</block>
   <block id="c05ba15abbb9e0a060b98aa13dc7640d" category="paragraph"><block ref="c05ba15abbb9e0a060b98aa13dc7640d" category="inline-image-macro-rx" type="image"></block></block>
   <block id="f72d7e736d5c07e6650c7c59c1d4beae" category="list-text">* 基礎儲存資源 * ：選擇初始 Aggregate 的設定：每個磁碟的磁碟類型和大小。</block>
   <block id="46c8ec27dde6a17388de3058e4f90f1b" category="paragraph">如需選擇磁碟類型和大小的說明、請參閱 <block ref="648252a904437aee014f01faec9e87c4" category="inline-link-macro-rx"></block>。</block>
@@ -3554,16 +3493,13 @@
   <block id="bbf1a68fc5e370127fe0c3f1622dced3" category="sidebar">規劃您的組態</block>
   <block id="9251700e586dc1a410f2e755a8643751" category="sidebar">網路需求</block>
   <block id="f9d148736ba8ad65073e2ae083e6442a" category="sidebar">設定 AWS 傳輸閘道</block>
-  <block id="c515064a3d86cb8016fed1688e3e8136" category="sidebar">在 AWS 中啟動系統</block>
   <block id="c513e9976f1caabf9a057b8deda54b0e" category="sidebar">開始使用 AWS C2S</block>
   <block id="1649f10406b5e0e0054f2cb76197f63a" category="sidebar">開始使用Microsoft Azure</block>
   <block id="97eaaff53e693fb413bacbae932f73ac" category="sidebar">使用您的金鑰設定加密</block>
-  <block id="128457dcd87ab7e0ca3adc36da682846" category="sidebar">在 Azure 中啟動系統</block>
   <block id="34d4ba89a5a404f7068a211071e4b81a" category="sidebar">開始使用Google Cloud</block>
   <block id="516d2ada3b8ef1647b348c09503c54c3" category="sidebar">規劃VPC服務控制</block>
   <block id="41d9e1257b3e21add2e59d038938ea94" category="sidebar">建立服務帳戶</block>
   <block id="2db8d56ab84a46b40fd6fcafd0beedcc" category="sidebar">使用客戶管理的加密金鑰</block>
-  <block id="dfba6b8a5b23c951ee506be258977563" category="sidebar">在 GCP 中啟動系統</block>
   <block id="c2fd420bc91dd3c63f52904944f346db" category="sidebar">使用Cloud Volumes ONTAP</block>
   <block id="a708619095926aab755444a042471757" category="sidebar">授權管理</block>
   <block id="1b972c4e3ca6d87a35d26b21149d2ef2" category="sidebar">Volume與LUN管理</block>
@@ -3608,7 +3544,6 @@
   <block id="112198e8f170ffed5d96373c5574f879" category="sidebar">儲存設備接管期間的行動</block>
   <block id="0b9c6eef4e3d3a222eb04e910d252339" category="sidebar">授權</block>
   <block id="141e0ee5acabd2b9a63fc92c4f5aa348" category="sidebar">管理節點型BYOL</block>
-  <block id="7c584a16cbf4210dc0a344179e274e09" category="sidebar">預設組態</block>
   <block id="0adc03eac86772ad2c75c8f140be417e" category="sidebar">知識與支援</block>
   <block id="63cbcee840097d5056d5062c72eb20d2" category="sidebar">AWS快速入門</block>
   <block id="2231aa494be5fd4b91c5aaa20e7e34e2" category="sidebar">Azure快速入門</block>
@@ -3667,7 +3602,6 @@
   <block id="783e44882ef395447a1b422181ebb3d4" category="section-title">支援Google Cloud</block>
   <block id="c0a92ff7cf6e8a1570f1775a4a7c563d" category="list-text">Google Cloud支援資料分層功能、從Cloud Volumes ONTAP 推出的功能僅支援32個9.6個。</block>
   <block id="0285440088a9a63b47028bcc1bccb076" category="section-title">功能互通性</block>
-  <block id="f655439fd5ae0223d994fa349e01c42b" category="list-text">在AWS中、年度合約可從AWS Marketplace的公開優惠中取得。部署Cloud Volumes ONTAP 執行功能的環境時、Cloud Manager會提示您從「詳細資料與認證」頁面訂閱。</block>
   <block id="656d282ec4da3b613132f8e29d6cb90e" category="paragraph">您可以在雲端供應商的市場中、透過隨用隨付訂閱取得30天的免費試用版。免費試用版包含Cloud Volumes ONTAP 了VMware及Cloud Backup。試用版會在您訂閱市場上的產品項目時開始。</block>
   <block id="2986f3edb85e34a7556b412028be57fb" category="paragraph">沒有執行個體或容量限制。您可以任意部署Cloud Volumes ONTAP 多個不需付費的功能、並視需要配置多餘的容量、30天內即可免費部署。免費試用版會在30天後自動轉換為付費的每小時訂閱。</block>
   <block id="631556a144b10d5d5f19603b18176e32" category="paragraph">雖然不收取Cloud Volumes ONTAP 每小時的軟體授權費用、但您的雲端供應商仍需支付基礎架構費用。</block>
@@ -3745,4 +3679,124 @@
   <block id="ed2bfa2a7df130888132e9df08fe91a7" category="list-text">存取控制：精細的</block>
   <block id="59ec9a96a05b9ff668ebee36565638b7" category="list-text">保護：無</block>
   <block id="77d680745644d1c19a022cc0a306f88b" category="list-text">資料加密：Google管理的金鑰</block>
+  <block id="b33b7497784a31fa197bca9debbfddea" category="list-text">瞭解設定Cloud Volumes ONTAP 驗證功能所需的條件。</block>
+  <block id="b2084f1d9eba331a28867d15c742284e" category="inline-link-macro">瞭解如何設定授權</block>
+  <block id="1093810fe4a9e55d156722b8332da3cd" category="paragraph"><block ref="9b79239dba046d18af2dfc2ca929db17" category="inline-link-macro-rx"></block>。</block>
+  <block id="5719f300587dfbbd55551379f9ab4915" category="list-text"><block ref="69100fd89c8fc892aa253073563db45d" category="inline-link-macro-rx"></block>。</block>
+  <block id="17b559ceaadd6decdd6c9a579de016a2" category="summary">在決定Cloud Volumes ONTAP 要使用哪個授權選項來執行功能時、在部署新系統時、您必須先執行幾個步驟、才能選擇該授權選項。</block>
+  <block id="0cce9e09385c0d8e677ff5d9518dc514" category="doc">在Cloud Volumes ONTAP Azure中設定for NetApp的授權</block>
+  <block id="c700f608c8bdc9eb590953ff57224bad" category="paragraph">決定Cloud Volumes ONTAP 要搭配使用哪種授權選項之後、您必須先執行幾個步驟、才能在建立新的工作環境時選擇授權選項。</block>
+  <block id="cb0226284bee9c96f70232a048c09d93" category="inline-link-macro">深入瞭解Freemium產品</block>
+  <block id="ef91b93e0524270004cc6800a90a5f93" category="paragraph">選擇Freemium產品、即可免費使用Cloud Volumes ONTAP 多達500 GiB的配置容量。 <block ref="4a1ec6d9cbc2633c90cec4c7aaaa9417" category="inline-link-macro-rx"></block>。</block>
+  <block id="bdf1438eb503eb36f76b9a617b549d19" category="list-text">在「畫版」頁面上、按一下「*新增工作環境*」、然後依照Cloud Manager中的步驟進行。</block>
+  <block id="3c2d870c278a131e2dd404e52b99875f" category="list-text">在*詳細資料與認證*頁面上、按一下*編輯認證&gt;新增訂閱*、然後依照提示訂閱Azure Marketplace中的隨用隨付方案。</block>
+  <block id="3aa15a20d51e3c7db018d625762c1e4a" category="paragraph">除非您超過500 GiB的已配置容量、系統會自動轉換為、否則不會透過市場訂閱付費 <block ref="d2627439b57217190ca76c46e52d35cf" category="inline-link-macro-rx"></block>。</block>
+  <block id="63c34af016d560eac2ed70f529ecee3a" category="inline-image-macro">建立Cloud Volumes ONTAP 運作環境時、PAYGO訂購選項的快照。</block>
+  <block id="e0f8df20ac9510e628512255f5b45d2d" category="paragraph"><block ref="e0f8df20ac9510e628512255f5b45d2d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2d60dae3a6d4e1405ae03d26a3c5a1dd" category="list-text">返回Cloud Manager之後、當您進入「充電方法」頁面時、請選取* Freemium *。</block>
+  <block id="79098ff4d83aceb44e576798d0c7e023" category="inline-image-macro">建立Cloud Volumes ONTAP 一套可運作的環境時、Freemium選項的快照。</block>
+  <block id="ed75177be08bfcf3f02f18b9106ecdbf" category="paragraph"><block ref="ed75177be08bfcf3f02f18b9106ecdbf" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3791dad7c29b82102cb1689416f1ad4b" category="inline-link-macro">請參閱Cloud Volumes ONTAP 逐步指示、以在Azure中推出《功能不全》</block>
+  <block id="9d43d6f0219326b62a38c7746df96925" category="paragraph"><block ref="c1037565bcb6e1d770690e1d252b358c" category="inline-link-macro-rx"></block>。</block>
+  <block id="376c581ebe9ec9aa8853377f8538ebbd" category="section-title">容量型授權</block>
+  <block id="f63eded59a08a3b3bd8dd4b30f5cd2d8" category="paragraph">容量型授權可讓您針對Cloud Volumes ONTAP 容量的每個TiB付費。容量型授權的形式為_package_：Essentials套件或Professional套件。</block>
+  <block id="64e2a2e379eafbf4fdc21f4b5b6b9670" category="list-text">向NetApp購買的授權（BYOL）</block>
+  <block id="fdbbc45fde04fd31543205fa0418c269" category="list-text">Azure Marketplace的每小時隨付隨付（PAYGO）訂閱</block>
+  <block id="e627d7610d38524265b212be19391938" category="list-text">年度合約</block>
+  <block id="3d241a11657521246cf272331a926bbb" category="inline-link-macro">深入瞭解容量型授權</block>
+  <block id="ff133f22bfbb391c42306c49c08dda5a" category="paragraph"><block ref="cb08d26194e001a938327c89172391a3" category="inline-link-macro-rx"></block>。</block>
+  <block id="896eba38b8484b6d3105e61aa3b17005" category="paragraph">下列各節將說明如何開始使用這些消費模式。</block>
+  <block id="b650b6a0e30782e5c59c3db6f2644347" category="section-title">BYOL</block>
+  <block id="824003e884884d7a86760223b7f8e790" category="paragraph">事先向NetApp購買授權（BYOL）、即可在Cloud Volumes ONTAP 任何雲端供應商部署支援系統。</block>
+  <block id="eb3d006a843d8a860a32271e8802c15d" category="inline-link">將您的NetApp支援網站帳戶新增至Cloud Manager</block>
+  <block id="3688a0f3a3c116a5be14d2d04c479723" category="list-text"><block ref="3688a0f3a3c116a5be14d2d04c479723" category="inline-link-rx"></block></block>
+  <block id="5d31da2512e42beca4a137ebc2110c0c" category="paragraph">Cloud Manager會自動查詢NetApp的授權服務、以取得與您NetApp支援網站帳戶相關之授權的詳細資料。如果沒有錯誤、Cloud Manager會自動將授權新增至Digital Wallet。</block>
+  <block id="ccefbae8dc522975c67de42e32bb82b1" category="inline-link-macro">手動將授權新增至Digital Wallet</block>
+  <block id="97d1804d38d8847c7ca062b1565cf3e0" category="paragraph">您的授權必須先從Digital Wallet取得、才能搭配Cloud Volumes ONTAP 使用。如有需要、您可以 <block ref="2ac0b255d132c27a07ae5c8241a47297" category="inline-link-macro-rx"></block>。</block>
+  <block id="56d5a0565e658b5d14d92cd4f4f444ae" category="paragraph">您向NetApp購買的授權一律會先收取費用、但如果您超過授權容量或授權到期、則會從市場的每小時費率中收取費用。</block>
+  <block id="374efabbae0445fd32a0cf43eebf0039" category="list-text">返回Cloud Manager之後、請在前往「充電方法」頁面時、選取容量型套件。</block>
+  <block id="33326f2c2997159b2e3901dab5e2b4dc" category="inline-image-macro">建立Cloud Volumes ONTAP 功能不正常的環境時、專業人員選項的螢幕快照。</block>
+  <block id="6e56bef6c86f5c113dfdf94836a6253b" category="paragraph"><block ref="6e56bef6c86f5c113dfdf94836a6253b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d0a5758728692cc3e64f3ddea08584f5" category="section-title">PAYGO訂閱</block>
+  <block id="c0d72cf44b05d21863093fcee14dbcfe" category="paragraph">從雲端供應商的市場訂閱優惠、每小時支付一次。</block>
+  <block id="03449337d98016becc1639384ef2f3f0" category="paragraph">當您建立Cloud Volumes ONTAP 一個可運作的環境時、Cloud Manager會提示您訂閱Azure Marketplace提供的合約。該訂閱之後會與工作環境建立關聯、以便進行充電。您可以在其他工作環境中使用相同的訂閱。</block>
+  <block id="f19cd149323627e1cd3902f0d4c280f9" category="inline-link">瞭解如何管理您的Azure帳戶和訂閱</block>
+  <block id="01703892350355cbf1ff8cbc335f1296" category="admonition">您可以從「設定」&gt;「認證」頁面管理Azure Marketplace與Azure帳戶相關的訂閱。<block ref="07ec72deb8828a17669b381b0162c266" category="inline-link-rx"></block></block>
+  <block id="421539f25601331f9f5f1e59cdb43e21" category="section-title">年度合約</block>
+  <block id="93eab4503b17582ffaf0ef5e4672b3fa" category="paragraph">購買年度合約、每年支付Cloud Volumes ONTAP 一份銷售費。</block>
+  <block id="65cce3a4ca59a6b658d9ca445b606a8e" category="list-text">請聯絡您的NetApp銷售代表以購買年度合約。</block>
+  <block id="33cd912daaaca7032dc94d2c0fd501d1" category="paragraph">該合約可在Azure Marketplace以_Private _優惠形式提供。</block>
+  <block id="31a55e4461cc8b2a69ffcb90b7380d34" category="list-text">在*詳細資料與認證*頁面上、按一下*編輯認證&gt;新增訂閱&gt;繼續*。</block>
+  <block id="86bc8fd34c3ccaa9976f99326f964928" category="list-text">在Azure入口網站中、選取與Azure帳戶共享的年度計畫、然後按一下*訂閱*。</block>
+  <block id="f3f783b29b5676786b48286f1e22f45e" category="paragraph">Keystone Flex訂閱是一種隨需付費的訂閱型服務。 <block ref="d7100d6786da776f77a335e342395914" category="inline-link-macro-rx"></block>。</block>
+  <block id="3af4fb97c9f77d1ba8d551d286a88c61" category="list-text">如果您尚未訂閱、<block ref="49d6686f1a400348bbcff579d9d978a6" category="inline-link-rx"></block></block>
+  <block id="4acc8f844fb07760f03ee00b38fba80d" category="list-text">當系統提示您選擇充電方法時、請選取Keystone Flex訂閱充電方法。</block>
+  <block id="bbf932728988f5056e42fa37db99f7d9" category="inline-image-macro">Keystone Flex訂購選項在建立Cloud Volumes ONTAP 運作環境時的快照。</block>
+  <block id="f18bded89e8a20f01b4ae8e4adc206f7" category="paragraph"><block ref="f18bded89e8a20f01b4ae8e4adc206f7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0859113bcaa28e16186a08e28441121a" category="admonition">HA配對不需要前三個權限。</block>
+  <block id="050c120c7155ccd2f0ee729008e2ff37" category="doc">在Cloud Volumes ONTAP AWS中設定適用於此功能的授權</block>
+  <block id="b1dbd9fd802a136b38f7661ea3dbaa3f" category="list-text">在*詳細資料與認證*頁面上、按一下*編輯認證&gt;新增訂閱*、然後依照提示訂閱AWS Marketplace中的隨用隨付方案。</block>
+  <block id="44ec3c7abc7539866144ab119167565c" category="paragraph"><block ref="44ec3c7abc7539866144ab119167565c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a5e108ad6879a730667cd00276540bcc" category="inline-link-macro">請參閱逐步指示、以在Cloud Volumes ONTAP AWS中啟動功能</block>
+  <block id="0edc861f43ae2d52eefa8472c74d97aa" category="paragraph"><block ref="8f923c51f4899eedd8d1162f766d9a16" category="inline-link-macro-rx"></block>。</block>
+  <block id="eec65f69842672d685e503dd18c77ae2" category="list-text">從AWS Marketplace訂閱時數小時隨付（PAYGO）</block>
+  <block id="13ee5322ed02b78a2cf2a6b4a802fef9" category="list-text">AWS Marketplace的年度合約</block>
+  <block id="a30d51ee31c7190580a6f944f14abe38" category="paragraph">當您建立Cloud Volumes ONTAP 一個可運作的環境時、Cloud Manager會提示您訂閱AWS Marketplace提供的合約。該訂閱之後會與工作環境建立關聯、以便進行充電。您可以在其他工作環境中使用相同的訂閱。</block>
+  <block id="2437584041416c75397847eedfaa770d" category="inline-link">瞭解如何管理AWS帳戶和訂閱</block>
+  <block id="35217fea572cdc0e813963a241a20013" category="admonition">您可以從「設定」&gt;「認證」頁面管理與AWS帳戶相關的AWS Marketplace訂閱。<block ref="7f815fe4e3faf7bd59775105e92d3773" category="inline-link-rx"></block></block>
+  <block id="cb4087e6d7672dd5164c8336ddd6a698" category="paragraph">每年向雲端供應商的市場購買一年一度的合約即可付款。</block>
+  <block id="a8cef6b3b22c0fe30d37e89d0369d9ca" category="paragraph">Cloud Manager類似於每小時訂閱、會提示您訂閱AWS Marketplace提供的年度合約。</block>
+  <block id="55dc8ea4d7859734e16b558847ea8085" category="list-text">在*詳細資料與認證*頁面上、按一下*編輯認證&gt;新增訂閱*、然後依照提示在AWS Marketplace訂閱年度合約。</block>
+  <block id="c21377c3d0b5468997e56505a2720bab" category="inline-image-macro">一年一度的合約服務快照、可在建立Cloud Volumes ONTAP 一個不工作環境時提供。</block>
+  <block id="ed9290c49502b9835c9bd2b363302a7c" category="paragraph"><block ref="ed9290c49502b9835c9bd2b363302a7c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7b2dece9fd16e6a10b60cfdf7e41b57f" category="doc">在Cloud Volumes ONTAP AWS中規劃您的不一樣組態</block>
+  <block id="5f677ae201071ad7015b7ab57940d333" category="section-title">選擇Cloud Volumes ONTAP 一個不含功能的授權</block>
+  <block id="69100fd89c8fc892aa253073563db45d" category="list-text"><block ref="69100fd89c8fc892aa253073563db45d" category="inline-link-macro-rx"></block></block>
+  <block id="b2908e7df27905e20924b93b3ff0b803" category="list-text"><block ref="b2908e7df27905e20924b93b3ff0b803" category="inline-link-macro-rx"></block></block>
+  <block id="519fd69508502bac64035ccc9de1d25e" category="section-title">選擇支援的地區</block>
+  <block id="8d2b55a9a4f02c74f0e8f911801cac54" category="section-title">選擇支援的執行個體</block>
+  <block id="84823006ce16045ed7605687d5042105" category="section-title">瞭解儲存限制</block>
+  <block id="3fd02e658b23015c55028667964b5da3" category="section-title">在AWS中調整系統規模</block>
+  <block id="8d0746f585cc5f735906c0414ea8f327" category="section-title">檢視預設系統磁碟</block>
+  <block id="a7ac8115e67a048adeeb0995ec46a2a0" category="section-title">準備在Cloud Volumes ONTAP AWS Outpost部署功能</block>
+  <block id="a58e86fa4cf26d37d661886b6d36fed8" category="section-title">收集網路資訊</block>
+  <block id="847282bf0cce1fa939157af19e469cb8" category="section-title">單一AZ中的單一節點或HA配對</block>
+  <block id="06282d6bfde23265c38eaf5e9f1b9c8a" category="section-title">多個AZs中的HA配對</block>
+  <block id="5cf08a0c28356ef36ccd650ef4df7ec4" category="section-title">選擇寫入速度</block>
+  <block id="848ba74632f2d95512e41c0283190dc5" category="section-title">選擇Volume使用設定檔</block>
+  <block id="e83e6938f82d96149155f11617a3f4b6" category="paragraph">瞭解如何開始使用Freemium產品：</block>
+  <block id="d0e9f6e752e409a4224686569c7ed7f7" category="list-text"><block ref="d0e9f6e752e409a4224686569c7ed7f7" category="inline-link-macro-rx"></block></block>
+  <block id="717274b88b6d91b24b7da7830ec7dc31" category="list-text"><block ref="717274b88b6d91b24b7da7830ec7dc31" category="inline-link-macro-rx"></block></block>
+  <block id="8f0a98314b48214c48339998c2fc4f5a" category="inline-link-macro">在Cloud Volumes ONTAP Google Cloud中設定適用於此技術的授權</block>
+  <block id="17b1da78f4ea2d6d32ebdce24f550dc0" category="list-text"><block ref="17b1da78f4ea2d6d32ebdce24f550dc0" category="inline-link-macro-rx"></block></block>
+  <block id="a24ad69dba38b7a2ce7bc133c0c71859" category="inline-image-macro">Cloud Manager介面中通知的螢幕快照顯示、免費試用期僅剩7天。</block>
+  <block id="c11bddd3f0b5c0f09e3ca02ff6bb72d5" category="admonition">免費試用開始、剩餘7天、以及剩餘1天時、您將會在Cloud Manager中收到通知。例如：<block ref="d18f5bf648a43ba5347efa3c8515f511" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="451e7fc5df78c19113abdb3f6a0dc54e" category="paragraph">瞭解如何開始使用容量型授權：</block>
+  <block id="fdb736034a6801c8a5010a511211a4a7" category="paragraph">瞭解如何開始使用Keystone Flex訂閱：</block>
+  <block id="a07503aa361f252fd9f1953e4472f28d" category="paragraph"><block ref="e7010d3e26fcd0c3b7c9d7059b1649f0" category="inline-link-macro-rx"></block>。</block>
+  <block id="01c73f9779c79dd6bcc508ca2e08db80" category="doc">在Cloud Volumes ONTAP Azure中規劃您的不一樣組態</block>
+  <block id="e7010d3e26fcd0c3b7c9d7059b1649f0" category="list-text"><block ref="e7010d3e26fcd0c3b7c9d7059b1649f0" category="inline-link-macro-rx"></block></block>
+  <block id="e3a47201ab0cc67c20d5aeacce3b8ced" category="section-title">選擇支援的VM類型</block>
+  <block id="8e3273e621dd5a9485259171b1b535e9" category="section-title">在Azure中調整系統規模</block>
+  <block id="e17d83fdb14af6aea9c5838dcc9ece55" category="paragraph"><block ref="b2908e7df27905e20924b93b3ff0b803" category="inline-link-macro-rx"></block>。</block>
+  <block id="96440bf30cd20c7ed50d0d7a8279917e" category="doc">在Cloud Volumes ONTAP Google Cloud規劃您的不一樣組態</block>
+  <block id="9b79239dba046d18af2dfc2ca929db17" category="list-text"><block ref="9b79239dba046d18af2dfc2ca929db17" category="inline-link-macro-rx"></block></block>
+  <block id="18ff4ec9e6259918d45028a5d6040d91" category="section-title">選擇支援的機器類型</block>
+  <block id="0d705fad98d8ea6c4ffe75e2508e2f92" category="section-title">在GCP中調整系統規模</block>
+  <block id="9b183a2167e00c4527ad8d66a1342c3c" category="list-text">在*詳細資料與認證*頁面上、按一下*編輯認證&gt;新增訂閱*、然後依照提示訂閱Google Cloud Marketplace中的隨用隨付方案。</block>
+  <block id="c89b1b25078cfacff0327e248f47742a" category="inline-link-macro">請參閱逐步指示Cloud Volumes ONTAP 、在Google Cloud中啟動「功能不全」</block>
+  <block id="00580a35c1c8179a01e7d20dec13cade" category="paragraph"><block ref="b9472d81f8e78286e85bc5ec5ddf3b8a" category="inline-link-macro-rx"></block>。</block>
+  <block id="297c0a5982d22edf63b2c4a69d5d4d7a" category="list-text">從Google Cloud Marketplace訂閱時數小時隨付（PAYGO）</block>
+  <block id="add24f74283ee9a5fef81272f8343622" category="paragraph"><block ref="87f769a4234c2e71d6b4e713b6cf855b" category="inline-link-macro-rx"></block>。</block>
+  <block id="2a0aac0f203d3c3a0536badf50b239af" category="paragraph">當您建立Cloud Volumes ONTAP 一個可運作的環境時、Cloud Manager會提示您訂閱Google Cloud Marketplace提供的合約。該訂閱之後會與工作環境建立關聯、以便進行充電。您可以在其他工作環境中使用相同的訂閱。</block>
+  <block id="853e80261480b98b92311064bba18ec1" category="inline-link">瞭解如何管理您的Google Cloud認證與訂閱</block>
+  <block id="9dfbdd027e651690d2f258d827cb5230" category="admonition">您可以從「設定」&gt;「認證」頁面管理與您帳戶相關的Google Cloud Marketplace訂閱。<block ref="0f7ef90840cb7719608f73e451a17f58" category="inline-link-rx"></block></block>
+  <block id="35d23de0f37782d307786bb80fa04ca3" category="paragraph">合約可在Google Cloud Marketplace以_Private _優惠形式提供。</block>
+  <block id="a3a9f2a7322ebec6cf1fa9b43d425434" category="list-text">在*詳細資料與認證*頁面上、按一下*編輯認證&gt;新增訂閱*、然後依照提示在Google Cloud Marketplace訂閱年度計畫。</block>
+  <block id="ded2372b0227a679ef632d3a032e4cb7" category="list-text">在Google Cloud中、選取與您的帳戶共享的年度計畫、然後按一下*訂閱*。</block>
+  <block id="e907b41f5f3d7332bee5a43fbbf78a08" category="sidebar">設定授權</block>
+  <block id="a3272fd5c4bd1903de9b1b2f5e1665a8" category="sidebar">在Cloud Volumes ONTAP AWS中啟動</block>
+  <block id="70c84621a7336f391b4b7df86b5f1396" category="sidebar">在Cloud Volumes ONTAP Azure中推出功能</block>
+  <block id="5195e4b472b1871018c47fface61dc40" category="sidebar">在Cloud Volumes ONTAP Google Cloud上啟動</block>
+  <block id="45d5eeea4210bb57cc495f10379b4966" category="sidebar">預設組態</block>
 </blocks>
