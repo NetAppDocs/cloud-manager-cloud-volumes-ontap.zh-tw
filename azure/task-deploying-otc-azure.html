@@ -508,6 +508,8 @@
 
 
 
+
+
           
         </li>
       </ul>
@@ -532,6 +534,8 @@
             開始使用Microsoft Azure
           </a>
           
+
+
 
 
 
@@ -576,6 +580,8 @@
             開始使用Google Cloud
           </a>
           
+
+
 
 
 
@@ -993,6 +999,8 @@
           </a>
           
 
+
+
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
@@ -1062,8 +1070,6 @@
     
 
   
-
-
 
 
 
@@ -1182,8 +1188,10 @@
         設定您的網路
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/azure/task-set-up-azure-encryption.html">
         使用您的金鑰設定加密
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/azure/task-set-up-licensing-azure.html">
+        設定授權
       </a></li><li class="  active "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/azure/task-deploying-otc-azure.html">
-        在 Azure 中啟動系統
+        在Cloud Volumes ONTAP Azure中推出功能
       </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 使用Cloud Volumes ONTAP</div>
       </a>
@@ -1275,7 +1283,9 @@
       </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 概念</div>
       </a>
-      <ul><li class="subfolders "><a href="#">
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/azure/concept-licensing.html">
+        授權
+      </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 儲存設備</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/azure/concept-client-protocols.html">
@@ -1299,14 +1309,12 @@
         Azure 中的 HA 配對
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/azure/concept-degraded-ha-pair.html">
         儲存設備接管期間的行動
-      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/azure/concept-licensing.html">
-        授權
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/azure/concept-license-management.html">
-        管理節點型BYOL
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/azure/concept-security.html">
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/azure/concept-security.html">
         安全性
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/azure/concept-performance.html">
         效能
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/azure/concept-license-management.html">
+        管理節點型BYOL
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/azure/concept-active-iq.html">
         不再是不知道的數位顧問AutoSupport Active IQ
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/azure/reference-default-configs.html">
@@ -1352,6 +1360,10 @@
         
 
         
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com/zh-tw/cloud-manager-family/">Cloud Manager</a>
+        </li>
+        
 
         <li class="n-breadcrumb__list-item">
           <a href="/zh-tw/cloud-manager-cloud-volumes-ontap/">Cloud&nbsp;Volumes&nbsp;ONTAP</a>
@@ -1385,7 +1397,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-03 09:39:01 +0000">05/03/2022</time>
+    <time datetime="2022-05-16 17:03:47 +0000">05/16/2022</time>
     
   
 
@@ -1420,55 +1432,10 @@
 </div>
 </li>
 <li>
-<p>瞭解在「新增工作環境」精靈中選擇特定授權選項所需的條件。 <a href="concept-licensing.html">"深入瞭Cloud Volumes ONTAP 解關於功能驗證的資訊"</a>。</p>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 40%;">
-<col style="width: 40%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">授權選項</th>
-<th class="tableblock halign-left valign-top">需求</th>
-<th class="tableblock halign-left valign-top">如何滿足需求</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Freemium</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">需要Marketplace訂閱或NetApp支援網站（NSS）帳戶。</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">您可以從*詳細資料與認證*頁面訂閱雲端供應商的市場。您可以在「*充電方法」和「NSSAccount *」頁面上輸入您的NSS*帳戶。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">專業或基本套件</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">需要Marketplace訂閱或容量型授權（BYOL）。如果您的帳戶沒有有效的容量型授權、或是您的資源配置超過授權容量、建議您訂閱Marketplace以容量為基礎進行收費。</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">您可以從*詳細資料與認證*頁面訂閱雲端供應商的市場。如果您想要使用從NetApp購買的容量型授權（BYOL）、您必須先將其新增至*數位錢包*。 <a href="task-manage-capacity-licenses.html">"瞭解如何新增容量型BYOL授權"</a>。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Keystone Flex 訂閱</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">您的帳戶必須獲得授權、而且訂閱必須啟用Cloud Volumes ONTAP 才能與效益管理系統搭配使用。</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>mailto：<a href="mailto:ng-keystone-success@netapp.com">ng-keystone-success@netapp.com</a> [聯絡NetApp]、以一或多個Keystone Flex訂閱授權您的Cloud Manager使用者帳戶。</p>
-</li>
-<li>
-<p>NetApp授權您的帳戶之後、 <a href="task-manage-keystone.html#link-a-subscription">"連結您的訂閱內容以供Cloud Volumes ONTAP 搭配使用"</a>。</p>
-</li>
-<li>
-<p>當您建立Cloud Volumes ONTAP 一個「叢集HA配對」時、請選取Keystone Flex訂閱充電方法。</p>
-</li>
-</ol>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">每個節點授權</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">您必須訂閱Marketplace、否則必須自行攜帶授權（BYOL）。此選項適用於現有訂閱或現有授權的客戶。不適用於新客戶。</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">如果您想要使用從NetApp購買的節點型授權（BYOL）、您必須先將其新增至*數位錢包*。 <a href="task-manage-node-licenses.html#obtain-a-system-license-file">"瞭解如何新增節點型BYOL授權"</a>。您可以在「*充電方法」和「NSSAccount *」頁面上輸入您的NSS*帳戶。</p></td>
-</tr>
-</tbody>
-</table>
+<p>瞭解設定Cloud Volumes ONTAP 驗證功能所需的條件。</p>
+<div class="paragraph">
+<p><a href="task-set-up-licensing-azure.html">"瞭解如何設定授權"</a>。</p>
+</div>
 </li>
 </ul>
 </div>
@@ -1621,10 +1588,10 @@ Your browser does not support the video tag.
 <div class="ulist">
 <ul>
 <li>
-<p><a href="concept-licensing.html">"瞭解這些充電方法"</a>。</p>
+<p><a href="concept-licensing.html">"深入瞭Cloud Volumes ONTAP 解適用於此功能的授權選項"</a>。</p>
 </li>
 <li>
-<p><a href="task-deploying-otc-azure.html#licensing">"瞭解精靈中您想要使用的授權方法所需的內容"</a>。</p>
+<p><a href="task-set-up-licensing-azure.html">"瞭解如何設定授權"</a>。</p>
 </li>
 </ul>
 </div>
