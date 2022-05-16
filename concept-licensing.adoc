@@ -59,14 +59,14 @@ endif::aws[]
 
 ifdef::azure[]
 
-* link:task-set-up-licensing-aws.html["在Cloud Volumes ONTAP Azure中設定for NetApp的授權"]
+* link:task-set-up-licensing-azure.html["在Cloud Volumes ONTAP Azure中設定for NetApp的授權"]
 
 
 endif::azure[]
 
 ifdef::gcp[]
 
-* link:task-set-up-licensing-aws.html["在Cloud Volumes ONTAP Google Cloud中設定適用於此技術的授權"]
+* link:task-set-up-licensing-google.html["在Cloud Volumes ONTAP Google Cloud中設定適用於此技術的授權"]
 
 
 endif::gcp[]
@@ -194,14 +194,14 @@ endif::aws[]
 
 ifdef::azure[]
 
-* link:task-set-up-licensing-aws.html["在Cloud Volumes ONTAP Azure中設定for NetApp的授權"]
+* link:task-set-up-licensing-azure.html["在Cloud Volumes ONTAP Azure中設定for NetApp的授權"]
 
 
 endif::azure[]
 
 ifdef::gcp[]
 
-* link:task-set-up-licensing-aws.html["在Cloud Volumes ONTAP Google Cloud中設定適用於此技術的授權"]
+* link:task-set-up-licensing-google.html["在Cloud Volumes ONTAP Google Cloud中設定適用於此技術的授權"]
 
 
 endif::gcp[]
@@ -245,14 +245,14 @@ endif::aws[]
 
 ifdef::azure[]
 
-* link:task-set-up-licensing-aws.html["在Cloud Volumes ONTAP Azure中設定for NetApp的授權"]
+* link:task-set-up-licensing-azure.html["在Cloud Volumes ONTAP Azure中設定for NetApp的授權"]
 
 
 endif::azure[]
 
 ifdef::gcp[]
 
-* link:task-set-up-licensing-aws.html["在Cloud Volumes ONTAP Google Cloud中設定適用於此技術的授權"]
+* link:task-set-up-licensing-google.html["在Cloud Volumes ONTAP Google Cloud中設定適用於此技術的授權"]
 
 
 endif::gcp[]
