@@ -1455,7 +1455,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-03 09:39:01 +0000">05/03/2022</time>
+    <time datetime="2022-05-19 13:00:41 +0000">05/19/2022</time>
     
   
 
@@ -2217,46 +2217,47 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">叢集間通訊（ Cloud Volumes ONTAP 僅限不含 HA ）</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DHCP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">UDP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">68</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">節點管理 LIF</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DHCP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">第一次設定的 DHCP 用戶端</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DHCPS</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DHCPS</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">UDP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">67</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">節點管理 LIF</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DHCP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DHCP 伺服器</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DNS</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DNS</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">UDP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">53.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">節點管理 LIF 與資料 LIF （ NFS 、 CIFS ）</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DNS</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DNS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">NDMP</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NDMP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">18600 – 18699</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">節點管理 LIF</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">目的地伺服器</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">NDMP 複本</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SMTP</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SMTP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">25</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">節點管理 LIF</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">郵件伺服器</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">可以使用 SMTP 警示 AutoSupport 來執行功能</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock">SNMP</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">161.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">節點管理 LIF</p></td>
@@ -2283,9 +2284,9 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">節點管理 LIF</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">監控伺服器</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">透過 SNMP 設陷進行監控</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">SnapMirror</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">11104.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">叢集間 LIF</p></td>
@@ -2298,7 +2299,14 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">叢集間 LIF</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">叢集間 LIF ONTAP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SnapMirror 資料傳輸</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">系統記錄</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UDP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">514</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">節點管理 LIF</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">系統記錄伺服器</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">系統記錄轉送訊息</p></td>
 </tr>
 </tbody>
 </table>
