@@ -409,22 +409,22 @@ NOTE: 來源是 Cloud Volumes ONTAP 指在整個系統上的介面（ IP 位址�
 | 叢集 | 所有流量 | 所有流量 | 一個節點上的所有 LIF | 其他節點上的所有 LIF | 叢集間通訊（ Cloud Volumes ONTAP 僅限不含 HA ） 
 
 
-| UDP | 68 | 節點管理 LIF | DHCP | 第一次設定的 DHCP 用戶端 | DHCPS 
+| DHCP | UDP | 68 | 節點管理 LIF | DHCP | 第一次設定的 DHCP 用戶端 
 
 
-| UDP | 67 | 節點管理 LIF | DHCP | DHCP 伺服器 | DNS 
+| DHCPS | UDP | 67 | 節點管理 LIF | DHCP | DHCP 伺服器 
 
 
-| UDP | 53. | 節點管理 LIF 與資料 LIF （ NFS 、 CIFS ） | DNS | DNS | NDMP 
+| DNS | UDP | 53. | 節點管理 LIF 與資料 LIF （ NFS 、 CIFS ） | DNS | DNS 
 
 
-| TCP | 18600 – 18699 | 節點管理 LIF | 目的地伺服器 | NDMP 複本 | SMTP 
+| NDMP | TCP | 18600 – 18699 | 節點管理 LIF | 目的地伺服器 | NDMP 複本 
 
 
-| TCP | 25 | 節點管理 LIF | 郵件伺服器 | 可以使用 SMTP 警示 AutoSupport 來執行功能 .4+| SNMP 
+| SMTP | TCP | 25 | 節點管理 LIF | 郵件伺服器 | 可以使用 SMTP 警示 AutoSupport 來執行功能 
 
 
-| TCP | 161. | 節點管理 LIF | 監控伺服器 | 透過 SNMP 設陷進行監控 
+.4+| SNMP | TCP | 161. | 節點管理 LIF | 監控伺服器 | 透過 SNMP 設陷進行監控 
 
 
 | UDP | 161. | 節點管理 LIF | 監控伺服器 | 透過 SNMP 設陷進行監控 
@@ -433,13 +433,16 @@ NOTE: 來源是 Cloud Volumes ONTAP 指在整個系統上的介面（ IP 位址�
 | TCP | 162% | 節點管理 LIF | 監控伺服器 | 透過 SNMP 設陷進行監控 
 
 
-| UDP | 162% | 節點管理 LIF | 監控伺服器 | 透過 SNMP 設陷進行監控 .2+| SnapMirror 
+| UDP | 162% | 節點管理 LIF | 監控伺服器 | 透過 SNMP 設陷進行監控 
 
 
-| TCP | 11104. | 叢集間 LIF | 叢集間 LIF ONTAP | 管理 SnapMirror 的叢集間通訊工作階段 
+.2+| SnapMirror | TCP | 11104. | 叢集間 LIF | 叢集間 LIF ONTAP | 管理 SnapMirror 的叢集間通訊工作階段 
 
 
-| TCP | 11105. | 叢集間 LIF | 叢集間 LIF ONTAP | SnapMirror 資料傳輸 | 系統記錄 
+| TCP | 11105. | 叢集間 LIF | 叢集間 LIF ONTAP | SnapMirror 資料傳輸 
+
+
+| 系統記錄 | UDP | 514 | 節點管理 LIF | 系統記錄伺服器 | 系統記錄轉送訊息 
 |===
 
 
