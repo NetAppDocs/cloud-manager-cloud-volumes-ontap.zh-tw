@@ -775,19 +775,6 @@
 
 
 
-    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
-  <a target="_blank" href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/pages/task-azure-key-vault.pdf" >
-    <img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
-    PDF of this page
-  </a>
-</li>
-
-</ul>
-  
-
-
-
-
 
           
         </li>
@@ -1296,13 +1283,9 @@
       </a></li><li class="  active "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-azure-key-vault.html">
         使用Azure Key Vault管理金鑰
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-google-key-manager.html">
-        利用Google Cloud Key Manager Service管理金鑰
+        利用Google Cloud KMS管理金鑰
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-protecting-ransomware.html">
         改善勒索軟體保護
-      </a></li><li class="  active "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-azure-key-vault.html">
-        啟用Azure Key Vault
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-google-key-manager.html">
-        啟用Google Cloud Key Manager服務
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 系統管理</div>
       </a>
@@ -1480,7 +1463,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-01 16:18:21 +0000">06/01/2022</time>
+    <time datetime="2022-06-01 17:05:47 +0000">06/01/2022</time>
     
   
 
@@ -1508,7 +1491,7 @@
 <p>必須執行9.10.1版或更新版本Cloud Volumes ONTAP</p>
 </li>
 <li>
-<p>Volume Encryption（VE）授權已安裝（NetApp Volume Encryption授權會自動安裝在Cloud Volumes ONTAP 向NetApp Support註冊的每個版本。）</p>
+<p>已安裝Volume Encryption（VE）授權（NetApp Volume Encryption授權會自動安裝在Cloud Volumes ONTAP 向NetApp支援註冊的每個支援系統上）</p>
 </li>
 <li>
 <p>已安裝多租戶加密金鑰管理（MTEKM）授權</p>
@@ -1535,7 +1518,29 @@
 <h2 id="組態程序">組態程序</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>概述的步驟將說明如何向Cloud Volumes ONTAP Azure註冊您的「還原組態」、以及如何建立Azure Key Vault和金鑰。如果您已經完成這些步驟、請確定您擁有正確的組態設定、尤其是在中 <a href="#create-akv">建立Azure Key Vault</a>，然後繼續 <a href="#ontap">組態Cloud Volumes ONTAP</a>。* <a href="#azure-app">Azure應用程式註冊</a>* <a href="#secret">建立Azure用戶端機密</a>* <a href="#create-akv">建立Azure Key Vault</a>* <a href="#key">建立加密金鑰</a>* <a href="#AAD">建立Azure Active Directory端點（僅限HA）</a>* <a href="#ontap">組態Cloud Volumes ONTAP</a></p>
+<p>概述的步驟將說明如何向Cloud Volumes ONTAP Azure註冊您的「還原組態」、以及如何建立Azure Key Vault和金鑰。如果您已經完成這些步驟、請確定您擁有正確的組態設定、尤其是在中 <a href="#create-akv">建立Azure Key Vault</a>，然後繼續 <a href="#ontap">組態Cloud Volumes ONTAP</a>。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#azure-app">Azure應用程式註冊</a></p>
+</li>
+<li>
+<p><a href="#secret">建立Azure用戶端機密</a></p>
+</li>
+<li>
+<p><a href="#create-akv">建立Azure Key Vault</a></p>
+</li>
+<li>
+<p><a href="#key">建立加密金鑰</a></p>
+</li>
+<li>
+<p><a href="#AAD">建立Azure Active Directory端點（僅限HA）</a></p>
+</li>
+<li>
+<p><a href="#ontap">組態Cloud Volumes ONTAP</a></p>
+</li>
+</ul>
 </div>
 <div id="azure-app" class="olist arabic">
 <div class="title">Azure應用程式註冊</div>
@@ -1746,14 +1751,10 @@ Category: kms_wrapped_key_status
 </li>
 <li>
 <p>選用：建立測試磁碟區以驗證AKV的功能。「vol create -vserver <em>Svm_name</em>-volume <em>volVolume _name</em>-Aggregate <em>aggr _-size _size</em>-state online -policy default」</p>
-</li>
-</ol>
-</div>
 <div class="paragraph">
 <p>如果設定正確、Cloud Volumes ONTAP 則會自動建立Volume並啟用Volume加密。</p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+</li>
 <li>
 <p>確認磁碟區已正確建立並加密。如果是的話、「-is-Encrypted」參數會顯示為「true」。「vol show -vserver <em>svm_name</em>-Fields is加密」</p>
 </li>
