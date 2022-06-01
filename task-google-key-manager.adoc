@@ -13,44 +13,51 @@ summary: 利用Azure Key Vault提供第三方金鑰管理服務。
 
 您可以使用 link:https://cloud.google.com/kms/docs["Google Cloud Platform的金鑰管理服務（雲端KMS）"^] 在ONTAP Google Cloud Platform部署的應用程式中保護您的不加密金鑰。
 
-金鑰管理雲端KMS可透過CLI或ONTAP REST API啟用。若要設定Cloud KMS Cloud Volumes ONTAP 以供使用、您必須先設定
+雲端KMS的金鑰管理可透過CLI或ONTAP REST API啟用。
 
 使用Cloud KMS時、請注意、預設會使用資料SVM LIF與雲端金鑰管理端點進行通訊。節點管理網路用於與雲端供應商的驗證服務（oauth2.googleapis.com）進行通訊。如果叢集網路設定不正確、叢集將無法正確使用金鑰管理服務。
 
 .先決條件
-* 這個支援NVE的叢集節點必須支援Cloud Volumes ONTAP
+* 必須執行9.10.1版或更新版本Cloud Volumes ONTAP
 * 已安裝Volume Encryption（VE）授權
 * 已安裝多租戶加密金鑰管理（MTEKM）授權
 * 您必須是叢集或SVM管理員
-
-
-.限制
-* 必須執行9.10.1版或更新版本Cloud Volumes ONTAP
-* 雲端KMS不適用於NSE和NAE。
-* 雲端KMS不適用於MetroCluster 不完整的組態。
-* 雲端KMS只能在資料SVM上設定
 * 現用Google Cloud Platform訂閱
 
 
-.啟用
-. 在Google Cloud環境中：
+.限制
+* 雲端KMS只能在資料SVM上設定
+
+
+
+
+== 組態
+
+.Google Cloud
+. 在您的Google Cloud環境中、 link:https://cloud.google.com/kms/docs/creating-keys["建立對稱的GCP金鑰環和金鑰"^]。
+. 為Cloud Volumes ONTAP 您的服務帳戶建立自訂角色。
 +
-.. 建立對稱的GCP金鑰環和金鑰：
-.. 為Cloud Volumes ONTAP 您的服務帳戶建立自訂角色：「gcloud iam角色可建立kmsCustom勞力-project =_project _id_-TITLE=_kms_custom_roue_name_-description=_custom_rousion_description_-privations.cryptoKeyVerations.gms.list、cloudkms.cryptoKeyVersions.useToDecrypt,cloudkms.cryptoKeyVersions.useToEncrypt,cloudkms.cryptoKeys.get,cloudkms.keyRings.get,cloudkms.locations.get,cloudkms.locations.list,resourcemanager.projects.get - ga-ga=bake /
-.. 將自訂角色指派Cloud Volumes ONTAP 給Cloud KMS金鑰與更新服務帳戶：「gCloud kms key add-iam-policy-bindusting $｛_key_name_｝-keyring $｛_key_ring_name_｝-location $｛_key_portation_｝-member ServiceAccount：$｛_service_Account_Name_｝-role專案/客戶_專案/_<Customk_rooles_專案角色
-.. 下載服務帳戶Json金鑰：「gCloud iam服務帳戶金鑰可建立金鑰檔案-iam-account=_sa-name_@_project-id_.iam.gserviceaccount.com」
+[listing]
+----
+gcloud iam roles create kmsCustomRole
+    --project=<project_id>
+    --title=<kms_custom_role_name>
+    --description=<custom_role_description>
+    --permissions=cloudkms.cryptoKeyVersions.get,cloudkms.cryptoKeyVersions.list,cloudkms.cryptoKeyVersions.useToDecrypt,cloudkms.cryptoKeyVersions.useToEncrypt,cloudkms.cryptoKeys.get,cloudkms.keyRings.get,cloudkms.locations.get,cloudkms.locations.list,resourcemanager.projects.get
+    --stage=GA
+----
+. 將自訂角色指派給Cloud KMS金鑰與Cloud Volumes ONTAP 更新服務帳戶：「gCloud kms金鑰add-iam-policy-binding _key_name_-keyring _key_ring_name_-location _-member ServiceAccount：_service_Account_Name_-role專案/_customer_project _id_/ros/ros/kmsCustomrole」
+. 下載服務帳戶Json金鑰：「gCloud iam服務帳戶金鑰可建立金鑰檔案-iam-account=_sa-name_@_project-id_.iam.gserviceaccount.com」
 
 
-. 切換Cloud Volumes ONTAP 到您的自然環境：
-+
-.. 切換至進階權限等級：「et -priv榮幸 進階」
-.. 為資料SVM建立DNS。“建立網域C_<<project>>_.internal -name-servers _server_address_-vserver _Svm_name_`
-.. 建立CMEK項目：「安全金鑰管理程式外部GCP啟用-vserver _Svm_name_-project -id _project _-key-ring_name _key_ring_name_-key-ring_location _key_ring_stip_-key-name _key_name_」
-.. 出現提示時、請從GCP帳戶輸入服務帳戶Json金鑰。
-.. 確認啟用的程序成功：「安全金鑰管理程式外部GCP檢查-vserver _svm_name_」
-.. 選用：建立磁碟區以測試加密「volvol create _volvolvole_name_>-Aggregate _-vserver _vserver_name_-size 10G'
-
-
+.Cloud Volumes ONTAP
+. 使用您偏好的SSH用戶端連線至叢集管理LIF。
+. 切換至進階權限等級：「et -priv榮幸 進階」
+. 為資料SVM建立DNS。「建立網域C_<project >_.internal -name-servers _server_address_-vserver _Svm_name_」
+. 建立CMEK項目：「安全金鑰管理程式外部GCP啟用-vserver _Svm_name_-project -id _project _-key-ring_name _key_ring_name_-key-ring_location _key_ring_stip_-key-name _key_name_」
+. 出現提示時、請從GCP帳戶輸入服務帳戶Json金鑰。
+. 確認啟用的程序成功：「安全金鑰管理程式外部GCP檢查-vserver _svm_name_」
+. 選用：建立磁碟區以測試加密「volvol create _volvolvole_name_-Aggregate _Aggregate _-vserver _vserver_name_-size 10G」
 
 
 

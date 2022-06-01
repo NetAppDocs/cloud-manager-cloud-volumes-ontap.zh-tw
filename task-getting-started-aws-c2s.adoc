@@ -35,14 +35,16 @@ Cloud Manager在C2S環境中提供下列功能：
 
 == 限制
 
-Cloud Manager不提供任何NetApp的雲端服務。
+* Cloud Manager不提供任何NetApp的雲端服務。
+* 由於在C2S環境中無法存取網際網路、因此下列功能也無法使用：
++
+** 與NetApp Cloud Central整合
+** 從Cloud Manager自動升級軟體
+** NetApp AutoSupport
+** AWS Cloud Volumes ONTAP 有關資源的成本資訊
 
-由於在C2S環境中無法存取網際網路、因此下列功能也無法使用：
 
-* 與NetApp Cloud Central整合
-* 從Cloud Manager自動升級軟體
-* NetApp AutoSupport
-* AWS Cloud Volumes ONTAP 有關資源的成本資訊
+* C2S環境不支援Freemium授權。
 
 
 

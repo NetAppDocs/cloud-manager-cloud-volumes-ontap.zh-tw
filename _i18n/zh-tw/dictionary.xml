@@ -3339,7 +3339,6 @@
   <block id="5a491f1bb01a92203592595fdf6ce353" category="list-text">* Google Cloud Platform 中的資料分層 * ：選擇是否要在初始 Aggregate 上啟用資料分層、選擇階層式資料的儲存類別、然後選取具有預先定義儲存管理角色的服務帳戶。</block>
   <block id="d8fe61fe121132ae71b6616d52f15f56" category="summary">支援 NetApp Volume Encryption （ NVE ）和 NetApp Aggregate Encryption （ NAE ）與外部金鑰管理程式。 Cloud Volumes ONTAP如果您設定外部金鑰管理程式、則預設會啟用 NVE 和 NAE 。</block>
   <block id="9472acffdb6a585b24d4317169bbc868" category="inline-link-macro">深入瞭解這些加密解決方案</block>
-  <block id="d1fa55aabe6476f6bb7c6b9bdb3ab04c" category="paragraph">支援NetApp Volume Encryption（NVE）和NetApp Aggregate Encryption（NAE）Cloud Volumes ONTAP 。NVE 和 NAE 是軟體型解決方案、可對磁碟區進行（ FIPS ） 140-2 相容的閒置資料加密。 <block ref="d36456219fc3d98cd4133816e30fd33f" category="inline-link-macro-rx"></block>。</block>
   <block id="1be198b136be79973c11820713c00b26" category="paragraph">新的Aggregate在您設定外部金鑰管理程式之後、預設會啟用NAE。非 NAE Aggregate 一部分的新磁碟區預設會啟用 NVE （例如、如果在設定外部金鑰管理程式之前已建立現有的 Aggregate ）。</block>
   <block id="d43f2f210545a0ed495aab9f6633e453" category="paragraph">不支援內建金鑰管理。 Cloud Volumes ONTAP</block>
   <block id="0df0b10ec6b2374f12bc928912e0e165" category="paragraph">您的支援系統應該已向 NetApp 註冊。 Cloud Volumes ONTAPNetApp Volume Encryption授權會自動安裝在Cloud Volumes ONTAP 每個註冊NetApp支援的支援系統上。</block>
@@ -3352,8 +3351,6 @@
   <block id="1de6a60059bfa3554a0fdce87d051073" category="inline-link-macro">連線 Cloud Volumes ONTAP 至 CLI</block>
   <block id="29d9a993720ee20b5810ae4a968304ca" category="list-text"><block ref="088a226dfa45520beac98dc7ae15a28a" category="inline-link-macro-rx"></block>。</block>
   <block id="48a052340f9e5c18b43a0cbab831db99" category="list-text">設定外部金鑰管理。</block>
-  <block id="fd821d5714ebcc986157929dd866f41c" category="inline-link">如ONTAP 需相關指示、請參閱《產品資訊》文件</block>
-  <block id="9d29aa56ea67ce2797cb1f0308225ae2" category="paragraph"><block ref="77f171337e8a9fae360a289a38558a31" category="inline-link-rx"></block>。</block>
   <block id="098ced68694df35d5e0943a0cad2fb8f" category="summary">如果您在啟動初始Cloud Volumes ONTAP 的支援功能後需要更多儲存設備、可以FlexVol 從Cloud Manager建立新的適用於NFS、CIFS或iSCSI的支援功能。</block>
   <block id="c65544a3678422a2d15f8bc1a12dec12" category="doc">建立FlexVol 功能區</block>
   <block id="f5452253eae7fb5f36ff2e68cd8aa5ae" category="paragraph">Cloud Manager提供多種建立新磁碟區的方法：</block>
@@ -3804,21 +3801,16 @@
   <block id="35b16ddf568bd70f42e0bcb19f2a533c" category="inline-link-macro">Azure Key Vault（AKV）</block>
   <block id="2f8fe9f0bb3ca6b63c1111b1fd670f9e" category="paragraph">您可以使用 <block ref="9061d13c3fae693003c080b827f91c1c" category="inline-link-macro-rx"></block> 在ONTAP Azure部署的應用程式中保護您的不加密金鑰。</block>
   <block id="4294aa58822f061e77d8da0c76ebf94d" category="inline-link-macro">NetApp Volume Encryption（NVE）金鑰</block>
-  <block id="b60a27a8ca201f4faf5778905a1e1105" category="paragraph">AKV和Cloud KMS可用於保護 <block ref="ce6d7ffd7c6719de501e205deb3bb075" category="inline-link-macro-rx"></block> 僅適用於資料SVM。</block>
   <block id="b80b61bef9c57d9979c8a0a11310d79b" category="paragraph">使用AKV的金鑰管理可透過CLI或ONTAP REST API來啟用。</block>
   <block id="e99dab450e193aa16ab181a9cbb70701" category="paragraph">使用AKV時、請注意、預設會使用資料SVM LIF與雲端金鑰管理端點進行通訊。節點管理網路用於與雲端供應商的驗證服務（login.microsoftonline.com）進行通訊。如果叢集網路設定不正確、叢集將無法正確使用金鑰管理服務。</block>
   <block id="ee68e5b99222bbc29a480fcb0d1d6ee2" category="list-title">先決條件</block>
   <block id="0dbc3b305b67f45cc077782f1bde33be" category="list-text">必須執行9.10.1版或更新版本Cloud Volumes ONTAP</block>
-  <block id="80175ad1c15d028f67b3376a45b8e3c0" category="list-text">這個支援NVE的叢集節點必須支援Cloud Volumes ONTAP</block>
   <block id="3db7729c3f93b51e237e9f64f77736ce" category="list-text">已安裝Volume Encryption（VE）授權</block>
   <block id="1343117a59836c5996c8be9e9914ce4b" category="list-text">已安裝多租戶加密金鑰管理（MTEKM）授權</block>
   <block id="941d09f50e1c95a1d21454ff759fc757" category="list-text">您必須是叢集或SVM管理員</block>
   <block id="4da5254130066f3f3262c3aa07f10759" category="list-text">現用Azure訂閱</block>
-  <block id="88f2fb0102e3b959940686651a664a37" category="list-text">NSE和NAE金鑰無法使用AKV</block>
-  <block id="7db8ff26e5e9d7fc031772044154257b" category="list-text">AKV不適用於MetroCluster 不完整的組態。</block>
   <block id="0c7af18d6ac0bf65ef1d6aec6f629263" category="list-text">AKV只能在資料SVM上設定</block>
   <block id="72bf37dc916a5b7107e5555c05e6deba" category="section-title">組態程序</block>
-  <block id="0353522b39b87d54d40d3f09ec668851" category="list-title">組態ONTAP</block>
   <block id="29c35caadd576a358e25cf276cf3f5c4" category="list-text">使用您偏好的SSH用戶端連線至叢集管理LIF。</block>
   <block id="04cf2d7d95d7d1c9ab9dbd7dbf46710c" category="list-text">進入進階權限模式ONTAP ：「et advanc進 階-con Off」（設定進階-con Off）</block>
   <block id="d25bc3e2f3cccb27b01b1088c349f1eb" category="list-text">識別所需的資料SVM、並驗證其DNS組態：「vserver services name-service DNS show」</block>
@@ -3828,32 +3820,85 @@
   <block id="5ac6ffb19ceb9619fe5f2fb10414c629" category="list-text">驗證金鑰管理程式組態：「安全金鑰管理程式外部azure show」</block>
   <block id="68f0035d3c55f26e0ec12ed454908a6e" category="list-text">檢查金鑰管理程式的狀態：「安全金鑰管理程式外部azure檢查」輸出內容如下：</block>
   <block id="558f8f17a0bbaa44eeaadc7095d4ec67" category="paragraph">如果「連線能力」狀態不是「正常」、SVM將無法以所有必要的連線和權限來連線至Azure Key Vault服務。初始組態時、「kms」迴應鍵狀態會報告「unkNOWNKNOWNKY」。第一個磁碟區加密後、其狀態會變更為「OK（正常）」。</block>
-  <block id="9b613c987763946434ad3660edb163a2" category="list-text">選用：建立測試磁碟區以驗證AKV的功能。「vol create -vserver _Svm_name_-volume _volVolume _name_-Aggregate _aggr _-size _size_-state online -policy預設值」如果設定正確、ONTAP 則會自動建立磁碟區並啟用磁碟區加密。</block>
   <block id="776c67d51f3f1c503c9062c9d812c2b7" category="list-text">確認磁碟區已正確建立並加密。如果是的話、「-is-Encrypted」參數會顯示為「true」。「vol show -vserver _svm_name_-Fields is加密」</block>
   <block id="0741b6c1237f126924ebdaa3fe6dbc4e" category="doc">利用Google的雲端金鑰管理服務來管理金鑰</block>
   <block id="0dbdff8ed1ef0e78c4dc84ace48205d6" category="inline-link-macro">Google Cloud Platform的金鑰管理服務（雲端KMS）</block>
   <block id="2f7905ac71167519792d73f964942175" category="paragraph">您可以使用 <block ref="4ef7b266bd9680469191a283388836d8" category="inline-link-macro-rx"></block> 在ONTAP Google Cloud Platform部署的應用程式中保護您的不加密金鑰。</block>
-  <block id="129c939af8813551a6b88e23f4048ae2" category="paragraph">金鑰管理雲端KMS可透過CLI或ONTAP REST API啟用。若要設定Cloud KMS Cloud Volumes ONTAP 以供使用、您必須先設定</block>
   <block id="effd05555235b0681857f0aff356bf2f" category="paragraph">使用Cloud KMS時、請注意、預設會使用資料SVM LIF與雲端金鑰管理端點進行通訊。節點管理網路用於與雲端供應商的驗證服務（oauth2.googleapis.com）進行通訊。如果叢集網路設定不正確、叢集將無法正確使用金鑰管理服務。</block>
-  <block id="724742e5865d00ce8408ff6e4aa5aef6" category="list-text">雲端KMS不適用於NSE和NAE。</block>
-  <block id="375e2f9b2984ac77600d156b668dda93" category="list-text">雲端KMS不適用於MetroCluster 不完整的組態。</block>
   <block id="41a2c826f6f02a44a93533524c99b84e" category="list-text">雲端KMS只能在資料SVM上設定</block>
   <block id="105e3d12938c631bc5d8ab6f6b628e1c" category="list-text">現用Google Cloud Platform訂閱</block>
-  <block id="2faec1f9f8cc7f8f40d521c4dd574f49" category="list-title">啟用</block>
-  <block id="b5413d5b20431bb65856ee65caf2f8e8" category="list-text">在Google Cloud環境中：</block>
-  <block id="a956ae27fe26e73f40b74bac5ab8d818" category="list-text">建立對稱的GCP金鑰環和金鑰：</block>
-  <block id="fb3ec58b16a722e2682f46b80c3f11e8" category="list-text">為Cloud Volumes ONTAP 您的服務帳戶建立自訂角色：「gcloud iam角色可建立kmsCustom勞力-project =_project _id_-TITLE=_kms_custom_roue_name_-description=_custom_rousion_description_-privations.cryptoKeyVerations.gms.list、cloudkms.cryptoKeyVersions.useToDecrypt,cloudkms.cryptoKeyVersions.useToEncrypt,cloudkms.cryptoKeys.get,cloudkms.keyRings.get,cloudkms.locations.get,cloudkms.locations.list,resourcemanager.projects.get - ga-ga=bake /</block>
-  <block id="35257e0a7fdf990e79516f14d54b9688" category="list-text">將自訂角色指派Cloud Volumes ONTAP 給Cloud KMS金鑰與更新服務帳戶：「gCloud kms key add-iam-policy-bindusting $｛_key_name_｝-keyring $｛_key_ring_name_｝-location $｛_key_portation_｝-member ServiceAccount：$｛_service_Account_Name_｝-role專案/客戶_專案/_&lt;Customk_rooles_專案角色</block>
   <block id="d21cbe89c10e8cddec31594493146dcf" category="list-text">下載服務帳戶Json金鑰：「gCloud iam服務帳戶金鑰可建立金鑰檔案-iam-account=_sa-name_@_project-id_.iam.gserviceaccount.com」</block>
-  <block id="43db0fe1ea4bbf51b29da7ede3c389c8" category="list-text">切換Cloud Volumes ONTAP 到您的自然環境：</block>
   <block id="82e39d2f55f4956d1929bbcff0b210aa" category="list-text">切換至進階權限等級：「et -priv榮幸 進階」</block>
-  <block id="a035687f65cfa8cf7e7c82084b7e145b" category="list-text">為資料SVM建立DNS。“建立網域C_<block ref="03b54379e1d996c88e31bd360eab170a" category="inline-xref-macro-rx"></block>_.internal -name-servers _server_address_-vserver _Svm_name_`</block>
   <block id="6deefebfd83493611afe8675c6d1ce7b" category="list-text">建立CMEK項目：「安全金鑰管理程式外部GCP啟用-vserver _Svm_name_-project -id _project _-key-ring_name _key_ring_name_-key-ring_location _key_ring_stip_-key-name _key_name_」</block>
   <block id="53521a13e927a2d5286f3433c692ed71" category="list-text">出現提示時、請從GCP帳戶輸入服務帳戶Json金鑰。</block>
   <block id="b20c482c85ecfd221cc2a8a8ac33d883" category="list-text">確認啟用的程序成功：「安全金鑰管理程式外部GCP檢查-vserver _svm_name_」</block>
-  <block id="43272767051c3ae3332c7d5065d40829" category="list-text">選用：建立磁碟區以測試加密「volvol create _volvolvole_name_&gt;-Aggregate _-vserver _vserver_name_-size 10G'</block>
   <block id="d60c463bb4096f3ed4bd1618626dfe10" category="section-title">疑難排解</block>
   <block id="6a81e96ba72f086fbc1fce60f448b1bb" category="paragraph">如果需要疑難排解、您可以跳接上述最後兩個步驟中的原始REST API記錄：。《設定》。"ystemShell -node_node_-command tail -f /mroot/etc/log/mlog/kmip2_client.log"</block>
   <block id="90ffa83e68ae5e0cbf95a61d80d4f2bc" category="sidebar">啟用Azure Key Vault</block>
   <block id="ea549d1febacd44f10ba966e5d89a261" category="sidebar">啟用Google Cloud Key Manager服務</block>
+  <block id="46653d32d1199a88497ad4000ed4e7b3" category="paragraph">AKV可用於保護 <block ref="8531e852e621158c599cbd603b309c10" category="inline-link-macro-rx"></block> 僅適用於資料SVM。</block>
+  <block id="0ea3f714b377b93b473407aa072f783d" category="list-text">Volume Encryption（VE）授權已安裝（NetApp Volume Encryption授權會自動安裝在Cloud Volumes ONTAP 向NetApp Support註冊的每個版本。）</block>
+  <block id="92d7c08c21ef73fa595de6c26658ae13" category="paragraph">概述的步驟將說明如何向Cloud Volumes ONTAP Azure註冊您的「還原組態」、以及如何建立Azure Key Vault和金鑰。如果您已經完成這些步驟、請確定您擁有正確的組態設定、尤其是在中 <block ref="b6cee0c01f8bf1f1cd6348c49fbde2b0" category="inline-xref-macro-rx"></block>，然後繼續 <block ref="0d835ce531ec9eb78a13d9e8f120db62" category="inline-xref-macro-rx"></block>。* <block ref="cdef42bd73f4820f7c1e1f3c23ba776b" category="inline-xref-macro-rx"></block>* <block ref="2a43cfee4c27fd40bae74d4018b95bd1" category="inline-xref-macro-rx"></block>* <block ref="b6cee0c01f8bf1f1cd6348c49fbde2b0" category="inline-xref-macro-rx"></block>* <block ref="eef1aa206d5a44d4bc4f9df01004949c" category="inline-xref-macro-rx"></block>* <block ref="dc960527a9d200faf5b1d4aabb43c442" category="inline-xref-macro-rx"></block>* <block ref="0d835ce531ec9eb78a13d9e8f120db62" category="inline-xref-macro-rx"></block></block>
+  <block id="0e62debe1968d8a9992becc4fb3a303b" category="list-title">Azure應用程式註冊</block>
+  <block id="7f7d612d5f09a474aa8522e2022e503d" category="list-text">您必須先在Azure訂閱中註冊您的應用程式Cloud Volumes ONTAP 、才能使用此功能來存取Azure Key Vault。在Azure入口網站中、選取「*應用程式註冊*」。</block>
+  <block id="fe03672d5cebda78f425cc339ac0425f" category="list-text">選擇「**新登錄」。</block>
+  <block id="0a3c1ea98015fea252076643a7006949" category="list-text">提供應用程式名稱、並選取支援的應用程式類型。Azure Key Vault使用預設的單一租戶即可滿足需求。選擇「*註冊*」。</block>
+  <block id="1d409f5854c728f2ea49e519f12e2ff8" category="list-text">在Azure Overview（Azure總覽）視窗中、選取您已註冊的應用程式。將應用程式（用戶端）ID *和*目錄（租戶）ID *複製到安全位置。在稍後的註冊程序中、將會需要這些工具。</block>
+  <block id="4466def91ac19af993030eff5c4ea4ef" category="list-title">建立Azure用戶端機密</block>
+  <block id="138447381f65d7de53d276300e34ace2" category="list-text">在Azure入口網站Cloud Volumes ONTAP 中、選取「*認證與機密*」窗格。</block>
+  <block id="0d11323c8a6d694cbd738f596a517d2f" category="list-text">選取「**新用戶端機密」*輸入有意義的用戶端機密名稱。NetApp建議使用24個月的到期日、不過您的特定雲端治理原則可能需要不同的設定。</block>
+  <block id="1fb1736b61369abce475039d7f448214" category="list-text">選取「**新增*」以儲存用戶端機密。立即複製機密的*值*、並將其儲存在安全的地方、以供未來設定使用。在您離開頁面後、不會顯示機密值。</block>
+  <block id="2c1f18e5f9ee7d42406022e9ffe5854d" category="list-title">建立Azure Key Vault</block>
+  <block id="19238aa3b8371b577668244b3228880e" category="list-text">如果您有現有的Azure Key Vault、您可以將其連線Cloud Volumes ONTAP 至您的功能表組態、不過您必須將存取原則調整為此程序中的設定。</block>
+  <block id="b52e3778af65d886ba32b1fd67fdfb1b" category="list-text">在Azure入口網站中、瀏覽至「**關鍵故障」區段。</block>
+  <block id="92ffcbcc7fa86b0c7d82367345872f5a" category="list-text">選擇「建立」。輸入所需資訊、包括資源群組、地區和價格層、並選擇保留刪除的保存資料室的天數、以及是否啟用清除保護。就本組態而言、預設值已足夠、不過您的特定雲端治理原則可能需要不同的設定。</block>
+  <block id="5806c7463c14b44dd17992a1c031fa0f" category="list-text">選擇「**下一步*」以選擇存取原則。</block>
+  <block id="a15b840e857b0be5423560edc5346ef6" category="list-text">選擇「* Azure Disk Encryption*（* Azure磁碟加密）」作為磁碟區加密選項、選擇「* Vault存取原則*」作為權限模式。</block>
+  <block id="1f34b5f3ab0226f052fc177239cc4f91" category="list-text">選取「**新增存取原則」。</block>
+  <block id="68cd8db76e0574e7adc41824f92f13bf" category="list-text">選取「自範本設定」（選用）字段旁邊的插入號。然後選擇「**金鑰、機密與認證管理」</block>
+  <block id="e4bff652065888d52fed75044894f9e7" category="list-text">選擇每個下拉式權限功能表（金鑰、秘密、憑證）、然後在功能表清單頂端選擇所有*、以選取所有可用的權限。您應該擁有：</block>
+  <block id="527f287f763d308ba075a4aecc220dbe" category="list-text">*關鍵權限*：19個已選取</block>
+  <block id="71a8ddee35e94c488b23ac9ba055bb79" category="list-text">**機密權限：選擇8項</block>
+  <block id="fee9a8fdd6aff1a6048d3ccee4f385a3" category="list-text">*認證權限*：16項已選取</block>
+  <block id="a158ec2c7b6ac237a382adc4fdd76141" category="list-text">選取「**新增*」以建立存取原則。</block>
+  <block id="93856c87f5f709c2bb22415396d9f2a6" category="list-text">選擇「下一步」*進入「**網路」*選項。</block>
+  <block id="f10e4cb8be9ad6f896cadded4bf18cee" category="list-text">選擇適當的網路存取方法、或選擇「*所有網路*」和「*審查+建立*」來建立金鑰保存庫。（網路存取方法可能由治理原則或您的企業雲端安全團隊規定。）</block>
+  <block id="37e7091aa36439837070742f8d6bc7e9" category="list-text">記錄金鑰庫URI：在您建立的金鑰庫中、瀏覽至「總覽」功能表、然後從右側欄複製「** Vault URI」。您稍後將需要此功能。</block>
+  <block id="8925f0e46ff47371441124c2df44a2a3" category="list-title">建立加密金鑰</block>
+  <block id="76f551dd2c984e558a618de45d9222ae" category="list-text">在您為Cloud Volumes ONTAP 之建立的Key Vault功能表中、瀏覽至「** Keys」選項。</block>
+  <block id="4e6b60602e4345dfe01d9d28c342518e" category="list-text">選取「*產生/匯入*」以建立新的金鑰。</block>
+  <block id="56576804b88df5feda2dd35232fb2733" category="list-text">將預設選項設為「**產生」。</block>
+  <block id="13c1455885d16af64f1bb96c4e48680a" category="list-text">提供下列資訊：</block>
+  <block id="5c2685fc4d5b3fa9e5718f23acaeb6ac" category="list-text">加密金鑰名稱</block>
+  <block id="a879c9ae69f23082894931a6ec418273" category="list-text">金鑰類型：RSA</block>
+  <block id="8cda0713a1c543d49bc4d57c19f53fc9" category="list-text">RSA金鑰大小：2048</block>
+  <block id="7203bac3edcdfe6a3a2785cc7cf9a737" category="list-text">已啟用：是</block>
+  <block id="aa5aef83169e0b9d9d46f0ca4ad0325f" category="list-text">選取「建立」以建立加密金鑰。</block>
+  <block id="6c777acc0b5710ba812bd761d96193fe" category="list-text">返回「**按鍵」功能表、然後選取您剛建立的按鍵。</block>
+  <block id="148a8c69d28b781487e6e1d682a63574" category="list-text">在「*目前版本*」下方選取金鑰ID、即可檢視金鑰內容。</block>
+  <block id="39350c9bb5d1944335ad3eb997bf08f1" category="list-text">找到「**金鑰識別碼」欄位。將URI複製到但不包括十六進位字串。</block>
+  <block id="90e3ef3b69667e2803197d86851432d3" category="list-title">建立Azure Active Directory端點（僅限HA）</block>
+  <block id="093e34e61123baceb7c92fc665dcaba1" category="list-text">只有在您將Azure Key Vault設定為HA Cloud Volumes ONTAP 功能環境時、才需要執行此程序。</block>
+  <block id="a9f595a9e965e7fd1b0c9296a00dc089" category="list-text">在Azure入口網站中、瀏覽至「**虛擬網路」。</block>
+  <block id="82a6e0886c87dc5bc69074249df4aa58" category="list-text">選取部署Cloud Volumes ONTAP 了整個功能區的虛擬網路、然後選取頁面左側的「**Subnets」（子網路）功能表。</block>
+  <block id="d90b291a12c60639bd85c4fafde4ea97" category="list-text">從Cloud Volumes ONTAP 清單中選取要部署的子網路名稱。</block>
+  <block id="c1c335737025d8b2354cceafcdabea4e" category="list-text">瀏覽至「**服務端點*」標題。在下拉式功能表中、從清單中選取「**Microsoft.AzureActiveDirectory」。</block>
+  <block id="23b8cf63899cafd6a9d0b32fbdc5c6e8" category="list-text">選取「**儲存」以擷取您的設定。</block>
+  <block id="5bfda0e2440a8346cbb089805c29d898" category="list-title">組態Cloud Volumes ONTAP</block>
+  <block id="293327de56819bbcc6bac1b0f0d39eb5" category="list-text">選用：建立測試磁碟區以驗證AKV的功能。「vol create -vserver _Svm_name_-volume _volVolume _name_-Aggregate _aggr _-size _size_-state online -policy default」</block>
+  <block id="89fe433ed203b193e97ffc51ade125be" category="paragraph">如果設定正確、Cloud Volumes ONTAP 則會自動建立Volume並啟用Volume加密。</block>
+  <block id="2f88a80d163d0a89ca5ecdf817af1f14" category="list-text">C2S環境不支援Freemium授權。</block>
+  <block id="5e31f4e44c9ec2b42878b12dff64c9fb" category="paragraph">雲端KMS的金鑰管理可透過CLI或ONTAP REST API啟用。</block>
+  <block id="254f642527b45bc260048e30704edb39" category="section-title">組態</block>
+  <block id="d8cc118193ca8f7de894de3aa3760c8b" category="inline-link-macro">建立對稱的GCP金鑰環和金鑰</block>
+  <block id="f510135977c794727163a8e714df5b99" category="list-text">在您的Google Cloud環境中、 <block ref="7ea8c432087c9eb8393041b63739b4b6" category="inline-link-macro-rx"></block>。</block>
+  <block id="43b2c0508e829808a52d205609043890" category="list-text">為Cloud Volumes ONTAP 您的服務帳戶建立自訂角色。</block>
+  <block id="df877e8ddc7d9aae543dcf9650ab2c34" category="list-text">將自訂角色指派給Cloud KMS金鑰與Cloud Volumes ONTAP 更新服務帳戶：「gCloud kms金鑰add-iam-policy-binding _key_name_-keyring _key_ring_name_-location _-member ServiceAccount：_service_Account_Name_-role專案/_customer_project _id_/ros/ros/kmsCustomrole」</block>
+  <block id="d8787bda3ae35a469afc376610816a6a" category="list-text">為資料SVM建立DNS。「建立網域C_&lt;project &gt;_.internal -name-servers _server_address_-vserver _Svm_name_」</block>
+  <block id="1601dadf3d75da8ab487484480cbf4ef" category="list-text">選用：建立磁碟區以測試加密「volvol create _volvolvole_name_-Aggregate _Aggregate _-vserver _vserver_name_-size 10G」</block>
+  <block id="401a8aaa330fe64d45395192c047e1ed" category="paragraph">支援NetApp Volume Encryption（NVE）和NetApp Aggregate Encryption（NAE）Cloud Volumes ONTAP 。NVE和NAE是軟體型解決方案、可啟用FIPS 140-2標準的磁碟區閒置資料加密功能。 <block ref="d36456219fc3d98cd4133816e30fd33f" category="inline-link-macro-rx"></block>。</block>
+  <block id="a8e451d7a52ebee36c6527d684d09cd7" category="list-text"><block ref="a8e451d7a52ebee36c6527d684d09cd7" category="inline-link-macro-rx"></block></block>
+  <block id="f0daa22edb6ee8b88bae0e5a21b552ec" category="inline-link-macro">Google Cloud金鑰管理服務</block>
+  <block id="7cf27d24396a294ecbe07a4a35a715e6" category="list-text"><block ref="7cf27d24396a294ecbe07a4a35a715e6" category="inline-link-macro-rx"></block></block>
+  <block id="bce3985c06cad9c2c4fca6ec2afb69c3" category="sidebar">利用Google Cloud Key Manager Service管理金鑰</block>
 </blocks>
