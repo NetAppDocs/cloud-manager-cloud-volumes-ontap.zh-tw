@@ -1,0 +1,78 @@
+---
+sidebar: sidebar 
+permalink: task-azure-key-vault.html 
+keywords: azure, encryption, NVE, NetApp volume encryption, KMIP, azure key vault 
+summary: 利用Azure Key Vault提供第三方金鑰管理服務。 
+---
+= 使用Azure Key Vault管理金鑰
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+您可以使用 link:https://docs.microsoft.com/en-us/azure/key-vault/general/basic-concepts["Azure Key Vault（AKV）"^] 在ONTAP Azure部署的應用程式中保護您的不加密金鑰。
+
+AKV和Cloud KMS可用於保護 link:configure-netapp-volume-encryption-concept.html["NetApp Volume Encryption（NVE）金鑰"] 僅適用於資料SVM。
+
+使用AKV的金鑰管理可透過CLI或ONTAP REST API來啟用。
+
+使用AKV時、請注意、預設會使用資料SVM LIF與雲端金鑰管理端點進行通訊。節點管理網路用於與雲端供應商的驗證服務（login.microsoftonline.com）進行通訊。如果叢集網路設定不正確、叢集將無法正確使用金鑰管理服務。
+
+.先決條件
+* 必須執行9.10.1版或更新版本Cloud Volumes ONTAP
+* 這個支援NVE的叢集節點必須支援Cloud Volumes ONTAP
+* 已安裝Volume Encryption（VE）授權
+* 已安裝多租戶加密金鑰管理（MTEKM）授權
+* 您必須是叢集或SVM管理員
+* 現用Azure訂閱
+
+
+.限制
+* NSE和NAE金鑰無法使用AKV
+* AKV不適用於MetroCluster 不完整的組態。
+* AKV只能在資料SVM上設定
+
+
+
+
+== 組態程序
+
+.組態ONTAP
+. 使用您偏好的SSH用戶端連線至叢集管理LIF。
+. 進入進階權限模式ONTAP ：「et advanc進 階-con Off」（設定進階-con Off）
+. 識別所需的資料SVM、並驗證其DNS組態：「vserver services name-service DNS show」
++
+.. 如果所需資料SVM的DNS項目存在、且其中包含Azure DNS項目、則不需要採取任何行動。如果沒有、請為資料SVM新增DNS伺服器項目、以指向Azure DNS、私有DNS或內部部署伺服器。這應該符合叢集管理SVM的項目：「vserver services name-service DNS create -vserver _svm_name_-domain_-name-servers _ip_address_」
+.. 確認已為資料SVM建立DNS服務：「vserver services name-service DNS show」
+
+
+. 使用應用程式登錄後儲存的用戶端ID和租戶ID來啟用Azure Key Vault：「安全金鑰管理程式外部azure enable -vserver _Svm_name_-client-id _Azure用戶端_ID_-租 戶ID _Azure租戶_ID_-name _Azure金鑰名稱_-key-id _Azure金鑰_ID_」
+. 驗證金鑰管理程式組態：「安全金鑰管理程式外部azure show」
+. 檢查金鑰管理程式的狀態：「安全金鑰管理程式外部azure檢查」輸出內容如下：
++
+[source]
+----
+::*> security key-manager external azure check
+
+Vserver: data_svm_name
+Node: akvlab01-01
+
+Category: service_reachability
+    Status: OK
+
+Category: ekmip_server
+    Status: OK
+
+Category: kms_wrapped_key_status
+    Status: UNKNOWN
+    Details: No volumes created yet for the vserver. Wrapped KEK status will be available after creating encrypted volumes.
+
+3 entries were displayed.
+----
++
+如果「連線能力」狀態不是「正常」、SVM將無法以所有必要的連線和權限來連線至Azure Key Vault服務。初始組態時、「kms」迴應鍵狀態會報告「unkNOWNKNOWNKY」。第一個磁碟區加密後、其狀態會變更為「OK（正常）」。
+
+. 選用：建立測試磁碟區以驗證AKV的功能。「vol create -vserver _Svm_name_-volume _volVolume _name_-Aggregate _aggr _-size _size_-state online -policy預設值」如果設定正確、ONTAP 則會自動建立磁碟區並啟用磁碟區加密。
+. 確認磁碟區已正確建立並加密。如果是的話、「-is-Encrypted」參數會顯示為「true」。「vol show -vserver _svm_name_-Fields is加密」
+
