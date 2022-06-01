@@ -64,4 +64,8 @@ gcloud iam roles create kmsCustomRole
 
 == 疑難排解
 
-如果需要疑難排解、您可以跳接上述最後兩個步驟中的原始REST API記錄：。《設定》。"ystemShell -node_node_-command tail -f /mroot/etc/log/mlog/kmip2_client.log"
+如果您需要疑難排解、可以跳接上述最後兩個步驟中的原始REST API記錄：
+
+. "以d為準"
+. "ystemShell -node_node_-command tail -f /mroot/etc/log/mlog/kmip2_client.log"
+
