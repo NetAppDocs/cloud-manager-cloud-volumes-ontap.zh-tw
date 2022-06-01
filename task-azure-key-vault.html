@@ -182,13 +182,13 @@
   <ul class="custom-dropdown-menu">
     
     
-    <li data-value="aws" data-url="/zh-tw/cloud-manager-cloud-volumes-ontap/aws/task-azure-key-vault.html">
+    <li data-value="aws" data-url="/zh-tw/cloud-manager-cloud-volumes-ontap/aws">
       <img alt="" src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/aws-ico.svg" onerror="this.src='/zh-tw/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Amazon Web Services
     </li>
     
     
     
-    <li data-value="gcp" data-url="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/task-azure-key-vault.html">
+    <li data-value="gcp" data-url="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp">
       <img alt="" src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/gcp-ico.svg" onerror="this.src='/zh-tw/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Google Cloud
     </li>
     
@@ -760,6 +760,19 @@
           
 
 
+    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
+  <a target="_blank" href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/pages/task-azure-key-vault.pdf" >
+    <img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
+    PDF of this page
+  </a>
+</li>
+
+</ul>
+  
+
+
+
+
 
 
     <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
@@ -1280,6 +1293,10 @@
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-encrypting-volumes.html">
         使用 NetApp 加密來加密磁碟區
+      </a></li><li class="  active "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-azure-key-vault.html">
+        使用Azure Key Vault管理金鑰
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-google-key-manager.html">
+        利用Google Cloud Key Manager Service管理金鑰
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-protecting-ransomware.html">
         改善勒索軟體保護
       </a></li><li class="  active "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-azure-key-vault.html">
@@ -1463,7 +1480,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-01 15:32:54 +0000">06/01/2022</time>
+    <time datetime="2022-06-01 16:18:21 +0000">06/01/2022</time>
     
   
 
@@ -1476,7 +1493,7 @@
 <p>您可以使用 <a href="https://docs.microsoft.com/en-us/azure/key-vault/general/basic-concepts" target="_blank" rel="noopener">"Azure Key Vault（AKV）"</a> 在ONTAP Azure部署的應用程式中保護您的不加密金鑰。</p>
 </div>
 <div class="paragraph">
-<p>AKV和Cloud KMS可用於保護 <a href="configure-netapp-volume-encryption-concept.html">"NetApp Volume Encryption（NVE）金鑰"</a> 僅適用於資料SVM。</p>
+<p>AKV可用於保護 <a href="https://docs.netapp.com/us-en/ontap/configure-netapp-volume-encryption-concept.html" target="_blank" rel="noopener">"NetApp Volume Encryption（NVE）金鑰"</a> 僅適用於資料SVM。</p>
 </div>
 <div class="paragraph">
 <p>使用AKV的金鑰管理可透過CLI或ONTAP REST API來啟用。</p>
@@ -1491,10 +1508,7 @@
 <p>必須執行9.10.1版或更新版本Cloud Volumes ONTAP</p>
 </li>
 <li>
-<p>這個支援NVE的叢集節點必須支援Cloud Volumes ONTAP</p>
-</li>
-<li>
-<p>已安裝Volume Encryption（VE）授權</p>
+<p>Volume Encryption（VE）授權已安裝（NetApp Volume Encryption授權會自動安裝在Cloud Volumes ONTAP 向NetApp Support註冊的每個版本。）</p>
 </li>
 <li>
 <p>已安裝多租戶加密金鑰管理（MTEKM）授權</p>
@@ -1511,12 +1525,6 @@
 <div class="title">限制</div>
 <ul>
 <li>
-<p>NSE和NAE金鑰無法使用AKV</p>
-</li>
-<li>
-<p>AKV不適用於MetroCluster 不完整的組態。</p>
-</li>
-<li>
 <p>AKV只能在資料SVM上設定</p>
 </li>
 </ul>
@@ -1526,8 +1534,164 @@
 <div class="sect1">
 <h2 id="組態程序">組態程序</h2>
 <div class="sectionbody">
-<div class="olist arabic">
-<div class="title">組態ONTAP</div>
+<div class="paragraph">
+<p>概述的步驟將說明如何向Cloud Volumes ONTAP Azure註冊您的「還原組態」、以及如何建立Azure Key Vault和金鑰。如果您已經完成這些步驟、請確定您擁有正確的組態設定、尤其是在中 <a href="#create-akv">建立Azure Key Vault</a>，然後繼續 <a href="#ontap">組態Cloud Volumes ONTAP</a>。* <a href="#azure-app">Azure應用程式註冊</a>* <a href="#secret">建立Azure用戶端機密</a>* <a href="#create-akv">建立Azure Key Vault</a>* <a href="#key">建立加密金鑰</a>* <a href="#AAD">建立Azure Active Directory端點（僅限HA）</a>* <a href="#ontap">組態Cloud Volumes ONTAP</a></p>
+</div>
+<div id="azure-app" class="olist arabic">
+<div class="title">Azure應用程式註冊</div>
+<ol class="arabic">
+<li>
+<p>您必須先在Azure訂閱中註冊您的應用程式Cloud Volumes ONTAP 、才能使用此功能來存取Azure Key Vault。在Azure入口網站中、選取「<strong>應用程式註冊</strong>」。</p>
+</li>
+<li>
+<p>選擇「**新登錄」。</p>
+</li>
+<li>
+<p>提供應用程式名稱、並選取支援的應用程式類型。Azure Key Vault使用預設的單一租戶即可滿足需求。選擇「<strong>註冊</strong>」。</p>
+</li>
+<li>
+<p>在Azure Overview（Azure總覽）視窗中、選取您已註冊的應用程式。將應用程式（用戶端）ID *和*目錄（租戶）ID *複製到安全位置。在稍後的註冊程序中、將會需要這些工具。</p>
+</li>
+</ol>
+</div>
+<div id="secret" class="olist arabic">
+<div class="title">建立Azure用戶端機密</div>
+<ol class="arabic">
+<li>
+<p>在Azure入口網站Cloud Volumes ONTAP 中、選取「<strong>認證與機密</strong>」窗格。</p>
+</li>
+<li>
+<p>選取「**新用戶端機密」*輸入有意義的用戶端機密名稱。NetApp建議使用24個月的到期日、不過您的特定雲端治理原則可能需要不同的設定。</p>
+</li>
+<li>
+<p>選取「<strong>*新增</strong>」以儲存用戶端機密。立即複製機密的*值*、並將其儲存在安全的地方、以供未來設定使用。在您離開頁面後、不會顯示機密值。</p>
+</li>
+</ol>
+</div>
+<div id="create-akv" class="olist arabic">
+<div class="title">建立Azure Key Vault</div>
+<ol class="arabic">
+<li>
+<p>如果您有現有的Azure Key Vault、您可以將其連線Cloud Volumes ONTAP 至您的功能表組態、不過您必須將存取原則調整為此程序中的設定。</p>
+</li>
+<li>
+<p>在Azure入口網站中、瀏覽至「**關鍵故障」區段。</p>
+</li>
+<li>
+<p>選擇「建立」。輸入所需資訊、包括資源群組、地區和價格層、並選擇保留刪除的保存資料室的天數、以及是否啟用清除保護。就本組態而言、預設值已足夠、不過您的特定雲端治理原則可能需要不同的設定。</p>
+</li>
+<li>
+<p>選擇「<strong>*下一步</strong>」以選擇存取原則。</p>
+</li>
+<li>
+<p>選擇「* Azure Disk Encryption*（* Azure磁碟加密）」作為磁碟區加密選項、選擇「* Vault存取原則*」作為權限模式。</p>
+</li>
+<li>
+<p>選取「**新增存取原則」。</p>
+</li>
+<li>
+<p>選取「自範本設定」（選用）字段旁邊的插入號。然後選擇「**金鑰、機密與認證管理」</p>
+</li>
+<li>
+<p>選擇每個下拉式權限功能表（金鑰、秘密、憑證）、然後在功能表清單頂端選擇所有*、以選取所有可用的權限。您應該擁有：</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>關鍵權限</strong>：19個已選取</p>
+</li>
+<li>
+<p>**機密權限：選擇8項</p>
+</li>
+<li>
+<p><strong>認證權限</strong>：16項已選取</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>選取「<strong>*新增</strong>」以建立存取原則。</p>
+</li>
+<li>
+<p>選擇「下一步」<strong>進入「</strong>*網路」*選項。</p>
+</li>
+<li>
+<p>選擇適當的網路存取方法、或選擇「<strong>所有網路</strong>」和「<strong>審查+建立</strong>」來建立金鑰保存庫。（網路存取方法可能由治理原則或您的企業雲端安全團隊規定。）</p>
+</li>
+<li>
+<p>記錄金鑰庫URI：在您建立的金鑰庫中、瀏覽至「總覽」功能表、然後從右側欄複製「** Vault URI」。您稍後將需要此功能。</p>
+</li>
+</ol>
+</div>
+<div id="key" class="olist arabic">
+<div class="title">建立加密金鑰</div>
+<ol class="arabic">
+<li>
+<p>在您為Cloud Volumes ONTAP 之建立的Key Vault功能表中、瀏覽至「** Keys」選項。</p>
+</li>
+<li>
+<p>選取「<strong>產生/匯入</strong>」以建立新的金鑰。</p>
+</li>
+<li>
+<p>將預設選項設為「**產生」。</p>
+</li>
+<li>
+<p>提供下列資訊：</p>
+<div class="ulist">
+<ul>
+<li>
+<p>加密金鑰名稱</p>
+</li>
+<li>
+<p>金鑰類型：RSA</p>
+</li>
+<li>
+<p>RSA金鑰大小：2048</p>
+</li>
+<li>
+<p>已啟用：是</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>選取「建立」以建立加密金鑰。</p>
+</li>
+<li>
+<p>返回「**按鍵」功能表、然後選取您剛建立的按鍵。</p>
+</li>
+<li>
+<p>在「<strong>目前版本</strong>」下方選取金鑰ID、即可檢視金鑰內容。</p>
+</li>
+<li>
+<p>找到「**金鑰識別碼」欄位。將URI複製到但不包括十六進位字串。</p>
+</li>
+</ol>
+</div>
+<div id="AAD" class="olist arabic">
+<div class="title">建立Azure Active Directory端點（僅限HA）</div>
+<ol class="arabic">
+<li>
+<p>只有在您將Azure Key Vault設定為HA Cloud Volumes ONTAP 功能環境時、才需要執行此程序。</p>
+</li>
+<li>
+<p>在Azure入口網站中、瀏覽至「**虛擬網路」。</p>
+</li>
+<li>
+<p>選取部署Cloud Volumes ONTAP 了整個功能區的虛擬網路、然後選取頁面左側的「**Subnets」（子網路）功能表。</p>
+</li>
+<li>
+<p>從Cloud Volumes ONTAP 清單中選取要部署的子網路名稱。</p>
+</li>
+<li>
+<p>瀏覽至「<strong>服務端點*」標題。在下拉式功能表中、從清單中選取「</strong>Microsoft.AzureActiveDirectory」。</p>
+</li>
+<li>
+<p>選取「**儲存」以擷取您的設定。</p>
+</li>
+</ol>
+</div>
+<div id="ontap" class="olist arabic">
+<div class="title">組態Cloud Volumes ONTAP</div>
 <ol class="arabic">
 <li>
 <p>使用您偏好的SSH用戶端連線至叢集管理LIF。</p>
@@ -1581,8 +1745,15 @@ Category: kms_wrapped_key_status
 </div>
 </li>
 <li>
-<p>選用：建立測試磁碟區以驗證AKV的功能。「vol create -vserver <em>Svm_name</em>-volume <em>volVolume _name</em>-Aggregate <em>aggr _-size _size</em>-state online -policy預設值」如果設定正確、ONTAP 則會自動建立磁碟區並啟用磁碟區加密。</p>
+<p>選用：建立測試磁碟區以驗證AKV的功能。「vol create -vserver <em>Svm_name</em>-volume <em>volVolume _name</em>-Aggregate <em>aggr _-size _size</em>-state online -policy default」</p>
 </li>
+</ol>
+</div>
+<div class="paragraph">
+<p>如果設定正確、Cloud Volumes ONTAP 則會自動建立Volume並啟用Volume加密。</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>確認磁碟區已正確建立並加密。如果是的話、「-is-Encrypted」參數會顯示為「true」。「vol show -vserver <em>svm_name</em>-Fields is加密」</p>
 </li>

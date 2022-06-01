@@ -182,7 +182,7 @@
   <ul class="custom-dropdown-menu">
     
     
-    <li data-value="aws" data-url="/zh-tw/cloud-manager-cloud-volumes-ontap/aws/task-google-key-manager.html">
+    <li data-value="aws" data-url="/zh-tw/cloud-manager-cloud-volumes-ontap/aws">
       <img alt="" src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/aws-ico.svg" onerror="this.src='/zh-tw/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Amazon Web Services
     </li>
     
@@ -194,7 +194,7 @@
     
     
     
-    <li data-value="azure" data-url="/zh-tw/cloud-manager-cloud-volumes-ontap/azure/task-google-key-manager.html">
+    <li data-value="azure" data-url="/zh-tw/cloud-manager-cloud-volumes-ontap/azure">
       <img alt="" src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/azure-ico.svg" onerror="this.src='/zh-tw/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Microsoft Azure
     </li>
     
@@ -762,6 +762,19 @@
 
 
 
+    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
+  <a target="_blank" href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/pages/task-google-key-manager.pdf" >
+    <img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
+    PDF of this page
+  </a>
+</li>
+
+</ul>
+  
+
+
+
+
 
 
     <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
@@ -1280,6 +1293,10 @@
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-encrypting-volumes.html">
         使用 NetApp 加密來加密磁碟區
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-azure-key-vault.html">
+        使用Azure Key Vault管理金鑰
+      </a></li><li class="  active "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-google-key-manager.html">
+        利用Google Cloud Key Manager Service管理金鑰
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-protecting-ransomware.html">
         改善勒索軟體保護
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-azure-key-vault.html">
@@ -1463,7 +1480,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-01 15:32:54 +0000">06/01/2022</time>
+    <time datetime="2022-06-01 16:18:21 +0000">06/01/2022</time>
     
   
 
@@ -1476,7 +1493,7 @@
 <p>您可以使用 <a href="https://cloud.google.com/kms/docs" target="_blank" rel="noopener">"Google Cloud Platform的金鑰管理服務（雲端KMS）"</a> 在ONTAP Google Cloud Platform部署的應用程式中保護您的不加密金鑰。</p>
 </div>
 <div class="paragraph">
-<p>金鑰管理雲端KMS可透過CLI或ONTAP REST API啟用。若要設定Cloud KMS Cloud Volumes ONTAP 以供使用、您必須先設定</p>
+<p>雲端KMS的金鑰管理可透過CLI或ONTAP REST API啟用。</p>
 </div>
 <div class="paragraph">
 <p>使用Cloud KMS時、請注意、預設會使用資料SVM LIF與雲端金鑰管理端點進行通訊。節點管理網路用於與雲端供應商的驗證服務（oauth2.googleapis.com）進行通訊。如果叢集網路設定不正確、叢集將無法正確使用金鑰管理服務。</p>
@@ -1485,7 +1502,7 @@
 <div class="title">先決條件</div>
 <ul>
 <li>
-<p>這個支援NVE的叢集節點必須支援Cloud Volumes ONTAP</p>
+<p>必須執行9.10.1版或更新版本Cloud Volumes ONTAP</p>
 </li>
 <li>
 <p>已安裝Volume Encryption（VE）授權</p>
@@ -1496,59 +1513,62 @@
 <li>
 <p>您必須是叢集或SVM管理員</p>
 </li>
+<li>
+<p>現用Google Cloud Platform訂閱</p>
+</li>
 </ul>
 </div>
 <div class="ulist">
 <div class="title">限制</div>
 <ul>
 <li>
-<p>必須執行9.10.1版或更新版本Cloud Volumes ONTAP</p>
-</li>
-<li>
-<p>雲端KMS不適用於NSE和NAE。</p>
-</li>
-<li>
-<p>雲端KMS不適用於MetroCluster 不完整的組態。</p>
-</li>
-<li>
 <p>雲端KMS只能在資料SVM上設定</p>
-</li>
-<li>
-<p>現用Google Cloud Platform訂閱</p>
 </li>
 </ul>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="組態">組態</h2>
+<div class="sectionbody">
 <div class="olist arabic">
-<div class="title">啟用</div>
+<div class="title">Google Cloud</div>
 <ol class="arabic">
 <li>
-<p>在Google Cloud環境中：</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>建立對稱的GCP金鑰環和金鑰：</p>
+<p>在您的Google Cloud環境中、 <a href="https://cloud.google.com/kms/docs/creating-keys" target="_blank" rel="noopener">"建立對稱的GCP金鑰環和金鑰"</a>。</p>
 </li>
 <li>
-<p>為Cloud Volumes ONTAP 您的服務帳戶建立自訂角色：「gcloud iam角色可建立kmsCustom勞力-project =<em>project _id</em>-TITLE=<em>kms_custom_roue_name</em>-description=<em>custom_rousion_description</em>-privations.cryptoKeyVerations.gms.list、cloudkms.cryptoKeyVersions.useToDecrypt,cloudkms.cryptoKeyVersions.useToEncrypt,cloudkms.cryptoKeys.get,cloudkms.keyRings.get,cloudkms.locations.get,cloudkms.locations.list,resourcemanager.projects.get - ga-ga=bake /</p>
+<p>為Cloud Volumes ONTAP 您的服務帳戶建立自訂角色。</p>
+<div class="listingblock">
+<div class="content">
+<pre>gcloud iam roles create kmsCustomRole
+    --project=&lt;project_id&gt;
+    --title=&lt;kms_custom_role_name&gt;
+    --description=&lt;custom_role_description&gt;
+    --permissions=cloudkms.cryptoKeyVersions.get,cloudkms.cryptoKeyVersions.list,cloudkms.cryptoKeyVersions.useToDecrypt,cloudkms.cryptoKeyVersions.useToEncrypt,cloudkms.cryptoKeys.get,cloudkms.keyRings.get,cloudkms.locations.get,cloudkms.locations.list,resourcemanager.projects.get
+    --stage=GA</pre>
+</div>
+</div>
 </li>
 <li>
-<p>將自訂角色指派Cloud Volumes ONTAP 給Cloud KMS金鑰與更新服務帳戶：「gCloud kms key add-iam-policy-bindusting $｛<em>key_name</em>｝-keyring $｛<em>key_ring_name</em>｝-location $｛<em>key_portation</em>｝-member ServiceAccount：$｛<em>service_Account_Name</em>｝-role專案/客戶_專案/_&lt;Customk_rooles_專案角色</p>
+<p>將自訂角色指派給Cloud KMS金鑰與Cloud Volumes ONTAP 更新服務帳戶：「gCloud kms金鑰add-iam-policy-binding <em>key_name</em>-keyring <em>key_ring_name</em>-location <em>-member ServiceAccount：_service_Account_Name</em>-role專案/<em>customer_project _id</em>/ros/ros/kmsCustomrole」</p>
 </li>
 <li>
 <p>下載服務帳戶Json金鑰：「gCloud iam服務帳戶金鑰可建立金鑰檔案-iam-account=<em>sa-name</em>@<em>project-id</em>.iam.gserviceaccount.com」</p>
 </li>
 </ol>
 </div>
-</li>
+<div class="olist arabic">
+<div class="title">Cloud Volumes ONTAP</div>
+<ol class="arabic">
 <li>
-<p>切換Cloud Volumes ONTAP 到您的自然環境：</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+<p>使用您偏好的SSH用戶端連線至叢集管理LIF。</p>
+</li>
 <li>
 <p>切換至進階權限等級：「et -priv榮幸 進階」</p>
 </li>
 <li>
-<p>為資料SVM建立DNS。“建立網域C_<a href="#project">[project]</a>_.internal -name-servers <em>server_address</em>-vserver <em>Svm_name</em>`</p>
+<p>為資料SVM建立DNS。「建立網域C_&lt;project &gt;_.internal -name-servers <em>server_address</em>-vserver <em>Svm_name</em>」</p>
 </li>
 <li>
 <p>建立CMEK項目：「安全金鑰管理程式外部GCP啟用-vserver <em>Svm_name</em>-project -id <em>project _-key-ring_name _key_ring_name</em>-key-ring_location <em>key_ring_stip</em>-key-name <em>key_name</em>」</p>
@@ -1560,10 +1580,7 @@
 <p>確認啟用的程序成功：「安全金鑰管理程式外部GCP檢查-vserver <em>svm_name</em>」</p>
 </li>
 <li>
-<p>選用：建立磁碟區以測試加密「volvol create <em>volvolvole_name</em>&gt;-Aggregate <em>-vserver _vserver_name</em>-size 10G'</p>
-</li>
-</ol>
-</div>
+<p>選用：建立磁碟區以測試加密「volvol create <em>volvolvole_name</em>-Aggregate <em>Aggregate _-vserver _vserver_name</em>-size 10G」</p>
 </li>
 </ol>
 </div>
