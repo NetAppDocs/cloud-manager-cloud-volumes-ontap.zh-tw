@@ -314,35 +314,27 @@
     </div>
   </div>
   <div class="n-property-bar__toolbar">
-    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
-      <div id="ie-i18n-menu">
-      <span class="ie-i18n-lang">繁體中文</span>
-        <button class="ie-i18n-icon-container" type="button">
+    <!-- Start Language Selector --><div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+      <div class="custom-dropdown-select custom-dropdown-select-lang">
+      <span class="lang-name">繁體中文</span>
           <svg class="n-globe__icon" aria-labelledby="title">
             <title>globe</title>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/zh-tw/cloud-manager-cloud-volumes-ontap/common/svg/sprite.svg#globe"></use>
           </svg>
         </button>
       </div>
-      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
-        <div class="n-language-selector-menu">
-          <ul class="n-menu__list">
-            <li class="n-menu__list-column">
-              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-managing-svms-azure.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/cloud-manager-cloud-volumes-ontap/task-managing-svms-azure.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-managing-svms-azure.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/cloud-manager-cloud-volumes-ontap/task-managing-svms-azure.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/task-managing-svms-azure.html" class="n-menu__header-text"><span translate="no" class="notranslate">繁體中文</span></a>
-                </li></ul>
-            </li>
-          </ul>
-        </div>
-      </div>
+
+      <ul class="custom-dropdown-menu"><li>
+          <a href="https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/task-managing-svms-azure.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-managing-svms-azure.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ja-jp/cloud-manager-cloud-volumes-ontap/task-managing-svms-azure.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-cn/cloud-manager-cloud-volumes-ontap/task-managing-svms-azure.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-managing-svms-azure.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+        </li></ul>
     </div><!-- End Language Selector -->
 
     <div class="n-property-bar__cta"></div>
@@ -397,8 +389,6 @@
         
         <a target="_blank" href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/azure/fullsite-sidebar/本文檔Cloud_Volumes_ONTAP.pdf" >
           <img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>此文件網站（PDF 格式）</a>
-
-
 
 
 
@@ -486,6 +476,8 @@
             設定您的網路
           </a>
           
+
+
 
 
 
@@ -748,6 +740,8 @@
 
 
 
+
+
           
         </li>
       </ul>
@@ -857,11 +851,11 @@
           
           <a target="_blank" 
             
-              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/azure/sidebar/AWS系統管理.pdf" 
+              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/azure/sidebar/AWS管理.pdf" 
             
           >
             <img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
-            AWS系統管理
+            AWS管理
           </a>
           
 
@@ -888,11 +882,11 @@
           
           <a target="_blank" 
             
-              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/azure/sidebar/Azure系統管理.pdf" 
+              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/azure/sidebar/Azure管理.pdf" 
             
           >
             <img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
-            Azure系統管理
+            Azure管理
           </a>
           
 
@@ -935,6 +929,8 @@
     
 
   
+
+
 
 
 
@@ -1020,6 +1016,8 @@
             儲存設備
           </a>
           
+
+
 
 
 
@@ -1162,10 +1160,10 @@
     $("#toggleContainerPdf").toggle('display');
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
-</script><div class="sidebar-nav-container">
-  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="azure/https://docs.netapp.com/us-en/cloud-manager-family">
-        所有Cloud Manager文件
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/azure/index.html">
+</script><div class="prod-nav" id="product-nav">
+  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/zh-tw/cloud-manager-family/"><img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/left_arrow.png" alt=""><pre>All Cloud Manager documentation</pre></a>
+</div><div class="sidebar-nav-container" id="mysidebardiv">
+  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/azure/index.html">
         文件Cloud Volumes ONTAP
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 版本資訊</div>
@@ -1269,7 +1267,7 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/azure/task-deleting-working-env.html">
         刪除系統
       </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> Azure系統管理</div>
+        <div class="na-navbar-padding"> Azure管理</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/azure/task-change-azure-vm.html">
         變更Azure VM類型
@@ -1277,8 +1275,10 @@
         覆寫CIFS鎖定
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/azure/task-enabling-private-link.html">
         使用 Azure 私有連結
-      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/azure/task-connecting-to-otc.html">
-        系統管理員或CLI的系統管理
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/azure/task-administer-advanced-view.html">
+        系統管理員的系統管理
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/azure/task-connecting-to-otc.html">
+        從CLI進行管理
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 系統健全狀況與事件</div>
       </a>
@@ -1403,7 +1403,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-03 09:39:01 +0000">05/03/2022</time>
+    <time datetime="2022-06-07 20:57:50 +0000">06/07/2022</time>
     
   
 
@@ -1458,71 +1458,10 @@
 <div class="sect2">
 <h3 id="單一節點系統">單一節點系統</h3>
 <div class="paragraph">
-<p>在您建立儲存VM並分配LIF之前、必須先將IP位址指派給Azure中的nic0。所需的IP位址數量取決於儲存傳輸協定。</p>
+<p>在您建立儲存VM並分配LIF之前、必須先將IP位址指派給Azure中的nic0。</p>
 </div>
-<div class="exampleblock tabbed-block">
-<div class="content">
-<div class="openblock">
-<div class="title">iSCSI</div>
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>一個IP位址可用於iSCSI資料LIF存取</p>
-</li>
-<li>
-<p>儲存VM（SVM）管理LIF的選用IP位址</p>
 <div class="paragraph">
-<p>此管理LIF可連線至SnapCenter 諸如VMware等管理工具。</p>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="openblock">
-<div class="title">NFS</div>
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>單一IP位址即可存取NAS資料LIF</p>
-</li>
-<li>
-<p>儲存VM（SVM）管理LIF的選用IP位址</p>
-<div class="paragraph">
-<p>此管理LIF可連線至SnapCenter 諸如VMware等管理工具。</p>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="openblock">
-<div class="title">中小企業</div>
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>單一IP位址即可存取NAS資料LIF</p>
-</li>
-<li>
-<p>一個IP位址、用於透過iSCSI LIF進行DNS和SMB通訊</p>
-<div class="paragraph">
-<p>iSCSI LIF用於此用途、因為它不會在容錯移轉時移轉。</p>
-</div>
-</li>
-<li>
-<p>儲存VM（SVM）管理LIF的選用IP位址</p>
-<div class="paragraph">
-<p>此管理LIF可連線至SnapCenter 諸如VMware等管理工具。</p>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
+<p>您需要為資料LIF存取建立IP位址、並為儲存VM（SVM）管理LIF建立另一個選用的IP位址。此管理LIF可連線至SnapCenter 諸如VMware等管理工具。</p>
 </div>
 <div class="olist arabic">
 <div class="title">步驟</div>
@@ -1554,13 +1493,10 @@
 <p>最好使用靜態IP位址、因為靜態IP可確保IP位址不會變更、有助於避免不必要的應用程式中斷運作。</p>
 </div>
 </li>
-<li>
-<p>如果您使用SMB、請重複這些步驟、為DNS和SMB通訊建立額外的IP位址。</p>
-</li>
-<li>
-<p>如果您要建立SVM管理LIF、請重複這些步驟以建立其他IP位址。</p>
-</li>
 </ol>
+</div>
+<div class="paragraph">
+<p>如果您要建立SVM管理LIF、請重複這些步驟以建立其他IP位址。</p>
 </div>
 <div class="paragraph">
 <p>複製您剛建立的私有IP位址。當您為新的儲存VM建立生命期時、必須指定這些IP位址。</p>
@@ -2069,14 +2005,6 @@
 </div>
 </li>
 <li>
-<p>建立提供DNS與SMB通訊所需的iSCSI LIF：</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-cli" data-lang="cli">network interface create -vserver &lt;svm-name&gt; -home-port e0a -address &lt;iscsi-ip-address&gt; -lif &lt;lif-name&gt; -home-node &lt;name-of-node1&gt; -data-protocol iscsi</code></pre>
-</div>
-</div>
-</li>
-<li>
 <p>選用：建立儲存VM管理LIF。</p>
 <div class="listingblock">
 <div class="content">
@@ -2176,6 +2104,31 @@
 <p>這是必要步驟、因為新的儲存VM需要存取至少一個Aggregate、才能在儲存VM上建立磁碟區。</p>
 </div>
 </li>
+<li>
+<p>如果您執行Cloud Volumes ONTAP 的是版本不含更新版本的版本、請修改儲存VM的網路服務原則。</p>
+<div class="paragraph">
+<p>需要修改服務、因為Cloud Volumes ONTAP 這樣可確保支援功能可將iSCSI LIF用於傳出管理連線。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">network interface service-policy remove-service -vserver &lt;svm-name&gt; -policy default-data-files -service data-fpolicy-client
+network interface service-policy remove-service -vserver &lt;svm-name&gt; -policy default-data-files -service management-ad-client
+network interface service-policy remove-service -vserver &lt;svm-name&gt; -policy default-data-files -service management-dns-client
+network interface service-policy remove-service -vserver &lt;svm-name&gt; -policy default-data-files -service management-ldap-client
+network interface service-policy remove-service -vserver &lt;svm-name&gt; -policy default-data-files -service management-nis-client
+network interface service-policy add-service -vserver &lt;svm-name&gt; -policy default-data-blocks -service data-fpolicy-client
+network interface service-policy add-service -vserver &lt;svm-name&gt; -policy default-data-blocks -service management-ad-client
+network interface service-policy add-service -vserver &lt;svm-name&gt; -policy default-data-blocks -service management-dns-client
+network interface service-policy add-service -vserver &lt;svm-name&gt; -policy default-data-blocks -service management-ldap-client
+network interface service-policy add-service -vserver &lt;svm-name&gt; -policy default-data-blocks -service management-nis-client
+network interface service-policy add-service -vserver &lt;svm-name&gt; -policy default-data-iscsi -service data-fpolicy-client
+network interface service-policy add-service -vserver &lt;svm-name&gt; -policy default-data-iscsi -service management-ad-client
+network interface service-policy add-service -vserver &lt;svm-name&gt; -policy default-data-iscsi -service management-dns-client
+network interface service-policy add-service -vserver &lt;svm-name&gt; -policy default-data-iscsi -service management-ldap-client
+network interface service-policy add-service -vserver &lt;svm-name&gt; -policy default-data-iscsi -service management-nis-client</code></pre>
+</div>
+</div>
+</li>
 </ol>
 </div>
 </div>
@@ -2245,6 +2198,31 @@
 </div>
 <div class="paragraph">
 <p>這是必要步驟、因為新的儲存VM需要存取至少一個Aggregate、才能在儲存VM上建立磁碟區。</p>
+</div>
+</li>
+<li>
+<p>如果您執行Cloud Volumes ONTAP 的是版本不含更新版本的版本、請修改儲存VM的網路服務原則。</p>
+<div class="paragraph">
+<p>需要修改服務、因為Cloud Volumes ONTAP 這樣可確保支援功能可將iSCSI LIF用於傳出管理連線。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">network interface service-policy remove-service -vserver &lt;svm-name&gt; -policy default-data-files -service data-fpolicy-client
+network interface service-policy remove-service -vserver &lt;svm-name&gt; -policy default-data-files -service management-ad-client
+network interface service-policy remove-service -vserver &lt;svm-name&gt; -policy default-data-files -service management-dns-client
+network interface service-policy remove-service -vserver &lt;svm-name&gt; -policy default-data-files -service management-ldap-client
+network interface service-policy remove-service -vserver &lt;svm-name&gt; -policy default-data-files -service management-nis-client
+network interface service-policy add-service -vserver &lt;svm-name&gt; -policy default-data-blocks -service data-fpolicy-client
+network interface service-policy add-service -vserver &lt;svm-name&gt; -policy default-data-blocks -service management-ad-client
+network interface service-policy add-service -vserver &lt;svm-name&gt; -policy default-data-blocks -service management-dns-client
+network interface service-policy add-service -vserver &lt;svm-name&gt; -policy default-data-blocks -service management-ldap-client
+network interface service-policy add-service -vserver &lt;svm-name&gt; -policy default-data-blocks -service management-nis-client
+network interface service-policy add-service -vserver &lt;svm-name&gt; -policy default-data-iscsi -service data-fpolicy-client
+network interface service-policy add-service -vserver &lt;svm-name&gt; -policy default-data-iscsi -service management-ad-client
+network interface service-policy add-service -vserver &lt;svm-name&gt; -policy default-data-iscsi -service management-dns-client
+network interface service-policy add-service -vserver &lt;svm-name&gt; -policy default-data-iscsi -service management-ldap-client
+network interface service-policy add-service -vserver &lt;svm-name&gt; -policy default-data-iscsi -service management-nis-client</code></pre>
+</div>
 </div>
 </li>
 </ol>
@@ -2339,6 +2317,31 @@
 </div>
 <div class="paragraph">
 <p>這是必要步驟、因為新的儲存VM需要存取至少一個Aggregate、才能在儲存VM上建立磁碟區。</p>
+</div>
+</li>
+<li>
+<p>如果您執行Cloud Volumes ONTAP 的是版本不含更新版本的版本、請修改儲存VM的網路服務原則。</p>
+<div class="paragraph">
+<p>需要修改服務、因為Cloud Volumes ONTAP 這樣可確保支援功能可將iSCSI LIF用於傳出管理連線。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">network interface service-policy remove-service -vserver &lt;svm-name&gt; -policy default-data-files -service data-fpolicy-client
+network interface service-policy remove-service -vserver &lt;svm-name&gt; -policy default-data-files -service management-ad-client
+network interface service-policy remove-service -vserver &lt;svm-name&gt; -policy default-data-files -service management-dns-client
+network interface service-policy remove-service -vserver &lt;svm-name&gt; -policy default-data-files -service management-ldap-client
+network interface service-policy remove-service -vserver &lt;svm-name&gt; -policy default-data-files -service management-nis-client
+network interface service-policy add-service -vserver &lt;svm-name&gt; -policy default-data-blocks -service data-fpolicy-client
+network interface service-policy add-service -vserver &lt;svm-name&gt; -policy default-data-blocks -service management-ad-client
+network interface service-policy add-service -vserver &lt;svm-name&gt; -policy default-data-blocks -service management-dns-client
+network interface service-policy add-service -vserver &lt;svm-name&gt; -policy default-data-blocks -service management-ldap-client
+network interface service-policy add-service -vserver &lt;svm-name&gt; -policy default-data-blocks -service management-nis-client
+network interface service-policy add-service -vserver &lt;svm-name&gt; -policy default-data-iscsi -service data-fpolicy-client
+network interface service-policy add-service -vserver &lt;svm-name&gt; -policy default-data-iscsi -service management-ad-client
+network interface service-policy add-service -vserver &lt;svm-name&gt; -policy default-data-iscsi -service management-dns-client
+network interface service-policy add-service -vserver &lt;svm-name&gt; -policy default-data-iscsi -service management-ldap-client
+network interface service-policy add-service -vserver &lt;svm-name&gt; -policy default-data-iscsi -service management-nis-client</code></pre>
+</div>
 </div>
 </li>
 </ol>
@@ -2499,4 +2502,5 @@
     </script>
     <script src='/zh-tw/cloud-manager-cloud-volumes-ontap/js/www-ntap.js'></script>
     <script src='/zh-tw/cloud-manager-cloud-volumes-ontap/js/tabbed-blocks.js'></script>
+    <script src='/zh-tw/cloud-manager-cloud-volumes-ontap/js/sidebar.js'></script>
   </body></html>

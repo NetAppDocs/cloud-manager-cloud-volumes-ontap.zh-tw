@@ -314,35 +314,27 @@
     </div>
   </div>
   <div class="n-property-bar__toolbar">
-    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
-      <div id="ie-i18n-menu">
-      <span class="ie-i18n-lang">繁體中文</span>
-        <button class="ie-i18n-icon-container" type="button">
+    <!-- Start Language Selector --><div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+      <div class="custom-dropdown-select custom-dropdown-select-lang">
+      <span class="lang-name">繁體中文</span>
           <svg class="n-globe__icon" aria-labelledby="title">
             <title>globe</title>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/zh-tw/cloud-manager-cloud-volumes-ontap/common/svg/sprite.svg#globe"></use>
           </svg>
         </button>
       </div>
-      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
-        <div class="n-language-selector-menu">
-          <ul class="n-menu__list">
-            <li class="n-menu__list-column">
-              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/cloud-manager-cloud-volumes-ontap/whats-new.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/whats-new.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/cloud-manager-cloud-volumes-ontap/whats-new.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/whats-new.html" class="n-menu__header-text"><span translate="no" class="notranslate">繁體中文</span></a>
-                </li></ul>
-            </li>
-          </ul>
-        </div>
-      </div>
+
+      <ul class="custom-dropdown-menu"><li>
+          <a href="https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/whats-new.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ja-jp/cloud-manager-cloud-volumes-ontap/whats-new.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-cn/cloud-manager-cloud-volumes-ontap/whats-new.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/whats-new.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+        </li></ul>
     </div><!-- End Language Selector -->
 
     <div class="n-property-bar__cta"></div>
@@ -397,8 +389,6 @@
         
         <a target="_blank" href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/azure/fullsite-sidebar/本文檔Cloud_Volumes_ONTAP.pdf" >
           <img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>此文件網站（PDF 格式）</a>
-
-
 
 
 
@@ -495,6 +485,8 @@
             設定您的網路
           </a>
           
+
+
 
 
 
@@ -748,6 +740,8 @@
 
 
 
+
+
           
         </li>
       </ul>
@@ -857,11 +851,11 @@
           
           <a target="_blank" 
             
-              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/azure/sidebar/AWS系統管理.pdf" 
+              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/azure/sidebar/AWS管理.pdf" 
             
           >
             <img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
-            AWS系統管理
+            AWS管理
           </a>
           
 
@@ -888,11 +882,11 @@
           
           <a target="_blank" 
             
-              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/azure/sidebar/Azure系統管理.pdf" 
+              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/azure/sidebar/Azure管理.pdf" 
             
           >
             <img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
-            Azure系統管理
+            Azure管理
           </a>
           
 
@@ -935,6 +929,8 @@
     
 
   
+
+
 
 
 
@@ -1020,6 +1016,8 @@
             儲存設備
           </a>
           
+
+
 
 
 
@@ -1162,10 +1160,10 @@
     $("#toggleContainerPdf").toggle('display');
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
-</script><div class="sidebar-nav-container">
-  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="azure/https://docs.netapp.com/us-en/cloud-manager-family">
-        所有Cloud Manager文件
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/azure/index.html">
+</script><div class="prod-nav" id="product-nav">
+  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/zh-tw/cloud-manager-family/"><img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/left_arrow.png" alt=""><pre>All Cloud Manager documentation</pre></a>
+</div><div class="sidebar-nav-container" id="mysidebardiv">
+  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/azure/index.html">
         文件Cloud Volumes ONTAP
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 版本資訊</div>
@@ -1269,7 +1267,7 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/azure/task-deleting-working-env.html">
         刪除系統
       </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> Azure系統管理</div>
+        <div class="na-navbar-padding"> Azure管理</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/azure/task-change-azure-vm.html">
         變更Azure VM類型
@@ -1277,8 +1275,10 @@
         覆寫CIFS鎖定
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/azure/task-enabling-private-link.html">
         使用 Azure 私有連結
-      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/azure/task-connecting-to-otc.html">
-        系統管理員或CLI的系統管理
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/azure/task-administer-advanced-view.html">
+        系統管理員的系統管理
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/azure/task-connecting-to-otc.html">
+        從CLI進行管理
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 系統健全狀況與事件</div>
       </a>
@@ -1403,7 +1403,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-09 15:43:09 +0000">05/09/2022</time>
+    <time datetime="2022-06-07 20:57:50 +0000">06/07/2022</time>
     
   
 
@@ -1417,6 +1417,44 @@
 </div>
 <div class="paragraph">
 <p>本頁所述的增強功能、是專為Cloud Manager提供的功能、可讓Cloud Volumes ONTAP 您管理各種功能。若要瞭解Cloud Volumes ONTAP 有關此功能的最新消息、請參閱 <a href="https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html" target="_blank" rel="noopener">"前往Cloud Volumes ONTAP 《發行說明》"</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="2022年6月7日">2022年6月7日</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>以下是3.9.19版本的Connector所做的變更。</p>
+</div>
+<div class="sect2">
+<h3 id="零點9-11-1-cloud-volumes-ontap">零點9.11.1. Cloud Volumes ONTAP</h3>
+<div class="paragraph">
+<p>Cloud Manager現在可部署及管理Cloud Volumes ONTAP 支援全新功能和其他雲端供應商區域的功能。</p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes" target="_blank" rel="noopener">"深入瞭Cloud Volumes ONTAP 解本版的更新功能"</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="新的進階檢視">新的進階檢視</h3>
+<div class="paragraph">
+<p>如果您需要執行Cloud Volumes ONTAP 進階的支援管理功能、可以使用ONTAP 支援ONTAP 此功能的支援功能、這個功能是隨附於一個系統的管理介面。我們直接在Cloud Manager中加入System Manager介面、讓您不需要離開Cloud Manager進行進階管理。</p>
+</div>
+<div class="paragraph">
+<p>此「進階檢視」可作為Cloud Volumes ONTAP Preview搭配使用的版本（含E59.10.0及更新版本）。我們計畫改善這項體驗、並在即將推出的版本中加入增強功能。請使用產品內建聊天功能、向我們傳送意見反應。</p>
+</div>
+<div class="paragraph">
+<p><a href="task-administer-advanced-view.html">"深入瞭解進階檢視"</a>。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="使用服務端點時網路存取受限">使用服務端點時網路存取受限</h3>
+<div class="paragraph">
+<p>Cloud Manager現在使用vnet服務端點來連線Cloud Volumes ONTAP 到各種不同的解決方法、限制網路存取。如果您停用Azure Private Link連線、Cloud Manager會使用服務端點。</p>
+</div>
+<div class="paragraph">
+<p><a href="task-enabling-private-link.html">"深入瞭解Azure Private Link與Cloud Volumes ONTAP NetApp的連線功能"</a>。</p>
+</div>
 </div>
 </div>
 </div>
@@ -2134,4 +2172,5 @@
     </script>
     <script src='/zh-tw/cloud-manager-cloud-volumes-ontap/js/www-ntap.js'></script>
     <script src='/zh-tw/cloud-manager-cloud-volumes-ontap/js/tabbed-blocks.js'></script>
+    <script src='/zh-tw/cloud-manager-cloud-volumes-ontap/js/sidebar.js'></script>
   </body></html>
