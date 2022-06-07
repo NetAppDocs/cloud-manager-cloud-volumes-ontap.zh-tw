@@ -1403,7 +1403,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-07 20:57:50 +0000">06/07/2022</time>
+    <time datetime="2022-06-07 22:03:55 +0000">06/07/2022</time>
     
   
 
@@ -1450,12 +1450,12 @@
 <h2 id="建立儲存vm">建立儲存VM</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>您可以在單一節點系統或HA配對上建立多個儲存VM。請注意、您必須使用Cloud Manager API在HA配對上建立儲存VM、而您可以使用CLI或System Manager在單一節點系統上建立儲存VM。</p>
+<p>如果授權支援、您可以在單一節點系統或HA配對上建立多個儲存VM。請注意、您必須使用Cloud Manager API在HA配對上建立儲存VM、而您可以使用CLI或System Manager在單一節點系統上建立儲存VM。</p>
 </div>
 <div class="sect2">
 <h3 id="單一節點系統">單一節點系統</h3>
 <div class="paragraph">
-<p>這些步驟使用CLI在單一節點系統上建立新的儲存VM。建立NAS LIF需要一個私有IP位址、如果您想要建立管理LIF、則需要另一個選用的私有IP位址。</p>
+<p>這些步驟使用CLI在單一節點系統上建立新的儲存VM。建立資料LIF需要一個私有IP位址、如果您想要建立管理LIF、則需要另一個選用的私有IP位址。</p>
 </div>
 <div class="olist arabic">
 <div class="title">步驟</div>
@@ -1524,7 +1524,7 @@
 <p>將一個或多個集合體指派給儲存VM。</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-cli" data-lang="cli">vserver add-aggregates -vserver svm_2 -aggregates aggr1,aggr2</code></pre>
+<pre class="highlight"><code class="language-cli" data-lang="cli">vserver add-aggregates -vserver &lt;svm-name&gt; -aggregates &lt;aggr1,aggr2&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1580,7 +1580,7 @@
 <h2 id="管理ha配對上的儲存vm">管理HA配對上的儲存VM</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Cloud Manager API也支援重新命名及刪除儲存VM。</p>
+<p>Cloud Manager API也支援重新命名及刪除HA配對上的儲存VM。</p>
 </div>
 <div class="sect2">
 <h3 id="重新命名儲存vm">重新命名儲存VM</h3>
