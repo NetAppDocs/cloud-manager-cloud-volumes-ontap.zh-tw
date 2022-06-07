@@ -35,6 +35,14 @@ Aggregate 可為磁碟區提供雲端儲存設備。Cloud Manager 會在您啟�
 
 * 它會將磁碟區放置在現有的 Aggregate 上、該集合體具有足夠的可用空間。
 * 它會為現有的 Aggregate 購買更多磁碟、將磁碟區放在現有的 Aggregate 上。
+
+
+ifdef::aws[]
+
++如果AWS中的集合體支援彈性磁碟區、Cloud Manager也會增加RAID群組中的磁碟大小。 link:concept-aws-elastic-volumes.html["深入瞭解彈性磁碟區的支援"]。
+
+endif::aws[]
+
 * 它會為新的 Aggregate 購買磁碟、並將該磁碟區放在該 Aggregate 上。
 
 
@@ -51,7 +59,7 @@ ifdef::aws[]
 
 Cloud Manager 在 Cloud Volumes ONTAP AWS 中建立新的 Aggregate 、隨著系統中的 Aggregate 數量增加、它會逐漸增加集合體中的磁碟大小。Cloud Manager 能確保您在系統達到 AWS 允許的資料磁碟數量上限之前、能夠充分利用系統的最大容量。
 
-例如、 Cloud Manager 可能會針對 Cloud Volumes ONTAP 下列大小的磁碟來選擇適用於下列的磁碟大小、以用於在某個供應端點或 BYOL 系統中的集合體：
+例如、Cloud Manager可能會選擇下列磁碟大小：
 
 [cols="3*"]
 |===
@@ -66,6 +74,9 @@ Cloud Manager 在 Cloud Volumes ONTAP AWS 中建立新的 Aggregate 、隨著系
 
 | 6. | 2 TiB | 12 TiB 
 |===
+
+NOTE: 此行為不適用於支援Amazon EBS彈性磁碟區功能的集合體。啟用彈性磁碟區的集合體由一或兩個RAID群組組成。每個RAID群組都有四個容量相同的磁碟。 link:concept-aws-elastic-volumes.html["深入瞭解彈性磁碟區的支援"]。
+
 您可以使用進階配置選項自行選擇磁碟大小。
 
 endif::aws[]
@@ -93,6 +104,14 @@ endif::aws[]
 * 如果某個Aggregate達到容量臨界值、而且有空間容納更多磁碟、Cloud Manager會自動為該Aggregate購買新的磁碟、讓磁碟區持續成長。
 +
 Cloud Manager每15分鐘檢查一次可用空間比例、以判斷是否需要購買額外的磁碟。
+
+
+
+ifdef::aws[]
+
++如果AWS中的集合體支援彈性磁碟區、Cloud Manager也會增加RAID群組中的磁碟大小。 link:concept-aws-elastic-volumes.html["深入瞭解彈性磁碟區的支援"]。
+
+endif::aws[]
 
 * 如果Aggregate達到容量臨界值、但無法支援任何其他磁碟、Cloud Manager會自動將該Aggregate中的磁碟區移至具有可用容量的Aggregate、或移至新的Aggregate。
 +

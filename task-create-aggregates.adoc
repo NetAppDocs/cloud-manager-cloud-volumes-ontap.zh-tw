@@ -24,7 +24,43 @@ CAUTION: 所有磁碟和集合體都必須直接從 Cloud Manager 建立和刪�
 . 按一下功能表圖示、然後按一下 * 進階 > 進階分配 * 。
 . 按一下「 * 新增 Aggregate * 」、然後指定 Aggregate 的詳細資料。
 +
-如需磁碟類型與磁碟大小的說明、請參閱 link:task-planning-your-config.html["規劃組態"]。
+[role="tabbed-block"]
+====
+ifdef::aws[]
 
+.AWS
+--
+** 如果系統提示您選擇磁碟類型和磁碟大小、請參閱 link:task-planning-your-config.html["在Cloud Volumes ONTAP AWS中規劃您的不一樣組態"]。
+** 如果系統提示您輸入Aggregate的容量大小、則表示您要在支援Amazon EBS彈性磁碟區功能的組態上建立Aggregate。下列螢幕快照顯示由GP3磁碟組成的新Aggregate範例。
++
+image:screenshot-aggregate-size-ev.png["GP3磁碟的Aggregate Disk（Aggregate磁碟）畫面快照、您可在其中以TiB輸入Aggregate大小。"]
+
++
+link:concept-aws-elastic-volumes.html["深入瞭解彈性磁碟區的支援"]。
+
+
+
+--
+endif::aws[]
+
+ifdef::azure[]
+
+.Azure
+--
+如需磁碟類型與磁碟大小的說明、請參閱 link:task-planning-your-config-azure.html["在Cloud Volumes ONTAP Azure中規劃您的不一樣組態"]。
+
+--
+endif::azure[]
+
+ifdef::gcp[]
+
+.Google Cloud
+--
+如需磁碟類型與磁碟大小的說明、請參閱 link:task-planning-your-config-gcp.html["在Cloud Volumes ONTAP Google Cloud規劃您的不一樣組態"]。
+
+--
+endif::gcp[]
+
+====
 . 按一下「 * 執行 * 」、然後按一下「 * 核准並購買 * 」。
 

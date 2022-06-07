@@ -1,0 +1,22 @@
+= 支援在Google Cloud中建立儲存VM
+:allow-uri-read: 
+
+
+
+
+=== 支援在Google Cloud中建立儲存VM
+
+從9.11.1版開始、Cloud Volumes ONTAP Google Cloud現在支援多個使用支援的儲存VM。從本版Connector開始、Cloud Manager可讓您Cloud Volumes ONTAP 使用API、在Google Cloud的「以雙埠HA配對」上建立儲存VM。
+
+若要支援建立儲存VM、Connector需要新的Google Cloud權限：
+
+[source, yaml]
+----
+- compute.instanceGroups.get
+- compute.addresses.get
+----
+請注意、您必須使用ONTAP NetApp CLI或System Manager、在單一節點系統上建立儲存VM。
+
+* https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-gcp.html#storage-vm-limits["深入瞭解Google Cloud中的儲存VM限制"^]
+* link:task-managing-svms-gcp.html["瞭解如何在Cloud Volumes ONTAP Google Cloud中建立資料服務儲存VM以供其使用"]
+

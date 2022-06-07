@@ -40,9 +40,11 @@ ifdef::aws[]
 
 在 AWS 中 Cloud Volumes ONTAP 、某些 EC2 執行個體類型使用 EBS 儲存設備來儲存使用者資料、並將本機 NVMe 儲存設備當作 Flash Cache 。
 
-EBS 儲存設備:: 在 AWS 中、 Aggregate 最多可包含 6 個大小相同的磁碟。磁碟大小上限為16 TiB。
+EBS 儲存設備:: 在 AWS 中、 Aggregate 最多可包含 6 個大小相同的磁碟。但是如果您的組態支援Amazon EBS彈性Volume功能、則Aggregate最多可包含8個磁碟。 link:concept-aws-elastic-volumes.html["深入瞭解彈性磁碟區的支援"]。
 +
 --
+磁碟大小上限為16 TiB。
+
 基礎EBS磁碟類型可以是一般用途SSD（GP3或gp2）、已配置的IOPS SSD（IO1）或處理量最佳化HDD（ST1）。您可以將 EBS 磁碟與 Amazon S3 配對至 link:concept-data-tiering.html["將非作用中資料分層至低成本物件儲存設備"]。
 
 

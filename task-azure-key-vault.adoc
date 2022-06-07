@@ -147,7 +147,10 @@ Category: kms_wrapped_key_status
 +
 如果「連線能力」狀態不是「正常」、SVM將無法以所有必要的連線和權限來連線至Azure Key Vault服務。初始組態時、「kms」迴應鍵狀態會報告「unkNOWNKNOWNKY」。第一個磁碟區加密後、其狀態會變更為「OK（正常）」。
 
-. 選用：建立測試磁碟區以驗證AKV的功能。「vol create -vserver _Svm_name_-volume _volVolume _name_-Aggregate _aggr _-size _size_-state online -policy default」
+. 選用：建立測試Volume以驗證NVE的功能。
++
+「vol create -vserver _Svm_name_-volume _volVolume _name_-Aggregate _aggr _-size _size_-state online -policy default」
+
 +
 如果設定正確、Cloud Volumes ONTAP 則會自動建立Volume並啟用Volume加密。
 

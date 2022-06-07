@@ -37,6 +37,7 @@ Cloud Manager提供多種建立新磁碟區的方法：
 ifdef::aws[]
 
 * 如果您想在 AWS 中使用 CIFS 、則必須設定 DNS 和 Active Directory 。如需詳細資訊、請參閱 link:reference-networking-aws.html["AWS 的 Cloud Volumes ONTAP 網路需求"]。
+* 如果Cloud Volumes ONTAP 您的支援Amazon EBS彈性Volume功能的組態、您可能會想要 link:concept-aws-elastic-volumes.html["深入瞭解建立Volume時會發生什麼事"]。
 
 
 endif::aws[]

@@ -77,8 +77,14 @@ EBS 磁碟類型:: EBS磁碟類型之間的差異較高、如下所示。若要�
 +
 當您選取GP3磁碟時、Cloud Manager會填入預設的IOPS和處理量值、這些值會根據選取的磁碟大小提供相當於gp2磁碟的效能。您可以提高價值、以更高的成本獲得更好的效能、但我們不支援較低的值、因為這樣可能導致效能低落。簡而言之、請保留預設值或增加預設值。請勿降低。 https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html#gp3-ebs-volume-type["深入瞭解GP3磁碟及其效能"^]。
 
++
+請注意Cloud Volumes ONTAP 、此功能可搭配GP3磁碟支援Amazon EBS彈性磁碟區功能。 link:concept-aws-elastic-volumes.html["深入瞭解彈性磁碟區支援"]。
+
 * _通用SSD（gp2）_磁碟可平衡各種工作負載的成本與效能。效能是以 IOPS 定義。
 * _資源配置的IOPS SSD（IO1）_磁碟適用於需要以較高成本獲得最高效能的關鍵應用程式。
++
+請注意Cloud Volumes ONTAP 、支援Amazon EBS彈性Volume功能搭配IO1磁碟。 link:concept-aws-elastic-volumes.html["深入瞭解彈性磁碟區支援"]。
+
 * _Throued Optimized HDD（ST1）_磁碟適用於經常存取的工作負載、這些工作負載需要以較低的價格提供快速且一致的處理量。
 +
 
@@ -87,7 +93,7 @@ NOTE: 使用處理量最佳化的HDD（ST1）時、不建議將資料分層至�
 
 
 --
-EBS 磁碟大小:: 啟動 Cloud Volumes ONTAP 一套系統時、您需要選擇初始磁碟大小。之後、您就可以了 link:concept-storage-management.html["讓 Cloud Manager 為您管理系統容量"]但如果您想要的話 link:task-create-aggregates.html["自行建立集合體"]請注意下列事項：
+EBS 磁碟大小:: 如果您選擇不支援的組態 link:concept-aws-elastic-volumes.html["Amazon EBS彈性磁碟區功能"]之後、您需要在啟動Cloud Volumes ONTAP 一套系統時選擇初始磁碟大小。之後、您就可以了 link:concept-storage-management.html["讓 Cloud Manager 為您管理系統容量"]但如果您想要的話 link:task-create-aggregates.html["自行建立集合體"]請注意下列事項：
 +
 --
 * 集合體中的所有磁碟大小必須相同。
@@ -97,6 +103,9 @@ EBS 磁碟大小:: 啟動 Cloud Volumes ONTAP 一套系統時、您需要選擇�
 +
 如需 EBS 磁碟效能的詳細資訊、請參閱 http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html["AWS 文件： EBS Volume 類型"^]。
 
++
+如上所述、Cloud Volumes ONTAP 支援Amazon EBS彈性Volume功能的各種組態不支援選擇磁碟大小。 link:concept-aws-elastic-volumes.html["深入瞭解彈性磁碟區支援"]。
+
 
 
 --
@@ -104,7 +113,7 @@ EBS 磁碟大小:: 啟動 Cloud Volumes ONTAP 一套系統時、您需要選擇�
 
 請觀看下列影片、以瞭解如何在 Cloud Volumes ONTAP AWS 中調整您的更新功能：
 
-video::GELcXmOuYPw[youtube, width=848,height=480]
+video::GELcXmOuYPw[youtube,width=848,height=480]
 
 
 == 檢視預設系統磁碟

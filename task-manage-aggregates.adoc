@@ -48,6 +48,23 @@ TIP: 集合體中的所有磁碟大小必須相同。
 
 
 
+ifdef::aws[]
+
+
+
+| 增加支援Amazon EBS彈性Volume的Aggregate容量  a| 
+.. 選取一個Aggregate、然後按一下*增加容量*。
+.. 輸入您要新增的額外容量、然後按一下「*新增*」。
++
+請注意、您必須將Aggregate的容量增加至少256 GiB或集合體大小的10%。
+
++
+例如、如果您有1.77 TiB Aggregate、則10%為181 GiB。此值低於256 GiB、因此集合體的大小必須至少增加256 GiB。
+
+
+
+endif::aws[]
+
 
 
 | 刪除 Aggregate  a| 

@@ -1,0 +1,30 @@
+= 支援Amazon EBS彈性Volume
+:allow-uri-read: 
+
+
+
+
+=== 支援Amazon EBS彈性Volume
+
+支援Amazon EBS Elastic Volumes功能搭配Cloud Volumes ONTAP 使用支援的不只是一個可提供更好的效能和額外容量、同時Cloud Manager還能視需要自動增加基礎磁碟容量。
+
+從_new _ Cloud Volumes ONTAP 版本-zhustr9.11.0系統、以及GP3和IO1 EBS磁碟類型開始、即可支援彈性磁碟區。
+
+link:concept-aws-elastic-volumes.html["深入瞭解彈性磁碟區的支援"]。
+
+請注意、若要支援彈性磁碟區、連接器需要新的AWS權限：
+
+[source, json]
+----
+"ec2:DescribeVolumesModifications",
+"ec2:ModifyVolume",
+----
+請務必為您新增至Cloud Manager的每組AWS認證資料提供這些權限。您可以在上找到最新的權限清單 https://mysupport.netapp.com/site/info/cloud-manager-policies["Cloud Manager 原則頁面"^]。
+
+
+
+=== 支援在共享AWS子網路中部署HA配對
+
+支援AWS VPC共享的支援範圍包括在內。Cloud Volumes ONTAP此版本的Connector可讓您在使用API時、將HA配對部署在AWS共用子網路中。
+
+link:task-deploy-aws-shared-vpc.html["瞭解如何在共用子網路中部署HA配對"]。

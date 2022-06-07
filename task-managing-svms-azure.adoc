@@ -39,45 +39,10 @@ summary: 儲存虛擬機器是 ONTAP 執行於支援內部的虛擬機器、可�
 
 === 單一節點系統
 
-在您建立儲存VM並分配LIF之前、必須先將IP位址指派給Azure中的nic0。所需的IP位址數量取決於儲存傳輸協定。
+在您建立儲存VM並分配LIF之前、必須先將IP位址指派給Azure中的nic0。
 
-[role="tabbed-block"]
-====
-.iSCSI
---
-* 一個IP位址可用於iSCSI資料LIF存取
-* 儲存VM（SVM）管理LIF的選用IP位址
-+
-此管理LIF可連線至SnapCenter 諸如VMware等管理工具。
+您需要為資料LIF存取建立IP位址、並為儲存VM（SVM）管理LIF建立另一個選用的IP位址。此管理LIF可連線至SnapCenter 諸如VMware等管理工具。
 
-
-
---
-.NFS
---
-* 單一IP位址即可存取NAS資料LIF
-* 儲存VM（SVM）管理LIF的選用IP位址
-+
-此管理LIF可連線至SnapCenter 諸如VMware等管理工具。
-
-
-
---
-.中小企業
---
-* 單一IP位址即可存取NAS資料LIF
-* 一個IP位址、用於透過iSCSI LIF進行DNS和SMB通訊
-+
-iSCSI LIF用於此用途、因為它不會在容錯移轉時移轉。
-
-* 儲存VM（SVM）管理LIF的選用IP位址
-+
-此管理LIF可連線至SnapCenter 諸如VMware等管理工具。
-
-
-
---
-====
 .步驟
 . 登入Azure入口網站、然後開啟*虛擬機器*服務。
 . 按一下Cloud Volumes ONTAP 「不完整虛擬機器」的名稱。
@@ -90,9 +55,9 @@ iSCSI LIF用於此用途、因為它不會在容錯移轉時移轉。
 +
 最好使用靜態IP位址、因為靜態IP可確保IP位址不會變更、有助於避免不必要的應用程式中斷運作。
 
-. 如果您使用SMB、請重複這些步驟、為DNS和SMB通訊建立額外的IP位址。
-. 如果您要建立SVM管理LIF、請重複這些步驟以建立其他IP位址。
 
+
+如果您要建立SVM管理LIF、請重複這些步驟以建立其他IP位址。
 
 複製您剛建立的私有IP位址。當您為新的儲存VM建立生命期時、必須指定這些IP位址。
 
@@ -395,12 +360,6 @@ network route create -destination 0.0.0.0/0 -vserver <svm-name> -gateway <ip-of-
 ----
 network interface create -vserver <svm-name> -lif <lif-name> -role data -data-protocol cifs,nfs -address <nfs--ip-address> -netmask-length <length> -home-node <name-of-node1> -status-admin up -failover-policy disabled -firewall-policy data -home-port e0a -auto-revert true -failover-group Default
 ----
-. 建立提供DNS與SMB通訊所需的iSCSI LIF：
-+
-[source, cli]
-----
-network interface create -vserver <svm-name> -home-port e0a -address <iscsi-ip-address> -lif <lif-name> -home-node <name-of-node1> -data-protocol iscsi
-----
 . 選用：建立儲存VM管理LIF。
 +
 [source, cli]
@@ -478,6 +437,29 @@ vserver add-aggregates -vserver svm_2 -aggregates aggr1,aggr2
 +
 這是必要步驟、因為新的儲存VM需要存取至少一個Aggregate、才能在儲存VM上建立磁碟區。
 
+. 如果您執行Cloud Volumes ONTAP 的是版本不含更新版本的版本、請修改儲存VM的網路服務原則。
++
+需要修改服務、因為Cloud Volumes ONTAP 這樣可確保支援功能可將iSCSI LIF用於傳出管理連線。
+
++
+[source, cli]
+----
+network interface service-policy remove-service -vserver <svm-name> -policy default-data-files -service data-fpolicy-client
+network interface service-policy remove-service -vserver <svm-name> -policy default-data-files -service management-ad-client
+network interface service-policy remove-service -vserver <svm-name> -policy default-data-files -service management-dns-client
+network interface service-policy remove-service -vserver <svm-name> -policy default-data-files -service management-ldap-client
+network interface service-policy remove-service -vserver <svm-name> -policy default-data-files -service management-nis-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-blocks -service data-fpolicy-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-blocks -service management-ad-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-blocks -service management-dns-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-blocks -service management-ldap-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-blocks -service management-nis-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-iscsi -service data-fpolicy-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-iscsi -service management-ad-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-iscsi -service management-dns-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-iscsi -service management-ldap-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-iscsi -service management-nis-client
+----
 
 
 --
@@ -531,6 +513,29 @@ vserver add-aggregates -vserver svm_2 -aggregates aggr1,aggr2
 +
 這是必要步驟、因為新的儲存VM需要存取至少一個Aggregate、才能在儲存VM上建立磁碟區。
 
+. 如果您執行Cloud Volumes ONTAP 的是版本不含更新版本的版本、請修改儲存VM的網路服務原則。
++
+需要修改服務、因為Cloud Volumes ONTAP 這樣可確保支援功能可將iSCSI LIF用於傳出管理連線。
+
++
+[source, cli]
+----
+network interface service-policy remove-service -vserver <svm-name> -policy default-data-files -service data-fpolicy-client
+network interface service-policy remove-service -vserver <svm-name> -policy default-data-files -service management-ad-client
+network interface service-policy remove-service -vserver <svm-name> -policy default-data-files -service management-dns-client
+network interface service-policy remove-service -vserver <svm-name> -policy default-data-files -service management-ldap-client
+network interface service-policy remove-service -vserver <svm-name> -policy default-data-files -service management-nis-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-blocks -service data-fpolicy-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-blocks -service management-ad-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-blocks -service management-dns-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-blocks -service management-ldap-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-blocks -service management-nis-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-iscsi -service data-fpolicy-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-iscsi -service management-ad-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-iscsi -service management-dns-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-iscsi -service management-ldap-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-iscsi -service management-nis-client
+----
 
 
 --
@@ -600,6 +605,29 @@ vserver add-aggregates -vserver svm_2 -aggregates aggr1,aggr2
 +
 這是必要步驟、因為新的儲存VM需要存取至少一個Aggregate、才能在儲存VM上建立磁碟區。
 
+. 如果您執行Cloud Volumes ONTAP 的是版本不含更新版本的版本、請修改儲存VM的網路服務原則。
++
+需要修改服務、因為Cloud Volumes ONTAP 這樣可確保支援功能可將iSCSI LIF用於傳出管理連線。
+
++
+[source, cli]
+----
+network interface service-policy remove-service -vserver <svm-name> -policy default-data-files -service data-fpolicy-client
+network interface service-policy remove-service -vserver <svm-name> -policy default-data-files -service management-ad-client
+network interface service-policy remove-service -vserver <svm-name> -policy default-data-files -service management-dns-client
+network interface service-policy remove-service -vserver <svm-name> -policy default-data-files -service management-ldap-client
+network interface service-policy remove-service -vserver <svm-name> -policy default-data-files -service management-nis-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-blocks -service data-fpolicy-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-blocks -service management-ad-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-blocks -service management-dns-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-blocks -service management-ldap-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-blocks -service management-nis-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-iscsi -service data-fpolicy-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-iscsi -service management-ad-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-iscsi -service management-dns-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-iscsi -service management-ldap-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-iscsi -service management-nis-client
+----
 
 
 --

@@ -1,0 +1,11 @@
+= 使用服務端點時網路存取受限
+:allow-uri-read: 
+
+
+
+
+=== 使用服務端點時網路存取受限
+
+Cloud Manager現在使用vnet服務端點來連線Cloud Volumes ONTAP 到各種不同的解決方法、限制網路存取。如果您停用Azure Private Link連線、Cloud Manager會使用服務端點。
+
+link:task-enabling-private-link.html["深入瞭解Azure Private Link與Cloud Volumes ONTAP NetApp的連線功能"]。

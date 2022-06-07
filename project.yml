@@ -23,8 +23,6 @@ settings:
   langs: zh-tw,us-en,ja-jp,zh-cn,ko-kr
 sidebar:
   entries:
-  - title: 所有Cloud Manager文件
-    url: https://docs.netapp.com/us-en/cloud-manager-family
   - title: 文件Cloud Volumes ONTAP
     url: "/index.html"
   - title: 版本資訊
@@ -52,6 +50,8 @@ sidebar:
           url: "/reference-networking-aws.html"
         - title: 設定 AWS 傳輸閘道
           url: "/task-setting-up-transit-gateway.html"
+        - title: 在共享子網路中部署HA配對
+          url: "/task-deploy-aws-shared-vpc.html"
         - title: AWS 的安全群組規則
           url: "/reference-security-groups.html"
       - title: 設定 AWS KMS
@@ -134,6 +134,9 @@ sidebar:
       - title: 在Azure中建立儲存VM
         flavor: azure
         url: "/task-managing-svms-azure.html"
+      - title: 在Google Cloud中建立儲存VM
+        flavor: gcp
+        url: "/task-managing-svms-gcp.html"
     - title: 安全性與資料加密
       entries:
       - title: 使用 NetApp 加密來加密磁碟區
@@ -168,7 +171,7 @@ sidebar:
           url: "/task-removing.html"
         - title: 刪除系統
           url: "/task-deleting-working-env.html"
-      - title: AWS系統管理
+      - title: AWS管理
         flavor: aws
         entries:
         - title: 變更EC2執行個體類型
@@ -177,7 +180,7 @@ sidebar:
           url: "/task-change-route-tables.html"
         - title: 監控 AWS 成本
           url: "/task-monitoring-costs.html"
-      - title: Azure系統管理
+      - title: Azure管理
         flavor: azure
         entries:
         - title: 變更Azure VM類型
@@ -191,7 +194,9 @@ sidebar:
         entries:
         - title: 變更機器類型
           url: "/task-change-gcp-machine.html"
-      - title: 系統管理員或CLI的系統管理
+      - title: 系統管理員的系統管理
+        url: "/task-administer-advanced-view.html"
+      - title: 從CLI進行管理
         url: "/task-connecting-to-otc.html"
     - title: 系統健全狀況與事件
       entries:
@@ -209,6 +214,9 @@ sidebar:
         url: "/concept-client-protocols.html"
       - title: 磁碟與集合體
         url: "/concept-storage.html"
+      - title: AWS中的彈性Volume
+        flavor: aws
+        url: "/concept-aws-elastic-volumes.html"
       - title: 資料分層
         url: "/concept-data-tiering.html"
       - title: 儲存管理
@@ -326,3 +334,4 @@ homepage:
 product-family:
   name: Cloud Manager
   repo: cloud-manager-family
+  sidebar_label: All Cloud Manager documentation

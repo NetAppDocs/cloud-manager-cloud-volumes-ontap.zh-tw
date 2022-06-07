@@ -1,0 +1,21 @@
+= 零點9.11.1. Cloud Volumes ONTAP
+:allow-uri-read: 
+
+
+
+
+=== 零點9.11.1. Cloud Volumes ONTAP
+
+Cloud Manager現在可部署及管理Cloud Volumes ONTAP 支援全新功能和其他雲端供應商區域的功能。
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes["深入瞭Cloud Volumes ONTAP 解本版的更新功能"^]
+
+
+
+=== 新的進階檢視
+
+如果您需要執行Cloud Volumes ONTAP 進階的支援管理功能、可以使用ONTAP 支援ONTAP 此功能的支援功能、這個功能是隨附於一個系統的管理介面。我們直接在Cloud Manager中加入System Manager介面、讓您不需要離開Cloud Manager進行進階管理。
+
+此「進階檢視」可作為Cloud Volumes ONTAP Preview搭配使用的版本（含E59.10.0及更新版本）。我們計畫改善這項體驗、並在即將推出的版本中加入增強功能。請使用產品內建聊天功能、向我們傳送意見反應。
+
+link:task-administer-advanced-view.html["深入瞭解進階檢視"]。

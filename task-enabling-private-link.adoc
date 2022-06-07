@@ -22,7 +22,7 @@ summary: 根據預設、 Cloud Manager 會在 Cloud Volumes ONTAP 支援 Azure �
 
 == 連接器位於Azure中
 
-連接器應部署在Cloud Volumes ONTAP 其所管理的或所管理的各個系統所在的Azure區域 https://docs.microsoft.com/en-us/azure/availability-zones/cross-region-replication-azure#azure-cross-region-replication-pairings-for-all-geographies["Azure區域配對"^] 適用於整個系統。Cloud Volumes ONTAP這項需求可確保Cloud Volumes ONTAP Azure Private Link連線可用於連接至相關的儲存帳戶。 link:task-enabling-private-link.html["瞭Cloud Volumes ONTAP 解如何使用Azure Private Link"]。
+連接器應部署在Cloud Volumes ONTAP 其所管理的或所管理的各個系統所在的Azure區域 https://docs.microsoft.com/en-us/azure/availability-zones/cross-region-replication-azure#azure-cross-region-replication-pairings-for-all-geographies["Azure區域配對"^] 適用於整個系統。Cloud Volumes ONTAP這項需求可確保Cloud Volumes ONTAP Azure Private Link連線可用於連接至相關的儲存帳戶。
 
 
 
@@ -91,6 +91,8 @@ image:diagram_azure_private_link.png["概念性影像、顯示資料存取功能
 == 停用Azure Private Link連線
 
 如果 Azure 組態需要、您可以停用 Cloud Volumes ONTAP Azure 私有 Link 與儲存帳戶之間的連線。
+
+如果您停用Azure Private Link連線、Cloud Manager會改用服務端點。即使有了服務端點、Cloud Manager也會限制儲存帳戶存取vnet（Cloud Volumes ONTAP 其中部署了哪些虛擬網路）和部署Connector的vnet。
 
 .步驟
 . 在Cloud Manager主控台右上角、按一下「設定」圖示、然後選取「*連接器設定*」。
