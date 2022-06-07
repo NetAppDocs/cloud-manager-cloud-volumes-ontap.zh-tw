@@ -184,6 +184,14 @@ DNS 伺服器必須為 Active Directory 環境提供名稱解析服務。您可�
 
 
 
+=== VPC共享
+
+從9.11.1版開始、Cloud Volumes ONTAP AWS支援搭配VPC共享功能的更新版、VPC共用功能可讓您的組織與其他AWS帳戶共用子網路。若要使用此組態、您必須設定AWS環境、然後使用API部署HA配對。
+
+link:task-deploy-aws-shared-vpc.html["瞭解如何在共用子網路中部署HA配對"]。
+
+
+
 == 多個 AZs 的 HA 配對需求
 
 其他 AWS 網路需求適用於 Cloud Volumes ONTAP 使用多個可用區域（ AZs ）的 SestHA 組態。在啟動HA配對之前、您應該先檢閱這些需求、因為在建立工作環境時、您必須在Cloud Manager中輸入網路詳細資料。
