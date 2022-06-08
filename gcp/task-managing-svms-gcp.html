@@ -1403,7 +1403,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-07 22:03:55 +0000">06/07/2022</time>
+    <time datetime="2022-06-08 19:23:18 +0000">06/08/2022</time>
     
   
 
@@ -1461,7 +1461,7 @@
 <div class="title">步驟</div>
 <ol class="arabic">
 <li>
-<p>在Google Cloud中、移至Cloud Volumes ONTAP 「實例」、並為每個LIF新增一個IP範圍至nic0。</p>
+<p>在Google Cloud中、移至Cloud Volumes ONTAP 「實例」、並為每個LIF新增一個IP位址至nic0。</p>
 <div class="paragraph">
 <p><span class="image"><img src="./media/screenshot-gcp-add-ip-range.png" alt="Google Cloud主控台的螢幕快照、您可Cloud Volumes ONTAP 在其中新增IP範圍、以編輯for the network interface for the zeing。"></span></p>
 </div>
@@ -1537,10 +1537,10 @@
 <div class="sect2">
 <h3 id="ha配對">HA配對</h3>
 <div class="paragraph">
-<p>您必須使用Cloud Manager API在Cloud Volumes ONTAP Google Cloud的一套系統上建立儲存VM。由於Cloud Manager會使用所需的LIF服務來設定儲存VM、以及用於傳出SMB/CIFS通訊所需的HA配對的iSCSI LIF、因此需要使用API（而非System Manager或CLI）。</p>
+<p>您必須使用Cloud Manager API在Cloud Volumes ONTAP Google Cloud的一套系統上建立儲存VM。因為Cloud Manager會使用所需的LIF服務、以及傳出SMB/CIFS通訊所需的iSCSI LIF來設定儲存VM、因此需要使用API（而非System Manager或CLI）。</p>
 </div>
 <div class="paragraph">
-<p>請注意、Cloud Manager會在Google Cloud中為您分配所需的IP位址。</p>
+<p>請注意、Cloud Manager會在Google Cloud中配置所需的IP位址、並使用資料LIF來建立儲存VM、以進行SMB/NFS存取、並使用iSCSI LIF來進行傳出SMB通訊。</p>
 </div>
 <div class="paragraph">
 <p>從3.9.19版本開始、Connector需要下列權限、才能建立及管理Cloud Volumes ONTAP 適用於各個HA配對的儲存VM：</p>
