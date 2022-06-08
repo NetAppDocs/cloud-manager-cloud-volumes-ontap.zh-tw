@@ -40,7 +40,7 @@ summary: 儲存虛擬機器是 ONTAP 執行於支援內部的虛擬機器、可�
 這些步驟使用CLI在單一節點系統上建立新的儲存VM。建立資料LIF需要一個私有IP位址、如果您想要建立管理LIF、則需要另一個選用的私有IP位址。
 
 .步驟
-. 在Google Cloud中、移至Cloud Volumes ONTAP 「實例」、並為每個LIF新增一個IP範圍至nic0。
+. 在Google Cloud中、移至Cloud Volumes ONTAP 「實例」、並為每個LIF新增一個IP位址至nic0。
 +
 image:screenshot-gcp-add-ip-range.png["Google Cloud主控台的螢幕快照、您可Cloud Volumes ONTAP 在其中新增IP範圍、以編輯for the network interface for the zeing。"]
 
@@ -101,9 +101,9 @@ vserver add-aggregates -vserver <svm-name> -aggregates <aggr1,aggr2>
 
 === HA配對
 
-您必須使用Cloud Manager API在Cloud Volumes ONTAP Google Cloud的一套系統上建立儲存VM。由於Cloud Manager會使用所需的LIF服務來設定儲存VM、以及用於傳出SMB/CIFS通訊所需的HA配對的iSCSI LIF、因此需要使用API（而非System Manager或CLI）。
+您必須使用Cloud Manager API在Cloud Volumes ONTAP Google Cloud的一套系統上建立儲存VM。因為Cloud Manager會使用所需的LIF服務、以及傳出SMB/CIFS通訊所需的iSCSI LIF來設定儲存VM、因此需要使用API（而非System Manager或CLI）。
 
-請注意、Cloud Manager會在Google Cloud中為您分配所需的IP位址。
+請注意、Cloud Manager會在Google Cloud中配置所需的IP位址、並使用資料LIF來建立儲存VM、以進行SMB/NFS存取、並使用iSCSI LIF來進行傳出SMB通訊。
 
 從3.9.19版本開始、Connector需要下列權限、才能建立及管理Cloud Volumes ONTAP 適用於各個HA配對的儲存VM：
 

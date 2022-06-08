@@ -168,18 +168,19 @@ ifdef::gcp[]
 === 將冷資料分層至 Google Cloud Storage 儲存庫的需求
 
 * 駐留的子網路 Cloud Volumes ONTAP 必須設定為私有 Google Access 。如需相關指示、請參閱 https://cloud.google.com/vpc/docs/configure-private-google-access["Google Cloud 文件：設定私有 Google Access"^]。
-* 您需要符合下列需求的服務帳戶：
+* 服務帳戶必須附加Cloud Volumes ONTAP 至
 +
-** IT必須具有預先定義的儲存管理角色。
-** Connector服務帳戶必須是此分層服務帳戶的_服務帳戶使用者_。
-+
-link:task-creating-gcp-service-account.html["瞭解如何設定服務帳戶"]。
+link:task-creating-gcp-service-account.html["瞭解如何設定此服務帳戶"]。
 
-** 若要使用客戶管理的加密金鑰來加密儲存區、請啟用Google Cloud儲存區使用金鑰。
++
+當您建立Cloud Volumes ONTAP 一個運作環境時、系統會提示您選擇此服務帳戶。
+
++
+如果您在部署期間未選擇服務帳戶、則必須關閉Cloud Volumes ONTAP 該服務帳戶、前往Google Cloud主控台、然後將該服務帳戶附加至Cloud Volumes ONTAP 該故障。然後、您可以依照下一節所述、啟用資料分層。
+
+* 若要使用客戶管理的加密金鑰來加密儲存區、請啟用Google Cloud儲存區使用金鑰。
 +
 link:task-setting-up-gcp-encryption.html["瞭解如何搭配Cloud Volumes ONTAP 使用客戶管理的加密金鑰"]。
-
-
 
 
 
@@ -199,8 +200,10 @@ endif::gcp[]
 image:screenshot_enable_capacity_tiering.gif["當 Cloud Manager 嘗試啟用資料分層時、如果遇到問題、可從工作環境功能表取得「啟用容量分層」選項的快照。"]
 
 +
+只有在 Cloud Manager 建立系統時無法啟用資料分層功能時、才會看到此選項。
 
-NOTE: 只有在 Cloud Manager 建立系統時無法啟用資料分層功能時、才會看到此選項。
++
+在Google Cloud中、必須先將服務帳戶附加至Cloud Volumes ONTAP 無法顯示此選項的功能。 <<Requirements,確保您已符合所有要求>>。
 
 . 按一下「 * 啟用 * 」、 Cloud Manager 就能建立物件存放區、供此 Cloud Volumes ONTAP 支援系統用於階層式資料。
 
