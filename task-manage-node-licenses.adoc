@@ -209,3 +209,21 @@ Cloud Manager 會更新 Cloud Volumes ONTAP 整個作業系統的授權。
 
 
 Cloud Manager會開始轉換程序。此程序會自動重新啟動。Cloud Volumes ONTAP備份時、授權資訊會反映出新的授權。
+
+
+
+== 在PAYGO和BYOL之間切換
+
+不支援將系統從PAYGO的節點授權轉換成BYOL的節點授權（反之亦然）。如果您想要在隨用隨付訂閱和BYOL訂閱之間切換、則必須部署新系統、並將資料從現有系統複寫到新系統。
+
+.步驟
+. 打造全新 Cloud Volumes ONTAP 的運作環境。
+. 針對您需要複寫的每個磁碟區、在系統之間設定一次性資料複寫。
++
+https://docs.netapp.com/us-en/cloud-manager-replication/task-replicating-data.html["瞭解如何在系統之間複寫資料"^]
+
+. 刪除原始工作環境、終止Cloud Volumes ONTAP 不再需要的功能。
++
+link:task-deleting-working-env.html["瞭解如何刪除Cloud Volumes ONTAP 功能不正常的工作環境"]。
+
+

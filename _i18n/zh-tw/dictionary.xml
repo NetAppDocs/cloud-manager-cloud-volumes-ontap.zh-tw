@@ -2823,9 +2823,7 @@
   <block id="8097feb21f6c4186704bf26f92131fe0" category="list-text">按一下HA配對的負載平衡器名稱。</block>
   <block id="7a5be31086b3ad69d1c6b2c5abafcc64" category="list-text">從節點1建立資料LIF存取的前端IP組態、從節點2存取資料LIF的前端IP組態、以及儲存VM（SVM）管理LIF的另一個選用前端IP。</block>
   <block id="91755019ec4f9b4503c2abd1e2018220" category="list-text">在*設定*下、按一下*前端IP組態*。</block>
-  <block id="7edcf3b7dac7218c74f45badfcadf54c" category="list-text">輸入前端IP的名稱、選取Cloud Volumes ONTAP 該子網路做為該子網路的「靜態HA配對」、然後保留「*動態*」選項。</block>
   <block id="fde48a87720c7f4a7b3fe579cf70ce21" category="inline-image-macro">在Azure入口網站中新增前端IP位址的快照、其中會選取名稱和子網路。</block>
-  <block id="624bf1221024c93616a16790392b5131" category="paragraph"><block ref="624bf1221024c93616a16790392b5131" category="inline-image-macro-rx" type="image"></block></block>
   <block id="0da801a9d3d38ccf39fc77f357cbd875" category="list-text">按一下您剛才建立的前端IP組態名稱、將*指派*變更為*靜態*、然後按一下*儲存*。</block>
   <block id="0f21ca89d8c8b745954f3d9e19a0dd80" category="list-text">為您剛建立的每個前端IP新增健全狀況探查。</block>
   <block id="1b45149e0b23a41687b2084ae6d33a48" category="list-text">在負載平衡器的*設定*下、按一下*健全狀況探查*。</block>
@@ -4129,4 +4127,19 @@
   <block id="870789b9d0beec538c84e00432400091" category="list-text">在Google Cloud中、移至Cloud Volumes ONTAP 「實例」、並為每個LIF新增一個IP位址至nic0。</block>
   <block id="71ab72fd4554a8b53d36a4e2687c3235" category="paragraph">您必須使用Cloud Manager API在Cloud Volumes ONTAP Google Cloud的一套系統上建立儲存VM。因為Cloud Manager會使用所需的LIF服務、以及傳出SMB/CIFS通訊所需的iSCSI LIF來設定儲存VM、因此需要使用API（而非System Manager或CLI）。</block>
   <block id="fb806393c7f698f410dd00705de40f9b" category="paragraph">請注意、Cloud Manager會在Google Cloud中配置所需的IP位址、並使用資料LIF來建立儲存VM、以進行SMB/NFS存取、並使用iSCSI LIF來進行傳出SMB通訊。</block>
+  <block id="8ad37a38e1be1cd56ba8016e897e15c5" category="inline-link">深入瞭解VPC網路對等關係</block>
+  <block id="3af417bcb28902bf6e018910cab4b830" category="paragraph">如果您計畫在Cloud Volumes ONTAP 獨立於Connector的VPC上部署物件、則需要設定VPC網路對等。<block ref="7da1fe3c3eb485cc3c06acb3359fc320" category="inline-link-rx"></block></block>
+  <block id="b961ba228f0253598e8fe47f55865219" category="list-text">輸入前端IP的名稱、選取Cloud Volumes ONTAP 該子網路做為「靜態HA配對」、保留「*動態*」選項、並在「可用區域」中保留「*區域-備援*」選項、以確保區域故障時IP位址仍可繼續使用。</block>
+  <block id="c00e2d19af360558425fe43036ba7057" category="paragraph"><block ref="c00e2d19af360558425fe43036ba7057" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="5505ffcb759fb1c9c3793b2dd386cd82" category="inline-link-macro">瞭解如何在PAYGO和BYOL之間切換</block>
+  <block id="b71c93cf4431b3a81c64a35fe6dbe9cf" category="paragraph">請注意、不支援將系統從PAYGO節點授權轉換成BYOL節點授權（反之亦然）。您需要部署新系統、然後將資料複寫到該系統。 <block ref="d81e4230804422351d525c6f4d42f594" category="inline-link-macro-rx"></block>。</block>
+  <block id="594cb44c6500d8855ad820b0653e02c7" category="section-title">在PAYGO和BYOL之間切換</block>
+  <block id="a704128156d562fe5860508e9584ee34" category="paragraph">不支援將系統從PAYGO的節點授權轉換成BYOL的節點授權（反之亦然）。如果您想要在隨用隨付訂閱和BYOL訂閱之間切換、則必須部署新系統、並將資料從現有系統複寫到新系統。</block>
+  <block id="7f7c7e70efe0e6e29f5d0b207145f30e" category="list-text">打造全新 Cloud Volumes ONTAP 的運作環境。</block>
+  <block id="9bd20ffd5e91ec2bb61bc593be38bb13" category="list-text">針對您需要複寫的每個磁碟區、在系統之間設定一次性資料複寫。</block>
+  <block id="95b10ad2ca24b4c8bd5673b7383531a2" category="inline-link">瞭解如何在系統之間複寫資料</block>
+  <block id="0f1f7d0cff1734f943c2503c9febec73" category="paragraph"><block ref="0f1f7d0cff1734f943c2503c9febec73" category="inline-link-rx"></block></block>
+  <block id="2dd15870a87ceaf45f31f08d066afaeb" category="list-text">刪除原始工作環境、終止Cloud Volumes ONTAP 不再需要的功能。</block>
+  <block id="2464ba8f7f97ce117f749b75a1c60906" category="inline-link-macro">瞭解如何刪除Cloud Volumes ONTAP 功能不正常的工作環境</block>
+  <block id="4397e74dad93d251efd7f65b1756f22b" category="paragraph"><block ref="8170ae40f603808099e16014cfba3f00" category="inline-link-macro-rx"></block>。</block>
 </blocks>
