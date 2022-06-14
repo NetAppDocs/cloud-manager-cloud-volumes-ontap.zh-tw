@@ -187,7 +187,7 @@ sidebar:
           url: "/task-change-azure-vm.html"
         - title: 覆寫CIFS鎖定
           url: "/task-overriding-cifs-locks.html"
-        - title: 使用 Azure 私有連結
+        - title: 使用Azure私有連結或服務端點
           url: "/task-enabling-private-link.html"
       - title: Google Cloud管理
         flavor: gcp
