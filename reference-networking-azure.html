@@ -1329,7 +1329,7 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-overriding-cifs-locks.html">
         覆寫CIFS鎖定
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-enabling-private-link.html">
-        使用 Azure 私有連結
+        使用Azure私有連結或服務端點
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Google Cloud管理</div>
       </a>
@@ -1469,7 +1469,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-07 20:57:50 +0000">06/07/2022</time>
+    <time datetime="2022-06-14 21:09:13 +0000">06/14/2022</time>
     
   
 
@@ -1545,37 +1545,16 @@ LIF 是與實體連接埠相關聯的 IP 位址。諸如 VMware 的管理工具�
 <div class="sect2">
 <h3 id="安全連線至azure服務">安全連線至Azure服務</h3>
 <div class="paragraph">
-<p>Cloud Manager可設定vnet服務端點和Azure Private Link端點、Cloud Volumes ONTAP 以便讓整個公司能夠私有連接至Azure服務。</p>
-</div>
-<div class="sect3">
-<h4 id="服務端點">服務端點</h4>
-<div class="paragraph">
-<p>Cloud Manager可讓vnet服務端點建立安全的連線、從Cloud Volumes ONTAP 功能區到Azure Blob儲存設備、以便進行資料分層。不支援Cloud Volumes ONTAP 其他服務端點、從功能到Azure服務皆不受支援。</p>
+<p>根據預設、Cloud Manager會啟用Azure Private Link、以便Cloud Volumes ONTAP 在支援的過程中連接至支援的各個資源。</p>
 </div>
 <div class="paragraph">
-<p>如果 Cloud Manager 原則具有下列權限、 Cloud Manager 可為您啟用 vnet 服務端點：</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">"Microsoft.Network/virtualNetworks/subnets/write",
-"Microsoft.Network/routeTables/join/action",</code></pre>
-</div>
+<p>在大多數情況下、您完全不需要做任何事——由NetApp Cloud Manager為您管理Azure Private Link。但是如果您使用 Azure 私有 DNS 、則需要編輯組態檔。您也應該瞭解Azure中的Connector位置需求。</p>
 </div>
 <div class="paragraph">
-<p>這些權限包含在最新版本中 <a href="https://mysupport.netapp.com/site/info/cloud-manager-policies">"Cloud Manager 原則"</a>。</p>
+<p>您也可以視業務需求而停用「私有連結」連線。如果您停用連結、Cloud Manager會設定Cloud Volumes ONTAP 使用服務端點的功能。</p>
 </div>
 <div class="paragraph">
-<p>如需設定資料分層的詳細資訊、請參閱 <a href="task-tiering.html">"將冷資料分層至低成本物件儲存設備"</a>。</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="私有連結">私有連結</h4>
-<div class="paragraph">
-<p>根據預設、 Cloud Manager 會在 Cloud Volumes ONTAP 支援 Azure 及其相關儲存帳戶的情況下、啟用 Azure Private Link 連線。Private Link 可保護 Azure 中端點之間的連線、並提供效能優勢。在大多數情況下、您完全不需要這麼做、Cloud Manager會為您管理Azure Private Link。但如果您使用Azure私有DNS、則必須編輯組態檔。您也可以視需要停用「私有連結」連線。</p>
-</div>
-<div class="paragraph">
-<p><a href="task-enabling-private-link.html">"深入瞭解如何搭配 Cloud Volumes ONTAP 使用 Azure 私有 Link 搭配使用功能"</a>。</p>
-</div>
+<p><a href="task-enabling-private-link.html">"深入瞭解如何搭配Cloud Volumes ONTAP 使用Azure私有連結或服務端點搭配使用"</a>。</p>
 </div>
 </div>
 <div class="sect2">
