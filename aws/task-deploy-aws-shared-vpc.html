@@ -1414,7 +1414,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-07 22:03:55 +0000">06/07/2022</time>
+    <time datetime="2022-06-15 15:46:50 +0000">06/15/2022</time>
     
   
 
@@ -1464,11 +1464,30 @@
 <p>選取*其他AWS帳戶*、然後輸入VPC擁有者帳戶的ID。</p>
 </li>
 <li>
-<p>使用Cloud Manager IAM原則建立原則、可從取得 <a href="https://mysupport.netapp.com/site/info/cloud-manager-policies" target="_blank" rel="noopener">"Cloud Manager 原則頁面"</a>。</p>
+<p>將原則附加至IAM角色、其中包含「STS:AssugumeROl」權限。</p>
+<div class="paragraph">
+<p>例如：</p>
+</div>
 </li>
 </ul>
 </div>
 </li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+  "Version": "2012-10-17",
+  "Statement": {
+    "Effect": "Allow",
+    "Action": "sts:AssumeRole",
+    "Resource": "arn:aws:iam::account-id:role/Test*"
+  }
+}</code></pre>
+</div>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
 <li>
 <p>複製IAM角色的角色ARN、以便在部署HA配對時、將其貼到API要求中。</p>
 </li>
@@ -1495,7 +1514,7 @@
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-json" data-lang="json">"haParams": {
-     “assumeRoleArn”: “arn:aws:iam::642991768967:role/mediator_role_assume_fromdev”
+     "assumeRoleArn": "arn:aws:iam::642991768967:role/mediator_role_assume_fromdev"
 }</code></pre>
 </div>
 </div>

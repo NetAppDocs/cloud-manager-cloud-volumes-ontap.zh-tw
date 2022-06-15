@@ -9,14 +9,14 @@
   <meta property="og:title" content="使用Azure私有連結或服務端點 | NetApp Documentation" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/task-enabling-private-link.html" />
-	<meta property="og:description" content="根據預設、Cloud Manager會啟用Azure Private Link、以便Cloud Volumes ONTAP 在支援的過程中連接至支援的各個資源。如有需要、您可以停用Azure私有連結、改用服務端點。" />
+	<meta property="og:description" content="使用Azure Private Link連線至相關儲存帳戶。Cloud Volumes ONTAP如有需要、您可以停用Azure私有連結、改用服務端點。" />
   <meta property="og:image" content="https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="根據預設、Cloud Manager會啟用Azure Private Link、以便Cloud Volumes ONTAP 在支援的過程中連接至支援的各個資源。如有需要、您可以停用Azure私有連結、改用服務端點。">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="使用Azure Private Link連線至相關儲存帳戶。Cloud Volumes ONTAP如有需要、您可以停用Azure私有連結、改用服務端點。">
   <meta name="keywords" content=" azure private link, private link connection, private link to storage, service endpoints, enable service endpoint, disable private link"><!-- Icons -->
   <link rel="icon" href="/zh-tw/cloud-manager-cloud-volumes-ontap/images/favicon.ico" type="image/x-icon">
 
@@ -1403,7 +1403,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-14 21:09:13 +0000">06/14/2022</time>
+    <time datetime="2022-06-15 15:46:50 +0000">06/15/2022</time>
     
   
 
@@ -1413,7 +1413,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>根據預設、Cloud Manager會啟用Azure Private Link、以便Cloud Volumes ONTAP 在支援的過程中連接至支援的各個資源。如有需要、您可以停用Azure私有連結、改用服務端點。</p>
+<p>使用Azure Private Link連線至相關儲存帳戶。Cloud Volumes ONTAP如有需要、您可以停用Azure私有連結、改用服務端點。</p>
 </div>
 </div>
 </div>
@@ -1421,20 +1421,7 @@
 <h2 id="總覽">總覽</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Cloud Manager可讓Azure Private Link在Cloud Volumes ONTAP 非同步節點與下列Azure資源之間建立連線：</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>連結到不同時存在的儲存帳戶Cloud Volumes ONTAP</p>
-</li>
-<li>
-<p>連接到用於備份和資料分層的功能Cloud Volumes ONTAP</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Azure Private Link可保護Azure中端點之間的連線安全、並提供效能優勢。</p>
+<p>根據預設、Cloud Manager會啟用Azure Private Link、以便Cloud Volumes ONTAP 在支援的各個層面及其相關儲存帳戶之間建立連線。Azure Private Link可保護Azure中端點之間的連線安全、並提供效能優勢。</p>
 </div>
 <div class="paragraph">
 <p>如有需要、您可以設定Cloud Volumes ONTAP 使用服務端點、而非Azure Private Link。</p>
@@ -1476,7 +1463,7 @@
 <p>在大多數情況下、您不需要做任何事、就能使用Cloud Volumes ONTAP 下列功能來設定Azure私有連結：Cloud Manager可為您管理Azure私有連結。但是如果您使用 Azure 私有 DNS 、則需要編輯組態檔。您也應該瞭解Azure中的Connector位置需求。</p>
 </div>
 <div class="sect2">
-<h3 id="private-link連線如何搭配cloud-volumes-ontap-使用介紹儲存帳戶">Private Link連線如何搭配Cloud Volumes ONTAP 使用介紹儲存帳戶</h3>
+<h3 id="私有連結連線的運作方式">私有連結連線的運作方式</h3>
 <div class="paragraph">
 <p>Cloud Manager在Cloud Volumes ONTAP Azure中部署時、會在資源群組中建立私有端點。私有端點與Cloud Volumes ONTAP 用於實現功能不均的儲存帳戶相關聯。因此Cloud Volumes ONTAP 、存取資料可透過Microsoft主幹網路存取。</p>
 </div>
