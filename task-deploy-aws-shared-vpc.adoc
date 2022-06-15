@@ -35,7 +35,22 @@ summary: 從9.11.1版開始、Cloud Volumes ONTAP AWS支援搭配VPC共享功能
 +
 *** 在*信任的實體類型*下、選取* AWS帳戶*。
 *** 選取*其他AWS帳戶*、然後輸入VPC擁有者帳戶的ID。
-*** 使用Cloud Manager IAM原則建立原則、可從取得 https://mysupport.netapp.com/site/info/cloud-manager-policies["Cloud Manager 原則頁面"^]。
+*** 將原則附加至IAM角色、其中包含「STS:AssugumeROl」權限。
++
+例如：
+
++
+[source, json]
+----
+{
+  "Version": "2012-10-17",
+  "Statement": {
+    "Effect": "Allow",
+    "Action": "sts:AssumeRole",
+    "Resource": "arn:aws:iam::account-id:role/Test*"
+  }
+}
+----
 
 
 .. 複製IAM角色的角色ARN、以便在部署HA配對時、將其貼到API要求中。
@@ -57,7 +72,7 @@ link:reference-security-groups.html["請參閱Cloud Volumes ONTAP 安全性群�
 [source, json]
 ----
 "haParams": {
-     “assumeRoleArn”: “arn:aws:iam::642991768967:role/mediator_role_assume_fromdev”
+     "assumeRoleArn": "arn:aws:iam::642991768967:role/mediator_role_assume_fromdev"
 }
 ----
 +

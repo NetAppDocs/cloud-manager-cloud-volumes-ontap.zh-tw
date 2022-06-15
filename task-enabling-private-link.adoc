@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-enabling-private-link.html 
 keywords: azure private link, private link connection, private link to storage, service endpoints, enable service endpoint, disable private link 
-summary: 根據預設、Cloud Manager會啟用Azure Private Link、以便Cloud Volumes ONTAP 在支援的過程中連接至支援的各個資源。如有需要、您可以停用Azure私有連結、改用服務端點。 
+summary: 使用Azure Private Link連線至相關儲存帳戶。Cloud Volumes ONTAP如有需要、您可以停用Azure私有連結、改用服務端點。 
 ---
 = 使用Azure私有連結或服務端點
 :hardbreaks:
@@ -14,19 +14,13 @@ summary: 根據預設、Cloud Manager會啟用Azure Private Link、以便Cloud V
 
 
 [role="lead"]
-根據預設、Cloud Manager會啟用Azure Private Link、以便Cloud Volumes ONTAP 在支援的過程中連接至支援的各個資源。如有需要、您可以停用Azure私有連結、改用服務端點。
+使用Azure Private Link連線至相關儲存帳戶。Cloud Volumes ONTAP如有需要、您可以停用Azure私有連結、改用服務端點。
 
 
 
 == 總覽
 
-Cloud Manager可讓Azure Private Link在Cloud Volumes ONTAP 非同步節點與下列Azure資源之間建立連線：
-
-* 連結到不同時存在的儲存帳戶Cloud Volumes ONTAP
-* 連接到用於備份和資料分層的功能Cloud Volumes ONTAP
-
-
-Azure Private Link可保護Azure中端點之間的連線安全、並提供效能優勢。
+根據預設、Cloud Manager會啟用Azure Private Link、以便Cloud Volumes ONTAP 在支援的各個層面及其相關儲存帳戶之間建立連線。Azure Private Link可保護Azure中端點之間的連線安全、並提供效能優勢。
 
 如有需要、您可以設定Cloud Volumes ONTAP 使用服務端點、而非Azure Private Link。
 
@@ -53,7 +47,7 @@ Azure Private Link可保護Azure中端點之間的連線安全、並提供效能
 
 
 
-=== Private Link連線如何搭配Cloud Volumes ONTAP 使用介紹儲存帳戶
+=== 私有連結連線的運作方式
 
 Cloud Manager在Cloud Volumes ONTAP Azure中部署時、會在資源群組中建立私有端點。私有端點與Cloud Volumes ONTAP 用於實現功能不均的儲存帳戶相關聯。因此Cloud Volumes ONTAP 、存取資料可透過Microsoft主幹網路存取。
 

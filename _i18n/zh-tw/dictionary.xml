@@ -3941,8 +3941,6 @@
   <block id="e1a3d580d5cb42904b96dc05c0e0903d" category="paragraph">請務必執行下列動作：</block>
   <block id="e506de832b98c2693eb3f400ef0722c0" category="list-text">在*信任的實體類型*下、選取* AWS帳戶*。</block>
   <block id="a4977642f2eb92080375e1160904c3a7" category="list-text">選取*其他AWS帳戶*、然後輸入VPC擁有者帳戶的ID。</block>
-  <block id="4aaa495471a5ae62d8384762205bf782" category="inline-link">Cloud Manager 原則頁面</block>
-  <block id="123f2e62fb6e53ac1b3fd91d12e190e0" category="list-text">使用Cloud Manager IAM原則建立原則、可從取得<block ref="685f869a0580bc1af63188a3b940f7ac" category="inline-link-rx"></block>。</block>
   <block id="fe1f47d50f78d0e14014e50d690720d7" category="list-text">複製IAM角色的角色ARN、以便在部署HA配對時、將其貼到API要求中。</block>
   <block id="fd3149c0644c605d917aeebea557d6d6" category="list-text">與參與者帳戶共用VPC擁有者帳戶中的子網路。</block>
   <block id="fa9fe3d94968b5f037653d41700dcd70" category="paragraph">若要在共用子網路中部署HA配對、必須執行此步驟。</block>
@@ -4124,25 +4122,24 @@
   <block id="2dd15870a87ceaf45f31f08d066afaeb" category="list-text">刪除原始工作環境、終止Cloud Volumes ONTAP 不再需要的功能。</block>
   <block id="2464ba8f7f97ce117f749b75a1c60906" category="inline-link-macro">瞭解如何刪除Cloud Volumes ONTAP 功能不正常的工作環境</block>
   <block id="4397e74dad93d251efd7f65b1756f22b" category="paragraph"><block ref="8170ae40f603808099e16014cfba3f00" category="inline-link-macro-rx"></block>。</block>
-  <block id="673fb65cee00fe66ec1474b9f688f4c2" category="summary">根據預設、Cloud Manager會啟用Azure Private Link、以便Cloud Volumes ONTAP 在支援的過程中連接至支援的各個資源。如有需要、您可以停用Azure私有連結、改用服務端點。</block>
   <block id="998afd8cfe6da6d00c47dc7bb4b8a5b1" category="doc">使用Azure私有連結或服務端點</block>
-  <block id="97216da93bcb058c62f9d5625e19efd5" category="paragraph">Cloud Manager可讓Azure Private Link在Cloud Volumes ONTAP 非同步節點與下列Azure資源之間建立連線：</block>
-  <block id="eeb456eab9a026938804e503c901565b" category="list-text">連結到不同時存在的儲存帳戶Cloud Volumes ONTAP</block>
-  <block id="09c946d1864e85a234bc9a00d2cb6b22" category="list-text">連接到用於備份和資料分層的功能Cloud Volumes ONTAP</block>
-  <block id="695ee985c6df8d6f4b802e115d761173" category="paragraph">Azure Private Link可保護Azure中端點之間的連線安全、並提供效能優勢。</block>
   <block id="c9a73222b35c741b31b116efb4cefa73" category="paragraph">如有需要、您可以設定Cloud Volumes ONTAP 使用服務端點、而非Azure Private Link。</block>
   <block id="39bc8cdccd900055ab16b607c68dd5c6" category="paragraph">無論是哪一種組態、Cloud Manager都會限制Cloud Volumes ONTAP 存取網路、以利連接到既供連接到儲存帳戶。網路存取僅限於Cloud Volumes ONTAP 部署了下列項目的vnet和部署Connector的vnet。</block>
   <block id="e44ebdbfa162690dea44b66cf5d816f9" category="section-title">停用Azure私有連結、改用服務端點</block>
   <block id="c8ef59607dc21f79e8bf4c7303cf19c4" category="paragraph">如果貴企業需要、您可以在Cloud Manager中變更設定、讓Cloud Volumes ONTAP 其設定使用服務端點、而非Azure Private Link。變更此設定會套用Cloud Volumes ONTAP 至您所建立的新版資訊系統。</block>
   <block id="14c6e9ce4cfa25dc1cfa02fe401deed1" category="section-title">使用Azure私有連結</block>
   <block id="347431c5a9e1d410f530ec93c187d045" category="paragraph">在大多數情況下、您不需要做任何事、就能使用Cloud Volumes ONTAP 下列功能來設定Azure私有連結：Cloud Manager可為您管理Azure私有連結。但是如果您使用 Azure 私有 DNS 、則需要編輯組態檔。您也應該瞭解Azure中的Connector位置需求。</block>
-  <block id="c43284f37b3ed2984e5681226605e6da" category="section-title">Private Link連線如何搭配Cloud Volumes ONTAP 使用介紹儲存帳戶</block>
   <block id="1a4c6839ae7b3d4de45f275929539d1b" category="paragraph">Cloud Manager在Cloud Volumes ONTAP Azure中部署時、會在資源群組中建立私有端點。私有端點與Cloud Volumes ONTAP 用於實現功能不均的儲存帳戶相關聯。因此Cloud Volumes ONTAP 、存取資料可透過Microsoft主幹網路存取。</block>
   <block id="fe133d1f6db8d046e4b328c0d9a967a1" category="paragraph">每個NetApp帳戶最多只能有50個不受使用中授權模式限制的不受限。Cloud Volumes ONTAP</block>
   <block id="ae5034ae6657395ba1fc2a16d2c55db3" category="paragraph">_system_是HA配對或單一節點系統。例如、如果您有八Cloud Volumes ONTAP 個用作「用作」的「用作」、四個用作單一節點的系統、您的帳戶中總共有12個系統、還有38個額外系統的空間。</block>
-  <block id="373b4a65c4968402d43a79bd35032a29" category="paragraph">根據預設、Cloud Manager會啟用Azure Private Link、以便Cloud Volumes ONTAP 在支援的過程中連接至支援的各個資源。</block>
-  <block id="0a83c0c787d0c267bcca3d5c6bcc2caa" category="paragraph">在大多數情況下、您完全不需要做任何事——由NetApp Cloud Manager為您管理Azure Private Link。但是如果您使用 Azure 私有 DNS 、則需要編輯組態檔。您也應該瞭解Azure中的Connector位置需求。</block>
   <block id="11e5ec6a6dd579034180a34f735c57ee" category="paragraph">您也可以視業務需求而停用「私有連結」連線。如果您停用連結、Cloud Manager會設定Cloud Volumes ONTAP 使用服務端點的功能。</block>
   <block id="4ff3b739a9573101f05111dd5136fe72" category="inline-link-macro">深入瞭解如何搭配Cloud Volumes ONTAP 使用Azure私有連結或服務端點搭配使用</block>
   <block id="47d9f4d696319d2e54439849e1a532f3" category="paragraph"><block ref="c666fc2bdc96ffeac9aa956ec79d2d3c" category="inline-link-macro-rx"></block>。</block>
+  <block id="ed383a2427feead2979d4dff111c8a81" category="list-text">將原則附加至IAM角色、其中包含「STS:AssugumeROl」權限。</block>
+  <block id="506c2c0c7f5b70af3df68c45c46f45a7" category="paragraph">例如：</block>
+  <block id="4803d974c37e8a3895fbff420f579823" category="summary">使用Azure Private Link連線至相關儲存帳戶。Cloud Volumes ONTAP如有需要、您可以停用Azure私有連結、改用服務端點。</block>
+  <block id="48230385876daffc7535fc6eab05f805" category="paragraph">根據預設、Cloud Manager會啟用Azure Private Link、以便Cloud Volumes ONTAP 在支援的各個層面及其相關儲存帳戶之間建立連線。Azure Private Link可保護Azure中端點之間的連線安全、並提供效能優勢。</block>
+  <block id="3b7d5a44ee60c424b0f9531a36f99994" category="section-title">私有連結連線的運作方式</block>
+  <block id="cd14dd2b5bd666f4fd9008fa68836b01" category="paragraph">根據預設、Cloud Manager會啟用Azure Private Link、以便Cloud Volumes ONTAP 在支援的過程中連接到各個層面和Azure儲存帳戶。</block>
+  <block id="44fbda76f93db897942a813a2ca722df" category="paragraph">在大多數情況下、您完全不需要做任何事——由NetApp Cloud Manager為您管理Azure Private Link。但如果您使用Azure私有DNS、則必須編輯組態檔。您也應該瞭解Azure中的Connector位置需求。</block>
 </blocks>
