@@ -1549,7 +1549,6 @@
   <block id="24ccc997472d0e30221fe39df91aa347" category="inline-link-macro">從 * 進階分配 * 頁面</block>
   <block id="0ea918acc7a4eddfe90aa3982fd4332c" category="paragraph">您可以自行管理 Aggregate 、而非讓 Cloud Manager 管理 Aggregate 。 <block ref="2414ef63108c7ecff38292e17ac61802" category="inline-link-macro-rx"></block>、您可以建立新的集合體、包括特定數量的磁碟、新增磁碟至現有的集合體、以及在特定的集合體中建立磁碟區。</block>
   <block id="1d19e21de0f93b11f5ceb8b535a3afc2" category="section-title">容量管理</block>
-  <block id="3b63d4ec434de86415bca73f12d741a3" category="paragraph">客戶管理員可以選擇 Cloud Manager 是否通知您儲存容量決策、或 Cloud Manager 是否自動為您管理容量需求。這可能有助於您瞭解這些模式的運作方式。</block>
   <block id="f2be69b635c39988351f6636a52c66bd" category="section-title">自動容量管理</block>
   <block id="f40e552fce5b2f183c035526f1c7bde9" category="paragraph">容量管理模式預設為自動。在此模式中、 Cloud Manager 會在 Cloud Volumes ONTAP 需要更多容量時自動購買新的磁碟以供執行個體使用、刪除未使用的磁碟集合（集合體）、視需要在集合體之間移動磁碟區、以及嘗試取消故障磁碟。</block>
   <block id="4ecae3c28a5b318997a02fa69a0d0950" category="paragraph">下列範例說明此模式的運作方式：</block>
@@ -4142,4 +4141,24 @@
   <block id="3b7d5a44ee60c424b0f9531a36f99994" category="section-title">私有連結連線的運作方式</block>
   <block id="cd14dd2b5bd666f4fd9008fa68836b01" category="paragraph">根據預設、Cloud Manager會啟用Azure Private Link、以便Cloud Volumes ONTAP 在支援的過程中連接到各個層面和Azure儲存帳戶。</block>
   <block id="44fbda76f93db897942a813a2ca722df" category="paragraph">在大多數情況下、您完全不需要做任何事——由NetApp Cloud Manager為您管理Azure Private Link。但如果您使用Azure私有DNS、則必須編輯組態檔。您也應該瞭解Azure中的Connector位置需求。</block>
+  <block id="ae271afdca3c7d6785a9aefa74e6c80e" category="doc">管理Connector上的容量設定</block>
+  <block id="b62aaf3fb48f9f8f103dc68c41211be5" category="paragraph">每個Connector都有設定、可決定其如何管理Cloud Volumes ONTAP 用於實現效益的Aggregate容量。</block>
+  <block id="4edc935aeaaf3923beb2e4249e6c56f3" category="paragraph">這些設定會影響Cloud Volumes ONTAP 由Connector管理的所有功能不全系統。如果您有另一個Connector、則可以以不同的方式設定。</block>
+  <block id="4f85ddd6337c9d7a3f7f9955945eece1" category="paragraph">修改Connector設定需要帳戶管理員權限。</block>
+  <block id="03c93da41831d72dcea5fc724b2b4658" category="list-text">在* Capacity *下、修改下列任何設定：</block>
+  <block id="6b4ff0efcdf107fc68c01f001273f945" category="list-text">選擇Cloud Manager是否通知您儲存容量決策、或Cloud Manager是否自動為您管理容量需求。</block>
+  <block id="af1f64d74440547a71a0dfdd077d8a15" category="inline-link-macro">瞭解容量管理模式的運作方式</block>
+  <block id="46e6171a2e84c75269ac8bcb3c5004d8" category="paragraph"><block ref="f8a3c55f9fa8638c083e126aaf830b07" category="inline-link-macro-rx"></block>。</block>
+  <block id="562e73580c466cead324e6a17fbfe1c8" category="list-text">可用空間比率</block>
+  <block id="314b05c3387324c9621b3b3cd58816d4" category="list-text">當Aggregate上的可用空間比率低於指定臨界值時觸發通知。</block>
+  <block id="a27b16792f86cfcc4c0f28d5d58e43f4" category="paragraph">可用空間比率的計算方式如下：</block>
+  <block id="b9fbc310908f08e909d0f601f964b6d5" category="paragraph">（Aggregate capcap處理 能力- Aggregate上的總使用容量）/ Aggregate cap處理 能力</block>
+  <block id="1bf0c6edc1ff4a9b211fcdf6bda9cef9" category="list-text">資料分層的可用空間比率</block>
+  <block id="0bc3c683bdb3389ca9d8d2211fce0878" category="list-text">定義將資料分層至容量層（物件儲存）時、效能層（磁碟）需要多少可用空間。</block>
+  <block id="3e230a58ba269a917d314abcc623818e" category="paragraph">這種比率對於災難恢復方案非常重要。從容量層讀取資料時Cloud Volumes ONTAP 、將資料移至效能層、以提供更好的效能。如果空間不足、Cloud Volumes ONTAP 則無法移動資料。</block>
+  <block id="a8511ef1eba750b782198f5ec3686faa" category="paragraph">客戶管理員可以選擇 Cloud Manager 是否通知您儲存容量決策、或 Cloud Manager 是否自動為您管理容量需求。</block>
+  <block id="99a583bf10de030bdac538c8b15f5b45" category="paragraph">此行為由連接器上的_Capacity Management Mode_決定。容量管理模式會影響Cloud Volumes ONTAP 由該Connector管理的所有不完整系統。如果您有另一個Connector、則可以以不同的方式設定。</block>
+  <block id="825ccc8f97f155807b31877cfd383216" category="inline-link-macro">瞭解如何修改容量管理模式</block>
+  <block id="bb4793d3293acae6810aa94d7a19444b" category="paragraph"><block ref="efe15a4f6f400360bbcb54034c690ce4" category="inline-link-macro-rx"></block>。</block>
+  <block id="278a1c52ea1d5d6936facc457046eea4" category="sidebar">管理容量設定</block>
 </blocks>

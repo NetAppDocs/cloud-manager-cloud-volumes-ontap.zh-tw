@@ -124,6 +124,8 @@ sidebar:
         url: "/task-create-aggregates.html"
       - title: 管理現有的集合體
         url: "/task-manage-aggregates.html"
+      - title: 管理容量設定
+        url: "/task-manage-capacity-settings.html"
     - title: 儲存VM管理
       entries:
       - title: 在Cloud Manager中使用儲存VM

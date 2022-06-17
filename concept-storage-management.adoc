@@ -91,7 +91,9 @@ endif::aws[]
 
 == 容量管理
 
-客戶管理員可以選擇 Cloud Manager 是否通知您儲存容量決策、或 Cloud Manager 是否自動為您管理容量需求。這可能有助於您瞭解這些模式的運作方式。
+客戶管理員可以選擇 Cloud Manager 是否通知您儲存容量決策、或 Cloud Manager 是否自動為您管理容量需求。
+
+此行為由連接器上的_Capacity Management Mode_決定。容量管理模式會影響Cloud Volumes ONTAP 由該Connector管理的所有不完整系統。如果您有另一個Connector、則可以以不同的方式設定。
 
 
 
@@ -134,3 +136,9 @@ Cloud Manager 的自動容量管理不適用於 LUN 。Cloud Manager 建立 LUN 
 === 手動容量管理
 
 如果帳戶管理員將容量管理模式設為手動、 Cloud Manager 會在必須做出容量決策時、顯示必要行動訊息。自動模式中所述的相同範例適用於手動模式、但您必須接受這些動作。
+
+
+
+=== 深入瞭解
+
+link:task-manage-capacity-settings.html["瞭解如何修改容量管理模式"]。
