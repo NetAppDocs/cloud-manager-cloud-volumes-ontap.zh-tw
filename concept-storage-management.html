@@ -695,6 +695,8 @@
 
 
 
+
+
           
         </li>
       </ul>
@@ -1266,6 +1268,8 @@
         建立Aggregate
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-manage-aggregates.html">
         管理現有的集合體
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-manage-capacity-settings.html">
+        管理容量設定
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 儲存VM管理</div>
       </a>
@@ -1469,7 +1473,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-07 20:57:50 +0000">06/07/2022</time>
+    <time datetime="2022-06-17 21:22:36 +0000">06/17/2022</time>
     
   
 
@@ -1612,7 +1616,10 @@
 <h2 id="容量管理">容量管理</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>客戶管理員可以選擇 Cloud Manager 是否通知您儲存容量決策、或 Cloud Manager 是否自動為您管理容量需求。這可能有助於您瞭解這些模式的運作方式。</p>
+<p>客戶管理員可以選擇 Cloud Manager 是否通知您儲存容量決策、或 Cloud Manager 是否自動為您管理容量需求。</p>
+</div>
+<div class="paragraph">
+<p>此行為由連接器上的_Capacity Management Mode_決定。容量管理模式會影響Cloud Volumes ONTAP 由該Connector管理的所有不完整系統。如果您有另一個Connector、則可以以不同的方式設定。</p>
 </div>
 <div class="sect2">
 <h3 id="自動容量管理">自動容量管理</h3>
@@ -1662,6 +1669,12 @@
 <h3 id="手動容量管理">手動容量管理</h3>
 <div class="paragraph">
 <p>如果帳戶管理員將容量管理模式設為手動、 Cloud Manager 會在必須做出容量決策時、顯示必要行動訊息。自動模式中所述的相同範例適用於手動模式、但您必須接受這些動作。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="深入瞭解">深入瞭解</h3>
+<div class="paragraph">
+<p><a href="task-manage-capacity-settings.html">"瞭解如何修改容量管理模式"</a>。</p>
 </div>
 </div>
 </div>
