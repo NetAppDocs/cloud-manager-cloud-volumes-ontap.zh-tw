@@ -3931,7 +3931,6 @@
   <block id="1ddb0e5b328575796533c1e7f5b1f802" category="doc">在共享子網路中部署HA配對</block>
   <block id="18520da6851f84ab4d7ab3d88d237cd9" category="inline-link">VPC共享</block>
   <block id="c81d796f0d5c668dfa8d68823f479c90" category="paragraph">與<block ref="93089d0988badd859f8a3f19acd5c989" category="inline-link-rx"></block>、將一個功能豐富的全功能HA組態分佈於兩個帳戶：Cloud Volumes ONTAP</block>
-  <block id="77af655ba582e54e6d4578b31231fed3" category="list-text">擁有網路的VPC擁有者帳戶（VPC、子網路和路由表）</block>
   <block id="276a017110af33316f598f585486bc29" category="list-text">參與者帳戶、其中EC2執行個體部署在共享子網路中（包括兩個HA節點和中介器）</block>
   <block id="123682af03421de2f290c8c127ad313b" category="paragraph">若將某個版本部署在多個可用度區域中、HA中介程式需要特定權限、才能寫入VPC擁有者帳戶中的路由表。Cloud Volumes ONTAP您必須設定協調員可以承擔的IAM角色、以提供這些權限。</block>
   <block id="d0ddf69c5f314ee3119f1732980d427e" category="list-text">建立IAM角色。</block>
@@ -4161,4 +4160,5 @@
   <block id="825ccc8f97f155807b31877cfd383216" category="inline-link-macro">瞭解如何修改容量管理模式</block>
   <block id="bb4793d3293acae6810aa94d7a19444b" category="paragraph"><block ref="efe15a4f6f400360bbcb54034c690ce4" category="inline-link-macro-rx"></block>。</block>
   <block id="278a1c52ea1d5d6936facc457046eea4" category="sidebar">管理容量設定</block>
+  <block id="3b00b6cf71c2bc89f160c57b7ec5696c" category="list-text">VPC擁有者帳戶、擁有網路（VPC、子網路、路由表和安全性群組）</block>
 </blocks>
