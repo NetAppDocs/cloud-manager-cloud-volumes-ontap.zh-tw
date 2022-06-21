@@ -117,16 +117,10 @@ TIP: 如果您使用的Azure帳戶具有 https://mysupport.netapp.com/site/info/
 +
 如果您選擇其中一個套件、則只需指定一個 Volume 、然後檢閱並核准組態。
 
-. * 授權 * ：視 Cloud Volumes ONTAP 需要變更版本、選取授權、然後選取虛擬機器類型。
-+
-image:screenshot_cvo_licensing_azure.gif["「授權」頁面的快照"]
-
-+
-如果您在啟動系統之後需要變更、您可以稍後修改授權或虛擬機器類型。
-
+. *授權*：視Cloud Volumes ONTAP 需要變更此版本、然後選取虛擬機器類型。
 +
 
-NOTE: 如果所選版本有較新的發行候選版本、一般可用度或修補程式版本、 Cloud Manager 會在建立工作環境時、將系統更新至該版本。例如、如果您選取 Cloud Volumes ONTAP 了「供應的是」「供應的是」「供應的是」「供應的」「供應的是」、就會進行更新。更新不會從一個版本發生到另一個版本、例如從 9.6 到 9.7 。
+NOTE: 如果所選版本有較新的發行候選版本、一般可用度或修補程式版本、 Cloud Manager 會在建立工作環境時、將系統更新至該版本。例如、如果您選擇Cloud Volumes ONTAP 了「更新」功能、就會進行更新。更新不會從一個版本發生到另一個版本、例如從 9.6 到 9.7 。
 
 . * 從 Azure Marketplace 訂閱 * ：如果 Cloud Manager 無法以程式設計方式部署 Cloud Volumes ONTAP 功能、請依照下列步驟進行。
 . * 基礎儲存資源 * ：選擇初始 Aggregate 的設定：磁碟類型、每個磁碟的大小、以及是否應啟用資料分層至 Blob 儲存設備。

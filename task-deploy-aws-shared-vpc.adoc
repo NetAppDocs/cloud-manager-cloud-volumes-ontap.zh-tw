@@ -18,44 +18,21 @@ summary: 從9.11.1版開始、Cloud Volumes ONTAP AWS支援搭配VPC共享功能
 
 與 https://aws.amazon.com/blogs/networking-and-content-delivery/vpc-sharing-a-new-approach-to-multiple-accounts-and-vpc-management/["VPC共享"^]、將一個功能豐富的全功能HA組態分佈於兩個帳戶：Cloud Volumes ONTAP
 
-* VPC擁有者帳戶、擁有網路（VPC、子網路、路由表和安全性群組）
+* VPC擁有者帳戶、擁有網路（VPC、子網路、路由表和Cloud Volumes ONTAP 保密群組）
 * 參與者帳戶、其中EC2執行個體部署在共享子網路中（包括兩個HA節點和中介器）
 
 
 若將某個版本部署在多個可用度區域中、HA中介程式需要特定權限、才能寫入VPC擁有者帳戶中的路由表。Cloud Volumes ONTAP您必須設定協調員可以承擔的IAM角色、以提供這些權限。
 
+下圖顯示此部署所涉及的元件：
+
+image:diagram-aws-vpc-sharing.png["在共享VPC中部署的概念性Cloud Volumes ONTAP 功能。它會顯示可供VPC擁有者帳戶和參與者帳戶使用的共享VPC。共享VPC包括IAM角色、路由表、安全組和三個子網。參與者帳戶包含Cloud Volumes ONTAP 不含「功能性HA」組態、以及附加至中介器的IAM角色。"]
+
+如下列步驟所述、您必須與參與者帳戶共用子網路、然後在VPC擁有者帳戶中建立IAM角色和安全性群組。
+
+當您建立Cloud Volumes ONTAP 運作環境時、Cloud Manager會自動建立IAM角色、並將其附加至中介者。此角色會假設您在VPC擁有者帳戶中建立的IAM角色、以便變更與HA配對相關的路由表。
+
 .步驟
-. 建立IAM角色。
-+
-.. 前往參與者帳戶中您要部署EC2執行個體的IAM主控台Cloud Volumes ONTAP 、以利執行。
-.. 在「存取管理」下、按一下*「角色」>「建立角色」*、然後依照步驟建立角色。
-+
-請務必執行下列動作：
-
-+
-*** 在*信任的實體類型*下、選取* AWS帳戶*。
-*** 選取*其他AWS帳戶*、然後輸入VPC擁有者帳戶的ID。
-*** 將原則附加至IAM角色、其中包含「STS:AssugumeROl」權限。
-+
-例如：
-
-+
-[source, json]
-----
-{
-  "Version": "2012-10-17",
-  "Statement": {
-    "Effect": "Allow",
-    "Action": "sts:AssumeRole",
-    "Resource": "arn:aws:iam::account-id:role/Test*"
-  }
-}
-----
-
-
-.. 複製IAM角色的角色ARN、以便在部署HA配對時、將其貼到API要求中。
-
-
 . 與參與者帳戶共用VPC擁有者帳戶中的子網路。
 +
 若要在共用子網路中部署HA配對、必須執行此步驟。
@@ -67,7 +44,24 @@ https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html#vpc-sharing-sh
 +
 link:reference-security-groups.html["請參閱Cloud Volumes ONTAP 安全性群組規則以瞭解相關資訊"]。請注意、您不需要為HA中介者建立安全性群組。Cloud Manager 能幫您達成這項目標。
 
+. 在VPC擁有者帳戶中、建立包含下列權限的IAM角色：
++
+[source, json]
+----
+Action": [
+                "ec2:AssignPrivateIpAddresses",
+                "ec2:CreateRoute",
+                "ec2:DeleteRoute",
+                "ec2:DescribeNetworkInterfaces",
+                "ec2:DescribeRouteTables",
+                "ec2:DescribeVpcs",
+                "ec2:ReplaceRoute",
+                "ec2:UnassignPrivateIpAddresses"
+----
 . 使用API建立新Cloud Volumes ONTAP 的功能性環境、並在「haParam」物件中傳遞「assume勞力Arn」欄位。
++
+「assume勞力arn」欄位應包含您在VPC擁有者帳戶中建立的IAM角色ARN（請參閱上一步）。
+
 +
 例如：
 
