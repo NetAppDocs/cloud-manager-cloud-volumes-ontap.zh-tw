@@ -1473,7 +1473,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-21 15:56:14 +0000">06/21/2022</time>
+    <time datetime="2022-06-22 14:16:25 +0000">06/22/2022</time>
     
   
 
@@ -1546,12 +1546,28 @@
 </div>
 </li>
 <li>
-<p>使用API建立新Cloud Volumes ONTAP 的功能性環境、並在「haParam」物件中傳遞「assume勞力Arn」欄位。</p>
+<p>使用Cloud Manager API建立全新Cloud Volumes ONTAP 的功能不全的工作環境。</p>
 <div class="paragraph">
-<p>「assume勞力arn」欄位應包含您在VPC擁有者帳戶中建立的IAM角色ARN（請參閱上一步）。</p>
+<p>請注意、您必須指定下列欄位：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>"安全性群組Id"</p>
+<div class="paragraph">
+<p>「安全性GroupId」欄位應指定您在VPC擁有者帳戶中建立的安全性群組（請參閱上述步驟2）。</p>
+</div>
+</li>
+<li>
+<p>「haParam」物件中的「assugerme勞力Arn」</p>
+<div class="paragraph">
+<p>「assume勞力arn」欄位應包含您在VPC擁有者帳戶中建立的IAM角色ARN（請參閱上述步驟3）。</p>
 </div>
 <div class="paragraph">
 <p>例如：</p>
+</div>
+</li>
+</ul>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1561,7 +1577,8 @@
 </div>
 </div>
 <div class="paragraph">
-<p><a href="https://docs.netapp.com/us-en/cloud-manager-automation/cm/overview.html" target="_blank" rel="noopener">"深入瞭Cloud Volumes ONTAP 解NetApp API"</a></p>
+<p>+<br>
+<a href="https://docs.netapp.com/us-en/cloud-manager-automation/cm/overview.html" target="_blank" rel="noopener">"深入瞭Cloud Volumes ONTAP 解NetApp API"</a></p>
 </div>
 </li>
 </ol>
