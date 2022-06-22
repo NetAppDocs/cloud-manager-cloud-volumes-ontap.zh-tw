@@ -4109,8 +4109,6 @@
   <block id="14c6e9ce4cfa25dc1cfa02fe401deed1" category="section-title">使用Azure私有連結</block>
   <block id="347431c5a9e1d410f530ec93c187d045" category="paragraph">在大多數情況下、您不需要做任何事、就能使用Cloud Volumes ONTAP 下列功能來設定Azure私有連結：Cloud Manager可為您管理Azure私有連結。但是如果您使用 Azure 私有 DNS 、則需要編輯組態檔。您也應該瞭解Azure中的Connector位置需求。</block>
   <block id="1a4c6839ae7b3d4de45f275929539d1b" category="paragraph">Cloud Manager在Cloud Volumes ONTAP Azure中部署時、會在資源群組中建立私有端點。私有端點與Cloud Volumes ONTAP 用於實現功能不均的儲存帳戶相關聯。因此Cloud Volumes ONTAP 、存取資料可透過Microsoft主幹網路存取。</block>
-  <block id="fe133d1f6db8d046e4b328c0d9a967a1" category="paragraph">每個NetApp帳戶最多只能有50個不受使用中授權模式限制的不受限。Cloud Volumes ONTAP</block>
-  <block id="ae5034ae6657395ba1fc2a16d2c55db3" category="paragraph">_system_是HA配對或單一節點系統。例如、如果您有八Cloud Volumes ONTAP 個用作「用作」的「用作」、四個用作單一節點的系統、您的帳戶中總共有12個系統、還有38個額外系統的空間。</block>
   <block id="11e5ec6a6dd579034180a34f735c57ee" category="paragraph">您也可以視業務需求而停用「私有連結」連線。如果您停用連結、Cloud Manager會設定Cloud Volumes ONTAP 使用服務端點的功能。</block>
   <block id="4ff3b739a9573101f05111dd5136fe72" category="inline-link-macro">深入瞭解如何搭配Cloud Volumes ONTAP 使用Azure私有連結或服務端點搭配使用</block>
   <block id="47d9f4d696319d2e54439849e1a532f3" category="paragraph"><block ref="c666fc2bdc96ffeac9aa956ec79d2d3c" category="inline-link-macro-rx"></block>。</block>
@@ -4158,4 +4156,19 @@
   <block id="2bce87c6b4b3176bac40c2e0439a5737" category="paragraph">「安全性GroupId」欄位應指定您在VPC擁有者帳戶中建立的安全性群組（請參閱上述步驟2）。</block>
   <block id="b11fdc24b5ec8e29c24abb5b80715fc3" category="list-text">「haParam」物件中的「assugerme勞力Arn」</block>
   <block id="d02c51c501566fb6b3f4693ca83b01ea" category="paragraph">「assume勞力arn」欄位應包含您在VPC擁有者帳戶中建立的IAM角色ARN（請參閱上述步驟3）。</block>
+  <block id="f4cf4636284848695d07f7eb4c75e531" category="summary">Microsoft Azure的高可用度模式應可減少非計畫性容錯移轉時間、並啟用NFSv4 for Cloud Volumes ONTAP 功能。</block>
+  <block id="e50998a44626779ff3f707014e804bb6" category="doc">在Azure中啟用高可用度模式</block>
+  <block id="8c3a857138568ac83d0c9e6b5e13c75e" category="paragraph">從發行版《S21》開始Cloud Volumes ONTAP 、我們縮短Cloud Volumes ONTAP 了在Microsoft Azure上執行的《21個HA配對》的非計畫性容錯移轉時間、並增加了對NFSv4的支援。若要讓Cloud Volumes ONTAP 這些增強功能適用於整個過程、您必須啟用Azure訂閱的高可用度功能。</block>
+  <block id="f962fda902f28c365c71973532fe62d2" category="paragraph">當您需要在Azure訂閱中啟用此功能時、Cloud Manager會在必要行動訊息中提示您提供這些詳細資料。</block>
+  <block id="4b86a9bfe35da8d5b3e1175b8664656d" category="list-text">高可用度Cloud Volumes ONTAP 的不存在任何問題。此Azure功能可搭配ONTAP 使用、以減少因非計畫性容錯移轉事件而導致NFS傳輸協定的應用程式停機時間。</block>
+  <block id="74c86f2714a033254b4bc8058a066937" category="list-text">啟用此功能對Cloud Volumes ONTAP 功能不中斷運作、不中斷對功能的支援。</block>
+  <block id="7dbbac252a198b9c7c543b30ca9455a6" category="list-text">在您的Azure訂閱中啟用此功能、不會對其他VM造成問題。</block>
+  <block id="3a3aee537f8eb946ce95b303a0b0cde6" category="paragraph">具備「擁有者」權限的Azure使用者可從Azure CLI啟用此功能。</block>
+  <block id="dede8f1d754e5872747fd6fdd219a9da" category="inline-link">從Azure Portal存取Azure Cloud Shell</block>
+  <block id="826fb3564b49a63adcbf5c36eec58144" category="list-text"><block ref="826fb3564b49a63adcbf5c36eec58144" category="inline-link-rx"></block></block>
+  <block id="17cecf34f6070ab2eecf2740c05f04fb" category="list-text">註冊高可用度模式功能：</block>
+  <block id="f2c8cae480fd1319bed5bc6dad61485e" category="list-text">（可選）驗證功能是否已註冊：</block>
+  <block id="3f8d6716204225738a12373603bece28" category="paragraph">Azure CLI應傳回類似下列的結果：</block>
+  <block id="b730a5e05a41eebeb51f5aee7c746386" category="paragraph">_system_是HA配對或單一節點系統。例如、如果您有兩Cloud Volumes ONTAP 個用作2個用作2個用作2個用作2個用作2個用作2個用作單一節點的系統、則您的帳戶中總共有4個用作16個用作額外系統的空間。</block>
+  <block id="0b6cbfb7fa10ae2ac77ae5d3273ea95e" category="sidebar">啟用高可用度模式</block>
 </blocks>

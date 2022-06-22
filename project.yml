@@ -75,6 +75,8 @@ sidebar:
         url: "/task-set-up-azure-encryption.html"
       - title: 設定授權
         url: "/task-set-up-licensing-azure.html"
+      - title: 啟用高可用度模式
+        url: "/task-azure-high-availability-mode.html"
       - title: 在Cloud Volumes ONTAP Azure中推出功能
         url: "/task-deploying-otc-azure.html"
     - title: 開始使用Google Cloud
