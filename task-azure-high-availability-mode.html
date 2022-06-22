@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="zh-tw">
   <head class="at-element-marker">
-  <title>在Cloud Volumes ONTAP Google Cloud中設定適用於此技術的授權 | NetApp Documentation</title>
+  <title>在Azure中啟用高可用度模式 | NetApp Documentation</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="在Cloud Volumes ONTAP Google Cloud中設定適用於此技術的授權 | NetApp Documentation" />
+  <meta property="og:title" content="在Azure中啟用高可用度模式 | NetApp Documentation" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/task-set-up-licensing-google.html" />
-	<meta property="og:description" content="在決定Cloud Volumes ONTAP 要使用哪個授權選項來執行功能時、在部署新系統時、您必須先執行幾個步驟、才能選擇該授權選項。" />
+	<meta property="og:url" content="https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/task-azure-high-availability-mode.html" />
+	<meta property="og:description" content="Microsoft Azure的高可用度模式應可減少非計畫性容錯移轉時間、並啟用NFSv4 for Cloud Volumes ONTAP 功能。" />
   <meta property="og:image" content="https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="在決定Cloud Volumes ONTAP 要使用哪個授權選項來執行功能時、在部署新系統時、您必須先執行幾個步驟、才能選擇該授權選項。">
-  <meta name="keywords" content=" freemium, professional, essentials, licensing, licenses, cloud volumes ontap charging, cloud volumes ontap licenses, cloud volumes ontap licensing, cvo licenses, cvo licensing, byol, bring your own license, paygo, pay as you go"><!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Microsoft Azure的高可用度模式應可減少非計畫性容錯移轉時間、並啟用NFSv4 for Cloud Volumes ONTAP 功能。">
+  <meta name="keywords" content=" high availability mode, EnableHighAvailabilityMode, action required, nfsv4"><!-- Icons -->
   <link rel="icon" href="/zh-tw/cloud-manager-cloud-volumes-ontap/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/zh-tw/cloud-manager-cloud-volumes-ontap/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -52,9 +52,6 @@
   <link rel="stylesheet" href="/zh-tw/cloud-manager-cloud-volumes-ontap/css/landing-page.css" type="text/css">
   <link rel="stylesheet" href="/zh-tw/cloud-manager-cloud-volumes-ontap/css/tabbed-blocks.css" type="text/css">
   <!-- Canonical url -->
-  
-    
-    <link rel="canonical" href="https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/task-set-up-licensing-google.html" />
   <link rel='stylesheet' href='/zh-tw/cloud-manager-cloud-volumes-ontap/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
     if (document.location.hostname === "docs.netapp.com") {
       var head = document.getElementsByTagName('head')[0];
@@ -164,7 +161,7 @@
 </head>
 
 
-  <body class role="document" data-flavor="gcp">
+  <body class role="document" data-flavor="">
     <div id="page" class="n-off-canvas-menu">
       <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
       <div class="n-off-canvas-menu__content-wrap">
@@ -173,14 +170,12 @@
   <!-- Start Page Toolbar -->
   
   <div class="page-nav-toolbar">
-<div id="flavor-dropdown" class="custom-dropdown" data-url="/zh-tw/cloud-manager-cloud-volumes-ontap/task-set-up-licensing-google.html">
+<div id="flavor-dropdown" class="custom-dropdown" data-url="/zh-tw/cloud-manager-cloud-volumes-ontap/task-azure-high-availability-mode.html">
   
-  
-  <div class="custom-dropdown-select selected" title="Google Cloud">
+  <div class="custom-dropdown-select unselected" title="所有雲端供應商">
     <label>雲端供應商</label>
-    <div>Google Cloud</div>  
-    <img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/filter.svg" class="custom-icon selected" alt="" />
-    <img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/dismiss.svg" class="custom-icon selected" id="remove-flavor" alt="" />
+    <span>所有雲端供應商</span>
+    <img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/filter.svg" class="custom-icon" alt="" />
   </div>
   
 
@@ -193,20 +188,20 @@
     
     
     
-    <li data-value="gcp" data-url="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/task-set-up-licensing-google.html">
+    <li data-value="gcp" data-url="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp">
       <img alt="" src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/gcp-ico.svg" onerror="this.src='/zh-tw/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Google Cloud
     </li>
     
     
     
-    <li data-value="azure" data-url="/zh-tw/cloud-manager-cloud-volumes-ontap/azure">
+    <li data-value="azure" data-url="/zh-tw/cloud-manager-cloud-volumes-ontap/azure/task-azure-high-availability-mode.html">
       <img alt="" src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/azure-ico.svg" onerror="this.src='/zh-tw/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Microsoft Azure
     </li>
     
     
   </ul>
 </div>
-<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[在Cloud Volumes ONTAP Google Cloud中設定適用於此技術的授權](https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/task-set-up-licensing-google.html)" class="page-nav-contribute-link" role="button"><img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />要求變更文件</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/task-set-up-licensing-google.adoc" class="page-nav-contribute-link" role="button"><img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />編輯此頁面</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />瞭解如何作出貢獻</a></div>
+<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[在Azure中啟用高可用度模式](https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/task-azure-high-availability-mode.html)" class="page-nav-contribute-link" role="button"><img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />要求變更文件</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/task-azure-high-availability-mode.adoc" class="page-nav-contribute-link" role="button"><img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />編輯此頁面</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />瞭解如何作出貢獻</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">在此頁面上</div>
@@ -301,7 +296,7 @@
           data-no-results-found-did-you-mean="找不到符合 {query} 的相關結果。您是否要找的是{suggestion}？" 
           data-results-found="找到 {hitCount} 筆結果"  
           data-sk-es-pf-indexes=""
-          data-flavor="gcp"></div>
+          data-flavor=""></div>
           <button class="n-property-bar__search-toggle-button" type="button">
             <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
               <title>search</title>
@@ -325,15 +320,15 @@
       </div>
 
       <ul class="custom-dropdown-menu"><li>
-          <a href="https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/task-set-up-licensing-google.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+          <a href="https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/task-azure-high-availability-mode.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-set-up-licensing-google.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+          <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-azure-high-availability-mode.html" target="_self"><span translate="no" class="notranslate">English</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/ja-jp/cloud-manager-cloud-volumes-ontap/task-set-up-licensing-google.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+          <a href="https://docs.netapp.com/ja-jp/cloud-manager-cloud-volumes-ontap/task-azure-high-availability-mode.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/zh-cn/cloud-manager-cloud-volumes-ontap/task-set-up-licensing-google.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+          <a href="https://docs.netapp.com/zh-cn/cloud-manager-cloud-volumes-ontap/task-azure-high-availability-mode.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-set-up-licensing-google.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+          <a href="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-azure-high-availability-mode.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
         </li></ul>
     </div><!-- End Language Selector -->
 
@@ -387,7 +382,7 @@
         
         
         
-        <a target="_blank" href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/gcp/fullsite-sidebar/本文檔Cloud_Volumes_ONTAP.pdf" >
+        <a target="_blank" href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/fullsite-sidebar/本文檔Cloud_Volumes_ONTAP.pdf" >
           <img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>此文件網站（PDF 格式）</a>
 
 
@@ -400,7 +395,7 @@
           
           <a target="_blank" 
             
-              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/gcp/sidebar/版本資訊.pdf" 
+              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/版本資訊.pdf" 
             
           >
             <img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
@@ -431,7 +426,7 @@
           
           <a target="_blank" 
             
-              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/gcp/sidebar/開始使用.pdf" 
+              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/開始使用.pdf" 
             
           >
             <img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
@@ -449,7 +444,7 @@
           
           <a target="_blank" 
             
-              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/gcp/sidebar/Amazon_Web_Services入門.pdf" 
+              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/Amazon_Web_Services入門.pdf" 
             
           >
             <img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
@@ -469,7 +464,7 @@
           
           <a target="_blank" 
             
-              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/gcp/sidebar/設定您的網路.pdf" 
+              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/設定您的網路.pdf" 
             
           >
             <img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
@@ -519,7 +514,7 @@
           
           <a target="_blank" 
             
-              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/gcp/sidebar/開始使用Microsoft_Azure.pdf" 
+              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/開始使用Microsoft_Azure.pdf" 
             
           >
             <img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
@@ -536,49 +531,8 @@
 
 
 
-
-
-
-
-
-          
-        </li>
-      </ul>
-    
-
-  
-
-
-
-    
-      <ul class="subfolders" style="display:none;">
-        <li class="pdf-ux-container">
-          
-          
-          
-          <a target="_blank" 
-            
-              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/gcp/sidebar/開始使用Google_Cloud.pdf" 
-            
-          >
-            <img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
-            開始使用Google Cloud
-          </a>
-          
-
-
-
-
-
-
-
-
-
-
-
-
     <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
-  <a target="_blank" href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/pages/task-set-up-licensing-google.pdf" >
+  <a target="_blank" href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/pages/task-azure-high-availability-mode.pdf" >
     <img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
     PDF of this page
   </a>
@@ -600,6 +554,47 @@
 
 
 
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/開始使用Google_Cloud.pdf" 
+            
+          >
+            <img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
+            開始使用Google Cloud
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
           
         </li>
       </ul>
@@ -617,7 +612,7 @@
           
           <a target="_blank" 
             
-              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/gcp/sidebar/使用Cloud_Volumes_ONTAP.pdf" 
+              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/使用Cloud_Volumes_ONTAP.pdf" 
             
           >
             <img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
@@ -633,7 +628,7 @@
           
           <a target="_blank" 
             
-              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/gcp/sidebar/授權管理.pdf" 
+              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/授權管理.pdf" 
             
           >
             <img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
@@ -664,7 +659,7 @@
           
           <a target="_blank" 
             
-              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/gcp/sidebar/Volume與LUN管理.pdf" 
+              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/Volume與LUN管理.pdf" 
             
           >
             <img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
@@ -699,7 +694,7 @@
           
           <a target="_blank" 
             
-              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/gcp/sidebar/Aggregate管理.pdf" 
+              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/Aggregate管理.pdf" 
             
           >
             <img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
@@ -730,7 +725,7 @@
           
           <a target="_blank" 
             
-              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/gcp/sidebar/儲存VM管理.pdf" 
+              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/儲存VM管理.pdf" 
             
           >
             <img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
@@ -763,7 +758,7 @@
           
           <a target="_blank" 
             
-              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/gcp/sidebar/安全性與資料加密.pdf" 
+              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/安全性與資料加密.pdf" 
             
           >
             <img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
@@ -796,7 +791,7 @@
           
           <a target="_blank" 
             
-              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/gcp/sidebar/系統管理.pdf" 
+              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/系統管理.pdf" 
             
           >
             <img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
@@ -824,7 +819,7 @@
           
           <a target="_blank" 
             
-              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/gcp/sidebar/新增_移除或刪除系統.pdf" 
+              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/新增_移除或刪除系統.pdf" 
             
           >
             <img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
@@ -855,7 +850,7 @@
           
           <a target="_blank" 
             
-              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/gcp/sidebar/AWS管理.pdf" 
+              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/AWS管理.pdf" 
             
           >
             <img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
@@ -886,7 +881,7 @@
           
           <a target="_blank" 
             
-              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/gcp/sidebar/Azure管理.pdf" 
+              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/Azure管理.pdf" 
             
           >
             <img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
@@ -917,7 +912,7 @@
           
           <a target="_blank" 
             
-              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/gcp/sidebar/Google_Cloud管理.pdf" 
+              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/Google_Cloud管理.pdf" 
             
           >
             <img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
@@ -957,7 +952,7 @@
           
           <a target="_blank" 
             
-              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/gcp/sidebar/系統健全狀況與事件.pdf" 
+              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/系統健全狀況與事件.pdf" 
             
           >
             <img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
@@ -995,7 +990,7 @@
           
           <a target="_blank" 
             
-              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/gcp/sidebar/概念.pdf" 
+              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/概念.pdf" 
             
           >
             <img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
@@ -1013,7 +1008,7 @@
           
           <a target="_blank" 
             
-              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/gcp/sidebar/儲存設備.pdf" 
+              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/儲存設備.pdf" 
             
           >
             <img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
@@ -1054,7 +1049,7 @@
           
           <a target="_blank" 
             
-              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/gcp/sidebar/高可用度配對.pdf" 
+              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/高可用度配對.pdf" 
             
           >
             <img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
@@ -1106,7 +1101,7 @@
           
           <a target="_blank" 
             
-              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/gcp/sidebar/知識與支援.pdf" 
+              href="/zh-tw/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/知識與支援.pdf" 
             
           >
             <img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
@@ -1167,40 +1162,83 @@
 </script><div class="prod-nav" id="product-nav">
   <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/zh-tw/cloud-manager-family/"><img src="/zh-tw/cloud-manager-cloud-volumes-ontap/images/left_arrow.png" alt=""><pre>All Cloud Manager documentation</pre></a>
 </div><div class="sidebar-nav-container" id="mysidebardiv">
-  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/index.html">
+  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/index.html">
         文件Cloud Volumes ONTAP
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 版本資訊</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/whats-new.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/whats-new.html">
         新增功能
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/reference-limitations.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/reference-limitations.html">
         已知限制
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/whats-new-ontap.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/whats-new-ontap.html">
         發行說明 Cloud Volumes ONTAP
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 開始使用</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/concept-overview-cvo.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/concept-overview-cvo.html">
         深入瞭解 Cloud Volumes ONTAP
       </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Amazon Web Services入門</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-getting-started-aws.html">
+        快速入門
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-planning-your-config.html">
+        規劃您的組態
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 設定您的網路</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/reference-networking-aws.html">
+        網路需求
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-setting-up-transit-gateway.html">
+        設定 AWS 傳輸閘道
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-deploy-aws-shared-vpc.html">
+        在共享子網路中部署HA配對
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/reference-security-groups.html">
+        AWS 的安全群組規則
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-setting-up-kms.html">
+        設定 AWS KMS
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-set-up-licensing-aws.html">
+        設定授權
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html">
+        在Cloud Volumes ONTAP AWS中啟動
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-getting-started-aws-c2s.html">
+        開始使用 AWS C2S
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 開始使用Microsoft Azure</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-getting-started-azure.html">
+        快速入門
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-planning-your-config-azure.html">
+        規劃您的組態
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/reference-networking-azure.html">
+        設定您的網路
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-set-up-azure-encryption.html">
+        使用您的金鑰設定加密
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-set-up-licensing-azure.html">
+        設定授權
+      </a></li><li class="  active "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-azure-high-availability-mode.html">
+        啟用高可用度模式
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html">
+        在Cloud Volumes ONTAP Azure中推出功能
+      </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 開始使用Google Cloud</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/task-getting-started-gcp.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-getting-started-gcp.html">
         快速入門
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/task-planning-your-config-gcp.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-planning-your-config-gcp.html">
         規劃您的組態
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/reference-networking-gcp.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/reference-networking-gcp.html">
         設定您的網路
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/reference-vpc-service-controls-gcp.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/reference-vpc-service-controls-gcp.html">
         規劃VPC服務控制
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/task-creating-gcp-service-account.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-creating-gcp-service-account.html">
         建立服務帳戶
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/task-setting-up-gcp-encryption.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-setting-up-gcp-encryption.html">
         使用客戶管理的加密金鑰
-      </a></li><li class="  active "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/task-set-up-licensing-google.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-set-up-licensing-google.html">
         設定授權
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/task-deploying-gcp.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-deploying-gcp.html">
         在Cloud Volumes ONTAP Google Cloud上啟動
       </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 使用Cloud Volumes ONTAP</div>
@@ -1208,137 +1246,167 @@
       <ul><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 授權管理</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/task-manage-capacity-licenses.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-manage-capacity-licenses.html">
         管理容量型授權
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/task-manage-keystone.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-manage-keystone.html">
         管理 Keystone Flex 訂閱
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/task-manage-node-licenses.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-manage-node-licenses.html">
         管理節點型授權
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Volume與LUN管理</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/task-create-volumes.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-create-volumes.html">
         建立磁碟區
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/task-manage-volumes.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-manage-volumes.html">
         管理現有磁碟區
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/task-tiering.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-tiering.html">
         將非作用中資料分層至物件儲存設備
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/task-connect-lun.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-connect-lun.html">
         將LUN連接至主機
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/task-accelerate-data-access.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-accelerate-data-access.html">
         利用NetApp加速資料存取FlexCache
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Aggregate管理</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/task-create-aggregates.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-create-aggregates.html">
         建立Aggregate
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/task-manage-aggregates.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-manage-aggregates.html">
         管理現有的集合體
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/task-manage-capacity-settings.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-manage-capacity-settings.html">
         管理容量設定
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 儲存VM管理</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/task-managing-svms.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-managing-svms.html">
         在Cloud Manager中使用儲存VM
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/task-managing-svms-gcp.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-managing-svms-aws.html">
+        在AWS中建立儲存VM
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-managing-svms-azure.html">
+        在Azure中建立儲存VM
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-managing-svms-gcp.html">
         在Google Cloud中建立儲存VM
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 安全性與資料加密</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/task-encrypting-volumes.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-encrypting-volumes.html">
         使用 NetApp 加密來加密磁碟區
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/task-google-key-manager.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-azure-key-vault.html">
+        使用Azure Key Vault管理金鑰
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-google-key-manager.html">
         利用Google Cloud KMS管理金鑰
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/task-protecting-ransomware.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-protecting-ransomware.html">
         改善勒索軟體保護
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 系統管理</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/task-updating-ontap-cloud.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-updating-ontap-cloud.html">
         升級Cloud Volumes ONTAP
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/task-registering.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-registering.html">
         註冊隨用隨付系統
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/task-managing-state.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-managing-state.html">
         停止並啟動系統
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/task-sync-time.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-sync-time.html">
         同步系統時間
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/task-modify-write-speed.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-modify-write-speed.html">
         修改系統寫入速度
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/task-change-password.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-change-password.html">
         變更系統密碼
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 新增、移除或刪除系統</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/task-adding-systems.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-adding-systems.html">
         新增現有系統
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/task-removing.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-removing.html">
         移除工作環境
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/task-deleting-working-env.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-deleting-working-env.html">
         刪除系統
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> AWS管理</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-change-ec2-instance.html">
+        變更EC2執行個體類型
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-change-route-tables.html">
+        變更HA配對的路由表
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-monitoring-costs.html">
+        監控 AWS 成本
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Azure管理</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-change-azure-vm.html">
+        變更Azure VM類型
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-overriding-cifs-locks.html">
+        覆寫CIFS鎖定
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-enabling-private-link.html">
+        使用Azure私有連結或服務端點
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Google Cloud管理</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/task-change-gcp-machine.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-change-gcp-machine.html">
         變更機器類型
-      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/task-administer-advanced-view.html">
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-administer-advanced-view.html">
         系統管理員的系統管理
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/task-connecting-to-otc.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-connecting-to-otc.html">
         從CLI進行管理
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 系統健全狀況與事件</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/task-verify-autosupport.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-verify-autosupport.html">
         驗AutoSupport 證此設定
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/task-configure-ems.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-configure-ems.html">
         設定EMS
       </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 概念</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/concept-licensing.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/concept-licensing.html">
         授權
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 儲存設備</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/concept-client-protocols.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/concept-client-protocols.html">
         用戶端傳輸協定
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/concept-storage.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/concept-storage.html">
         磁碟與集合體
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/concept-data-tiering.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/concept-aws-elastic-volumes.html">
+        AWS中的彈性Volume
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/concept-data-tiering.html">
         資料分層
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/concept-storage-management.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/concept-storage-management.html">
         儲存管理
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/concept-write-speed.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/concept-write-speed.html">
         寫入速度
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/concept-flash-cache.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/concept-flash-cache.html">
         Flash 快取
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/concept-worm.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/concept-worm.html">
         WORM 儲存設備
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 高可用度配對</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/concept-ha-google-cloud.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/concept-ha.html">
+        AWS 中的 HA 配對
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/concept-ha-azure.html">
+        Azure 中的 HA 配對
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/concept-ha-google-cloud.html">
         GCP 中的 HA 配對
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/concept-degraded-ha-pair.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/concept-degraded-ha-pair.html">
         儲存設備接管期間的行動
-      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/concept-security.html">
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/concept-security.html">
         安全性
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/concept-performance.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/concept-performance.html">
         效能
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/concept-license-management.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/concept-license-management.html">
         管理節點型BYOL
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/concept-active-iq.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/concept-active-iq.html">
         不再是不知道的數位顧問AutoSupport Active IQ
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/reference-default-configs.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/reference-default-configs.html">
         預設組態
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 知識與支援</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/task-support-registration.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-support-registration.html">
         註冊以取得支援
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/task-get-help.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-get-help.html">
         取得協助
-      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/gcp/legal-notices.html">
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/legal-notices.html">
         法律聲明
       </a></li></ul>
 </div>
@@ -1402,261 +1470,88 @@
     </div>
   </span>
 </div><div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">在Cloud Volumes ONTAP Google Cloud中設定適用於此技術的授權</h1>
+  <h1 class="n-doc__component-detail-heading">在Azure中啟用高可用度模式</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-05-16 17:03:47 +0000">05/16/2022</time>
+    <time datetime="2022-06-22 18:17:13 +0000">06/22/2022</time>
     
   
 
 
 </p>
 
-<div id="preamble">
-<div class="sectionbody">
 <div class="paragraph lead">
-<p>決定Cloud Volumes ONTAP 要搭配使用哪種授權選項之後、您必須先執行幾個步驟、才能在建立新的工作環境時選擇授權選項。</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="freemium">Freemium</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>選擇Freemium產品、即可免費使用Cloud Volumes ONTAP 多達500 GiB的配置容量。 <a href="concept-licensing.html#freemium-offering">"深入瞭解Freemium產品"</a>。</p>
-</div>
-<div class="olist arabic">
-<div class="title">步驟</div>
-<ol class="arabic">
-<li>
-<p>在「畫版」頁面上、按一下「<strong>新增工作環境</strong>」、然後依照Cloud Manager中的步驟進行。</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>在*詳細資料與認證*頁面上、按一下*編輯認證&gt;新增訂閱*、然後依照提示訂閱Google Cloud Marketplace中的隨用隨付方案。</p>
-<div class="paragraph">
-<p>除非您超過500 GiB的已配置容量、系統會自動轉換為、否則不會透過市場訂閱付費 <a href="concept-licensing.html#capacity-based-licensing-packages">"Essentials套件"</a>。</p>
-</div>
-</li>
-<li>
-<p>返回Cloud Manager之後、當您進入「充電方法」頁面時、請選取* Freemium *。</p>
-<div class="paragraph">
-<p><span class="image"><img src="./media/screenshot-freemium.png" alt="建立Cloud Volumes ONTAP 一套可運作的環境時、Freemium選項的快照。"></span></p>
-</div>
-</li>
-</ol>
-</div>
-</li>
-</ol>
+<p>Microsoft Azure的高可用度模式應可減少非計畫性容錯移轉時間、並啟用NFSv4 for Cloud Volumes ONTAP 功能。</p>
 </div>
 <div class="paragraph">
-<p><a href="task-deploying-gcp.html">"請參閱逐步指示Cloud Volumes ONTAP 、在Google Cloud中啟動「功能不全」"</a>。</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="容量型授權">容量型授權</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>容量型授權可讓您針對Cloud Volumes ONTAP 容量的每個TiB付費。容量型授權的形式為_package_：Essentials套件或Professional套件。</p>
+<p>從發行版《S21》開始Cloud Volumes ONTAP 、我們縮短Cloud Volumes ONTAP 了在Microsoft Azure上執行的《21個HA配對》的非計畫性容錯移轉時間、並增加了對NFSv4的支援。若要讓Cloud Volumes ONTAP 這些增強功能適用於整個過程、您必須啟用Azure訂閱的高可用度功能。</p>
 </div>
 <div class="paragraph">
-<p>Essentials和Professional套件可搭配下列消費模式使用：</p>
+<p>當您需要在Azure訂閱中啟用此功能時、Cloud Manager會在必要行動訊息中提示您提供這些詳細資料。</p>
+</div>
+<div class="paragraph">
+<p>請注意下列事項：</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>向NetApp購買的授權（BYOL）</p>
+<p>高可用度Cloud Volumes ONTAP 的不存在任何問題。此Azure功能可搭配ONTAP 使用、以減少因非計畫性容錯移轉事件而導致NFS傳輸協定的應用程式停機時間。</p>
 </li>
 <li>
-<p>從Google Cloud Marketplace訂閱時數小時隨付（PAYGO）</p>
+<p>啟用此功能對Cloud Volumes ONTAP 功能不中斷運作、不中斷對功能的支援。</p>
 </li>
 <li>
-<p>年度合約</p>
+<p>在您的Azure訂閱中啟用此功能、不會對其他VM造成問題。</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p><a href="concept-licensing.html#freemium-offering">"深入瞭解容量型授權"</a>。</p>
-</div>
-<div class="paragraph">
-<p>下列各節將說明如何開始使用這些消費模式。</p>
-</div>
-<div class="sect2">
-<h3 id="byol">BYOL</h3>
-<div class="paragraph">
-<p>事先向NetApp購買授權（BYOL）、即可在Cloud Volumes ONTAP 任何雲端供應商部署支援系統。</p>
+<p>具備「擁有者」權限的Azure使用者可從Azure CLI啟用此功能。</p>
 </div>
 <div class="olist arabic">
 <div class="title">步驟</div>
 <ol class="arabic">
 <li>
-<p><a href="https://cloud.netapp.com/contact-cds" target="_blank" rel="noopener">"請聯絡NetApp銷售人員以取得授權"</a></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/cloud-shell/quickstart" target="_blank" rel="noopener">"從Azure Portal存取Azure Cloud Shell"</a></p>
 </li>
 <li>
-<p><a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html#add-an-nss-account" target="_blank" rel="noopener">"將您的NetApp支援網站帳戶新增至Cloud Manager"</a></p>
-<div class="paragraph">
-<p>Cloud Manager會自動查詢NetApp的授權服務、以取得與您NetApp支援網站帳戶相關之授權的詳細資料。如果沒有錯誤、Cloud Manager會自動將授權新增至Digital Wallet。</p>
+<p>註冊高可用度模式功能：</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-azurecli" data-lang="azurecli">az account set -s AZURE_SUBSCRIPTION_NAME_OR_ID
+az feature register --name EnableHighAvailabilityMode --namespace Microsoft.Network
+az provider register -n Microsoft.Network</code></pre>
 </div>
-<div class="paragraph">
-<p>您的授權必須先從Digital Wallet取得、才能搭配Cloud Volumes ONTAP 使用。如有需要、您可以 <a href="task-manage-capacity-licenses.html#add-purchased-licenses-to-your-account">"手動將授權新增至Digital Wallet"</a>。</p>
-</div>
-</li>
-<li>
-<p>在「畫版」頁面上、按一下「<strong>新增工作環境</strong>」、然後依照Cloud Manager中的步驟進行。</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>在*詳細資料與認證*頁面上、按一下*編輯認證&gt;新增訂閱*、然後依照提示訂閱Google Cloud Marketplace中的隨用隨付方案。</p>
-<div class="paragraph">
-<p>您向NetApp購買的授權一律會先收取費用、但如果您超過授權容量或授權到期、則會從市場的每小時費率中收取費用。</p>
 </div>
 </li>
 <li>
-<p>返回Cloud Manager之後、請在前往「充電方法」頁面時、選取容量型套件。</p>
+<p>（可選）驗證功能是否已註冊：</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-azurecli" data-lang="azurecli">az feature show --name EnableHighAvailabilityMode --namespace Microsoft.Network</code></pre>
+</div>
+</div>
 <div class="paragraph">
-<p><span class="image"><img src="./media/screenshot-professional.png" alt="建立Cloud Volumes ONTAP 功能不正常的環境時、專業人員選項的螢幕快照。"></span></p>
+<p>Azure CLI應傳回類似下列的結果：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>{
+  "id": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/providers/Microsoft.Features/providers/Microsoft.Network/features/EnableHighAvailabilityMode",
+  "name": "Microsoft.Network/EnableHighAvailabilityMode",
+  "properties": {
+    "state": "Registered"
+  },
+  "type": "Microsoft.Features/providers/features"
+}</pre>
+</div>
 </div>
 </li>
 </ol>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><a href="task-deploying-gcp.html">"請參閱逐步指示Cloud Volumes ONTAP 、在Google Cloud中啟動「功能不全」"</a>。</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="paygo訂閱">PAYGO訂閱</h3>
-<div class="paragraph">
-<p>從雲端供應商的市場訂閱優惠、每小時支付一次。</p>
-</div>
-<div class="paragraph">
-<p>當您建立Cloud Volumes ONTAP 一個可運作的環境時、Cloud Manager會提示您訂閱Google Cloud Marketplace提供的合約。該訂閱之後會與工作環境建立關聯、以便進行充電。您可以在其他工作環境中使用相同的訂閱。</p>
-</div>
-<div class="olist arabic">
-<div class="title">步驟</div>
-<ol class="arabic">
-<li>
-<p>在「畫版」頁面上、按一下「<strong>新增工作環境</strong>」、然後依照Cloud Manager中的步驟進行。</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>在*詳細資料與認證*頁面上、按一下*編輯認證&gt;新增訂閱*、然後依照提示訂閱Google Cloud Marketplace中的隨用隨付方案。</p>
-</li>
-<li>
-<p>返回Cloud Manager之後、請在前往「充電方法」頁面時、選取容量型套件。</p>
-<div class="paragraph">
-<p><span class="image"><img src="./media/screenshot-professional.png" alt="建立Cloud Volumes ONTAP 功能不正常的環境時、專業人員選項的螢幕快照。"></span></p>
-</div>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><a href="task-deploying-gcp.html">"請參閱逐步指示Cloud Volumes ONTAP 、在Google Cloud中啟動「功能不全」"</a>。</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/tip.svg" alt="提示">
-</td>
-<td class="content">
-您可以從「設定」&gt;「認證」頁面管理與您帳戶相關的Google Cloud Marketplace訂閱。 <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-gcp-accounts.html" target="_blank" rel="noopener">"瞭解如何管理您的Google Cloud認證與訂閱"</a>
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="年度合約">年度合約</h3>
-<div class="paragraph">
-<p>購買年度合約、每年支付Cloud Volumes ONTAP 一份銷售費。</p>
-</div>
-<div class="olist arabic">
-<div class="title">步驟</div>
-<ol class="arabic">
-<li>
-<p>請聯絡您的NetApp銷售代表以購買年度合約。</p>
-<div class="paragraph">
-<p>合約可在Google Cloud Marketplace以_Private _優惠形式提供。</p>
-</div>
-<div class="paragraph">
-<p>在NetApp與您分享私人優惠之後、您可以在工作環境建立期間、從Google Cloud Marketplace訂閱年度方案。</p>
-</div>
-</li>
-<li>
-<p>在「畫版」頁面上、按一下「<strong>新增工作環境</strong>」、然後依照Cloud Manager中的步驟進行。</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>在*詳細資料與認證*頁面上、按一下*編輯認證&gt;新增訂閱*、然後依照提示在Google Cloud Marketplace訂閱年度計畫。</p>
-</li>
-<li>
-<p>在Google Cloud中、選取與您的帳戶共享的年度計畫、然後按一下*訂閱*。</p>
-</li>
-<li>
-<p>返回Cloud Manager之後、請在前往「充電方法」頁面時、選取容量型套件。</p>
-<div class="paragraph">
-<p><span class="image"><img src="./media/screenshot-professional.png" alt="建立Cloud Volumes ONTAP 功能不正常的環境時、專業人員選項的螢幕快照。"></span></p>
-</div>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><a href="task-deploying-gcp.html">"請參閱逐步指示Cloud Volumes ONTAP 、在Google Cloud中啟動「功能不全」"</a>。</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="keystone-flex-訂閱">Keystone Flex 訂閱</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Keystone Flex訂閱是一種隨需付費的訂閱型服務。 <a href="concept-licensing.html#keystone-flex-subscription">"深入瞭解Keystone Flex訂閱"</a>。</p>
-</div>
-<div class="olist arabic">
-<div class="title">步驟</div>
-<ol class="arabic">
-<li>
-<p>如果您尚未訂閱、 <a href="https://www.netapp.com/forms/keystone-sales-contact/" target="_blank" rel="noopener">"請聯絡NetApp"</a></p>
-</li>
-<li>
-<p>mailto：<a href="mailto:ng-keystone-success@netapp.com">ng-keystone-success@netapp.com</a> [聯絡NetApp]、以一或多個Keystone Flex訂閱授權您的Cloud Manager使用者帳戶。</p>
-</li>
-<li>
-<p>NetApp授權您的帳戶之後、 <a href="task-manage-keystone.html#link-a-subscription">"連結您的訂閱內容以供Cloud Volumes ONTAP 搭配使用"</a>。</p>
-</li>
-<li>
-<p>在「畫版」頁面上、按一下「<strong>新增工作環境</strong>」、然後依照Cloud Manager中的步驟進行。</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>當系統提示您選擇充電方法時、請選取Keystone Flex訂閱充電方法。</p>
-<div class="paragraph">
-<p><span class="image"><img src="./media/screenshot-keystone.png" alt="Keystone Flex訂購選項在建立Cloud Volumes ONTAP 運作環境時的快照。"></span></p>
-</div>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><a href="task-deploying-gcp.html">"請參閱逐步指示Cloud Volumes ONTAP 、在Google Cloud中啟動「功能不全」"</a>。</p>
-</div>
-</div>
 </div>
 
     </article>
