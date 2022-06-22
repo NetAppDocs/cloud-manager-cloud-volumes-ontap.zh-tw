@@ -58,9 +58,18 @@ Action": [
                 "ec2:ReplaceRoute",
                 "ec2:UnassignPrivateIpAddresses"
 ----
-. 使用API建立新Cloud Volumes ONTAP 的功能性環境、並在「haParam」物件中傳遞「assume勞力Arn」欄位。
+. 使用Cloud Manager API建立全新Cloud Volumes ONTAP 的功能不全的工作環境。
 +
-「assume勞力arn」欄位應包含您在VPC擁有者帳戶中建立的IAM角色ARN（請參閱上一步）。
+請注意、您必須指定下列欄位：
+
++
+** "安全性群組Id"
++
+「安全性GroupId」欄位應指定您在VPC擁有者帳戶中建立的安全性群組（請參閱上述步驟2）。
+
+** 「haParam」物件中的「assugerme勞力Arn」
++
+「assume勞力arn」欄位應包含您在VPC擁有者帳戶中建立的IAM角色ARN（請參閱上述步驟3）。
 
 +
 例如：
@@ -74,5 +83,7 @@ Action": [
 ----
 +
 https://docs.netapp.com/us-en/cloud-manager-automation/cm/overview.html["深入瞭Cloud Volumes ONTAP 解NetApp API"^]
+
+
 
 
