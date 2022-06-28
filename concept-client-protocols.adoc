@@ -36,14 +36,10 @@ NFS是UNIX和Linux系統的傳統檔案存取傳輸協定。用戶端可以ONTAP
 
 SMB是Windows系統的傳統檔案存取傳輸協定。用戶端可以ONTAP 使用SMB 2.0、SMB 2.1、SMB 3.0和SMB 3.1.1傳輸協定來存取位於支援區內的檔案。就像NFS一樣、支援各種權限樣式。
 
+ifdef::aws[]
+
+endif::aws[]
+
 ifdef::azure[]
-
-
-
-== S3
-
-支援S3作為橫向擴充儲存設備的選項、僅適用於Microsoft Azure。Cloud Volumes ONTAPS3傳輸協定支援可讓您設定S3用戶端存取SVM中儲存區內的物件。
-
-https://docs.netapp.com/us-en/ontap/object-storage-management/index.html["瞭解如何在ONTAP 功能區中設定及管理S3物件儲存服務"^]。
 
 endif::azure[]
