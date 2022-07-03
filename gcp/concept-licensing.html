@@ -1357,7 +1357,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-22 18:17:13 +0000">06/22/2022</time>
+    <time datetime="2022-07-03 16:16:07 +0000">07/03/2022</time>
     
   
 
@@ -1379,17 +1379,9 @@
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">Freemium產品</dt>
+<dt class="hdlist1">容量型授權</dt>
 <dd>
-<p>不需購買授權或合約、即可免費提供高達500 GiB的資源配置。包括有限支援。</p>
-</dd>
-<dt class="hdlist1">Essentials套件</dt>
-<dd>
-<p>依容量付費Cloud Volumes ONTAP 、以供各種不同組態使用。</p>
-</dd>
-<dt class="hdlist1">專業套件</dt>
-<dd>
-<p>依容量支付Cloud Volumes ONTAP 任何類型的資訊配置費用。包括使用Cloud Backup的無限備份。</p>
+<p>根據Cloud Volumes ONTAP 資源配置的容量、在NetApp帳戶中支付多個支援系統的費用。包括購買附加雲端資料服務的能力。</p>
 </dd>
 <dt class="hdlist1">Keystone Flex 訂閱</dt>
 <dd>
@@ -1406,8 +1398,24 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="freemium產品">Freemium產品</h2>
+<h2 id="容量型授權">容量型授權</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>容量型授權套件可讓您針對Cloud Volumes ONTAP 每TiB的容量付費。授權與您的NetApp帳戶相關聯、只要授權有足夠的容量可用、您就能根據授權向多個系統收取費用。</p>
+</div>
+<div class="paragraph">
+<p>例如、您可以購買單一20 TiB授權、部署四Cloud Volumes ONTAP 個作業系統、然後將5個TiB磁碟區分配給每個系統、總共20 TiB。容量可用於Cloud Volumes ONTAP 該帳戶中部署的每個作業系統上的磁碟區。</p>
+</div>
+<div class="paragraph">
+<p>容量型授權的形式為_package_。當您部署Cloud Volumes ONTAP 一套解決方案時、您可以根據業務需求、從多個授權套件中進行選擇。</p>
+</div>
+<div class="sect2">
+<h3 id="套件">套件</h3>
+<div class="paragraph">
+<p>下列容量型套件可供Cloud Volumes ONTAP 使用。</p>
+</div>
+<div class="sect3">
+<h4 id="freemium">Freemium</h4>
 <div class="paragraph">
 <p>NetApp Cloud Volumes ONTAP 免費提供所有的支援功能（仍需支付雲端供應商費用）。</p>
 </div>
@@ -1426,43 +1434,22 @@
 <p>您可以在Cloud Volumes ONTAP 任何雲端供應商中、使用最多10個包含每個NetApp帳戶的Freemium產品的NetApp系統。</p>
 </li>
 <li>
-<p>如果Cloud Volumes ONTAP 供應的功能超過500 GiB、Cloud Manager會將系統轉換成Essentials套件（容量型授權）。</p>
+<p>如果Cloud Volumes ONTAP 針對某個不符合需求的系統所配置的容量超過500 GiB、Cloud Manager會將系統轉換成Essentials套件。</p>
+<div class="paragraph">
+<p>一旦系統轉換成Essentials套件 <a href="#Notes about charging">最低收費</a> 適用。</p>
+</div>
 <div class="paragraph">
 <p>任何其他配置容量低於500 GiB的系統、都會留在Freemium上（只要使用Freemium產品進行部署）。</p>
 </div>
 </li>
 </ul>
 </div>
+</div>
+<div class="sect3">
+<h4 id="基礎知識">基礎知識</h4>
 <div class="paragraph">
-<p>瞭解如何開始使用Freemium產品：</p>
+<p>依容量付費Cloud Volumes ONTAP 、以供各種不同組態使用。</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="task-set-up-licensing-google.html">"在Cloud Volumes ONTAP Google Cloud中設定適用於此技術的授權"</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="容量型授權套件">容量型授權套件</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>容量型授權可讓您針對Cloud Volumes ONTAP 容量的每個TiB付費。授權與您的NetApp帳戶相關聯、只要授權有足夠的容量可用、您就能根據授權向多個系統收取費用。</p>
-</div>
-<div class="paragraph">
-<p>例如、您可以購買單一20 TiB授權、部署四Cloud Volumes ONTAP 個作業系統、然後將5個TiB磁碟區分配給每個系統、總共20 TiB。容量可用於Cloud Volumes ONTAP 該帳戶中部署的每個作業系統上的磁碟區。</p>
-</div>
-<div class="paragraph">
-<p>容量型授權的形式為_package_。當您部署Cloud Volumes ONTAP 一套功能完善的系統時、您可以選擇_Essentials套件或_Professional_套件。</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Essentials套件</dt>
-<dd>
-<div class="openblock">
-<div class="content">
 <div class="ulist">
 <ul>
 <li>
@@ -1484,19 +1471,21 @@
 </ul>
 </div>
 </div>
+<div class="sect3">
+<h4 id="專業人員">專業人員</h4>
+<div class="paragraph">
+<p>以容量支付Cloud Volumes ONTAP 任何類型的不受限制的還原組態。</p>
 </div>
-</dd>
-<dt class="hdlist1">專業套件</dt>
-<dd>
-<div class="openblock">
-<div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>提供Cloud Volumes ONTAP 任何支援功能（單一節點或任何儲存類型的HA）</p>
+<p>提供Cloud Volumes ONTAP 任何功能組態的授權</p>
+<div class="paragraph">
+<p>單一節點或HA、以相同速率為主要和次要磁碟區充電</p>
+</div>
 </li>
 <li>
-<p>包含使用Cloud Backup的Volume備份（僅適用於根據此授權付費的Volume）</p>
+<p>包括使用Cloud Backup的無限Volume備份、但僅適用於Cloud Volumes ONTAP 隨Professional套件部署的各種系統</p>
 </li>
 <li>
 <p>以額外成本附加任何NetApp的雲端資料服務</p>
@@ -1505,27 +1494,21 @@
 </div>
 </div>
 </div>
-</dd>
-</dl>
-</div>
 <div class="sect2">
 <h3 id="消費模式">消費模式</h3>
 <div class="paragraph">
-<p>Essentials和Professional套件可搭配下列消費模式使用：</p>
+<p>下列消費模式提供容量型授權套件：</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>向NetApp購買的授權（BYOL）、可用於在Cloud Volumes ONTAP 任何雲端供應商部署功能。</p>
-<div class="paragraph">
-<p>授權不限於單一雲端供應商。</p>
-</div>
+<p>* BYOL*：向NetApp購買的授權、可用於在Cloud Volumes ONTAP 任何雲端供應商中部署</p>
 </li>
 <li>
-<p>從雲端供應商的市場訂購（PAYGO）、每小時一次。</p>
+<p>* PAYGO*：每小時向雲端供應商的市場訂購一次。</p>
 </li>
 <li>
-<p>一年一度的雲端供應商市場合約。</p>
+<p><strong>年度</strong>：雲端供應商市場的年度合約。</p>
 </li>
 </ul>
 </div>
@@ -1603,23 +1586,78 @@
 </div>
 <div class="sect2">
 <h3 id="充電注意事項">充電注意事項</h3>
+<div class="paragraph">
+<p>下列詳細資料可協助您瞭解充電方式如何搭配容量型授權使用。</p>
+</div>
+<div class="sect3">
+<h4 id="最低收費">最低收費</h4>
+<div class="paragraph">
+<p>每個資料服務儲存VM至少要有一個主要（讀寫）磁碟區、至少需支付4 TiB的最低費用。如果主要磁碟區的總和低於4 TiB、Cloud Manager會將4 TiB最低收費套用至該儲存VM。</p>
+</div>
+<div class="paragraph">
+<p>如果您尚未配置任何磁碟區、則不適用最低收費。</p>
+</div>
+<div class="paragraph">
+<p>4 TiB最低容量費用不適用於僅包含次要（資料保護）磁碟區的儲存VM。例如、如果您的儲存虛擬機器擁有1個二線資料的TiB、則只需支付1個TiB的資料費用。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="過度使用">過度使用</h4>
+<div class="paragraph">
+<p>如果您超過BYOL容量、或授權過期、系統會根據您的市場訂閱、按每小時費率收取超額費用。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="essentials套件">Essentials套件</h4>
+<div class="paragraph">
+<p>有了Essentials套件、您將依照部署類型（HA或單一節點）和Volume類型（主要或次要）收費。例如、_Essentials HHA與_Essentials次要HA的定價不同。</p>
+</div>
+<div class="paragraph">
+<p>如果您向NetApp（BYOL）購買Essentials授權、但超出該部署與Volume類型的授權容量、則Digital Wallet會針對價格較高的Essentials授權（如果您有）收取超額費用。這是因為我們會先使用您已購買的可用容量作為預付容量、然後再針對市場進行充電。向市場收取費用會增加每月帳單的成本。</p>
+</div>
+<div class="paragraph">
+<p>以下是範例。假設您擁有下列Essentials套件授權：</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>如果您超過BYOL容量、或授權過期、系統會根據您的市場訂閱、按每小時費率收取超額費用。</p>
+<p>500 TiB _Essentials二線HA授權、擁有500 TiB的承諾容量</p>
 </li>
 <li>
-<p>每個套件至少需支付4 TiB容量費用。任何容量低於4 TiB的實體執行個體將以4 TiB的速率收費。Cloud Volumes ONTAP</p>
+<p>500 TiB _Essentials單一節點_授權、僅擁有100 TiB的已認可容量</p>
 </li>
+</ul>
+</div>
+<div class="paragraph">
+<p>另有50個TiB配置在與次要Volume的HA配對上。數位錢包不會向PAYGO收取50 TiB的費用、而是根據_Essentials單一節點_授權、收取50 TiB的超額費用。該授權的價格高於_Essentials二線HA、但比PAYGO價格便宜。</p>
+</div>
+<div class="paragraph">
+<p>在「數位錢包」中、50 TiB將根據_Essentials單一節點_授權收費。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="儲存vm">儲存VM</h4>
+<div class="ulist">
+<ul>
 <li>
 <p>額外的資料服務儲存VM（SVM）無需額外授權成本、但每個資料服務SVM的最低容量費用為4 TiB。</p>
 </li>
 <li>
 <p>災難恢復SVM是根據已配置的容量來收費的。</p>
 </li>
-<li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="ha-配對">HA 配對</h4>
+<div class="paragraph">
 <p>對於HA配對、您只需支付節點上已配置容量的費用。您不需支付同步鏡射至合作夥伴節點的資料費用。</p>
-</li>
+</div>
+</div>
+<div class="sect3">
+<h4 id="flexclone與flexcache-功能">FlexClone與FlexCache 功能</h4>
+<div class="ulist">
+<ul>
 <li>
 <p>FlexClone磁碟區所使用的容量不需付費。</p>
 </li>
@@ -1627,6 +1665,7 @@
 <p>來源FlexCache 和目的地的資料不只是主要資料、而且會根據已配置的空間進行收費。</p>
 </li>
 </ul>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -1725,10 +1764,35 @@
 <h2 id="最大系統數">最大系統數</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>無論使用何種授權模式、每個NetApp帳戶最多只能有20個不受限的功能。Cloud Volumes ONTAP</p>
+<p>每個NetApp帳戶最多可有20個不受限的不受限系統。Cloud Volumes ONTAP_system_是Cloud Volumes ONTAP 一個EsireHA配對、Cloud Volumes ONTAP 一個僅供支援的節點系統、或是您所建立的任何其他儲存VM。預設的儲存VM不會計入限制。此限制適用於所有授權模式。</p>
 </div>
 <div class="paragraph">
-<p>_system_是HA配對或單一節點系統。例如、如果您有兩Cloud Volumes ONTAP 個用作2個用作2個用作2個用作2個用作2個用作2個用作單一節點的系統、則您的帳戶中總共有4個用作16個用作額外系統的空間。</p>
+<p>例如、假設您有三種工作環境：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>單一節點Cloud Volumes ONTAP 的不完整系統、只需一個儲存VM（這是部署Cloud Volumes ONTAP 時建立的預設儲存VM）</p>
+<div class="paragraph">
+<p>這種工作環境是單一系統的重要關鍵。</p>
+</div>
+</li>
+<li>
+<p>單一節點Cloud Volumes ONTAP 的不完整系統、含兩個儲存VM（預設儲存VM、加上您所建立的一個額外儲存VM）</p>
+<div class="paragraph">
+<p>此工作環境可視為兩個系統：一個用於單一節點系統、另一個用於額外的儲存VM。</p>
+</div>
+</li>
+<li>
+<p>包含三個儲存VM（預設儲存VM、加上您所建立的兩個額外儲存VM）的支援功能Cloud Volumes ONTAP</p>
+<div class="paragraph">
+<p>此工作環境可算為三個系統：一個用於HA配對、兩個用於額外的儲存VM。</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>總共有六個系統。之後您的帳戶就有額外14個系統的空間。</p>
 </div>
 <div class="paragraph">
 <p>如果您有任何問題、請聯絡您的客戶代表或銷售團隊。</p>

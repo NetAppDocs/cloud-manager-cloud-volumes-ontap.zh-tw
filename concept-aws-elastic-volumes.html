@@ -1425,7 +1425,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-07 20:57:50 +0000">06/07/2022</time>
+    <time datetime="2022-07-03 16:16:07 +0000">07/03/2022</time>
     
   
 
@@ -1616,18 +1616,8 @@
 <div class="sect1">
 <h2 id="限制">限制</h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>增加Aggregate的大小最多需要6小時。在此期間、Cloud Manager無法為該Aggregate要求任何額外容量。</p>
-</li>
-<li>
-<p>目前Cloud Volumes ONTAP 、只有API支援在初始Aggregate上啟用彈性Volume來建立新的支援功能。Cloud Manager使用者介面不支援此動作。如果Cloud Volumes ONTAP 您從使用者介面建立新的版本的更新版本、則初始Aggregate上不會啟用彈性磁碟區。</p>
 <div class="paragraph">
-<p>使用者介面支援所有其他動作（例如建立新的Aggregate）。</p>
-</div>
-</li>
-</ul>
+<p>增加Aggregate的大小最多需要6小時。在此期間、Cloud Manager無法為該Aggregate要求任何額外容量。</p>
 </div>
 </div>
 </div>
@@ -1640,15 +1630,9 @@
 <div class="ulist">
 <ul>
 <li>
-<p>在初始Aggregate上建立啟用彈性磁碟區的新系統</p>
+<p>使用GP3或IO1磁碟時、請建立在初始Aggregate上啟用「彈性磁碟區」的新系統</p>
 <div class="paragraph">
-<p>如中所述 <a href="#Limitations">[Limitations]</a>，此時僅API支援此動作。使用者介面不支援此功能。</p>
-</div>
-<div class="paragraph">
-<p>當您初始化API呼叫時、預設會在初始Aggregate上啟用「彈性磁碟區」功能。</p>
-</div>
-<div class="paragraph">
-<p><a href="https://docs.netapp.com/us-en/cloud-manager-automation/cm/overview.html" target="_blank" rel="noopener">"瞭解如何Cloud Volumes ONTAP 使用API建立功能"</a></p>
+<p><a href="task-deploying-otc-aws.html">"瞭解如何建立Cloud Volumes ONTAP 一套功能完善的系統"</a></p>
 </div>
 </li>
 <li>

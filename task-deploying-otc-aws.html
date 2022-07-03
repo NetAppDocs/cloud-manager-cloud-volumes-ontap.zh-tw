@@ -1425,7 +1425,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-21 15:56:14 +0000">06/21/2022</time>
+    <time datetime="2022-07-03 16:16:07 +0000">07/03/2022</time>
     
   
 
@@ -1660,20 +1660,20 @@ Your browser does not support the video tag.
 </div>
 </li>
 <li>
-<p>* 基礎儲存資源 * ：選擇初始 Aggregate 的設定：磁碟類型、每個磁碟的大小、以及是否應啟用資料分層。</p>
+<p><strong>基礎儲存資源</strong>：選擇磁碟類型、設定基礎儲存設備、然後選擇是否要啟用資料分層。</p>
 <div class="paragraph">
 <p>請注意下列事項：</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>磁碟類型適用於初始磁碟區。您可以為後續磁碟區選擇不同的磁碟類型。</p>
+<p>磁碟類型適用於初始磁碟區（和Aggregate）。您可以為後續磁碟區（和Aggregate）選擇不同的磁碟類型。</p>
 </li>
 <li>
-<p>磁碟大小適用於初始 Aggregate 中的所有磁碟、以及 Cloud Manager 在使用簡易資源配置選項時所建立的任何其他集合體。您可以使用進階配置選項、建立使用不同磁碟大小的集合體。</p>
-<div class="paragraph">
-<p>如需選擇磁碟類型和大小的說明、請參閱 <a href="task-planning-your-config.html#sizing-your-system-in-aws">"在 AWS 中調整系統規模"</a>。</p>
-</div>
+<p>如果您選擇GP3或IO1磁碟、Cloud Manager會使用AWS中的彈性磁碟區功能、視需要自動增加基礎儲存磁碟容量。您可以根據儲存需求來選擇初始容量、Cloud Volumes ONTAP 並在部署完畢後加以修改。 <a href="concept-aws-elastic-volumes.html">"深入瞭解AWS對彈性磁碟區的支援"</a>。</p>
+</li>
+<li>
+<p>如果您選擇gp2或ST1磁碟、則可以針對初始Aggregate中的所有磁碟、以及使用Simple Provisioning選項時Cloud Manager所建立的任何其他Aggregate、選取磁碟大小。您可以使用進階配置選項、建立使用不同磁碟大小的集合體。</p>
 </li>
 <li>
 <p>您可以在建立或編輯磁碟區時、選擇特定的磁碟區分層原則。</p>
@@ -2045,20 +2045,20 @@ Your browser does not support the video tag.
 </div>
 </li>
 <li>
-<p>* 基礎儲存資源 * ：選擇初始 Aggregate 的設定：磁碟類型、每個磁碟的大小、以及是否應啟用資料分層。</p>
+<p><strong>基礎儲存資源</strong>：選擇磁碟類型、設定基礎儲存設備、然後選擇是否要啟用資料分層。</p>
 <div class="paragraph">
 <p>請注意下列事項：</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>磁碟類型適用於初始磁碟區。您可以為後續磁碟區選擇不同的磁碟類型。</p>
+<p>磁碟類型適用於初始磁碟區（和Aggregate）。您可以為後續磁碟區（和Aggregate）選擇不同的磁碟類型。</p>
 </li>
 <li>
-<p>磁碟大小適用於初始 Aggregate 中的所有磁碟、以及 Cloud Manager 在使用簡易資源配置選項時所建立的任何其他集合體。您可以使用進階配置選項、建立使用不同磁碟大小的集合體。</p>
-<div class="paragraph">
-<p>如需選擇磁碟類型和大小的說明、請參閱 <a href="task-planning-your-config.html#sizing-your-system-in-aws">"在 AWS 中調整系統規模"</a>。</p>
-</div>
+<p>如果您選擇GP3或IO1磁碟、Cloud Manager會使用AWS中的彈性磁碟區功能、視需要自動增加基礎儲存磁碟容量。您可以根據儲存需求來選擇初始容量、Cloud Volumes ONTAP 並在部署完畢後加以修改。 <a href="concept-aws-elastic-volumes.html">"深入瞭解AWS對彈性磁碟區的支援"</a>。</p>
+</li>
+<li>
+<p>如果您選擇gp2或ST1磁碟、則可以針對初始Aggregate中的所有磁碟、以及使用Simple Provisioning選項時Cloud Manager所建立的任何其他Aggregate、選取磁碟大小。您可以使用進階配置選項、建立使用不同磁碟大小的集合體。</p>
 </li>
 <li>
 <p>您可以在建立或編輯磁碟區時、選擇特定的磁碟區分層原則。</p>

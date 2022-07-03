@@ -1359,7 +1359,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-09 15:43:09 +0000">05/09/2022</time>
+    <time datetime="2022-07-03 16:16:07 +0000">07/03/2022</time>
     
   
 
@@ -1397,10 +1397,10 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="檢視您帳戶的容量">檢視您帳戶的容量</h2>
+<h2 id="檢視您帳戶中的已用容量">檢視您帳戶中的已用容量</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>依套件檢視授權容量和已配置容量、確保您有足夠空間容納資料磁碟區。</p>
+<p>數位錢包會顯示您帳戶的總使用容量、以及授權套件的使用容量。這有助於瞭解您的收費方式、以及您是否需要購買額外容量。</p>
 </div>
 <div class="olist arabic">
 <div class="title">步驟</div>
@@ -1409,13 +1409,48 @@
 <p>按一下*「所有服務」&gt;「數位錢包」&gt; Cloud Volumes ONTAP 「參考」*。</p>
 </li>
 <li>
-<p>選取*容量型授權*後、即可檢視每個套件的授權容量和已配置容量。</p>
+<p>選取*容量型授權*後、即可檢視套件摘要、其中會顯示耗用容量、總授權容量、以及總PAYGO容量。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>_總使用容量_是Cloud Volumes ONTAP NetApp帳戶中所有供應系統的總容量。無論磁碟區內的本機、已用、已儲存或有效空間為何、充電都是根據每個磁碟區的已配置大小而計算。</p>
+</li>
+<li>
+<p>_Total licensed是您向NetApp購買的總授權容量（BYOL）。</p>
+</li>
+<li>
+<p>_Total PAYGO_是使用雲端市場訂閱的已配置總容量。只有當耗用容量高於授權容量、或數位錢包中沒有BYOL授權時、才會使用透過PAYGO充電。</p>
+<div class="paragraph">
+<p>以下是使用容量為2000 TiB的帳戶範例：</p>
+</div>
+</li>
+</ul>
+</div>
 <div class="paragraph">
 <p><span class="image"><img src="./media/screenshot_capacity-based-licenses.png" alt="螢幕擷取畫面顯示專業套件和基本套件的已配置容量與授權容量。"></span></p>
 </div>
 </li>
 <li>
-<p>如有需要、請購買額外的授權容量、然後將授權新增至您的帳戶。</p>
+<p>在摘要下、檢視每個授權套件的耗用容量。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>_已用容量_顯示該套件的磁碟區總容量。如需特定套件的詳細資料、請將滑鼠游標移到工具提示上。</p>
+<div class="paragraph">
+<p>若要更深入瞭解Essentials套件的顯示容量、您應該熟悉充電的運作方式。 <a href="concept-licensing.html#notes-about-charging">"瞭解如何為Essentials套裝方案充電"</a>。</p>
+</div>
+</li>
+<li>
+<p>「<em>BYOL</em>」和「<em>PAYGO</em>」容量顯示授權使用模式的總使用容量。</p>
+<div class="paragraph">
+<p>以下是一個擁有多個授權套件的帳戶範例：</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot-digital-wallet-packages.png" alt="螢幕快照顯示專業、最佳化及基本套件的耗用容量。"></span></p>
+</div>
 </li>
 </ol>
 </div>
