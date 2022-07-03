@@ -226,7 +226,7 @@ image:screenshot_cot_upgrade.gif["螢幕擷取畫面：顯示選取工作環境�
 Cloud Manager作業（例如Volume或Aggregate建立）不得在Cloud Volumes ONTAP 作業系統上進行。
 
 .步驟
-. 按一下 * Canvas* 。
+. 從左側導覽功能表中選取* Canvas*。
 . 選取工作環境。
 +
 如果有新版本可用、則右窗格中會出現通知：

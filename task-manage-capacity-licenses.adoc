@@ -39,7 +39,7 @@ link:concept-licensing.html["深入瞭Cloud Volumes ONTAP 解不知如何取得�
 數位錢包會顯示您帳戶的總使用容量、以及授權套件的使用容量。這有助於瞭解您的收費方式、以及您是否需要購買額外容量。
 
 .步驟
-. 按一下*「所有服務」>「數位錢包」> Cloud Volumes ONTAP 「參考」*。
+. 從左側導覽功能表中、選取* Digital Wallet *。
 . 選取*容量型授權*後、即可檢視套件摘要、其中會顯示耗用容量、總授權容量、以及總PAYGO容量。
 +
 ** _總使用容量_是Cloud Volumes ONTAP NetApp帳戶中所有供應系統的總容量。無論磁碟區內的本機、已用、已儲存或有效空間為何、充電都是根據每個磁碟區的已配置大小而計算。
@@ -82,8 +82,8 @@ image:screenshot-digital-wallet-packages.png["螢幕快照顯示專業、最佳�
 
 
 .步驟
-. 按一下*「所有服務」>「數位錢包」> Cloud Volumes ONTAP 「參考」*。
-. 按一下「 * 新增授權 * 」。
+. 從左側導覽功能表中、選取* Digital Wallet *。
+. 在* Cloud Volumes ONTAP 《*》索引標籤上、保留*容量型授權*、然後按一下*新增授權*。
 . 輸入容量型授權的序號、或上傳授權檔案。
 +
 如果您輸入序號、您也需要選擇獲授權存取序號的NetApp Support Site帳戶。
@@ -102,8 +102,8 @@ image:screenshot-digital-wallet-packages.png["螢幕快照顯示專業、最佳�
 授權檔案（如果您有HA配對、則為_file_）。
 
 .步驟
-. 按一下*「所有服務」>「數位錢包」> Cloud Volumes ONTAP 「參考」*。
-. 按一下授權旁邊的動作功能表、然後選取*更新授權*。
+. 從左側導覽功能表中、選取* Digital Wallet *。
+. 在* Cloud Volumes ONTAP 《*》索引標籤上、按一下授權旁的動作功能表、然後選取*更新授權*。
 . 上傳授權檔案。
 . 按一下*上傳授權*。
 
@@ -115,7 +115,7 @@ image:screenshot-digital-wallet-packages.png["螢幕快照顯示專業、最佳�
 如果容量型授權過期且不再使用、您可以隨時將其移除。
 
 .步驟
-. 按一下*「所有服務」>「數位錢包」> Cloud Volumes ONTAP 「參考」*。
-. 按一下授權旁邊的動作功能表、然後選取*移除授權*。
+. 從左側導覽功能表中、選取* Digital Wallet *。
+. 在* Cloud Volumes ONTAP 《*》索引標籤上、按一下授權旁的動作功能表、然後選取*移除授權*。
 . 按一下「 * 移除 * 」以確認。
 

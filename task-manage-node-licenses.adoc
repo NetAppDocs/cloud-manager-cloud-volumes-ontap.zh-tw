@@ -33,8 +33,8 @@ link:concept-licensing.html["深入瞭Cloud Volumes ONTAP 解不知如何取得�
 「Digital Wallet」頁面可讓您檢視每Cloud Volumes ONTAP 個PAYGO更新系統的詳細資料、包括序號和PAYGO授權類型。
 
 .步驟
-. 按一下*「所有服務」>「數位錢包」> Cloud Volumes ONTAP 「參考」*。
-. 從下拉式清單中選取*節點型授權*。
+. 從左側導覽功能表中、選取* Digital Wallet *。
+. 在* Cloud Volumes ONTAP 《*》*索引標籤上、從下拉式清單中選取「*節點型授權*」。
 . 按一下* PAYGO*。
 . 請在表格中檢視每個PAYGO授權的詳細資料。
 +
@@ -56,8 +56,8 @@ image:screenshot_paygo_licenses.png["一張螢幕快照、顯示「數位錢包�
 將節點型授權新增至Digital Wallet、以便在建立新Cloud Volumes ONTAP 的作業系統時選取授權。數位錢包會將這些授權識別為_未指派_。
 
 .步驟
-. 按一下*「所有服務」>「數位錢包」> Cloud Volumes ONTAP 「參考」*。
-. 從下拉式清單中選取*節點型授權*。
+. 從左側導覽功能表中、選取* Digital Wallet *。
+. 在* Cloud Volumes ONTAP 《*》*索引標籤上、從下拉式清單中選取「*節點型授權*」。
 . 按一下*未指派*。
 . 按一下「*新增未指派的授權*」。
 . 輸入授權的序號或上傳授權檔案。
@@ -84,8 +84,8 @@ Cloud Manager會將授權新增至Digital Wallet。授權將被識別為未指�
 轉換後的授權到期日與Cloud Volumes ONTAP 不含更新授權的到期日相同。
 
 .步驟
-. 按一下*「所有服務」>「數位錢包」> Cloud Volumes ONTAP 「參考」*。
-. 從下拉式清單中選取*節點型授權*。
+. 從左側導覽功能表中、選取* Digital Wallet *。
+. 在* Cloud Volumes ONTAP 《*》*索引標籤上、從下拉式清單中選取「*節點型授權*」。
 . 按一下*未指派*。
 . 按一下「* Exchange授權*」。
 +
@@ -125,8 +125,8 @@ image:screenshot_license_generator.gif["螢幕擷取畫面：顯示填寫的 Net
 如果 Cloud Manager 無法透過安全的網際網路連線存取授權檔案、您可以自行取得檔案、然後手動將檔案上傳至 Cloud Manager 。
 
 .步驟
-. 按一下*「所有服務」>「數位錢包」> Cloud Volumes ONTAP 「參考」*。
-. 從下拉式清單中選取*節點型授權*。
+. 從左側導覽功能表中、選取* Digital Wallet *。
+. 在* Cloud Volumes ONTAP 《*》*索引標籤上、從下拉式清單中選取「*節點型授權*」。
 . 在「* BYOL*」標籤中、展開Cloud Volumes ONTAP 關於某個系統的詳細資料。
 . 按一下系統授權旁的動作功能表、然後選取*更新授權*。
 . 上傳授權檔案（若您有HA配對、則為檔案）。
@@ -150,8 +150,8 @@ Cloud Manager 會更新 Cloud Volumes ONTAP 整個作業系統的授權。
 透過Cloud Manager右下角的聊天圖示聯絡我們、購買額外的容量授權。購買授權後、您可以將其套用Cloud Volumes ONTAP 至一套系統。
 
 .步驟
-. 按一下*「所有服務」>「數位錢包」> Cloud Volumes ONTAP 「參考」*。
-. 從下拉式清單中選取*節點型授權*。
+. 從左側導覽功能表中、選取* Digital Wallet *。
+. 在* Cloud Volumes ONTAP 《*》*索引標籤上、從下拉式清單中選取「*節點型授權*」。
 . 在「* BYOL*」標籤中、展開Cloud Volumes ONTAP 關於某個系統的詳細資料。
 . 按一下「*新增容量授權*」。
 . 輸入序號或上傳授權檔案（如果您有HA配對、也可以輸入檔案）。
@@ -165,8 +165,8 @@ Cloud Manager 會更新 Cloud Volumes ONTAP 整個作業系統的授權。
 如果您延長額外容量授權的期限、則必須在Cloud Manager中更新授權。
 
 .步驟
-. 按一下*「所有服務」>「數位錢包」> Cloud Volumes ONTAP 「參考」*。
-. 從下拉式清單中選取*節點型授權*。
+. 從左側導覽功能表中、選取* Digital Wallet *。
+. 在* Cloud Volumes ONTAP 《*》*索引標籤上、從下拉式清單中選取「*節點型授權*」。
 . 在「* BYOL*」標籤中、展開Cloud Volumes ONTAP 關於某個系統的詳細資料。
 . 按一下容量授權旁邊的動作功能表、然後選取*更新授權*。
 . 上傳授權檔案（若您有HA配對、則為檔案）。
@@ -180,8 +180,8 @@ Cloud Manager 會更新 Cloud Volumes ONTAP 整個作業系統的授權。
 如果額外的容量授權過期且不再使用、您可以隨時將其移除。
 
 .步驟
-. 按一下*「所有服務」>「數位錢包」> Cloud Volumes ONTAP 「參考」*。
-. 從下拉式清單中選取*節點型授權*。
+. 從左側導覽功能表中、選取* Digital Wallet *。
+. 在* Cloud Volumes ONTAP 《*》*索引標籤上、從下拉式清單中選取「*節點型授權*」。
 . 在「* BYOL*」標籤中、展開Cloud Volumes ONTAP 關於某個系統的詳細資料。
 . 按一下容量授權旁的動作功能表、然後選取*移除授權*。
 . 按一下「*移除*」。
@@ -200,8 +200,8 @@ Cloud Manager 會更新 Cloud Volumes ONTAP 整個作業系統的授權。
 
 
 .步驟
-. 按一下*「所有服務」>「數位錢包」> Cloud Volumes ONTAP 「參考」*。
-. 從下拉式清單中選取*節點型授權*。
+. 從左側導覽功能表中、選取* Digital Wallet *。
+. 在* Cloud Volumes ONTAP 《*》*索引標籤上、從下拉式清單中選取「*節點型授權*」。
 . 按一下* Eval*。
 . 在表格中、按一下*「轉換成BYOL授權*」以取得Cloud Volumes ONTAP 一套系統。
 . 輸入序號或上傳授權檔案。

@@ -674,7 +674,6 @@
   <block id="b4fdd997b1f33e0d4c6964444c2bf399" category="section-title">中小企業</block>
   <block id="11b07e87cde6233c7e410399ad203deb" category="paragraph">SMB是Windows系統的傳統檔案存取傳輸協定。用戶端可以ONTAP 使用SMB 2.0、SMB 2.1、SMB 3.0和SMB 3.1.1傳輸協定來存取位於支援區內的檔案。就像NFS一樣、支援各種權限樣式。</block>
   <block id="6958464059ef304c59d06fcb948ccafd" category="inline-link">瞭解如何在ONTAP 功能區中設定及管理S3物件儲存服務</block>
-  <block id="75081fb4982f7b843e702079b35f0ed4" category="paragraph"><block ref="3fe75f10a35597997861eca633c30fa7" category="inline-link-rx"></block>。</block>
   <block id="4df04bd818b4ec915902bb9d71d89e11" category="summary">在Cloud Volumes ONTAP AWS中啟動時、您可以從多個執行個體或類型中進行選擇。如果判斷執行個體的大小過小或過大、您可以隨時變更執行個體類型。</block>
   <block id="58cfda201064f1899f15aad3e019b071" category="doc">變更EC2執行個體類型Cloud Volumes ONTAP 以供使用</block>
   <block id="64001104830dfdff90f2cf316af055f4" category="list-text">變更執行個體類型可能會影響AWS服務費用。</block>
@@ -2050,7 +2049,6 @@
   <block id="93e69b27c99652c72cf49fd51a487813" category="paragraph"><block ref="93e69b27c99652c72cf49fd51a487813" category="inline-image-macro-rx" type="image"></block></block>
   <block id="1e565fae8cb8375a73df9abf2e99667a" category="paragraph">您可以從此通知開始升級程序、從 S3 儲存區取得軟體映像、安裝映像、然後重新啟動系統、藉此自動化程序。</block>
   <block id="d898e4d722776933e5dbfe89668ef31e" category="paragraph">Cloud Manager作業（例如Volume或Aggregate建立）不得在Cloud Volumes ONTAP 作業系統上進行。</block>
-  <block id="e17d9d52c8208dfce3fde1af20447264" category="list-text">按一下 * Canvas* 。</block>
   <block id="d51a07decbe601cbb24e543eb1a87686" category="list-text">選取工作環境。</block>
   <block id="253804b3f61f30ff9abeb479b2c10701" category="paragraph">如果有新版本可用、則右窗格中會出現通知：</block>
   <block id="3ff5bd4f7d1ec1b55544ace7c0a77dbc" category="list-text">如果有可用的新版本、請按一下 * 升級 * 。</block>
@@ -2093,7 +2091,6 @@
   <block id="792eeb7f686f2ad37b664f6478d40bed" category="paragraph">向NetApp銷售代表購買授權後、NetApp會寄送一封電子郵件給您、附上序號和其他授權詳細資料。</block>
   <block id="4e85798464067990a260920303c6ad56" category="paragraph">在此期間、Cloud Manager會自動查詢NetApp的授權服務、以取得與您NetApp支援網站帳戶相關之授權的詳細資料。如果沒有錯誤、Cloud Manager會自動將授權新增至Digital Wallet。</block>
   <block id="ad0be4bc913a8026a3f5e42fc7656d23" category="inline-xref">瞭解如何將購買的授權新增至您的帳戶</block>
-  <block id="0abf972ae04f5fd460eb8fb37920a7e2" category="list-text">按一下*「所有服務」&gt;「數位錢包」&gt; Cloud Volumes ONTAP 「參考」*。</block>
   <block id="8881e3192df3d6a5d7efc284f0e0beee" category="inline-image-macro">螢幕擷取畫面顯示專業套件和基本套件的已配置容量與授權容量。</block>
   <block id="a67c1e3fa166897e8cc4f860ff4aa0c5" category="paragraph"><block ref="a67c1e3fa166897e8cc4f860ff4aa0c5" category="inline-image-macro-rx" type="image"></block></block>
   <block id="b2dfe525c9a6bec7392826fba889fe07" category="section-title">將購買的授權新增至您的帳戶</block>
@@ -2108,12 +2105,10 @@
   <block id="bf78c4658c1ace314410495dc10c0ba1" category="paragraph">如果您購買額外容量或延長授權期限、Cloud Manager會自動更新Digital Wallet中的授權。您無需做任何事。</block>
   <block id="3782253c295a20f84aac6d9de87d5256" category="paragraph">不過、如果您在無法存取網際網路的位置部署Cloud Manager、則必須在Cloud Manager中手動更新授權。</block>
   <block id="e02250fabfba9f2d7325403663479a43" category="paragraph">授權檔案（如果您有HA配對、則為_file_）。</block>
-  <block id="d4737869e4d4dc07c6bb7c4c990d49f2" category="list-text">按一下授權旁邊的動作功能表、然後選取*更新授權*。</block>
   <block id="f591dbc4232b149ea0792178559405f9" category="list-text">上傳授權檔案。</block>
   <block id="034f6db5181ab87d962e69b9b7b5a995" category="list-text">按一下*上傳授權*。</block>
   <block id="8f79a5bc1b9725ce4036eb2d94c60de9" category="section-title">移除容量型授權</block>
   <block id="78a946dc090d511b993ffbe9803dff06" category="paragraph">如果容量型授權過期且不再使用、您可以隨時將其移除。</block>
-  <block id="f079c14c88dca42fef3c7cb092bd6831" category="list-text">按一下授權旁邊的動作功能表、然後選取*移除授權*。</block>
   <block id="40b851aafab82c78484c46169f816fd2" category="list-text">按一下「 * 移除 * 」以確認。</block>
   <block id="0a83752faee4775a43f41a1c3b0e10f6" category="summary">Cloud Manager 可讓您檢視在 Cloud Volumes ONTAP AWS 中執行功能的相關成本。您也可以瞭解使用 NetApp 功能來降低儲存成本、省下多少成本。</block>
   <block id="0131f05be010a429416bcb6f853b54f6" category="doc">監控 AWS 資源成本</block>
@@ -2290,7 +2285,6 @@
   <block id="144db5f18aa0a48a9fe63c8b55bd0275" category="paragraph">_Keystone Flex訂購_是NetApp提供的隨需付費儲存服務。</block>
   <block id="4edb70089cdbc18de22fa9ead5189bc8" category="section-title">授權您的帳戶</block>
   <block id="1c41d8404a680acdfbd1135446677d69" category="paragraph">在Cloud Manager中使用及管理Keystone Flex訂閱之前、您必須先聯絡NetApp、以利用Keystone Flex訂閱來授權Cloud Manager使用者帳戶。</block>
-  <block id="2dd472e5849f2d63d198abee4211faf1" category="list-text">按一下「*所有服務&gt;數位錢包*」。</block>
   <block id="34050b9fba3323c4ec7fb2d89aa95a36" category="list-text">按一下* Keystone Flex訂閱*。</block>
   <block id="daf4ae396784c74ec2cbf002eaaa25f4" category="list-text">如果您看到*歡迎使用NetApp Keystone S不到*頁面、請傳送電子郵件至頁面上所列的地址。</block>
   <block id="16692c26ca4528e651bbb36d93c465c7" category="paragraph">NetApp代表將授權您的使用者帳戶存取訂閱、以處理您的申請。</block>
@@ -2869,7 +2863,6 @@
   <block id="17ac9e85cf5b6f7b77acf61fb7721242" category="list-text">從雲端供應商的市場訂閱每小時隨付（PAYGO）</block>
   <block id="9426b05d2fc423b761e34f9d75b4066d" category="section-title">管理PAYGO授權</block>
   <block id="39489bc3468be0f9c30ed41b5ac89051" category="paragraph">「Digital Wallet」頁面可讓您檢視每Cloud Volumes ONTAP 個PAYGO更新系統的詳細資料、包括序號和PAYGO授權類型。</block>
-  <block id="343c7ed77049523f4d99e8d4c436a330" category="list-text">從下拉式清單中選取*節點型授權*。</block>
   <block id="87089bacab591352ad6ad6579e34d93e" category="list-text">按一下* PAYGO*。</block>
   <block id="82be8e06ac169a3de0fce42cd01f5760" category="list-text">請在表格中檢視每個PAYGO授權的詳細資料。</block>
   <block id="76e10a0df08439afad301bff55b0ae58" category="inline-image-macro">一張螢幕快照、顯示「數位錢包」頁面中的表格、其中包含三份Paygo授權。每一列都會顯示名稱、系統類型、序號、套件、以及管理授權的連結。</block>
@@ -4144,7 +4137,6 @@
   <block id="986e1f3279b4d74444bd32d4f833afbd" category="section-title">數位錢包</block>
   <block id="d5503d6062daaaa4326462970164cbac" category="paragraph">數位錢包現在會顯示您帳戶的總使用容量、以及授權套件的使用容量。這有助於瞭解您的收費方式、以及您是否需要購買額外容量。</block>
   <block id="232ac716fdabb7e9b9ba7c3a108574a7" category="inline-image-macro">顯示容量型授權的「Digital Wallet」頁面的快照。此頁面概述您帳戶中的已用容量、然後依照授權套件細分已用容量。</block>
-  <block id="25151b376af0a0b205be15ab92b4cd97" category="paragraph"><block ref="25151b376af0a0b205be15ab92b4cd97" category="inline-image-macro-rx" type="image"></block></block>
   <block id="d9c05beb7c27c53dc1cb952afddea3ac" category="section-title">彈性磁碟區增強功能</block>
   <block id="119ffefd11e6681de49e316bc16a471d" category="paragraph">Cloud Manager現在可在Cloud Volumes ONTAP 使用者介面建立運作環境時、支援Amazon EBS Elastic Volumes功能。使用GP3或IO1磁碟時、預設會啟用彈性磁碟區功能。您可以根據儲存需求來選擇初始容量、Cloud Volumes ONTAP 並在部署完畢後加以修改。</block>
   <block id="0c5741d0ec0127a10c28f7c82579da32" category="inline-link-macro">深入瞭解AWS對彈性磁碟區的支援</block>
@@ -4155,9 +4147,6 @@
   <block id="c55cc410beff8f86afc3ba8027b681f7" category="paragraph">從9.10.1版開始、Cloud Volumes ONTAP 現在Azure West US 3地區支援了整套功能。</block>
   <block id="1a3362a1b5304a4e1e1112496974b9ae" category="section-title">Azure中的SS3授權ONTAP</block>
   <block id="e29ddfe6afa32fb2c96c8682f4ca73e8" category="paragraph">Cloud Manager現在會自動在ONTAP Azure中執行9.9.1版或更新版本的全新和現有Cloud Volumes ONTAP 的支援系統上安裝支援S3。</block>
-  <block id="82e8338c73d6540f48f2e0cc8d035511" category="list-text">馬德里（歐洲-西南1）</block>
-  <block id="1a1145c860165dcd96b82eb7d32cd59f" category="list-text">巴黎（歐洲-西9）</block>
-  <block id="eb4cae07e62b958e999eaa4c0d9b254b" category="list-text">華沙（歐洲中心2）</block>
   <block id="1cea3dd4ff4ec3b14e8632bf82e14041" category="list-text">使用GP3或IO1磁碟時、請建立在初始Aggregate上啟用「彈性磁碟區」的新系統</block>
   <block id="99ef8dc541c558ff343420594d6dcb5c" category="inline-link-macro">瞭解如何建立Cloud Volumes ONTAP 一套功能完善的系統</block>
   <block id="f56c72fa8323042cbff6cb92648345ca" category="paragraph"><block ref="f56c72fa8323042cbff6cb92648345ca" category="inline-link-macro-rx"></block></block>
@@ -4223,4 +4212,13 @@
   <block id="bbb170bfbf4105204b0dbe4292724d6e" category="paragraph">以下是一個擁有多個授權套件的帳戶範例：</block>
   <block id="9dbb08096054a8593f55c8cd3e2863d6" category="inline-image-macro">螢幕快照顯示專業、最佳化及基本套件的耗用容量。</block>
   <block id="943b03ddb77b543ab329dfed996ad4ac" category="paragraph"><block ref="943b03ddb77b543ab329dfed996ad4ac" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="998e6cc07bc5c3b4a2329ad21093316c" category="paragraph"><block ref="998e6cc07bc5c3b4a2329ad21093316c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3fe75f10a35597997861eca633c30fa7" category="paragraph"><block ref="3fe75f10a35597997861eca633c30fa7" category="inline-link-rx"></block></block>
+  <block id="e101009414989b26a668aca3a341820c" category="paragraph">stdin&gt;中未解析的指令-包括：：：_include/new-Jule-Gcp.ado[]</block>
+  <block id="c0d3ce4ea1bcde455d433b9182cdde33" category="list-text">從左側導覽功能表中、選取* Digital Wallet *。</block>
+  <block id="5844b24c31c1897efda5443d984702f8" category="list-text">在* Cloud Volumes ONTAP 《*》*索引標籤上、從下拉式清單中選取「*節點型授權*」。</block>
+  <block id="f3ea3c5e0bf5262dea3ca4f879eccdc7" category="list-text">從左側導覽功能表中選取* Canvas*。</block>
+  <block id="666ac747a8d5a1aa317496f8add413a6" category="list-text">在* Cloud Volumes ONTAP 《*》索引標籤上、保留*容量型授權*、然後按一下*新增授權*。</block>
+  <block id="ecdf6ba3b837de5910abdabc360df552" category="list-text">在* Cloud Volumes ONTAP 《*》索引標籤上、按一下授權旁的動作功能表、然後選取*更新授權*。</block>
+  <block id="5ca97f84ee577fbacf355fc75d23921d" category="list-text">在* Cloud Volumes ONTAP 《*》索引標籤上、按一下授權旁的動作功能表、然後選取*移除授權*。</block>
 </blocks>

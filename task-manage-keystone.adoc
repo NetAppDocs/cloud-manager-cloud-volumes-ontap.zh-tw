@@ -29,7 +29,7 @@ link:concept-licensing.html["深入瞭Cloud Volumes ONTAP 解不知如何取得�
 在Cloud Manager中使用及管理Keystone Flex訂閱之前、您必須先聯絡NetApp、以利用Keystone Flex訂閱來授權Cloud Manager使用者帳戶。
 
 .步驟
-. 按一下「*所有服務>數位錢包*」。
+. 從左側導覽功能表中、選取* Digital Wallet *。
 . 按一下* Keystone Flex訂閱*。
 . 如果您看到*歡迎使用NetApp Keystone S不到*頁面、請傳送電子郵件至頁面上所列的地址。
 +
@@ -50,7 +50,7 @@ image:screenshot-keystone-overview.png["顯示Keystone Flex訂閱清單的快照
 在NetApp授權您的帳戶之後、您必須連結Keystone Flex訂閱Cloud Volumes ONTAP 以供搭配使用。此動作可讓使用者選擇訂閱做為新Cloud Volumes ONTAP 版的功能表系統的充電方法。
 
 .步驟
-. 按一下「*所有服務>數位錢包*」。
+. 從左側導覽功能表中、選取* Digital Wallet *。
 . 按一下* Keystone Flex訂閱*。
 . 如需您要連結的訂閱、請按一下 image:icon-action.png["這是三個並排點的圖示"] 然後選取*連結*。
 +
@@ -67,7 +67,7 @@ image:screenshot-keystone-link.png["顯示訂閱連結選項的快照。"]
 如果您需要調整訂閱的已提交容量、可以直接從Cloud Manager介面傳送要求。
 
 .步驟
-. 按一下「*所有服務>數位錢包*」。
+. 從左側導覽功能表中、選取* Digital Wallet *。
 . 按一下* Keystone Flex訂閱*。
 . 如需調整容量的訂閱、請按一下 image:icon-action.png["這是三個並排點的圖示"] 然後選取*檢視詳細資料並編輯*。
 . 輸入一或多個訂閱所需的已提交容量。
@@ -86,7 +86,7 @@ image:screenshot-keystone-request.png["螢幕快照顯示可要求變更訂閱�
 如果您不想再將Keystone Flex訂閱搭配新Cloud Volumes ONTAP 的功能使用、可以取消訂閱連結。請注意、您只能取消連結未附加至現有Cloud Volumes ONTAP 的訂閱內容的訂閱。
 
 .步驟
-. 按一下「*所有服務>數位錢包*」。
+. 從左側導覽功能表中、選取* Digital Wallet *。
 . 按一下* Keystone Flex訂閱*。
 . 若要取消連結訂閱、請按一下 image:icon-action.png["這是三個並排點的圖示"] 然後選取*取消連結*。
 
