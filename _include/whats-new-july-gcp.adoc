@@ -1,0 +1,16 @@
+= 新的Google Cloud區域支援
+:allow-uri-read: 
+
+
+
+
+=== 新的Google Cloud區域支援
+
+從9.10.1版開始、下列Google Cloud區域現在支援此功能：Cloud Volumes ONTAP
+
+* 馬德里（歐洲-西南1）
+* 巴黎（歐洲-西9）
+* 華沙（歐洲中心2）
+
+
+https://cloud.netapp.com/cloud-volumes-global-regions["檢視Cloud Volumes ONTAP 支援區域的完整清單以供參閱"^]

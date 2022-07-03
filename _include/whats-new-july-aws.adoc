@@ -1,0 +1,19 @@
+= 彈性磁碟區增強功能
+:allow-uri-read: 
+
+
+
+
+=== 彈性磁碟區增強功能
+
+Cloud Manager現在可在Cloud Volumes ONTAP 使用者介面建立運作環境時、支援Amazon EBS Elastic Volumes功能。使用GP3或IO1磁碟時、預設會啟用彈性磁碟區功能。您可以根據儲存需求來選擇初始容量、Cloud Volumes ONTAP 並在部署完畢後加以修改。
+
+link:concept-aws-elastic-volumes.html["深入瞭解AWS對彈性磁碟區的支援"]。
+
+
+
+=== AWS中的SS3授權ONTAP
+
+Cloud Manager現在會自動在ONTAP AWS中執行9.11.0版或更新版本的全新和現有Cloud Volumes ONTAP 的支援系統上安裝支援功能。
+
+https://docs.netapp.com/us-en/ontap/object-storage-management/index.html["瞭解如何在ONTAP 功能區中設定及管理S3物件儲存服務"^]。

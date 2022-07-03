@@ -673,7 +673,6 @@
   <block id="1ecf939f833364bdd59ce6237b13389d" category="paragraph">用戶端可以使用NFS和SMB傳輸協定存取相同的檔案。</block>
   <block id="b4fdd997b1f33e0d4c6964444c2bf399" category="section-title">中小企業</block>
   <block id="11b07e87cde6233c7e410399ad203deb" category="paragraph">SMB是Windows系統的傳統檔案存取傳輸協定。用戶端可以ONTAP 使用SMB 2.0、SMB 2.1、SMB 3.0和SMB 3.1.1傳輸協定來存取位於支援區內的檔案。就像NFS一樣、支援各種權限樣式。</block>
-  <block id="e2ab7c65b21ed8cc1c3b642b5e36429e" category="section-title">S3</block>
   <block id="6958464059ef304c59d06fcb948ccafd" category="inline-link">瞭解如何在ONTAP 功能區中設定及管理S3物件儲存服務</block>
   <block id="75081fb4982f7b843e702079b35f0ed4" category="paragraph"><block ref="3fe75f10a35597997861eca633c30fa7" category="inline-link-rx"></block>。</block>
   <block id="4df04bd818b4ec915902bb9d71d89e11" category="summary">在Cloud Volumes ONTAP AWS中啟動時、您可以從多個執行個體或類型中進行選擇。如果判斷執行個體的大小過小或過大、您可以隨時變更執行個體類型。</block>
@@ -1175,12 +1174,8 @@
   <block id="6b32e99bddf60938239aabe092cb4c16" category="paragraph">有多種授權選項可供Cloud Volumes ONTAP 選擇。每個選項都能讓您選擇符合需求的消費模式。</block>
   <block id="8efc36afc2e7202a9c9bda00b8e8a75d" category="section-title">授權總覽</block>
   <block id="f008ecd5469e24eee31eb4e2e4a1e23f" category="paragraph">下列授權選項適用於新客戶。</block>
-  <block id="474eb171216a34faad8105c0ca4b47bd" category="list-text">Freemium產品</block>
-  <block id="d6140227f443f533f2d169225f41c434" category="list-text">不需購買授權或合約、即可免費提供高達500 GiB的資源配置。包括有限支援。</block>
   <block id="27d0a1d0fc95280fbaf78c65ff6b37fb" category="list-text">Essentials套件</block>
   <block id="57050f826fe75d25457ab448568ae53d" category="list-text">依容量付費Cloud Volumes ONTAP 、以供各種不同組態使用。</block>
-  <block id="f2213b04acf4d3b9fcad6cdbc77cd671" category="list-text">專業套件</block>
-  <block id="765b9232138388e3de34831ab3adb1e0" category="list-text">依容量支付Cloud Volumes ONTAP 任何類型的資訊配置費用。包括使用Cloud Backup的無限備份。</block>
   <block id="a47bcecd4f4a1f89ad4e82bca88975ab" category="list-text">Keystone Flex 訂閱</block>
   <block id="a7c9ae4b871102b7553565c7089cf839" category="list-text">以隨成長付費訂閱為基礎的服務、為HA配對提供無縫的混合雲體驗。</block>
   <block id="0e1a6eb7eed81777ed9d0610be51df3b" category="paragraph">先前的個別節點授權模式仍適用於已購買授權或正在訂閱市場的現有客戶。</block>
@@ -1190,26 +1185,16 @@
   <block id="cc3b16b51bb72e66b8f103fef83035d9" category="list-text">不包括NetApp的支援。</block>
   <block id="895dacd81cbc05951744c0bce981546c" category="list-text">每Cloud Volumes ONTAP 個系統的資源配置容量上限為500 GiB。</block>
   <block id="46cb473c7acee70e9be90113f3acce9d" category="list-text">您可以在Cloud Volumes ONTAP 任何雲端供應商中、使用最多10個包含每個NetApp帳戶的Freemium產品的NetApp系統。</block>
-  <block id="922e54a2e69b279fbb6ab93d4f189181" category="list-text">如果Cloud Volumes ONTAP 供應的功能超過500 GiB、Cloud Manager會將系統轉換成Essentials套件（容量型授權）。</block>
   <block id="2b5b1f6feb7719bc282a3518f33b1784" category="paragraph">任何其他配置容量低於500 GiB的系統、都會留在Freemium上（只要使用Freemium產品進行部署）。</block>
   <block id="6602afb860a6cca23c3b75bf601365eb" category="inline-link-macro">在 Cloud Volumes ONTAP AWS 中啟動</block>
   <block id="7ca1af679f0ba86814f2ad58a578cb7c" category="inline-link-macro">在 Cloud Volumes ONTAP Azure 中啟動</block>
-  <block id="19bcaffbe8361f9d452beabc8065f223" category="section-title">容量型授權套件</block>
-  <block id="e7cf94fb6f7d5441689859c52b410a98" category="paragraph">容量型授權可讓您針對Cloud Volumes ONTAP 容量的每個TiB付費。授權與您的NetApp帳戶相關聯、只要授權有足夠的容量可用、您就能根據授權向多個系統收取費用。</block>
   <block id="68935a38790e91889cd56742a47079f3" category="paragraph">例如、您可以購買單一20 TiB授權、部署四Cloud Volumes ONTAP 個作業系統、然後將5個TiB磁碟區分配給每個系統、總共20 TiB。容量可用於Cloud Volumes ONTAP 該帳戶中部署的每個作業系統上的磁碟區。</block>
-  <block id="c5a8696749d985ac6f5542bcf7ace1e2" category="paragraph">容量型授權的形式為_package_。當您部署Cloud Volumes ONTAP 一套功能完善的系統時、您可以選擇_Essentials套件或_Professional_套件。</block>
   <block id="6cc9f034206d1e740ca9a065330721b4" category="list-text">選擇Cloud Volumes ONTAP 您的需求組態：</block>
   <block id="d7a4c9387784a4f0820a7a6500b673bc" category="list-text">單一節點或HA系統</block>
   <block id="5e9a61c426f74f04e7e194fc07bab16e" category="list-text">用於災難恢復（DR）的檔案與區塊儲存或次要資料</block>
   <block id="3c5e979087ecb3ead1e8ace0120e5cb6" category="list-text">以額外成本附加任何NetApp的雲端資料服務</block>
-  <block id="c741d4dfd63aec956160917346d489e5" category="list-text">提供Cloud Volumes ONTAP 任何支援功能（單一節點或任何儲存類型的HA）</block>
-  <block id="71cce048f3aa67d534f433fdfc00f486" category="list-text">包含使用Cloud Backup的Volume備份（僅適用於根據此授權付費的Volume）</block>
   <block id="26e0cffca193fe47b1c5c8f73ea3c3e1" category="section-title">消費模式</block>
   <block id="3cc132ecf0523f86195d2baf263bfdba" category="paragraph">Essentials和Professional套件可搭配下列消費模式使用：</block>
-  <block id="f0c74524bf1dcc2586975c7d2fab30aa" category="list-text">向NetApp購買的授權（BYOL）、可用於在Cloud Volumes ONTAP 任何雲端供應商部署功能。</block>
-  <block id="c603e0cd8afdb5636238d7d652481a08" category="paragraph">授權不限於單一雲端供應商。</block>
-  <block id="f28f2c679b3208af9d5fe292ad6356b8" category="list-text">從雲端供應商的市場訂購（PAYGO）、每小時一次。</block>
-  <block id="612b1fa388e719e990cb953520986784" category="list-text">一年一度的雲端供應商市場合約。</block>
   <block id="51606c7b614cdc7ab9e0489981838dfa" category="paragraph">NetApp與您分享私人優惠之後、您可以在工作環境建立期間、從Azure Marketplace訂閱年度方案。</block>
   <block id="f96723ecb29e40ca9b9fb042ab6ff4ef" category="paragraph">在NetApp與您分享私人優惠之後、您可以在工作環境建立期間、從Google Cloud Marketplace訂閱年度方案。</block>
   <block id="cf3a2d2c139bf5c9cc87fe714bfff3b1" category="paragraph">請注意下列事項：</block>
@@ -1229,7 +1214,6 @@
   <block id="28d17a1ec8598824eb0c46f1ef2668af" category="paragraph">授權本身並無最大容量限制。</block>
   <block id="25827e83a178b9b140976a356e0ea48a" category="section-title">充電注意事項</block>
   <block id="c1092325501599c6dcc90500081a2184" category="list-text">如果您超過BYOL容量、或授權過期、系統會根據您的市場訂閱、按每小時費率收取超額費用。</block>
-  <block id="caa54273e5fb3b700fad994050e4dde4" category="list-text">每個套件至少需支付4 TiB容量費用。任何容量低於4 TiB的實體執行個體將以4 TiB的速率收費。Cloud Volumes ONTAP</block>
   <block id="ee095a2fd0990ba785c303c6524d8145" category="list-text">額外的資料服務儲存VM（SVM）無需額外授權成本、但每個資料服務SVM的最低容量費用為4 TiB。</block>
   <block id="cc331a0f761602982769cdbb99e71272" category="list-text">災難恢復SVM是根據已配置的容量來收費的。</block>
   <block id="55675f6a5328a3c661aa2daa971f7c76" category="list-text">對於HA配對、您只需支付節點上已配置容量的費用。您不需支付同步鏡射至合作夥伴節點的資料費用。</block>
@@ -2109,13 +2093,9 @@
   <block id="792eeb7f686f2ad37b664f6478d40bed" category="paragraph">向NetApp銷售代表購買授權後、NetApp會寄送一封電子郵件給您、附上序號和其他授權詳細資料。</block>
   <block id="4e85798464067990a260920303c6ad56" category="paragraph">在此期間、Cloud Manager會自動查詢NetApp的授權服務、以取得與您NetApp支援網站帳戶相關之授權的詳細資料。如果沒有錯誤、Cloud Manager會自動將授權新增至Digital Wallet。</block>
   <block id="ad0be4bc913a8026a3f5e42fc7656d23" category="inline-xref">瞭解如何將購買的授權新增至您的帳戶</block>
-  <block id="c466d075672a191cdf97342836294989" category="section-title">檢視您帳戶的容量</block>
-  <block id="f0d6507143193afc5ed30d59568c31e8" category="paragraph">依套件檢視授權容量和已配置容量、確保您有足夠空間容納資料磁碟區。</block>
   <block id="0abf972ae04f5fd460eb8fb37920a7e2" category="list-text">按一下*「所有服務」&gt;「數位錢包」&gt; Cloud Volumes ONTAP 「參考」*。</block>
-  <block id="ad1bc5e540af69d2fae33c10beba29af" category="list-text">選取*容量型授權*後、即可檢視每個套件的授權容量和已配置容量。</block>
   <block id="8881e3192df3d6a5d7efc284f0e0beee" category="inline-image-macro">螢幕擷取畫面顯示專業套件和基本套件的已配置容量與授權容量。</block>
   <block id="a67c1e3fa166897e8cc4f860ff4aa0c5" category="paragraph"><block ref="a67c1e3fa166897e8cc4f860ff4aa0c5" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="dce5019f9c2e14a57d05767b06b4b81a" category="list-text">如有需要、請購買額外的授權容量、然後將授權新增至您的帳戶。</block>
   <block id="b2dfe525c9a6bec7392826fba889fe07" category="section-title">將購買的授權新增至您的帳戶</block>
   <block id="59278e406900d98dfbf804d3447c186c" category="paragraph">如果您在Digital Wallet中沒有看到您購買的授權、您需要將授權新增至Cloud Manager、以便能夠Cloud Volumes ONTAP 使用該容量來進行支援。</block>
   <block id="a2426434bd2755150443a72dbf29878b" category="list-text">您需要向Cloud Manager提供授權或授權檔案的序號。</block>
@@ -2724,8 +2704,6 @@
   <block id="c449e34e5848c75cf2ae5048d97482c1" category="list-text">* IAM角色*：最好保留預設選項、讓Cloud Manager為您建立角色。</block>
   <block id="bef2f3bc1b5f6b5fc3eaabff818b8b07" category="inline-link">有關節點的原則要求 Cloud Volumes ONTAP</block>
   <block id="28df6ca63a931a73e42bb1a5832f842b" category="paragraph">如果您偏好使用自己的原則、就必須符合<block ref="e6af531133ecd89e70d5f32cb2437c92" category="inline-link-rx"></block>。</block>
-  <block id="47d8aa01ec2403f7d2bfb83097302616" category="list-text">* 基礎儲存資源 * ：選擇初始 Aggregate 的設定：磁碟類型、每個磁碟的大小、以及是否應啟用資料分層。</block>
-  <block id="ffc7a29a080fe8de84db524d17f3f56d" category="paragraph">如需選擇磁碟類型和大小的說明、請參閱 <block ref="f64204a2336539d9a8e0dc0a2e1a572b" category="inline-link-macro-rx"></block>。</block>
   <block id="a6fcc094aa2aa8328784bade825b168a" category="inline-link-macro">瞭解資料分層的運作方式</block>
   <block id="e3d16ce79bcead59781233b93cb58009" category="paragraph"><block ref="204d09224c7e7513a2d3fc955e6c2d5a" category="inline-link-macro-rx"></block>。</block>
   <block id="8ee28f71a3913c6cd38d72baee984fef" category="list-text">* 寫入速度與 WORM * ：選擇 * 正常 * 或 * 高速 * 寫入速度、並視需要啟動一次寫入、多次讀取（ WORM ）儲存設備。</block>
@@ -3511,7 +3489,6 @@
   <block id="2f2289dc4d144dd69a1fd73eaab183e0" category="summary">部分Cloud Volumes ONTAP 支援的組態包括本機NVMe儲存設備、Cloud Volumes ONTAP 這些儲存設備以Flash Cache的形式使用、可提供更好的效能。</block>
   <block id="712cc6bb6749aa390ea026f9c60a15ec" category="paragraph">部分Cloud Volumes ONTAP 支援的組態包括本機NVMe儲存設備、Cloud Volumes ONTAP 這些儲存設備可作為_Flash Cache使用、以獲得更好的效能。</block>
   <block id="b208585c8517e02e2edf44f36a9bbb44" category="paragraph">Flash Cache支援特定Cloud Volumes ONTAP 的支援功能。檢視中支援的組態<block ref="7a96f232274f5a7cebcb1f6a52cc095f" category="inline-link-rx"></block></block>
-  <block id="e9ce6ae29a2619019cac23f8015bb188" category="paragraph">支援S3作為橫向擴充儲存設備的選項、僅適用於Microsoft Azure。Cloud Volumes ONTAPS3傳輸協定支援可讓您設定S3用戶端存取SVM中儲存區內的物件。</block>
   <block id="409e6786522e4428d2517478280ecf40" category="section-title">Google Cloud儲存設備</block>
   <block id="e289128f5466f0eacab7fa58b05c8169" category="paragraph">在Google Cloud中、Aggregate最多可包含6個大小相同的磁碟。磁碟大小上限為64 TiB。</block>
   <block id="76cede1efa6255431fb1182712250d63" category="inline-link">Google Cloud文件：儲存選項</block>
@@ -3693,7 +3670,6 @@
   <block id="06282d6bfde23265c38eaf5e9f1b9c8a" category="section-title">多個AZs中的HA配對</block>
   <block id="5cf08a0c28356ef36ccd650ef4df7ec4" category="section-title">選擇寫入速度</block>
   <block id="848ba74632f2d95512e41c0283190dc5" category="section-title">選擇Volume使用設定檔</block>
-  <block id="e83e6938f82d96149155f11617a3f4b6" category="paragraph">瞭解如何開始使用Freemium產品：</block>
   <block id="d0e9f6e752e409a4224686569c7ed7f7" category="list-text"><block ref="d0e9f6e752e409a4224686569c7ed7f7" category="inline-link-macro-rx"></block></block>
   <block id="8f0a98314b48214c48339998c2fc4f5a" category="inline-link-macro">在Cloud Volumes ONTAP Google Cloud中設定適用於此技術的授權</block>
   <block id="a24ad69dba38b7a2ce7bc133c0c71859" category="inline-image-macro">Cloud Manager介面中通知的螢幕快照顯示、免費試用期僅剩7天。</block>
@@ -4025,15 +4001,8 @@
   <block id="3ffe064f92b34cbcdfcab03d93ac0aa6" category="inline-link-macro">深入瞭解容量管理模式</block>
   <block id="d2c22afe536c7332438ccf868d74c34d" category="paragraph"><block ref="ef63e2789991bbc45cfd16ad2085fca0" category="inline-link-macro-rx"></block>。</block>
   <block id="a33974427bc165b7a93accc1aa8be64f" category="list-text">增加Aggregate的大小最多需要6小時。在此期間、Cloud Manager無法為該Aggregate要求任何額外容量。</block>
-  <block id="d95ee608b161269708126edb4b983c53" category="list-text">目前Cloud Volumes ONTAP 、只有API支援在初始Aggregate上啟用彈性Volume來建立新的支援功能。Cloud Manager使用者介面不支援此動作。如果Cloud Volumes ONTAP 您從使用者介面建立新的版本的更新版本、則初始Aggregate上不會啟用彈性磁碟區。</block>
-  <block id="7f2dd60cac15d963d53c4b26e028d65e" category="paragraph">使用者介面支援所有其他動作（例如建立新的Aggregate）。</block>
   <block id="95f37b47d36f29b34f5eb9876539e793" category="section-title">如何使用彈性磁碟區</block>
   <block id="fadf0b4acbadb08e8e435a9d7130ab76" category="paragraph">您可以在Cloud Manager中使用Elastic Volumes、如下所示：</block>
-  <block id="8a08bb1cb08b803e8dcbd2a3ace89d1e" category="list-text">在初始Aggregate上建立啟用彈性磁碟區的新系統</block>
-  <block id="7dc2847ac93d622984709d8490d8d064" category="paragraph">如中所述 <block ref="1970a78ed44a3cfc31f9405835942101" category="inline-xref-macro-rx"></block>，此時僅API支援此動作。使用者介面不支援此功能。</block>
-  <block id="b66cb58951bd984f0fb3e8629023bbe1" category="paragraph">當您初始化API呼叫時、預設會在初始Aggregate上啟用「彈性磁碟區」功能。</block>
-  <block id="561112ad9b56b4dd0515c5b0e35146f7" category="inline-link">瞭解如何Cloud Volumes ONTAP 使用API建立功能</block>
-  <block id="0a91fc79f47639b5b3ee7133c078544e" category="paragraph"><block ref="0a91fc79f47639b5b3ee7133c078544e" category="inline-link-rx"></block></block>
   <block id="d5f89027268b27b157f79b1a29b881ab" category="list-text">在已啟用「彈性磁碟區」的集合體上建立新的磁碟區</block>
   <block id="b7225bc02dfd73fec72be6e9f04f0f4a" category="paragraph">如果您建立的磁碟區使用GP3或IO1磁碟、Cloud Manager會自動在已啟用彈性磁碟區的集合體上建立磁碟區。如需詳細資料、請參閱 <block ref="e432ed6cbb90ef2b99ca3ebe7006e953" category="inline-xref-macro-rx"></block>。</block>
   <block id="d2089f3a642b9ad1bc7dada3770cd27d" category="inline-link-macro">瞭解如何建立Volume</block>
@@ -4169,6 +4138,89 @@
   <block id="17cecf34f6070ab2eecf2740c05f04fb" category="list-text">註冊高可用度模式功能：</block>
   <block id="f2c8cae480fd1319bed5bc6dad61485e" category="list-text">（可選）驗證功能是否已註冊：</block>
   <block id="3f8d6716204225738a12373603bece28" category="paragraph">Azure CLI應傳回類似下列的結果：</block>
-  <block id="b730a5e05a41eebeb51f5aee7c746386" category="paragraph">_system_是HA配對或單一節點系統。例如、如果您有兩Cloud Volumes ONTAP 個用作2個用作2個用作2個用作2個用作2個用作2個用作單一節點的系統、則您的帳戶中總共有4個用作16個用作額外系統的空間。</block>
   <block id="0b6cbfb7fa10ae2ac77ae5d3273ea95e" category="sidebar">啟用高可用度模式</block>
+  <block id="1511b856d0328cfba458b8f83c2e94e3" category="section-title">2022年7月3日</block>
+  <block id="11df15715c1f580c53cb06d73a344574" category="paragraph">以下是3.9.20版Connector的變更。</block>
+  <block id="986e1f3279b4d74444bd32d4f833afbd" category="section-title">數位錢包</block>
+  <block id="d5503d6062daaaa4326462970164cbac" category="paragraph">數位錢包現在會顯示您帳戶的總使用容量、以及授權套件的使用容量。這有助於瞭解您的收費方式、以及您是否需要購買額外容量。</block>
+  <block id="232ac716fdabb7e9b9ba7c3a108574a7" category="inline-image-macro">顯示容量型授權的「Digital Wallet」頁面的快照。此頁面概述您帳戶中的已用容量、然後依照授權套件細分已用容量。</block>
+  <block id="25151b376af0a0b205be15ab92b4cd97" category="paragraph"><block ref="25151b376af0a0b205be15ab92b4cd97" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d9c05beb7c27c53dc1cb952afddea3ac" category="section-title">彈性磁碟區增強功能</block>
+  <block id="119ffefd11e6681de49e316bc16a471d" category="paragraph">Cloud Manager現在可在Cloud Volumes ONTAP 使用者介面建立運作環境時、支援Amazon EBS Elastic Volumes功能。使用GP3或IO1磁碟時、預設會啟用彈性磁碟區功能。您可以根據儲存需求來選擇初始容量、Cloud Volumes ONTAP 並在部署完畢後加以修改。</block>
+  <block id="0c5741d0ec0127a10c28f7c82579da32" category="inline-link-macro">深入瞭解AWS對彈性磁碟區的支援</block>
+  <block id="3cc8cd9bef921086f444d55cf1ea25c6" category="paragraph"><block ref="a2865c7bad4b206df6582ad55cba915e" category="inline-link-macro-rx"></block>。</block>
+  <block id="7fb4d101a5e000398c4d5b4c48b802a6" category="section-title">AWS中的SS3授權ONTAP</block>
+  <block id="e1d7a3ee89947f3549d385865ef27dda" category="paragraph">Cloud Manager現在會自動在ONTAP AWS中執行9.11.0版或更新版本的全新和現有Cloud Volumes ONTAP 的支援系統上安裝支援功能。</block>
+  <block id="c86d179c90248acd6ebdba05bd94320c" category="section-title">全新Azure Cloud區域支援</block>
+  <block id="c55cc410beff8f86afc3ba8027b681f7" category="paragraph">從9.10.1版開始、Cloud Volumes ONTAP 現在Azure West US 3地區支援了整套功能。</block>
+  <block id="1a3362a1b5304a4e1e1112496974b9ae" category="section-title">Azure中的SS3授權ONTAP</block>
+  <block id="e29ddfe6afa32fb2c96c8682f4ca73e8" category="paragraph">Cloud Manager現在會自動在ONTAP Azure中執行9.9.1版或更新版本的全新和現有Cloud Volumes ONTAP 的支援系統上安裝支援S3。</block>
+  <block id="82e8338c73d6540f48f2e0cc8d035511" category="list-text">馬德里（歐洲-西南1）</block>
+  <block id="1a1145c860165dcd96b82eb7d32cd59f" category="list-text">巴黎（歐洲-西9）</block>
+  <block id="eb4cae07e62b958e999eaa4c0d9b254b" category="list-text">華沙（歐洲中心2）</block>
+  <block id="1cea3dd4ff4ec3b14e8632bf82e14041" category="list-text">使用GP3或IO1磁碟時、請建立在初始Aggregate上啟用「彈性磁碟區」的新系統</block>
+  <block id="99ef8dc541c558ff343420594d6dcb5c" category="inline-link-macro">瞭解如何建立Cloud Volumes ONTAP 一套功能完善的系統</block>
+  <block id="f56c72fa8323042cbff6cb92648345ca" category="paragraph"><block ref="f56c72fa8323042cbff6cb92648345ca" category="inline-link-macro-rx"></block></block>
+  <block id="13cc2ad9256954007d04ae6bbe5845a9" category="list-text">*基礎儲存資源*：選擇磁碟類型、設定基礎儲存設備、然後選擇是否要啟用資料分層。</block>
+  <block id="657441166e098e3ac2d1fbeca0be5a8c" category="list-text">磁碟類型適用於初始磁碟區（和Aggregate）。您可以為後續磁碟區（和Aggregate）選擇不同的磁碟類型。</block>
+  <block id="ecc6da3e19e047e546eaa2c889eb5052" category="list-text">如果您選擇GP3或IO1磁碟、Cloud Manager會使用AWS中的彈性磁碟區功能、視需要自動增加基礎儲存磁碟容量。您可以根據儲存需求來選擇初始容量、Cloud Volumes ONTAP 並在部署完畢後加以修改。 <block ref="a2865c7bad4b206df6582ad55cba915e" category="inline-link-macro-rx"></block>。</block>
+  <block id="81415a84192a858c9e2c4f88aae60221" category="list-text">如果您選擇gp2或ST1磁碟、則可以針對初始Aggregate中的所有磁碟、以及使用Simple Provisioning選項時Cloud Manager所建立的任何其他Aggregate、選取磁碟大小。您可以使用進階配置選項、建立使用不同磁碟大小的集合體。</block>
+  <block id="771f877f73ed39c1ce2849efb746d509" category="list-text">容量型授權</block>
+  <block id="2a30ccbe01f425f3a2807267dff4fc33" category="list-text">根據Cloud Volumes ONTAP 資源配置的容量、在NetApp帳戶中支付多個支援系統的費用。包括購買附加雲端資料服務的能力。</block>
+  <block id="b03772ed11df6476bff4de403713f8c3" category="paragraph">容量型授權套件可讓您針對Cloud Volumes ONTAP 每TiB的容量付費。授權與您的NetApp帳戶相關聯、只要授權有足夠的容量可用、您就能根據授權向多個系統收取費用。</block>
+  <block id="37439fa615a442ec183c1c602f9755f1" category="paragraph">容量型授權的形式為_package_。當您部署Cloud Volumes ONTAP 一套解決方案時、您可以根據業務需求、從多個授權套件中進行選擇。</block>
+  <block id="27fe4eb3edbaff8f250e2d51f7462681" category="section-title">套件</block>
+  <block id="5f50ddf0fbe0f1f7d019d566c86cfe73" category="paragraph">下列容量型套件可供Cloud Volumes ONTAP 使用。</block>
+  <block id="1e76ec6fcee71cd95970fa3f9482e9be" category="list-text">如果Cloud Volumes ONTAP 針對某個不符合需求的系統所配置的容量超過500 GiB、Cloud Manager會將系統轉換成Essentials套件。</block>
+  <block id="6784815d06685b36d779b24581ccfa66" category="inline-xref">最低收費</block>
+  <block id="011b0e1cd1e0161097d616babc107976" category="paragraph">一旦系統轉換成Essentials套件 <block ref="22eeec54b04ebfde4307a78d36fd52ee" category="inline-xref-macro-rx"></block> 適用。</block>
+  <block id="4d55f77f062bf48891bd0f749c36a36d" category="section-title">基礎知識</block>
+  <block id="9e8b160226c9fe22a910c782ce5076e2" category="section-title">專業人員</block>
+  <block id="0d007d44f30aa9582772f6ca7709803f" category="paragraph">以容量支付Cloud Volumes ONTAP 任何類型的不受限制的還原組態。</block>
+  <block id="fdb568933703a9268c5ba46f3208f414" category="list-text">提供Cloud Volumes ONTAP 任何功能組態的授權</block>
+  <block id="2b7a2bda81dcf84ff8d6b600415c5e52" category="paragraph">單一節點或HA、以相同速率為主要和次要磁碟區充電</block>
+  <block id="2d856ef929513d16aba9286266a2ea92" category="list-text">包括使用Cloud Backup的無限Volume備份、但僅適用於Cloud Volumes ONTAP 隨Professional套件部署的各種系統</block>
+  <block id="728fd439c2abdc887c4a5e678d7c8708" category="paragraph">下列消費模式提供容量型授權套件：</block>
+  <block id="fcbd09a2622ccd7b58495c6277262566" category="list-text">* BYOL*：向NetApp購買的授權、可用於在Cloud Volumes ONTAP 任何雲端供應商中部署</block>
+  <block id="1e101142b61a711e7fbc92238adf9d20" category="list-text">* PAYGO*：每小時向雲端供應商的市場訂購一次。</block>
+  <block id="146cb6145f5238f0a019636047844250" category="list-text">*年度*：雲端供應商市場的年度合約。</block>
+  <block id="e26935ad375965079b7681b616fa96eb" category="paragraph">下列詳細資料可協助您瞭解充電方式如何搭配容量型授權使用。</block>
+  <block id="10297bdbea13a5f039ea0c228d352388" category="section-title">最低收費</block>
+  <block id="e779eb02b4dec3ef7d4a6d875e1d8485" category="paragraph">每個資料服務儲存VM至少要有一個主要（讀寫）磁碟區、至少需支付4 TiB的最低費用。如果主要磁碟區的總和低於4 TiB、Cloud Manager會將4 TiB最低收費套用至該儲存VM。</block>
+  <block id="2f3cbf00c1fc3c4ac211dcbe5883292c" category="paragraph">如果您尚未配置任何磁碟區、則不適用最低收費。</block>
+  <block id="f167d4d0d82d9d30283cad870543871a" category="paragraph">4 TiB最低容量費用不適用於僅包含次要（資料保護）磁碟區的儲存VM。例如、如果您的儲存虛擬機器擁有1個二線資料的TiB、則只需支付1個TiB的資料費用。</block>
+  <block id="bec8a1d5f2dd848ffc437304b7f6557d" category="section-title">過度使用</block>
+  <block id="1d47f9c9e82cf7214539548fd5c31bc6" category="paragraph">有了Essentials套件、您將依照部署類型（HA或單一節點）和Volume類型（主要或次要）收費。例如、_Essentials HHA與_Essentials次要HA的定價不同。</block>
+  <block id="e1f0e073c7ebb806dff01cf209b73f13" category="paragraph">如果您向NetApp（BYOL）購買Essentials授權、但超出該部署與Volume類型的授權容量、則Digital Wallet會針對價格較高的Essentials授權（如果您有）收取超額費用。這是因為我們會先使用您已購買的可用容量作為預付容量、然後再針對市場進行充電。向市場收取費用會增加每月帳單的成本。</block>
+  <block id="ecc429e82f6e54d1b5ef6c8bb4a49308" category="paragraph">以下是範例。假設您擁有下列Essentials套件授權：</block>
+  <block id="afac41d47fd5a7a0fff54c7d4dcc9ac8" category="list-text">500 TiB _Essentials二線HA授權、擁有500 TiB的承諾容量</block>
+  <block id="1ce6ab2d6dbcea26717506a031dde30c" category="list-text">500 TiB _Essentials單一節點_授權、僅擁有100 TiB的已認可容量</block>
+  <block id="75c6d2a261b9cf09ec954cf0cd425e1b" category="paragraph">另有50個TiB配置在與次要Volume的HA配對上。數位錢包不會向PAYGO收取50 TiB的費用、而是根據_Essentials單一節點_授權、收取50 TiB的超額費用。該授權的價格高於_Essentials二線HA、但比PAYGO價格便宜。</block>
+  <block id="2ba3f057b3f441a58c358dd4703ea556" category="paragraph">在「數位錢包」中、50 TiB將根據_Essentials單一節點_授權收費。</block>
+  <block id="2204b0f79985b7b0565114e8305937a5" category="section-title">儲存VM</block>
+  <block id="ea2d4d2ac58be22179ef1e523d4602b4" category="section-title">FlexClone與FlexCache 功能</block>
+  <block id="c0a01aae03aec488789ec9662cb472bb" category="paragraph">每個NetApp帳戶最多可有20個不受限的不受限系統。Cloud Volumes ONTAP_system_是Cloud Volumes ONTAP 一個EsireHA配對、Cloud Volumes ONTAP 一個僅供支援的節點系統、或是您所建立的任何其他儲存VM。預設的儲存VM不會計入限制。此限制適用於所有授權模式。</block>
+  <block id="ee39f25358b04b9ab4c35e9b485d2797" category="paragraph">例如、假設您有三種工作環境：</block>
+  <block id="35851ad4214e2cb5358ee8d010fd31e9" category="list-text">單一節點Cloud Volumes ONTAP 的不完整系統、只需一個儲存VM（這是部署Cloud Volumes ONTAP 時建立的預設儲存VM）</block>
+  <block id="75a89431d9d36de5dedb4018f6ca3cbe" category="paragraph">這種工作環境是單一系統的重要關鍵。</block>
+  <block id="9dcf3eb2c417aa53d6bc0d88eef77b49" category="list-text">單一節點Cloud Volumes ONTAP 的不完整系統、含兩個儲存VM（預設儲存VM、加上您所建立的一個額外儲存VM）</block>
+  <block id="5e28535b412ed4eaf515fbfdfce97b68" category="paragraph">此工作環境可視為兩個系統：一個用於單一節點系統、另一個用於額外的儲存VM。</block>
+  <block id="4c41d499b08fed91769d6d2c3b51157a" category="list-text">包含三個儲存VM（預設儲存VM、加上您所建立的兩個額外儲存VM）的支援功能Cloud Volumes ONTAP</block>
+  <block id="f327746b90761d64fda358e3ff9ce7a3" category="paragraph">此工作環境可算為三個系統：一個用於HA配對、兩個用於額外的儲存VM。</block>
+  <block id="e1d61ff8b15b12854145940279164504" category="paragraph">總共有六個系統。之後您的帳戶就有額外14個系統的空間。</block>
+  <block id="03021ab228ad1d1c921bbf536e2913a4" category="section-title">檢視您帳戶中的已用容量</block>
+  <block id="e54d493645f297f788982c1215f721bf" category="paragraph">數位錢包會顯示您帳戶的總使用容量、以及授權套件的使用容量。這有助於瞭解您的收費方式、以及您是否需要購買額外容量。</block>
+  <block id="d5dde91fb8d63e816b49f1eaaf1b31f0" category="list-text">選取*容量型授權*後、即可檢視套件摘要、其中會顯示耗用容量、總授權容量、以及總PAYGO容量。</block>
+  <block id="29f9c9781f75b695cb6c7c93910280cd" category="list-text">_總使用容量_是Cloud Volumes ONTAP NetApp帳戶中所有供應系統的總容量。無論磁碟區內的本機、已用、已儲存或有效空間為何、充電都是根據每個磁碟區的已配置大小而計算。</block>
+  <block id="2895d33d8798ea34fbece2f03c7b1a44" category="list-text">_Total licensed是您向NetApp購買的總授權容量（BYOL）。</block>
+  <block id="4cca90046112da5c5d3a703dafebbb7e" category="list-text">_Total PAYGO_是使用雲端市場訂閱的已配置總容量。只有當耗用容量高於授權容量、或數位錢包中沒有BYOL授權時、才會使用透過PAYGO充電。</block>
+  <block id="fa5b039d6c7312346b7c921f81258971" category="paragraph">以下是使用容量為2000 TiB的帳戶範例：</block>
+  <block id="ea7c202c277e5ccf92e08be29b4a64e9" category="list-text">在摘要下、檢視每個授權套件的耗用容量。</block>
+  <block id="39d8821e12869173bcc44d49a6c82619" category="list-text">_已用容量_顯示該套件的磁碟區總容量。如需特定套件的詳細資料、請將滑鼠游標移到工具提示上。</block>
+  <block id="d30bc4bd5cee7ac23a1df54311d1f4b3" category="inline-link-macro">瞭解如何為Essentials套裝方案充電</block>
+  <block id="33b4838dec7acdb2df64d13961f0a255" category="paragraph">若要更深入瞭解Essentials套件的顯示容量、您應該熟悉充電的運作方式。 <block ref="eee0a6ebb632d7e4c34635f35e9b54cf" category="inline-link-macro-rx"></block>。</block>
+  <block id="da1c54b789cbe5eb82490a61a1240bdc" category="list-text">「_BYOL_」和「_PAYGO_」容量顯示授權使用模式的總使用容量。</block>
+  <block id="bbb170bfbf4105204b0dbe4292724d6e" category="paragraph">以下是一個擁有多個授權套件的帳戶範例：</block>
+  <block id="9dbb08096054a8593f55c8cd3e2863d6" category="inline-image-macro">螢幕快照顯示專業、最佳化及基本套件的耗用容量。</block>
+  <block id="943b03ddb77b543ab329dfed996ad4ac" category="paragraph"><block ref="943b03ddb77b543ab329dfed996ad4ac" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>

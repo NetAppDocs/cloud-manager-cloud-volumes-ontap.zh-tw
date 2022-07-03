@@ -20,6 +20,77 @@ summary: 瞭Cloud Volumes ONTAP 解Cloud Manager的更新功能。
 
 
 
+== 2022年7月3日
+
+以下是3.9.20版Connector的變更。
+
+
+
+=== 數位錢包
+
+數位錢包現在會顯示您帳戶的總使用容量、以及授權套件的使用容量。這有助於瞭解您的收費方式、以及您是否需要購買額外容量。
+
+image:screenshot-digital-wallet-summary.png["顯示容量型授權的「Digital Wallet」頁面的快照。此頁面概述您帳戶中的已用容量、然後依照授權套件細分已用容量。"]
+
+ifdef::aws[]
+
+
+
+=== 彈性磁碟區增強功能
+
+Cloud Manager現在可在Cloud Volumes ONTAP 使用者介面建立運作環境時、支援Amazon EBS Elastic Volumes功能。使用GP3或IO1磁碟時、預設會啟用彈性磁碟區功能。您可以根據儲存需求來選擇初始容量、Cloud Volumes ONTAP 並在部署完畢後加以修改。
+
+link:concept-aws-elastic-volumes.html["深入瞭解AWS對彈性磁碟區的支援"]。
+
+
+
+=== AWS中的SS3授權ONTAP
+
+Cloud Manager現在會自動在ONTAP AWS中執行9.11.0版或更新版本的全新和現有Cloud Volumes ONTAP 的支援系統上安裝支援功能。
+
+https://docs.netapp.com/us-en/ontap/object-storage-management/index.html["瞭解如何在ONTAP 功能區中設定及管理S3物件儲存服務"^]。
+
+endif::aws[]
+
+ifdef::azure[]
+
+
+
+=== 全新Azure Cloud區域支援
+
+從9.10.1版開始、Cloud Volumes ONTAP 現在Azure West US 3地區支援了整套功能。
+
+https://cloud.netapp.com/cloud-volumes-global-regions["檢視Cloud Volumes ONTAP 支援區域的完整清單以供參閱"^]
+
+
+
+=== Azure中的SS3授權ONTAP
+
+Cloud Manager現在會自動在ONTAP Azure中執行9.9.1版或更新版本的全新和現有Cloud Volumes ONTAP 的支援系統上安裝支援S3。
+
+https://docs.netapp.com/us-en/ontap/object-storage-management/index.html["瞭解如何在ONTAP 功能區中設定及管理S3物件儲存服務"^]。
+
+endif::azure[]
+
+ifdef::gcp[]
+
+
+
+=== 新的Google Cloud區域支援
+
+從9.10.1版開始、下列Google Cloud區域現在支援此功能：Cloud Volumes ONTAP
+
+* 馬德里（歐洲-西南1）
+* 巴黎（歐洲-西9）
+* 華沙（歐洲中心2）
+
+
+https://cloud.netapp.com/cloud-volumes-global-regions["檢視Cloud Volumes ONTAP 支援區域的完整清單以供參閱"^]
+
+endif::gcp[]
+
+
+
 == 2022年6月7日
 
 以下是3.9.19版本的Connector所做的變更。
