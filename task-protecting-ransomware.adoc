@@ -16,6 +16,8 @@ summary: 勒索軟體攻擊可能會耗費一定的時間、資源和商譽。Cl
 [role="lead"]
 勒索軟體攻擊可能會耗費一定的時間、資源和商譽。Cloud Manager 可讓您針對勒索軟體實作 NetApp 解決方案、提供有效的可見度、偵測及補救工具。
 
+使用此功能來改善勒索軟體的保護、可解決與不同的使用案例 https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html["此功能可防勒索軟體ONTAP"^] 您可以透過System Manager或ONTAP 支援的CLI來啟用。
+
 .步驟
 . 在工作環境中、按一下 * 勒索軟體 * 圖示。
 +

@@ -4142,11 +4142,9 @@
   <block id="0c5741d0ec0127a10c28f7c82579da32" category="inline-link-macro">深入瞭解AWS對彈性磁碟區的支援</block>
   <block id="3cc8cd9bef921086f444d55cf1ea25c6" category="paragraph"><block ref="a2865c7bad4b206df6582ad55cba915e" category="inline-link-macro-rx"></block>。</block>
   <block id="7fb4d101a5e000398c4d5b4c48b802a6" category="section-title">AWS中的SS3授權ONTAP</block>
-  <block id="e1d7a3ee89947f3549d385865ef27dda" category="paragraph">Cloud Manager現在會自動在ONTAP AWS中執行9.11.0版或更新版本的全新和現有Cloud Volumes ONTAP 的支援系統上安裝支援功能。</block>
   <block id="c86d179c90248acd6ebdba05bd94320c" category="section-title">全新Azure Cloud區域支援</block>
   <block id="c55cc410beff8f86afc3ba8027b681f7" category="paragraph">從9.10.1版開始、Cloud Volumes ONTAP 現在Azure West US 3地區支援了整套功能。</block>
   <block id="1a3362a1b5304a4e1e1112496974b9ae" category="section-title">Azure中的SS3授權ONTAP</block>
-  <block id="e29ddfe6afa32fb2c96c8682f4ca73e8" category="paragraph">Cloud Manager現在會自動在ONTAP Azure中執行9.9.1版或更新版本的全新和現有Cloud Volumes ONTAP 的支援系統上安裝支援S3。</block>
   <block id="1cea3dd4ff4ec3b14e8632bf82e14041" category="list-text">使用GP3或IO1磁碟時、請建立在初始Aggregate上啟用「彈性磁碟區」的新系統</block>
   <block id="99ef8dc541c558ff343420594d6dcb5c" category="inline-link-macro">瞭解如何建立Cloud Volumes ONTAP 一套功能完善的系統</block>
   <block id="f56c72fa8323042cbff6cb92648345ca" category="paragraph"><block ref="f56c72fa8323042cbff6cb92648345ca" category="inline-link-macro-rx"></block></block>
@@ -4221,4 +4219,8 @@
   <block id="666ac747a8d5a1aa317496f8add413a6" category="list-text">在* Cloud Volumes ONTAP 《*》索引標籤上、保留*容量型授權*、然後按一下*新增授權*。</block>
   <block id="ecdf6ba3b837de5910abdabc360df552" category="list-text">在* Cloud Volumes ONTAP 《*》索引標籤上、按一下授權旁的動作功能表、然後選取*更新授權*。</block>
   <block id="5ca97f84ee577fbacf355fc75d23921d" category="list-text">在* Cloud Volumes ONTAP 《*》索引標籤上、按一下授權旁的動作功能表、然後選取*移除授權*。</block>
+  <block id="8152540df51584ebf79193211a381d46" category="paragraph">現在AWS中執行9.11.0版或更新版本的全新和現有的版本不含支援的S3授權。ONTAP Cloud Volumes ONTAP</block>
+  <block id="f225a4f57ea32da8b983d7bffd20b6eb" category="paragraph">Azure中執行9.9.1版或更新版本的全新及現有的支援功能系統、現在已隨附一份支援功能S3的授權。ONTAP Cloud Volumes ONTAP</block>
+  <block id="809e3658d55a8182673968a51f763bd4" category="inline-link">此功能可防勒索軟體ONTAP</block>
+  <block id="286a15f897b0ea49a39300795dbb689e" category="paragraph">使用此功能來改善勒索軟體的保護、可解決與不同的使用案例<block ref="4212bad7bd1fb5a7b1b9d017fd36eeae" category="inline-link-rx"></block> 您可以透過System Manager或ONTAP 支援的CLI來啟用。</block>
 </blocks>
