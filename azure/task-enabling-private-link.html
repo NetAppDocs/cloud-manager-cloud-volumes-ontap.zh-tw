@@ -1359,7 +1359,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-15 15:46:50 +0000">06/15/2022</time>
+    <time datetime="2022-07-11 22:30:47 +0000">07/11/2022</time>
     
   
 
@@ -1457,18 +1457,27 @@
 <p>瀏覽至下列目錄：/opp/application/netapp/cloudmanager/docker_occm/data</p>
 </li>
 <li>
-<p>修改下列參數以編輯app.conf、如下所示：</p>
+<p>使用下列關鍵字-值配對新增「user-Private - DNS"區域設定參數、以編輯app.conf：</p>
 <div class="literalblock">
 <div class="content">
-<pre>"user-private-dns-zone-settings": {
-   "use-existing": true,
-   "resource-group": "&lt;resource group name of the DNS zone&gt;",
-   "subscription": "&lt;subscription ID&gt;"
-  }</pre>
+<pre>"user-private-dns-zone-settings" : {
+   "resource-group" : "&lt;resource group name of the DNS zone&gt;",
+   "subscription" : "&lt;subscription ID&gt;",
+   "use-existing" : true
+}</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>只有當私有DNS區域存在於與Connector不同的訂閱中時、才需要訂購參數。</p>
+<p>此參數應與「system-id」輸入的層級相同、如下所示：</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>"system-id" : "&lt;system ID&gt;",
+"user-private-dns-zone-settings" : {</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>請注意、只有當私有DNS區域的訂閱與Connector不同時、才需要訂購關鍵字。</p>
 </div>
 </li>
 <li>
