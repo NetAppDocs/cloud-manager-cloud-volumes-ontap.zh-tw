@@ -74,17 +74,25 @@ image:diagram_azure_private_link.png["概念性影像、顯示資料存取功能
 .步驟
 . SSH 連接至 Connector 主機並登入。
 . 瀏覽至下列目錄：/opp/application/netapp/cloudmanager/docker_occm/data
-. 修改下列參數以編輯app.conf、如下所示：
+. 使用下列關鍵字-值配對新增「user-Private - DNS"區域設定參數、以編輯app.conf：
 +
 ....
-"user-private-dns-zone-settings": {
-   "use-existing": true,
-   "resource-group": "<resource group name of the DNS zone>",
-   "subscription": "<subscription ID>"
-  }
+"user-private-dns-zone-settings" : {
+   "resource-group" : "<resource group name of the DNS zone>",
+   "subscription" : "<subscription ID>",
+   "use-existing" : true
+}
 ....
 +
-只有當私有DNS區域存在於與Connector不同的訂閱中時、才需要訂購參數。
+此參數應與「system-id」輸入的層級相同、如下所示：
+
++
+....
+"system-id" : "<system ID>",
+"user-private-dns-zone-settings" : {
+....
++
+請注意、只有當私有DNS區域的訂閱與Connector不同時、才需要訂購關鍵字。
 
 . 儲存檔案並登出 Connector 。
 +
