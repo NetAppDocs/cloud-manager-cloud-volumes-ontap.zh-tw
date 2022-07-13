@@ -494,6 +494,8 @@
 
 
 
+
+
         </li>
       </ul>
     
@@ -1148,6 +1150,8 @@
         AWS 的安全群組規則
       </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-setting-up-kms.html">
         設定 AWS KMS
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-set-up-iam-roles.html">
+        設定IAM角色
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-set-up-licensing-aws.html">
         設定授權
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html">
@@ -1427,7 +1431,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-03 09:39:01 +0000">05/03/2022</time>
+    <time datetime="2022-07-13 19:52:08 +0000">07/13/2022</time>
     
   
 
@@ -1448,17 +1452,9 @@
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>確保提供 Cloud Manager 權限的 IAM 原則包括下列動作：</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">"ce:GetReservationUtilization",
-"ce:GetDimensionValues",
-"ce:GetCostAndUsage",
-"ce:GetTags"</code></pre>
-</div>
-</div>
+<p>確保提供Cloud Manager權限的IAM原則包含必要的權限。</p>
 <div class="paragraph">
-<p>這些行動包含在最新的中 <a href="https://mysupport.netapp.com/site/info/cloud-manager-policies" target="_blank" rel="noopener">"Cloud Manager 原則"</a>。從 NetApp Cloud Central 部署的新系統會自動包含這些權限。</p>
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html" target="_blank" rel="noopener">"檢視所需的權限"</a></p>
 </div>
 </li>
 <li>

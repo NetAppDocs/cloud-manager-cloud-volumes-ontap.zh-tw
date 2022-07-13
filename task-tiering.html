@@ -494,6 +494,8 @@
 
 
 
+
+
         </li>
       </ul>
     
@@ -1148,6 +1150,8 @@
         AWS 的安全群組規則
       </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-setting-up-kms.html">
         設定 AWS KMS
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-set-up-iam-roles.html">
+        設定IAM角色
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-set-up-licensing-aws.html">
         設定授權
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html">
@@ -1427,7 +1431,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-08 19:23:18 +0000">06/08/2022</time>
+    <time datetime="2022-07-13 19:52:08 +0000">07/13/2022</time>
     
   
 
@@ -1607,7 +1611,7 @@
 <div class="sect2">
 <h3 id="將冷資料分層至-azure-blob-儲存設備的需求">將冷資料分層至 Azure Blob 儲存設備的需求</h3>
 <div class="paragraph">
-<p>只要 Cloud Manager 具備所需的權限、您就不需要在效能層與容量層之間建立連線。如果 Cloud Manager 原則具有下列權限、 Cloud Manager 可為您啟用 vnet 服務端點：</p>
+<p>只要 Cloud Manager 具備所需的權限、您就不需要在效能層與容量層之間建立連線。如果Connector的自訂角色具有下列權限、Cloud Manager會為您啟用vnet服務端點：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1616,7 +1620,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>權限包含在最新版本中 <a href="https://mysupport.netapp.com/site/info/cloud-manager-policies">"Cloud Manager 原則"</a>。</p>
+<p>根據預設、權限會包含在自訂角色中。 <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-azure.html" target="_blank" rel="noopener">"檢視Azure對Connector的權限"</a></p>
 </div>
 </div>
 <div class="sect2">
