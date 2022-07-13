@@ -1239,9 +1239,6 @@
   <block id="d81f72d124621f7fbe888b57a3b055c2" category="paragraph">不Cloud Volumes ONTAP 支援將現有的支援系統轉換成其他授權方法。目前的三種授權方法為容量型授權、Keystone Flex訂閱及節點型授權。例如、您無法將系統從節點型授權轉換成容量型授權（反之亦然）。</block>
   <block id="7bd090ccc30738cd79592e7431dee17b" category="paragraph">如果您想要轉換至其他授權方法、可以購買授權、使用Cloud Volumes ONTAP 該授權部署新的一套作業系統、然後將資料複寫到新系統。</block>
   <block id="170d227d215fb560bb4c8ad4e345183a" category="section-title">最大系統數</block>
-  <block id="3ac6338087c4180b5cbb359584abab3a" category="paragraph">無論使用何種授權模式、每個NetApp帳戶最多只能有20個不受限的功能。Cloud Volumes ONTAP</block>
-  <block id="5908d4e5a438659ba844464125f51abe" category="paragraph">_system_是HA配對或單一節點系統。例如、如果您有兩Cloud Volumes ONTAP 個用作2個用作2個用作2個用作2個用作2個用作2個用作單一節點的系統、則您的帳戶中總共有4個用作16個用作額外系統的空間。</block>
-  <block id="a259bb127cd2a1cd02edf6a3a2484f33" category="paragraph">如果您有任何問題、請聯絡您的客戶代表或銷售團隊。</block>
   <block id="fc2be74c7bf9f46e12967c2298a899ba" category="inline-link">深入瞭解NetApp客戶</block>
   <block id="e821f27f6bd96fe3103abd85280bcc70" category="paragraph"><block ref="e0109745edea3dd07561e6ef24e031b3" category="inline-link-rx"></block>。</block>
   <block id="72d7d9fbd92253175591abfdb19dc6a1" category="summary">在 Cloud Volumes ONTAP AWS 中部署時、您可以選擇符合工作負載需求的預先設定系統、也可以建立自己的組態。如果您選擇自己的組態、應該瞭解可用的選項。</block>
@@ -1642,8 +1639,6 @@
   <block id="cc3717c29172e7c4beafc5f30f3639ac" category="paragraph">我們重新設計了授權選擇畫面、以建立全新Cloud Volumes ONTAP 的運作環境。這些變更突顯了2021年7月推出的附加容量充電方法、並透過雲端供應商市場支援即將推出的產品。</block>
   <block id="cb859e966c34323b5da18c0c77998603" category="section-title">數位錢包更新</block>
   <block id="912b97680395d2b9dfdd2d9fcfded8bf" category="paragraph">我們在Cloud Volumes ONTAP 單一索引標籤中整合了各種不完整的授權、藉此更新*數位錢包*。</block>
-  <block id="6040922a9492ff1a6966cd9d9d73a9f9" category="section-title">每個NetApp帳戶20個系統</block>
-  <block id="e0109745edea3dd07561e6ef24e031b3" category="paragraph"><block ref="e0109745edea3dd07561e6ef24e031b3" category="inline-link-rx"></block></block>
   <block id="586301717819197e24001cac47efdaaa" category="section-title">2022年1月2日</block>
   <block id="424543ac82fbe709685dcec8b007bf63" category="paragraph">以下變更是在3.9.14版的Connector中提出的。</block>
   <block id="bbbee7961ccb9cea5bdfe8ab78e43452" category="paragraph">從9.10.1版開始、下列VM類型現在可在Microsoft Azure中支援此功能：Cloud Volumes ONTAP</block>
@@ -3087,7 +3082,6 @@
   <block id="3d64d0d43e2b3f4726dd94ece523a44b" category="inline-link-macro">變更現有系統的寫入速度</block>
   <block id="f7ccf02d84fa210180071ca2470f84e9" category="paragraph">您可以在建立新的工作環境時選擇寫入速度、而且可以 <block ref="bb09c850cc1f480d84d76846ade7e379" category="inline-link-macro-rx"></block>。</block>
   <block id="a6b5c3b6343acd9e9c252b6734e21729" category="section-title">發生資料遺失時的預期結果</block>
-  <block id="c2bed051015327a0fbd183fa026d6072" category="paragraph">如果您選擇高速寫入速度且發生資料遺失、則系統應能在不需使用者介入的情況下開機並繼續提供資料。當節點發生資料遺失時、會報告兩則 EMS 訊息。其中一個是 wafl.root.content.changed 、其中一個是錯誤嚴重性層級事件、另一個是 nv.check.failed 、其中包含偵錯嚴重性層級事件。這兩個訊息都必須顯示為資料遺失的指示。</block>
   <block id="ccd6abf00ee311d6ee0fe0cfa658d4af" category="section-title">如何在資料遺失時停止資料存取</block>
   <block id="3c88118331e31a974e72f747b05eac91" category="paragraph">如果您擔心資料遺失、希望應用程式在資料遺失時停止執行、並在資料遺失問題妥善解決後恢復資料存取、您可以從 CLI 使用 NVFIL 選項來達成此目標。</block>
   <block id="da40cbf3df02166f4e0befe0ef32dcce" category="list-text">啟用 NVFIL 選項</block>
@@ -4184,7 +4178,6 @@
   <block id="2ba3f057b3f441a58c358dd4703ea556" category="paragraph">在「數位錢包」中、50 TiB將根據_Essentials單一節點_授權收費。</block>
   <block id="2204b0f79985b7b0565114e8305937a5" category="section-title">儲存VM</block>
   <block id="ea2d4d2ac58be22179ef1e523d4602b4" category="section-title">FlexClone與FlexCache 功能</block>
-  <block id="c0a01aae03aec488789ec9662cb472bb" category="paragraph">每個NetApp帳戶最多可有20個不受限的不受限系統。Cloud Volumes ONTAP_system_是Cloud Volumes ONTAP 一個EsireHA配對、Cloud Volumes ONTAP 一個僅供支援的節點系統、或是您所建立的任何其他儲存VM。預設的儲存VM不會計入限制。此限制適用於所有授權模式。</block>
   <block id="ee39f25358b04b9ab4c35e9b485d2797" category="paragraph">例如、假設您有三種工作環境：</block>
   <block id="35851ad4214e2cb5358ee8d010fd31e9" category="list-text">單一節點Cloud Volumes ONTAP 的不完整系統、只需一個儲存VM（這是部署Cloud Volumes ONTAP 時建立的預設儲存VM）</block>
   <block id="75a89431d9d36de5dedb4018f6ca3cbe" category="paragraph">這種工作環境是單一系統的重要關鍵。</block>
@@ -4204,7 +4197,6 @@
   <block id="39d8821e12869173bcc44d49a6c82619" category="list-text">_已用容量_顯示該套件的磁碟區總容量。如需特定套件的詳細資料、請將滑鼠游標移到工具提示上。</block>
   <block id="d30bc4bd5cee7ac23a1df54311d1f4b3" category="inline-link-macro">瞭解如何為Essentials套裝方案充電</block>
   <block id="33b4838dec7acdb2df64d13961f0a255" category="paragraph">若要更深入瞭解Essentials套件的顯示容量、您應該熟悉充電的運作方式。 <block ref="eee0a6ebb632d7e4c34635f35e9b54cf" category="inline-link-macro-rx"></block>。</block>
-  <block id="da1c54b789cbe5eb82490a61a1240bdc" category="list-text">「_BYOL_」和「_PAYGO_」容量顯示授權使用模式的總使用容量。</block>
   <block id="bbb170bfbf4105204b0dbe4292724d6e" category="paragraph">以下是一個擁有多個授權套件的帳戶範例：</block>
   <block id="9dbb08096054a8593f55c8cd3e2863d6" category="inline-image-macro">螢幕快照顯示專業、最佳化及基本套件的耗用容量。</block>
   <block id="943b03ddb77b543ab329dfed996ad4ac" category="paragraph"><block ref="943b03ddb77b543ab329dfed996ad4ac" category="inline-image-macro-rx" type="image"></block></block>
@@ -4224,4 +4216,12 @@
   <block id="21f6d246225534dc3444037c83f109c3" category="list-text">使用下列關鍵字-值配對新增「user-Private - DNS"區域設定參數、以編輯app.conf：</block>
   <block id="b5544a18e847192d0e5a82658b3e0f92" category="paragraph">此參數應與「system-id」輸入的層級相同、如下所示：</block>
   <block id="ff9fcf498a74a638ff2a01da3cae4468" category="paragraph">請注意、只有當私有DNS區域的訂閱與Connector不同時、才需要訂購關鍵字。</block>
+  <block id="34010f1e0d61721ccadb44d47c32e547" category="paragraph">透過容量型授權、Cloud Volumes ONTAP 每個NetApp帳戶最多可有20個不限數量的不二元系統。_system_是Cloud Volumes ONTAP 一個EsireHA配對、Cloud Volumes ONTAP 一個僅供支援的節點系統、或是您所建立的任何其他儲存VM。預設的儲存VM不會計入限制。此限制適用於所有授權模式。</block>
+  <block id="b4c7b5de587c69b61237e13a2d37bbf1" category="paragraph">如果您的大型部署需要20個以上的系統、請聯絡您的客戶代表或銷售團隊。</block>
+  <block id="3bc8827b2b8b4b47a25fb21994526d52" category="paragraph">如果資料因高速寫入而遺失、事件管理系統（EMS）會報告下列兩個事件：</block>
+  <block id="be98a72c550adaac0016c02f579ae8d6" category="list-text">更新版本Cloud Volumes ONTAP</block>
+  <block id="7cd42532925d5e610a9d3694b57652da" category="list-text">零點9.8到9.10.1 Cloud Volumes ONTAP</block>
+  <block id="deae9d093dee266b166a3693474231a9" category="paragraph">發生這種情況時Cloud Volumes ONTAP 、無需使用者介入、即可啟動及繼續提供資料。</block>
+  <block id="4f68f7a47531b2df7b7a4db5225d57b5" category="list-text">_BYOL_顯示您向NetApp購買的授權容量。</block>
+  <block id="0c27ea3454ff74c09bafc9361752d263" category="list-text">_PAYGO_顯示授權使用模式的總使用容量。</block>
 </blocks>

@@ -59,7 +59,8 @@ image:screenshot_capacity-based-licenses.png["螢幕擷取畫面顯示專業套�
 +
 若要更深入瞭解Essentials套件的顯示容量、您應該熟悉充電的運作方式。 link:concept-licensing.html#notes-about-charging["瞭解如何為Essentials套裝方案充電"]。
 
-** 「_BYOL_」和「_PAYGO_」容量顯示授權使用模式的總使用容量。
+** _BYOL_顯示您向NetApp購買的授權容量。
+** _PAYGO_顯示授權使用模式的總使用容量。
 +
 以下是一個擁有多個授權套件的帳戶範例：
 

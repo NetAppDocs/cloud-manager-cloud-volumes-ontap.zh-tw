@@ -112,7 +112,21 @@ endif::gcp[]
 
 == 發生資料遺失時的預期結果
 
-如果您選擇高速寫入速度且發生資料遺失、則系統應能在不需使用者介入的情況下開機並繼續提供資料。當節點發生資料遺失時、會報告兩則 EMS 訊息。其中一個是 wafl.root.content.changed 、其中一個是錯誤嚴重性層級事件、另一個是 nv.check.failed 、其中包含偵錯嚴重性層級事件。這兩個訊息都必須顯示為資料遺失的指示。
+如果資料因高速寫入而遺失、事件管理系統（EMS）會報告下列兩個事件：
+
+* 更新版本Cloud Volumes ONTAP
++
+ DEBUG nv.check.failed: NVRAM check failed with error "NVRAM disabled due to dirty shutdown with High Write Speed mode"
++
+ ERROR wafl.root.content.changed: Contents of the root volume '' might have changed. Verify that all recent configuration changes are still in effect.
+* 零點9.8到9.10.1 Cloud Volumes ONTAP
++
+ DEBUG nv.check.failed: NVRAM check failed with error "NVRAM disabled due to dirty shutdown"
++
+ ERROR wafl.root.content.changed: Contents of the root volume '' might have changed. Verify that all recent configuration changes are still in effect.
+
+
+發生這種情況時Cloud Volumes ONTAP 、無需使用者介入、即可啟動及繼續提供資料。
 
 
 

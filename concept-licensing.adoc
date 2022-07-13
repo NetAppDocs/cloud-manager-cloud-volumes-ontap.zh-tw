@@ -154,6 +154,34 @@ TIP: 免費試用開始、剩餘7天、以及剩餘1天時、您將會在Cloud M
 
 
 
+=== 最大系統數
+
+透過容量型授權、Cloud Volumes ONTAP 每個NetApp帳戶最多可有20個不限數量的不二元系統。_system_是Cloud Volumes ONTAP 一個EsireHA配對、Cloud Volumes ONTAP 一個僅供支援的節點系統、或是您所建立的任何其他儲存VM。預設的儲存VM不會計入限制。此限制適用於所有授權模式。
+
+例如、假設您有三種工作環境：
+
+* 單一節點Cloud Volumes ONTAP 的不完整系統、只需一個儲存VM（這是部署Cloud Volumes ONTAP 時建立的預設儲存VM）
++
+這種工作環境是單一系統的重要關鍵。
+
+* 單一節點Cloud Volumes ONTAP 的不完整系統、含兩個儲存VM（預設儲存VM、加上您所建立的一個額外儲存VM）
++
+此工作環境可視為兩個系統：一個用於單一節點系統、另一個用於額外的儲存VM。
+
+* 包含三個儲存VM（預設儲存VM、加上您所建立的兩個額外儲存VM）的支援功能Cloud Volumes ONTAP
++
+此工作環境可算為三個系統：一個用於HA配對、兩個用於額外的儲存VM。
+
+
+
+總共有六個系統。之後您的帳戶就有額外14個系統的空間。
+
+如果您的大型部署需要20個以上的系統、請聯絡您的客戶代表或銷售團隊。
+
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-netapp-accounts.html["深入瞭解NetApp客戶"^]。
+
+
+
 === 充電注意事項
 
 下列詳細資料可協助您瞭解充電方式如何搭配容量型授權使用。
@@ -313,31 +341,3 @@ endif::gcp[]
 如果您想要轉換至其他授權方法、可以購買授權、使用Cloud Volumes ONTAP 該授權部署新的一套作業系統、然後將資料複寫到新系統。
 
 請注意、不支援將系統從PAYGO節點授權轉換成BYOL節點授權（反之亦然）。您需要部署新系統、然後將資料複寫到該系統。 link:task-manage-node-licenses.html["瞭解如何在PAYGO和BYOL之間切換"]。
-
-
-
-== 最大系統數
-
-每個NetApp帳戶最多可有20個不受限的不受限系統。Cloud Volumes ONTAP_system_是Cloud Volumes ONTAP 一個EsireHA配對、Cloud Volumes ONTAP 一個僅供支援的節點系統、或是您所建立的任何其他儲存VM。預設的儲存VM不會計入限制。此限制適用於所有授權模式。
-
-例如、假設您有三種工作環境：
-
-* 單一節點Cloud Volumes ONTAP 的不完整系統、只需一個儲存VM（這是部署Cloud Volumes ONTAP 時建立的預設儲存VM）
-+
-這種工作環境是單一系統的重要關鍵。
-
-* 單一節點Cloud Volumes ONTAP 的不完整系統、含兩個儲存VM（預設儲存VM、加上您所建立的一個額外儲存VM）
-+
-此工作環境可視為兩個系統：一個用於單一節點系統、另一個用於額外的儲存VM。
-
-* 包含三個儲存VM（預設儲存VM、加上您所建立的兩個額外儲存VM）的支援功能Cloud Volumes ONTAP
-+
-此工作環境可算為三個系統：一個用於HA配對、兩個用於額外的儲存VM。
-
-
-
-總共有六個系統。之後您的帳戶就有額外14個系統的空間。
-
-如果您有任何問題、請聯絡您的客戶代表或銷售團隊。
-
-https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-netapp-accounts.html["深入瞭解NetApp客戶"^]。
