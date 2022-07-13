@@ -21,17 +21,9 @@ Cloud Manager 可讓您檢視在 Cloud Volumes ONTAP AWS 中執行功能的相�
 .步驟
 . 確認 Cloud Manager 可從 AWS 取得成本資訊：
 +
-.. 確保提供 Cloud Manager 權限的 IAM 原則包括下列動作：
+.. 確保提供Cloud Manager權限的IAM原則包含必要的權限。
 +
-[source, json]
-----
-"ce:GetReservationUtilization",
-"ce:GetDimensionValues",
-"ce:GetCostAndUsage",
-"ce:GetTags"
-----
-+
-這些行動包含在最新的中 https://mysupport.netapp.com/site/info/cloud-manager-policies["Cloud Manager 原則"^]。從 NetApp Cloud Central 部署的新系統會自動包含這些權限。
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html["檢視所需的權限"^]
 
 .. https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/activating-tags.html["啟動 * 工作環境 Id* 標籤"^]。
 +

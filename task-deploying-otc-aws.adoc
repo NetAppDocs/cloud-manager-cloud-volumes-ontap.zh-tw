@@ -132,7 +132,7 @@ link:concept-security.html#encryption-of-data-at-rest["深入瞭解支援的加�
 
 . * IAM角色*：最好保留預設選項、讓Cloud Manager為您建立角色。
 +
-如果您偏好使用自己的原則、就必須符合 https://mysupport.netapp.com/site/info/cloud-manager-policies["有關節點的原則要求 Cloud Volumes ONTAP"^]。
+如果您偏好使用自己的原則、就必須符合 link:task-set-up-iam-roles.html["有關節點的原則要求 Cloud Volumes ONTAP"]。
 
 . *授權*：視Cloud Volumes ONTAP 需要變更此版本、並選取執行個體類型和執行個體租賃。
 +
@@ -355,7 +355,7 @@ link:concept-security.html#encryption-of-data-at-rest["深入瞭解支援的加�
 
 . * IAM角色*：最好保留預設選項、讓Cloud Manager為您建立角色。
 +
-如果您偏好使用自己的原則、就必須符合 https://mysupport.netapp.com/site/info/cloud-manager-policies["有關節點和 HA 中介器的原則要求 Cloud Volumes ONTAP"^]。
+如果您偏好使用自己的原則、就必須符合 link:task-set-up-iam-roles.html["有關節點和 HA 中介器的原則要求 Cloud Volumes ONTAP"]。
 
 . *授權*：視Cloud Volumes ONTAP 需要變更此版本、並選取執行個體類型和執行個體租賃。
 +

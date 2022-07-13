@@ -23,4 +23,4 @@ https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.htm
 ----
 現在需要這些權限、才能最佳化Cloud Manager建立放置群組的方式。
 
-請務必為您新增至Cloud Manager的每組AWS認證資料提供這些權限。您可以在上找到最新的權限清單 https://mysupport.netapp.com/site/info/cloud-manager-policies["Cloud Manager 原則頁面"^]。
+請務必為您新增至Cloud Manager的每組AWS認證資料提供這些權限。 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html["檢視AWS的最新Connector原則"^]。

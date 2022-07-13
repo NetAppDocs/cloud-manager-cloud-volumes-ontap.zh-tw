@@ -110,7 +110,7 @@ HA 配對::
 "Microsoft.KeyVault/vaults/read",
 "Microsoft.KeyVault/vaults/accessPolicies/write"
 ----
-您可以在上找到最新的權限清單 https://mysupport.netapp.com/site/info/cloud-manager-policies["Cloud Manager 原則頁面"^]。
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-azure.html["檢視最新的權限清單"^]
 
 
 NOTE: HA配對不需要前三個權限。

@@ -19,7 +19,7 @@ link:concept-aws-elastic-volumes.html["深入瞭解彈性磁碟區的支援"]。
 "ec2:DescribeVolumesModifications",
 "ec2:ModifyVolume",
 ----
-請務必為您新增至Cloud Manager的每組AWS認證資料提供這些權限。您可以在上找到最新的權限清單 https://mysupport.netapp.com/site/info/cloud-manager-policies["Cloud Manager 原則頁面"^]。
+請務必為您新增至Cloud Manager的每組AWS認證資料提供這些權限。 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html["檢視AWS的最新Connector原則"^]。
 
 
 

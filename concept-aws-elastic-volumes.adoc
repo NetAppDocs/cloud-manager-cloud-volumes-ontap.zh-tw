@@ -69,7 +69,7 @@ Amazon EBS彈性磁碟區功能支援特定Cloud Volumes ONTAP 的版本、以�
 * EC2：修改Volume
 
 
-這些權限包含在中 https://mysupport.netapp.com/site/info/cloud-manager-policies["NetApp 提供的原則"^]
+這些權限包含在中 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html["NetApp 提供的原則"^]
 
 
 

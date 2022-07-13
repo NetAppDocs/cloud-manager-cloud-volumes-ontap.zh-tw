@@ -101,7 +101,7 @@ video::video_subscribing_azure.mp4[width=848,height=480]
 您必須使用專屬的資源群組來處理Cloud Volumes ONTAP 您在Azure中部署的每個「EHA配對」。資源群組僅支援一個HA配對。如果您嘗試在Cloud Volumes ONTAP Azure資源群組中部署第二個「功能組」配對、Cloud Manager會發生連線問題。
 
 
-TIP: 如果您使用的Azure帳戶具有 https://mysupport.netapp.com/site/info/cloud-manager-policies["必要權限"^]Cloud Manager可在Cloud Volumes ONTAP 部署失敗或刪除時、從資源群組移除不必要的資源。
+TIP: 如果您使用的Azure帳戶具有 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-azure.html["必要權限"^]Cloud Manager可在Cloud Volumes ONTAP 部署失敗或刪除時、從資源群組移除不必要的資源。
 
 
 

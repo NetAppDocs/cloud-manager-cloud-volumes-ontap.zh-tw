@@ -289,8 +289,6 @@
   <block id="d9483fef78159e6b7c5c069f6308ec9e" category="doc">搭配 Cloud Volumes ONTAP 使用客戶管理的加密金鑰</block>
   <block id="769b2b29e604b8ed7cfb5dd3f4866402" category="paragraph">雖然Google Cloud Storage會在資料寫入磁碟之前先加密資料、但您可以使用Cloud Manager API來建立Cloud Volumes ONTAP 使用_客戶管理的加密金鑰_的支援系統。這些是您使用 Cloud Key Management Service 在 GCP 中產生及管理的金鑰。</block>
   <block id="b9619c1148373a636c12c8213eddff6c" category="list-text">確保Cloud Manager Connector服務帳戶在專案層級（儲存金鑰的專案）擁有正確的權限。</block>
-  <block id="ba4d50b593a64cf3bc09099137fea857" category="inline-link">Cloud Manager Yaml檔案</block>
-  <block id="26acc058d297ac8811f53111c6405f4c" category="paragraph">權限由提供<block ref="1c047ede583bccd8d55f27e40850ab68" category="inline-link-rx"></block> 根據預設、但如果您使用雲端金鑰管理服務的替代專案、則可能無法套用。</block>
   <block id="8d6f8ae15f085c0f77796ef25c3e542f" category="paragraph">權限如下：</block>
   <block id="e58a4fe969b25e78703eca19dbe150f4" category="inline-link">Google Compute Engine服務代理程式</block>
   <block id="f83957d35ae58c124cdefecdb0acb6d2" category="list-text">確認的服務帳戶<block ref="20c753a1b4fa297bc9e2c3ab9d93174c" category="inline-link-rx"></block> 具有金鑰的Cloud KMS Encrypter/Dec供 解密權限。</block>
@@ -427,7 +425,6 @@
   <block id="59527d9d0803346cc8e4cbcbe4fc5e0d" category="paragraph">請注意、 Cloud Manager 會在 HA 配對上建立 SVM 管理 LIF 、但不會在 Azure 中的單一節點系統上建立。</block>
   <block id="cf97b7bbcae965edf17dfb032d773d4e" category="admonition">LIF 是與實體連接埠相關聯的 IP 位址。諸如 VMware 的管理工具需要 SVM 管理 LIF SnapCenter 。</block>
   <block id="0af87aead9b1478c9d33afc90cbcbf02" category="section-title">安全連線至Azure服務</block>
-  <block id="d76af3fd99bc3d655a1c7ebb39340b6f" category="inline-link">Cloud Manager 原則</block>
   <block id="465b92b3276cc18a4183d48ccf476d6a" category="inline-link-macro">將冷資料分層至低成本物件儲存設備</block>
   <block id="c444761212c29ddb96943c613e011090" category="inline-link-macro">深入瞭解如何搭配 Cloud Volumes ONTAP 使用 Azure 私有 Link 搭配使用功能</block>
   <block id="1fc84e37bead390cd8921abb886256a5" category="paragraph"><block ref="a2f09fc910f91b45be16b1d3da056377" category="inline-link-macro-rx"></block>。</block>
@@ -590,8 +587,6 @@
   <block id="ee838eedbc836643e82292aaec35e9bd" category="section-title">建立使用加密金鑰的工作環境</block>
   <block id="b182b79adc6d3d917ce345097c4ccd53" category="paragraph">建立金鑰庫並產生加密金鑰之後、您可以建立Cloud Volumes ONTAP 新的、設定為使用金鑰的整套系統。使用Cloud Manager API可支援這些步驟。</block>
   <block id="60caa3723d35318302867d5f5c093f4a" category="paragraph">如果您想要將客戶管理的金鑰與單一節點Cloud Volumes ONTAP 的作業系統搭配使用、請確定Cloud Manager Connector具有下列權限：</block>
-  <block id="eaf263597aafb24c99ce4e16af420ae8" category="inline-link">Cloud Manager 原則頁面</block>
-  <block id="9de255345c89e4a84f3125ff96e9f3ed" category="paragraph">您可以在上找到最新的權限清單<block ref="0e92ab1ca454f31f07a6e5fba6519a3a" category="inline-link-rx"></block>。</block>
   <block id="c4e08114666cf6bc480ea8458e1dd083" category="list-text">請使用下列Cloud Manager API呼叫、取得Azure訂閱中的金鑰保存清單。</block>
   <block id="b5bc96f48f2241c984568df161fa1a37" category="paragraph">對於HA配對：「Get /azure/ha/mata/Vault」</block>
   <block id="ac20be2c156e351d08e2cd3c7c63b584" category="paragraph">對於單一節點：「Get /azure/VSA/中繼資料/資料保存」</block>
@@ -973,8 +968,6 @@
   <block id="3e8a22c9458be9392b33d4c1a68e03cc" category="inline-link">AWS 支援知識中心：為什麼我無法使用閘道 VPC 端點連線至 S3 儲存區？</block>
   <block id="9daf3764d930a69c2d6feecf1143803d" category="paragraph">如果您遇到任何問題、請參閱<block ref="133eaae00ad88e811386070963e01d00" category="inline-link-rx"></block>。</block>
   <block id="9937c497b7ba5b93c4e025e7034a6ab2" category="section-title">將冷資料分層至 Azure Blob 儲存設備的需求</block>
-  <block id="69fc3aa126fc7a09511fee14d2ec37b4" category="paragraph">只要 Cloud Manager 具備所需的權限、您就不需要在效能層與容量層之間建立連線。如果 Cloud Manager 原則具有下列權限、 Cloud Manager 可為您啟用 vnet 服務端點：</block>
-  <block id="aaf6c9386307243e0c7f006a0f97bb52" category="paragraph">權限包含在最新版本中<block ref="7fc49a88d4bedbc1252c1f5516a8dc2a" category="inline-link-rx"></block>。</block>
   <block id="fa1042438bed47a60c15908b94fd42c4" category="section-title">將冷資料分層至 Google Cloud Storage 儲存庫的需求</block>
   <block id="2e5f3aa65f18453c5c51b5ffcf2214d5" category="inline-link">Google Cloud 文件：設定私有 Google Access</block>
   <block id="5a73034af6b91167e9ba69ce44d86e8f" category="list-text">駐留的子網路 Cloud Volumes ONTAP 必須設定為私有 Google Access 。如需相關指示、請參閱<block ref="46bdb5a1fb51df5eb32e2147ea91e6d8" category="inline-link-rx"></block>。</block>
@@ -1585,7 +1578,6 @@
   <block id="ef8e1d8f242a7ee4d109deb44db1b252" category="section-title">Connector需要新的AWS權限</block>
   <block id="bfd761a70b5f9cd277ef7c878344df38" category="paragraph">在單一可用度區域（AZ）中部署HA配對時、現在需要下列權限才能建立AWS分散配置群組：</block>
   <block id="0080f4096e51a12d4256890c125c5c46" category="paragraph">現在需要這些權限、才能最佳化Cloud Manager建立放置群組的方式。</block>
-  <block id="26dd25d183752a9f37249174f3d3ff89" category="paragraph">請務必為您新增至Cloud Manager的每組AWS認證資料提供這些權限。您可以在上找到最新的權限清單<block ref="0e92ab1ca454f31f07a6e5fba6519a3a" category="inline-link-rx"></block>。</block>
   <block id="81ad4f0de90ee8a7305d0fd7751df796" category="section-title">新的Google Cloud區域支援</block>
   <block id="6b071f4257d8badb0aeb96e6b0547800" category="paragraph">從9.10.1版開始、下列Google Cloud區域現在支援此功能：Cloud Volumes ONTAP</block>
   <block id="b11df59ba05c25c3a8734d54b7501ae7" category="list-text">德里（亞洲-南2）</block>
@@ -1715,7 +1707,6 @@
   <block id="1b267f21193669a66008c34cc479a4fc" category="inline-image-macro">「建立工作環境」精靈的快照、您可以在其中選取現有的資源群組。</block>
   <block id="cad0012f66cb2f1cfe9fddf03895f77e" category="paragraph"><block ref="cad0012f66cb2f1cfe9fddf03895f77e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="ea2f95cd186ab87bca1dcce34b32534a" category="paragraph">下列權限可讓Cloud Manager在Cloud Volumes ONTAP 部署失敗或刪除時、從資源群組中移除不必要的資源：</block>
-  <block id="5a0c4362aa70d1aeb52c4b022fd88361" category="paragraph">請務必提供這些權限給您新增至Cloud Manager的每組Azure認證資料。您可以在上找到最新的權限清單<block ref="0e92ab1ca454f31f07a6e5fba6519a3a" category="inline-link-rx"></block>。</block>
   <block id="0a3c5ad9f109853d264fbf6240883bfe" category="section-title">Azure中現在已停用BLOB公開存取</block>
   <block id="3d0f1890147e4cb614f14a676c8ef588" category="paragraph">Cloud Manager現在會在建立Cloud Volumes ONTAP 適用於的儲存帳戶時、停用* Blob公有存取*、以增強安全性。</block>
   <block id="aef1ee9aa40596fa2f356372bd8af7d5" category="section-title">Azure Private Link增強功能</block>
@@ -1748,8 +1739,6 @@
   <block id="bf3fded166c9420fbd66b824ce9bbc0b" category="section-title">刪除舊的雲端快照</block>
   <block id="63c06d07a1fa7b849380de0fd3b1183b" category="paragraph">Cloud Manager現在會刪除在Cloud Volumes ONTAP 部署完一套系統時、以及每次關機時所建立的舊版根磁碟和開機磁碟雲端快照。只有兩個最新的快照會同時保留給根磁碟區和開機磁碟區。</block>
   <block id="f39a950236a2ad655637cfc92f42e08a" category="paragraph">這項增強功能可移除不再需要的快照、協助降低雲端供應商的成本。</block>
-  <block id="c6864fba0c63991f673104f8962961a0" category="inline-link">檢視Azure最新的Cloud Manager原則</block>
-  <block id="39a27239d032dc234fdb9bf37df2907f" category="paragraph">請注意、Connector需要新的權限才能刪除Azure快照。<block ref="a2c3d86df958bba3f2cf61370f533f94" category="inline-link-rx"></block>。</block>
   <block id="838ebd02c4e75e1a01b87638b45ee617" category="section-title">2021年5月24日</block>
   <block id="910d8975bd41857a0103e9a8657ea7d9" category="section-title">部分9.9.1 Cloud Volumes ONTAP</block>
   <block id="c863fcd8d7f3278495a83acff7ce4871" category="paragraph">Cloud Manager現在可以部署及管理Cloud Volumes ONTAP 支援。</block>
@@ -2108,8 +2097,6 @@
   <block id="35e4967d2a2e90d7bfa5caff34b2036e" category="paragraph">Cloud Manager 可讓您檢視在 Cloud Volumes ONTAP AWS 中執行功能的相關資源成本。您也可以瞭解使用 NetApp 功能來降低儲存成本、省下多少成本。</block>
   <block id="a5d977ba36574331e6fac69ee299d352" category="paragraph">當您重新整理頁面時、 Cloud Manager 會更新成本。如需最終成本詳細資料、請參閱 AWS 。</block>
   <block id="ef6804a71d4dc1bde5a7f23c03679def" category="list-text">確認 Cloud Manager 可從 AWS 取得成本資訊：</block>
-  <block id="54656853d86488021d6d7dbdb510aa1d" category="list-text">確保提供 Cloud Manager 權限的 IAM 原則包括下列動作：</block>
-  <block id="387b1d5a0d67dbd2eb72b8f47d9d96c2" category="paragraph">這些行動包含在最新的中<block ref="0dc063d42cd9e31c0e2c7df9df595c9f" category="inline-link-rx"></block>。從 NetApp Cloud Central 部署的新系統會自動包含這些權限。</block>
   <block id="de4e4bb6bc85c14c6a8601fd20afdca3" category="inline-link">啟動 * 工作環境 Id* 標籤</block>
   <block id="ee0050b628db7de40e04e661d528d91f" category="list-text"><block ref="541edff71c56eae6d36d5f7a463cfcca" category="inline-link-rx"></block>。</block>
   <block id="2a8cdc8078be7ba49f8cc84255ed8462" category="paragraph">為了追蹤 AWS 成本、 Cloud Manager 會指派成本分配標籤給 Cloud Volumes ONTAP 各個執行個體。建立第一個工作環境之後、請啟動 * 工作環境 Id* 標籤。使用者定義的標記不會出現在 AWS 帳單報告上、除非您在帳單和成本管理主控台中啟動它們。</block>
@@ -2570,7 +2557,6 @@
   <block id="2d6e88c43d1b87d3d042cce1773371b7" category="paragraph">建立Cloud Volumes ONTAP 新的資源群組以供使用、或使用現有的資源群組。最佳實務做法是使用全新的資源群組 Cloud Volumes ONTAP 來進行支援。雖然可以在Cloud Volumes ONTAP 現有的共享資源群組中部署功能、但由於資料遺失的風險、不建議這麼做。如需詳細資料、請參閱上述警告。</block>
   <block id="c9187ee1a002f195f99a19e00d1b9596" category="paragraph">您必須使用專屬的資源群組來處理Cloud Volumes ONTAP 您在Azure中部署的每個「EHA配對」。資源群組僅支援一個HA配對。如果您嘗試在Cloud Volumes ONTAP Azure資源群組中部署第二個「功能組」配對、Cloud Manager會發生連線問題。</block>
   <block id="21c199e82e474a9a5607a2b9ccb8e66f" category="inline-link">必要權限</block>
-  <block id="24890578d550dfd7eafc2569059f89e2" category="admonition">如果您使用的Azure帳戶具有<block ref="a18b1518901620e43c44c260945ff7cb" category="inline-link-rx"></block>Cloud Manager可在Cloud Volumes ONTAP 部署失敗或刪除時、從資源群組移除不必要的資源。</block>
   <block id="338578acf7e0dc54ebcd8c3592f0b022" category="cell">安全性群組</block>
   <block id="aeba611d332bf85ad8d5a14dd92fa935" category="inline-link-macro">檢視預設的安全性群組</block>
   <block id="44651ffc55fe78607ad39789f43eab9b" category="cell">如果您選擇現有的安全群組、則必須符合Cloud Volumes ONTAP 下列需求： <block ref="f88b68abd6e0fcb97b26739e6dccf3c6" category="inline-link-macro-rx"></block>。</block>
@@ -2690,7 +2676,6 @@
   <block id="aa1a1dda4b1ade9ea7484b8f180091ba" category="paragraph">如果您選擇其中一個套件、則只需指定一個Volume、然後檢閱並核准組態。</block>
   <block id="c449e34e5848c75cf2ae5048d97482c1" category="list-text">* IAM角色*：最好保留預設選項、讓Cloud Manager為您建立角色。</block>
   <block id="bef2f3bc1b5f6b5fc3eaabff818b8b07" category="inline-link">有關節點的原則要求 Cloud Volumes ONTAP</block>
-  <block id="28df6ca63a931a73e42bb1a5832f842b" category="paragraph">如果您偏好使用自己的原則、就必須符合<block ref="e6af531133ecd89e70d5f32cb2437c92" category="inline-link-rx"></block>。</block>
   <block id="a6fcc094aa2aa8328784bade825b168a" category="inline-link-macro">瞭解資料分層的運作方式</block>
   <block id="e3d16ce79bcead59781233b93cb58009" category="paragraph"><block ref="204d09224c7e7513a2d3fc955e6c2d5a" category="inline-link-macro-rx"></block>。</block>
   <block id="8ee28f71a3913c6cd38d72baee984fef" category="list-text">* 寫入速度與 WORM * ：選擇 * 正常 * 或 * 高速 * 寫入速度、並視需要啟動一次寫入、多次讀取（ WORM ）儲存設備。</block>
@@ -2720,7 +2705,6 @@
   <block id="0d27f0f1131dc607258f48d5dc5dcf14" category="list-text">* 路由表 * ：如果您選擇多個 AZs 、請選取應包含浮動 IP 位址路由的路由表。</block>
   <block id="5e2b7cebb4bf10923692995c621e2e85" category="paragraph">如果您有多個路由表、請務必選取正確的路由表。否則、部分用戶端可能無法存取 Cloud Volumes ONTAP 此功能配對。如需路由表的詳細資訊、請參閱<block ref="8ed06851f50fcdbded65cb78f986bfa5" category="inline-link-rx"></block>。</block>
   <block id="b2bb3f64fb5b828b17cb684f3c44b684" category="inline-link">有關節點和 HA 中介器的原則要求 Cloud Volumes ONTAP</block>
-  <block id="75b4ad07a93bd884b4cecba578453c90" category="paragraph">如果您偏好使用自己的原則、就必須符合<block ref="a2de7a18595694bfdf2d090235d628ca" category="inline-link-rx"></block>。</block>
   <block id="e33d0575f3a1479ae00cc2fb1764511c" category="list-text">* CIFS 設定 * ：如果您選取 CIFS 傳輸協定、請設定 CIFS 伺服器。</block>
   <block id="b687eeea7d6170a303a1764ea5284467" category="paragraph">Cloud Manager 會啟動 Cloud Volumes ONTAP 「叢集式 HA 配對」。您可以追蹤時間表的進度。</block>
   <block id="63f5b3a996af84469a7cccd34a9a29c0" category="paragraph">如果您在啟動 HA 配對時遇到任何問題、請檢閱故障訊息。您也可以選取工作環境、然後按一下重新建立環境。</block>
@@ -3175,8 +3159,6 @@
   <block id="fdbc311c4dd4bb425160f22f166435fa" category="doc">在 Cloud Volumes ONTAP GCP 中啟動</block>
   <block id="74b0825a91f70136708bc63f9253e89c" category="paragraph">您可以 Cloud Volumes ONTAP 在單一節點組態中或在 Google Cloud Platform 中以 HA 配對的形式啟動功能。</block>
   <block id="3a2e3bd3692b5b10d4e8d1876ea764e4" category="list-text">您應該擁有<block ref="31efb472d9740ae4bd5b3185af479587" category="inline-link-rx"></block>。</block>
-  <block id="bd6c369240f89bf86e4b626364f908e2" category="inline-link-macro">應具備最新權限</block>
-  <block id="3321bc090ceb16b6084591444ef6cd3a" category="list-text">與 Connector 相關的服務帳戶 <block ref="64a8bbbeae7df623fa565fb7d6d95fe1" category="inline-link-macro-rx"></block>。</block>
   <block id="af2fe545c466e4cd2bff03fb7e3dd4f2" category="paragraph">您應該先選擇組態、然後從系統管理員取得GCP網路資訊、以做好準備。如需詳細資訊、請參閱 <block ref="7c40283f4f533a5903d1033c57ef27f4" category="inline-link-macro-rx"></block>。</block>
   <block id="fb387d3403e9d0f4168631a5c1e65d3d" category="inline-link">在您的專案中啟用</block>
   <block id="3f7dd317abe229076594c229e96f375d" category="list-text">Google Cloud API應該是<block ref="2bf1d71c4d11fe94040400dbdd9bbe2e" category="inline-link-rx"></block>：</block>
@@ -3924,7 +3906,6 @@
   <block id="29788364ff656936651870f4b1c88537" category="list-text">選用：指定您在Google Cloud中新增的IP位址、以建立儲存VM管理LIF。</block>
   <block id="4bd46f200c4c3391a3b00fc9aa8af7dd" category="paragraph">從3.9.19版本開始、Connector需要下列權限、才能建立及管理Cloud Volumes ONTAP 適用於各個HA配對的儲存VM：</block>
   <block id="9edd86f763fc6d21418429b5c63134af" category="inline-link">NetApp 提供的原則</block>
-  <block id="e32789b345ccbe1107de29d5684f39a3" category="paragraph">這些權限包含在中<block ref="d2f8d77175d2dd5e5ed1a096c2593510" category="inline-link-rx"></block></block>
   <block id="8786838db6c83df6feac856057d2e141" category="list-text">使用下列API呼叫建立儲存VM：</block>
   <block id="78beb47b48fe8b17a288b32a8942a187" category="paragraph">「POST /occm/api/gcp/ha/辦公 環境/｛we_ID｝/svm/」</block>
   <block id="995ddfd1247131c9653edbf829fa6e28" category="paragraph">申請機構應包括下列項目：</block>
@@ -4224,4 +4205,46 @@
   <block id="deae9d093dee266b166a3693474231a9" category="paragraph">發生這種情況時Cloud Volumes ONTAP 、無需使用者介入、即可啟動及繼續提供資料。</block>
   <block id="4f68f7a47531b2df7b7a4db5225d57b5" category="list-text">_BYOL_顯示您向NetApp購買的授權容量。</block>
   <block id="0c27ea3454ff74c09bafc9361752d263" category="list-text">_PAYGO_顯示授權使用模式的總使用容量。</block>
+  <block id="37bd0d8d0efdd824ed9e36094f3c2c1c" category="paragraph">這些權限包含在中<block ref="98fe8f9430f05dddae3f56358643ae7b" category="inline-link-rx"></block></block>
+  <block id="ae80bc88aef0110098f23957532726a9" category="list-text">確保提供Cloud Manager權限的IAM原則包含必要的權限。</block>
+  <block id="d0cc9b5d406e02bdbb6a1a9848e6af5f" category="inline-link">檢視所需的權限</block>
+  <block id="0fcac0fe9e3d9ae4416e83b6bf0316d1" category="paragraph"><block ref="0fcac0fe9e3d9ae4416e83b6bf0316d1" category="inline-link-rx"></block></block>
+  <block id="63e4eec15ba75260d01771611989182b" category="inline-link">檢視AWS的最新Connector原則</block>
+  <block id="3f5180c6dfc0906c58f04ff000c41a28" category="paragraph">請務必為您新增至Cloud Manager的每組AWS認證資料提供這些權限。<block ref="68d3de9f2b18269a91b4a95ab6a0f18b" category="inline-link-rx"></block>。</block>
+  <block id="ea03ff7045a27cd5d2c4f32dcc1e5c1a" category="inline-link">檢視Azure最新的Connector原則</block>
+  <block id="295513df08c7c28471bdab48a5e355ca" category="paragraph">請務必提供這些權限給您新增至Cloud Manager的每組Azure認證資料。<block ref="574207c2ae4659a179501fd348865e04" category="inline-link-rx"></block>。</block>
+  <block id="a8871b0f5e2060375f5d22d7b732e703" category="paragraph">請注意、Connector需要新的權限才能刪除Azure快照。<block ref="574207c2ae4659a179501fd348865e04" category="inline-link-rx"></block>。</block>
+  <block id="5df454c08487b25ef7ed689e20bbb85b" category="admonition">如果您使用的Azure帳戶具有<block ref="cd2b97a09fd9df6a215a5b6e4e80bd0b" category="inline-link-rx"></block>Cloud Manager可在Cloud Volumes ONTAP 部署失敗或刪除時、從資源群組移除不必要的資源。</block>
+  <block id="2976866d443a54a1d677044dcbde1667" category="paragraph">只要 Cloud Manager 具備所需的權限、您就不需要在效能層與容量層之間建立連線。如果Connector的自訂角色具有下列權限、Cloud Manager會為您啟用vnet服務端點：</block>
+  <block id="0f0088348e85cdf82b3a00d88879bc4d" category="inline-link">檢視Azure對Connector的權限</block>
+  <block id="8ddf671701dec41bed133165068f79cf" category="paragraph">根據預設、權限會包含在自訂角色中。<block ref="02023942a78dd9e7d6b9acab278574c6" category="inline-link-rx"></block></block>
+  <block id="50e6df40fd4046e3d4cba1fe6794893f" category="summary">每Cloud Volumes ONTAP 個支援節點都必須具有附加的IAM角色、才能提供必要的權限。HA中介者也是如此。讓Cloud Manager為您建立IAM角色最簡單、但您可以使用自己的角色。</block>
+  <block id="75c41138bbd7704a1e0b806bef4b58ac" category="doc">設定IAM角色Cloud Volumes ONTAP 以供使用</block>
+  <block id="e8d7c2539c0a4191d2d2e9716d9aa611" category="paragraph">具有所需權限的IAM角色必須附加至每Cloud Volumes ONTAP 個節點。HA中介者也是如此。讓Cloud Manager為您建立IAM角色最簡單、但您可以使用自己的角色。</block>
+  <block id="beb54b15eed37770fdbcb3e343aab17f" category="paragraph">此工作為選用工作。當您建立Cloud Volumes ONTAP 一個運作環境時、預設選項是讓Cloud Manager為您建立IAM角色。如果貴企業的安全性原則要求您自行建立IAM角色、請遵循下列步驟。</block>
+  <block id="07561162983a030769cc8563b6143a06" category="inline-link-macro">瞭解如何在Cloud Volumes ONTAP C2S中部署功能</block>
+  <block id="f6fe0c003ae0bc360a2c1d722f423983" category="admonition">AWS商業雲端服務環境需要提供您自己的IAM角色。 <block ref="af622e808f4363be4413c4e256d0f137" category="inline-link-macro-rx"></block>。</block>
+  <block id="1e71ce7defc90d8f5a2c46c08ba968df" category="list-text">前往AWS IAM主控台。</block>
+  <block id="2be2a83dff352bbae732dfe827629b52" category="list-text">建立包含下列權限的IAM原則：</block>
+  <block id="f671db25e387df2f231d7d414ac6e1ba" category="list-text">節點Cloud Volumes ONTAP</block>
+  <block id="222ddb2f355a49f64fb3858123f2b97b" category="open-title">標準區域</block>
+  <block id="1411debdb32e6b128ca27ec92a708cbd" category="open-title">GovCloud（美國）地區</block>
+  <block id="a8416eae2db8c97eb943559351fab358" category="open-title">C2S環境</block>
+  <block id="3e5c966a065f647b413d08592c0e466d" category="list-text">建立IAM角色、並將您在上一個步驟中建立的原則附加至角色。</block>
+  <block id="a640e21419d545eaa2be7040f35bcbde" category="paragraph">現在您可以在建立新Cloud Volumes ONTAP 的運作環境時選擇IAM角色。</block>
+  <block id="ab066b3292d8ab61ef3b5c77169cdd19" category="list-title">更多資訊</block>
+  <block id="0eab25f343df3cb0d26a483c0c7e529f" category="inline-link">AWS文件：建立IAM原則</block>
+  <block id="45e9fc9038e8db14384b82fa67d6e96c" category="list-text"><block ref="45e9fc9038e8db14384b82fa67d6e96c" category="inline-link-rx"></block></block>
+  <block id="c6239bda161ac0e2a3f3a7f04121192f" category="inline-link">AWS文件：建立IAM角色</block>
+  <block id="a617d64955af268e6cf6dcbbd1b9c7a2" category="list-text"><block ref="a617d64955af268e6cf6dcbbd1b9c7a2" category="inline-link-rx"></block></block>
+  <block id="9bbbccce6014d45ac8f43e7614d2a34c" category="paragraph">這些權限包含在中<block ref="4e2f5782ef353f7277cd9ba2163caaf1" category="inline-link-rx"></block>。</block>
+  <block id="67e53d36a1474a1493554aa780f091dd" category="inline-link">連接器服務帳戶權限依預設</block>
+  <block id="30770411d4576ecdafaa756fb5a82328" category="paragraph">權限會在中提供<block ref="296035bc3f3b9b7f4150059e833c4544" category="inline-link-rx"></block>、但如果您使用雲端金鑰管理服務的替代專案、則可能無法套用。</block>
+  <block id="791fab48bebea2a79a35d70b5cc07227" category="inline-link">檢視最新的權限清單</block>
+  <block id="ba7ae0204894b3edc44a2f0822ad2da8" category="paragraph"><block ref="ba7ae0204894b3edc44a2f0822ad2da8" category="inline-link-rx"></block></block>
+  <block id="9e1dbaa97d16ff9bc20f90cb1663f522" category="inline-link">應具備所需的權限</block>
+  <block id="acbe60cca2f08e7905a3283a0c9d7b09" category="list-text">與 Connector 相關的服務帳戶<block ref="9efb82dd4baa51f3442d848d3fff4260" category="inline-link-rx"></block></block>
+  <block id="ca28d9f44067f5a160cea063e474fc37" category="paragraph">如果您偏好使用自己的原則、就必須符合 <block ref="a89eb99c31d3fd4d78e3bc9ddfb0dc20" category="inline-link-macro-rx"></block>。</block>
+  <block id="6459a9ada2e38351f8beba8f79c30a5f" category="paragraph">如果您偏好使用自己的原則、就必須符合 <block ref="f5cab54abdefb42b27e2bac59f2262c2" category="inline-link-macro-rx"></block>。</block>
+  <block id="e26c5d07fc30848902a99c95897441b4" category="sidebar">設定IAM角色</block>
 </blocks>

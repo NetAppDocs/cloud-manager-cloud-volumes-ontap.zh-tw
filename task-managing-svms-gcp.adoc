@@ -112,7 +112,7 @@ vserver add-aggregates -vserver <svm-name> -aggregates <aggr1,aggr2>
 - compute.instanceGroups.get
 - compute.addresses.get
 ----
-這些權限包含在中 https://mysupport.netapp.com/site/info/cloud-manager-policies["NetApp 提供的原則"^]
+這些權限包含在中 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-gcp.html["NetApp 提供的原則"]。
 
 .步驟
 . 使用下列API呼叫建立儲存VM：
