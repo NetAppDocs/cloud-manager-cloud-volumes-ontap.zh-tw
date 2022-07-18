@@ -370,7 +370,6 @@
   <block id="e2d4a517cbcae1c0966d5e478d743531" category="list-text">WORM儲存在Cloud Volumes ONTAP 「受信任的儲存管理員」模式下運作。儘管WORM檔案受到保護、不會遭到竄改或修改、但即使這些磁碟區包含未過期的WORM資料、叢集管理員仍可刪除這些磁碟區。</block>
   <block id="6d0cc0f6b100bdce8cb06276811faff9" category="list-text">除了值得信賴的儲存管理員模式之外Cloud Volumes ONTAP 、在「值得信賴的雲端管理員」模式下、WORM儲存設備也會以隱含方式運作。雲端管理員可以直接從雲端供應商移除或編輯雲端儲存設備、在WORM資料到期日前刪除。</block>
   <block id="eb57ade58504f4d5c09cb5e8cd78ae55" category="list-text">啟動 WORM 儲存設備時、無法啟用資料分層至物件儲存設備的功能。</block>
-  <block id="d9054c47c3f9c235104ce71c08d03270" category="list-text">必須停用以啟用WORM儲存。Cloud Backup Service</block>
   <block id="f5c4745b8a5809c2aa248d1297288719" category="summary">在雲端環境發生故障時、提供企業級的可靠性和持續運作。 Cloud Volumes ONTAP在 Azure 中、儲存設備會在兩個節點之間共享。</block>
   <block id="ca010532511b0575d0c11648404720a6" category="doc">Azure 中的高可用度配對</block>
   <block id="39579c446d8c5e21ff1d2b6c3e65c086" category="section-title">HA 元件</block>
@@ -2574,7 +2573,6 @@
   <block id="963dc2ced33c135470b8d59948bed4db" category="paragraph"><block ref="9d2a2a02285bff8cac27941dbd566d2c" category="inline-link-macro-rx"></block>。</block>
   <block id="5f785ef412cf3ae3f3656054cca2d342" category="list-text">* 寫入速度與 WORM * （僅限單節點系統）：選擇 * 正常 * 或 * 高速 * 寫入速度、並視需要啟動一次寫入、多次讀取（ WORM ）儲存設備。</block>
   <block id="154182f595466ead49f0896392c37343" category="paragraph"><block ref="12222f10612c9f092ca31c9e99478649" category="inline-link-macro-rx"></block>。</block>
-  <block id="aaba9ed07f65bdca98f42e38431e1fa9" category="paragraph">如果啟用雲端備份或啟用資料分層、則無法啟用WORM。</block>
   <block id="9fbcc7d5f14bd49b571c1a321923fd19" category="paragraph"><block ref="b8e9389aa16366d8b675fc0ac72edf2e" category="inline-link-macro-rx"></block>。</block>
   <block id="99933c51e50b7da9dbe73f3421397211" category="list-text">* 安全通訊至儲存設備與 WORM * （僅限 HA ）：選擇是否啟用 HTTPS 連線至 Azure 儲存帳戶、並視需要啟動一次寫入、多次讀取（ WORM ）儲存設備。</block>
   <block id="02c690c7e2df5602e590fab55c30a15e" category="paragraph">HTTPS 連線是 Cloud Volumes ONTAP 從一個名為「支援速度」的鏈接至 Azure 儲存帳戶。請注意、啟用此選項可能會影響寫入效能。您無法在建立工作環境之後變更設定。</block>
@@ -4247,4 +4245,5 @@
   <block id="ca28d9f44067f5a160cea063e474fc37" category="paragraph">如果您偏好使用自己的原則、就必須符合 <block ref="a89eb99c31d3fd4d78e3bc9ddfb0dc20" category="inline-link-macro-rx"></block>。</block>
   <block id="6459a9ada2e38351f8beba8f79c30a5f" category="paragraph">如果您偏好使用自己的原則、就必須符合 <block ref="f5cab54abdefb42b27e2bac59f2262c2" category="inline-link-macro-rx"></block>。</block>
   <block id="e26c5d07fc30848902a99c95897441b4" category="sidebar">設定IAM角色</block>
+  <block id="15cbb1f16ecbbcee7df3dcd252b9d2ef" category="paragraph">如果資料分層已啟用、則無法啟用 WORM 。</block>
 </blocks>
